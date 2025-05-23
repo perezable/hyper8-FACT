@@ -1,57 +1,273 @@
-FACT – Fast‑Access Cached Tools
-================================
-FACT is a lean retrieval pattern that skips vector search. We cache every static token inside Claude Sonnet‑4 and fetch live facts only through authenticated tools hosted on Arcade.dev. The result is deterministic answers, fresh data, and sub‑100 ms latency.
+# FACT System - Fast-Access Cached Tools
 
-Why FACT?
----------
-* **Speed** – Sonnet reuses its cached key‑value states so only new tokens run. Tool calls stay on LAN (<10 ms).
-* **Determinism** – Structured tools return exact rows, not cosine‑similar text chunks.
-* **Simplicity** – No embeddings, no index refresh, no third‑party search infra.
-* **Cost** – Cache hits cut Anthropic billing by up to 90 percent; you pay only for incremental tokens.
+A lean retrieval pattern that skips vector search by caching static tokens in Claude Sonnet-4 and fetching live facts through authenticated tools hosted on Arcade.dev.
 
-Benchmarks
-----------
-| Scenario                     | Latency | Token cost |
-|------------------------------|---------|------------|
-| Pure RAG (PGVector + rerank) | 320 ms  | 100 %      |
-| FACT cache miss              | 140 ms  | 35 %       |
-| FACT cache hit               | **48 ms** | **10 %**  |
-*(Local tests on M2 laptop, Sonnet‑4 200‑token responses.)*
+## 🎯 Overview
 
-Architecture
-------------
-1. **Cache Prefix** – A ≥500‑token system block plus immutable docs sent with `cache_control:{mode:"write",prefix:"fact_v1"}`.
-2. **User Query** – Prompts can include natural placeholders like “{lookup sql}”.
-3. **Tool Call** – Sonnet emits a structured call, driver forwards it to Arcade.
-4. **Tool Result** – JSON result is appended as a `tool` message; Sonnet completes the answer.
+FACT (Fast-Access Cached Tools) implements a novel approach to AI-powered data retrieval that achieves:
+- **Sub-100ms response times** through intelligent caching
+- **Deterministic answers** via structured tool-based data access
+- **90% cost reduction** on cache hits vs traditional RAG
+- **Fresh data access** through live database queries
 
-Quick Start
------------
-```bash
-# clone & enter
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env  # fill API keys
-# launch Arcade gateway
-docker compose -f gateway/docker-compose.yml up -d
-# seed sample DB
-awk -f - < db/seed.sql | sqlite3 finance.db  # or sqlite3 finance.db < db/seed.sql
-# register tools
-python tools/sql_query.py --register
-# run interactive CLI\python driver.py
+## 🏗️ Architecture
+
 ```
-Ask: `What was Q1‑2025 net revenue?`
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   User Query    │───▶│  FACT Driver    │───▶│  Claude Sonnet  │
+│                 │    │                 │    │      -4         │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                                 │                        │
+                                 │                        ▼
+                         ┌─────────────────┐    ┌─────────────────┐
+                         │ Arcade Gateway  │◀───│   Tool Calls    │
+                         │                 │    │                 │
+                         └─────────────────┘    └─────────────────┘
+                                 │
+                                 ▼
+                         ┌─────────────────┐
+                         │   Data Sources  │
+                         │  (SQLite, APIs) │
+                         └─────────────────┘
+```
 
-Extending FACT
---------------
-* **Add tools** – Drop a new `@Tool` function in `tools/`, run with `--register`.
-* **Scale** – Deploy Arcade behind TLS and point multiple driver pods to it; cache prefixes are portable because they only store token hashes.
-* **Fallback search** – Bolt on a traditional RAG path for unstructured domains; let a policy router pick RAG vs FACT per request.
+## ⚡ Quick Start
 
-Security Notes
---------------
-Arcade supports OAuth scopes, rate limits, and audit logs. Always sandbox dangerous actions (shell, DDL) behind explicit scopes and review Sonnet’s tool call args.
+### Prerequisites
 
-License
--------
-MIT, see LICENSE file.
+- Python 3.8+
+- Anthropic API key
+- Arcade.dev API key (optional for full functionality)
+
+### Installation
+
+1. **Clone and setup:**
+   ```bash
+   git clone <repository-url>
+   cd FACT
+   pip install -r requirements.txt
+   ```
+
+2. **Configure environment:**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your API keys
+   ```
+
+3. **Initialize system:**
+   ```bash
+   python scripts/setup.py
+   ```
+
+4. **Run the system:**
+   ```bash
+   python driver.py
+   ```
+
+### Example Usage
+
+```bash
+# Interactive mode
+python driver.py
+
+# Single query mode
+python driver.py --query "What's TechCorp's Q1 2025 revenue?"
+```
+
+## 🛠️ Core Components
+
+### 1. FACT Driver ([`src/core/driver.py`](src/core/driver.py))
+Central orchestrator managing cache, queries, and tool execution.
+
+### 2. Database Layer ([`src/db/`](src/db/))
+- **Connection Management**: Secure SQLite operations
+- **Sample Data**: Pre-loaded financial dataset for demonstration
+- **Security**: Read-only query validation
+
+### 3. Tool Framework ([`src/tools/`](src/tools/))
+- **Decorators**: Easy tool definition and registration
+- **SQL Tools**: Secure database query execution
+- **Registry**: Centralized tool management
+
+### 4. Configuration ([`src/core/config.py`](src/core/config.py))
+Environment-based configuration with validation.
+
+## 📊 Available Tools
+
+### SQL.QueryReadonly
+Execute SELECT queries on the financial database.
+
+**Example:**
+```sql
+SELECT c.name, f.revenue 
+FROM companies c 
+JOIN financial_records f ON c.id = f.company_id 
+WHERE f.year = 2025 AND f.quarter = 'Q1'
+```
+
+### SQL.GetSchema
+Get database schema information for query construction.
+
+### SQL.GetSampleQueries
+Get sample queries for exploring the financial dataset.
+
+## 💾 Database Schema
+
+The system includes a sample financial database with:
+
+### Companies Table
+- Company information (name, symbol, sector, market cap)
+- Technology, Financial Services, Healthcare, Energy, Retail sectors
+
+### Financial Records Table
+- Quarterly financial data (revenue, profit, expenses)
+- Q1 2024 through Q1 2025 data
+- Linked to companies via foreign key
+
+## 🔧 Configuration
+
+Environment variables (`.env` file):
+
+```bash
+# Required
+ANTHROPIC_API_KEY=your_anthropic_api_key
+ARCADE_API_KEY=your_arcade_api_key
+
+# Optional
+DATABASE_PATH=data/fact_demo.db
+CACHE_PREFIX=fact_v1
+CLAUDE_MODEL=claude-3-5-sonnet-20241022
+LOG_LEVEL=INFO
+```
+
+## 🎮 CLI Commands
+
+When running interactively, use these commands:
+
+- `help` - Show available commands
+- `status` - Display system status
+- `tools` - List registered tools
+- `schema` - Show database schema
+- `samples` - Display sample queries
+- `metrics` - Show performance metrics
+- `exit` - Quit the system
+
+## 🧪 Testing
+
+Run the test suite:
+
+```bash
+# Install test dependencies
+pip install pytest pytest-asyncio
+
+# Run tests
+python -m pytest tests/ -v
+
+# Run specific test
+python tests/test_basic_functionality.py
+```
+
+## 📈 Performance Targets
+
+- **Cache hits**: ≤50ms latency
+- **Cache misses**: ≤140ms latency  
+- **Tool execution**: ≤10ms (LAN)
+- **Cost reduction**: 90% on cache hits, 65% on cache misses
+
+## 🔒 Security Features
+
+- **SQL Injection Prevention**: Validates all queries
+- **Read-only Access**: Only SELECT statements allowed
+- **Path Validation**: Secure file system access
+- **Input Sanitization**: Comprehensive parameter validation
+- **Audit Logging**: Complete activity tracking
+
+## 📁 Project Structure
+
+```
+fact/
+├── src/
+│   ├── core/           # Core system components
+│   ├── db/             # Database layer
+│   ├── tools/          # Tool framework and implementations
+│   └── monitoring/     # Performance monitoring
+├── tests/              # Test suite
+├── scripts/            # Utility scripts
+├── docs/               # Documentation
+├── data/               # Database files
+├── driver.py           # Main entry point
+└── requirements.txt    # Dependencies
+```
+
+## 🚀 Example Queries
+
+Try these queries with the system:
+
+1. **Company Information:**
+   ```
+   "What companies are in the Technology sector?"
+   ```
+
+2. **Financial Analysis:**
+   ```
+   "Show me Q1 2025 revenue for all companies"
+   ```
+
+3. **Comparative Analysis:**
+   ```
+   "Compare TechCorp's performance across quarters"
+   ```
+
+4. **Sector Analysis:**
+   ```
+   "What's the average revenue by sector in 2024?"
+   ```
+
+## 🛡️ Error Handling
+
+The system provides graceful error handling with:
+- User-friendly error messages
+- Detailed logging for debugging
+- Graceful degradation when services are unavailable
+- Automatic retry mechanisms for transient failures
+
+## 📊 Monitoring
+
+Built-in metrics tracking:
+- Query processing times
+- Cache hit/miss ratios
+- Tool execution statistics
+- Error rates and types
+- Cost savings calculations
+
+## 🔮 Future Enhancements
+
+- RAG fallback for unstructured data
+- Multi-database support
+- Advanced caching strategies
+- Real-time data streaming
+- GraphQL tool interfaces
+- Enterprise authentication
+
+## 🤝 Contributing
+
+1. Follow the modular architecture principles
+2. Maintain files under 500 lines
+3. Include comprehensive error handling
+4. Add tests for new functionality
+5. Update documentation
+
+## 📄 License
+
+See [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+For issues and questions:
+1. Check the [documentation](docs/)
+2. Review [troubleshooting guide](docs/troubleshooting.md)
+3. Run diagnostics: `python driver.py --query "status"`
+
+---
+
+**FACT System v1.0.0** - Fast-Access Cached Tools for deterministic AI responses

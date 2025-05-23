@@ -4,7 +4,7 @@ anthropic==0.19.1
 arcade-sdk==0.4.7
 aiohttp==3.9.5
 python-dotenv==1.0.1
-
+litellm
 #──────────────── .env.example ─────────────
 ANTHROPIC_API_KEY=sk-anthropic-XXXXXXXXXXXXXXXXXXXX
 ARCADE_API_KEY=pk_live_XXXXXXXXXXXXXXXXXXXXXXXXXXX
