@@ -6,7 +6,7 @@ errors and error handling utilities.
 """
 
 from typing import Optional, Dict, Any
-from ..core.errors import FACTError
+from src.core.errors import FACTError
 
 
 class ArcadeError(FACTError):

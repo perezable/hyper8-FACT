@@ -11,7 +11,7 @@ from typing import Dict, Any, List, Optional, Union
 from datetime import datetime
 import structlog
 
-from ..core.errors import ValidationError, SecurityError
+from src.core.errors import ValidationError, SecurityError
 
 
 logger = structlog.get_logger(__name__)

@@ -1,3 +1,4 @@
+
 """
 FACT System Database Connection Management
 
@@ -13,10 +14,10 @@ from typing import Dict, List, Any, Optional, Tuple
 from contextlib import asynccontextmanager
 import structlog
 
-from ..core.errors import DatabaseError, SecurityError, InvalidSQLError
+from src.core.errors import DatabaseError, SecurityError, InvalidSQLError
 from .models import (
-    DATABASE_SCHEMA, 
-    SAMPLE_COMPANIES, 
+    DATABASE_SCHEMA,
+    SAMPLE_COMPANIES,
     SAMPLE_FINANCIAL_RECORDS,
     QueryResult,
     validate_schema_integrity
@@ -112,36 +113,53 @@ class DatabaseManager:
             SecurityError: If statement contains dangerous operations
             InvalidSQLError: If statement has syntax errors
         """
-        normalized_statement = statement.lower().strip()
+        # Check for None or non-string input FIRST before any operations
+        if statement is None:
+            raise InvalidSQLError("SQL statement cannot be None")
         
-        # Security check: only allow SELECT statements
-        if not normalized_statement.startswith("select"):
-            raise SecurityError("Only SELECT statements are allowed")
+        if not isinstance(statement, str):
+            raise InvalidSQLError(f"SQL statement must be a string, got {type(statement).__name__}")
         
-        # Enhanced dangerous keyword detection
-        dangerous_keywords = [
-            "drop", "delete", "update", "insert", "alter", "create",
-            "truncate", "replace", "merge", "exec", "execute", "pragma",
-            "attach", "detach", "vacuum", "reindex", "analyze"
-        ]
+        # Check for empty string after stripping whitespace
+        statement_stripped = statement.strip()
+        if not statement_stripped:
+            raise InvalidSQLError("SQL statement cannot be empty")
         
-        # Check for dangerous keywords with word boundaries
+        normalized_statement = statement_stripped.lower()
+        
+        # Security check: allow SELECT statements and specific PRAGMA commands
         import re
-        for keyword in dangerous_keywords:
-            pattern = r'\b' + re.escape(keyword) + r'\b'
-            if re.search(pattern, normalized_statement, re.IGNORECASE):
-                raise SecurityError(f"Dangerous SQL keyword detected: {keyword}")
+        is_select = normalized_statement.startswith("select")
+        is_pragma_table_info = re.search(r'^\s*pragma\s+table_info\s*\(', normalized_statement, re.IGNORECASE)
         
-        # Check for SQL injection patterns
+        if not (is_select or is_pragma_table_info):
+            raise SecurityError("Only SELECT statements and PRAGMA table_info are allowed")
+        
+        # Enhanced dangerous keyword detection (only for SELECT statements)
+        if is_select:
+            dangerous_keywords = [
+                "drop", "delete", "update", "insert", "alter", "create",
+                "truncate", "replace", "merge", "exec", "execute",
+                "attach", "detach", "vacuum", "reindex", "analyze"
+            ]
+            
+            # Check for dangerous keywords with word boundaries
+            for keyword in dangerous_keywords:
+                pattern = r'\b' + re.escape(keyword) + r'\b'
+                if re.search(pattern, normalized_statement, re.IGNORECASE):
+                    raise SecurityError(f"Dangerous SQL keyword detected: {keyword}")
+        
+        # Check for SQL injection patterns (highly refined to avoid false positives)
         injection_patterns = [
-            r'--',  # SQL comments
-            r'/\*.*?\*/',  # Multi-line comments
-            r';\s*\w+',  # Multiple statements
-            r'\bunion\s+select\b',  # Union injection
-            r'\bor\s+1\s*=\s*1\b',  # Always true conditions
-            r'\band\s+1\s*=\s*1\b',  # Always true conditions
-            r'\'.*\'.*\'',  # Multiple quotes
+            r';\s*(?:drop|delete|insert|update|create|alter)',  # Multiple dangerous statements
+            r'\bunion\s+(?:all\s+)?select\b',  # Union injection attempts
+            r'\bor\s+[\'"]?1[\'"]?\s*=\s*[\'"]?1[\'"]?\b',  # Always true OR conditions
+            r'\band\s+[\'"]?1[\'"]?\s*=\s*[\'"]?1[\'"]?\b',  # Always true AND conditions (but not legitimate AND clauses)
+            r'\'[^\']*\'.*\'[^\']*\'.*\'[^\']*\'',  # Multiple quotes with content suggesting complex injection (not just adjacent quotes)
             r'\\x[0-9a-f]{2}',  # Hex encoding
+            r'--.*(?:union|drop|delete|insert|update|create)',  # Dangerous comments
+            r'\bor\s+[\'"]?\w+[\'"]?\s*=\s*[\'"]?\w+[\'"]?\s+or\b',  # OR chain injections
+            r'\'.*\'\s*;\s*\w+',  # Quote followed by statement separator
         ]
         
         for pattern in injection_patterns:
@@ -149,7 +167,7 @@ class DatabaseManager:
                 raise SecurityError(f"Potential SQL injection pattern detected")
         
         # Limit query complexity
-        if len(statement) > 5000:
+        if len(statement_stripped) > 5000:
             raise SecurityError("Query too long - potential DoS attack")
         
         # Count nested subqueries to prevent complex injection attacks
@@ -157,16 +175,16 @@ class DatabaseManager:
         if subquery_count > 5:
             raise SecurityError("Too many nested subqueries - potential injection attack")
         
-        # Basic syntax validation using sqlite3 parser
+        # Basic syntax validation using sqlite3 parser with actual database
         try:
             # Parse SQL to check syntax (without executing)
-            conn = sqlite3.connect(":memory:")
-            conn.execute(f"EXPLAIN QUERY PLAN {statement}")
+            conn = sqlite3.connect(self.database_path)
+            conn.execute(f"EXPLAIN QUERY PLAN {statement_stripped}")
             conn.close()
         except sqlite3.Error as e:
             raise InvalidSQLError(f"SQL syntax error: {e}")
         
-        logger.debug("SQL query validation passed", statement=statement[:100])
+        logger.debug("SQL query validation passed", statement=statement_stripped[:100])
     
     def _is_valid_table_name(self, table_name: str) -> bool:
         """
@@ -198,7 +216,6 @@ class DatabaseManager:
             return False
         
         return True
-        logger.debug("SQL query validation passed", statement=statement[:100])
     
     async def execute_query(self, statement: str) -> QueryResult:
         """

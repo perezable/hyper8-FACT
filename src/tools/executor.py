@@ -13,19 +13,36 @@ from typing import Dict, Any, List, Optional, Union
 from dataclasses import dataclass
 import structlog
 
-from ..core.errors import (
-    ToolExecutionError,
-    ToolValidationError, 
-    ToolNotFoundError,
-    UnauthorizedError,
-    SecurityError,
-    FinalRetryError
-)
-from .decorators import get_tool_registry, ToolDefinition
-from .validation import ParameterValidator, SecurityValidator
-from ..security.auth import AuthorizationManager
-from ..arcade.client import ArcadeClient
-from ..monitoring.metrics import MetricsCollector
+# Use try/except to handle both relative and absolute imports
+try:
+    from ..core.errors import (
+        ToolExecutionError,
+        ToolValidationError,
+        ToolNotFoundError,
+        UnauthorizedError,
+        SecurityError,
+        FinalRetryError
+    )
+    from .decorators import get_tool_registry, ToolDefinition
+    from .validation import ParameterValidator, SecurityValidator
+    from ..security.auth import AuthorizationManager
+    from ..monitoring.metrics import MetricsCollector
+except ImportError:
+    # Fallback to absolute imports when called from scripts
+    from core.errors import (
+        ToolExecutionError,
+        ToolValidationError,
+        ToolNotFoundError,
+        UnauthorizedError,
+        SecurityError,
+        FinalRetryError
+    )
+    from tools.decorators import get_tool_registry, ToolDefinition
+    from tools.validation import ParameterValidator, SecurityValidator
+    from security.auth import AuthorizationManager
+    from monitoring.metrics import MetricsCollector
+
+from src.arcade.client import ArcadeClient
 
 
 logger = structlog.get_logger(__name__)

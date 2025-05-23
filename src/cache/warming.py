@@ -13,9 +13,9 @@ from dataclasses import dataclass
 from pathlib import Path
 import structlog
 
-from .manager import CacheManager, get_cache_manager
-from .metrics import get_metrics_collector
-from ..core.errors import CacheError
+from manager import CacheManager, get_cache_manager
+from metrics import get_metrics_collector
+from core.errors import CacheError
 
 
 logger = structlog.get_logger(__name__)

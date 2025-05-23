@@ -14,8 +14,8 @@ from collections import defaultdict, deque
 from threading import Lock
 import structlog
 
-from .manager import CacheManager, CacheMetrics
-from ..core.errors import CacheError
+from manager import CacheManager, CacheMetrics
+from core.errors import CacheError
 
 
 logger = structlog.get_logger(__name__)

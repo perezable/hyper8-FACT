@@ -19,15 +19,28 @@ except ImportError:
     ARCADE_AVAILABLE = False
     arcade = None
 
-from .errors import (
-    ArcadeConnectionError,
-    ArcadeAuthenticationError,
-    ArcadeExecutionError,
-    ArcadeTimeoutError,
-    ArcadeRegistrationError,
-    ArcadeSerializationError
-)
-from ..core.errors import ToolExecutionError
+# Use try/except to handle both relative and absolute imports
+try:
+    from .errors import (
+        ArcadeConnectionError,
+        ArcadeAuthenticationError,
+        ArcadeExecutionError,
+        ArcadeTimeoutError,
+        ArcadeRegistrationError,
+        ArcadeSerializationError
+    )
+    from ..core.errors import ToolExecutionError
+except ImportError:
+    # Fallback to absolute imports when called from scripts
+    from arcade.errors import (
+        ArcadeConnectionError,
+        ArcadeAuthenticationError,
+        ArcadeExecutionError,
+        ArcadeTimeoutError,
+        ArcadeRegistrationError,
+        ArcadeSerializationError
+    )
+    from core.errors import ToolExecutionError
 
 
 logger = structlog.get_logger(__name__)

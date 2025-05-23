@@ -46,7 +46,7 @@ class Config:
         self._validate_required_keys()
         
     def _load_environment(self) -> None:
-        """Load environment variables from .env file if it exists."""
+        """Load environment variables from env file if it exists."""
         if os.path.exists(self.env_file):
             load_dotenv(self.env_file)
             logger.info("Loaded environment configuration", file=self.env_file)
@@ -61,7 +61,7 @@ class Config:
             ConfigurationError: If any required keys are missing
         """
         required_keys = [
-            "ANTHROPIC_API_KEY",
+            "OPENAI_API_KEY",
             "ARCADE_API_KEY"
         ]
         
@@ -88,6 +88,11 @@ class Config:
         return os.getenv("ARCADE_API_KEY", "")
         
     @property
+    def openai_api_key(self) -> str:
+        """Get OpenAI API key."""
+        return os.getenv("OPENAI_API_KEY", "")
+        
+    @property
     def arcade_base_url(self) -> str:
         """Get Arcade base URL."""
         return os.getenv("ARCADE_BASE_URL", "https://api.arcade-ai.com")
@@ -107,13 +112,47 @@ class Config:
         """Get system prompt for Claude."""
         return os.getenv(
             "SYSTEM_PROMPT",
-            "You are a deterministic finance assistant. When uncertain, request data via tools."
+            """You are a proactive SQL database assistant with access to financial and company data. Your goal is to provide complete, actionable answers by executing the necessary database queries.
+
+DATABASE SCHEMA INFORMATION:
+The database contains these key tables:
+- companies: Contains company information (id, name, symbol, sector, founded_year, employees, market_cap)
+- financial_records: Contains financial data (id, company_id, quarter, year, revenue, profit, expenses)
+
+CRITICAL TABLE NAMES:
+- Use "companies" for company information
+- Use "financial_records" (NOT "financials") for financial data
+- Join on: companies.id = financial_records.company_id
+
+CRITICAL INSTRUCTIONS:
+1. ALWAYS complete your analysis in a single response - don't just acknowledge what you'll do
+2. When you identify what data to retrieve, IMMEDIATELY execute the SQL queries
+3. NEVER respond with just "I will now..." or "Next, I will..." - DO it and show results
+4. If you need schema information, get it. If you need data, query it. Then provide the complete answer.
+5. Present actual data and results, not promises of future actions
+6. ALWAYS use correct table names: "companies" and "financial_records"
+
+WORKFLOW:
+1. Understand the question completely
+2. Use SQL.GetSchema if you need to understand table structure
+3. Use SQL.QueryReadonly to get the actual data the user needs
+4. Format and present the results clearly with specific numbers/details
+5. If a query fails, fix it and retry immediately
+
+RESPONSE STYLE:
+- Be direct and complete
+- Always include actual data in your responses
+- Provide specific numbers, names, and details
+- Don't leave users hanging with incomplete responses
+- If you execute tools, summarize what the results show
+
+Remember: Your job is to GET the data and PRESENT it, not just describe what you could do."""
         )
         
     @property
     def claude_model(self) -> str:
-        """Get Claude model name."""
-        return os.getenv("CLAUDE_MODEL", "claude-3-5-sonnet-20241022")
+        """Get OpenAI model name."""
+        return os.getenv("OPENAI_MODEL", "gpt-4o-mini")
         
     @property
     def max_retries(self) -> int:

@@ -16,7 +16,7 @@ from dataclasses import dataclass, asdict
 from pathlib import Path
 import structlog
 
-from ..core.errors import CacheError, ConfigurationError
+from core.errors import CacheError, ConfigurationError
 
 
 logger = structlog.get_logger(__name__)

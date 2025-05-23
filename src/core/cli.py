@@ -7,13 +7,18 @@ providing user interaction and command processing.
 
 import asyncio
 import sys
+import os
 import argparse
 from typing import Optional
 import structlog
 
-from .driver import get_driver, shutdown_driver
-from .config import get_config
-from .errors import FACTError, create_user_friendly_message
+# Add src directory to Python path when running as module
+if __name__ == "__main__":
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+
+from src.core.driver import get_driver, shutdown_driver
+from src.core.config import get_config
+from src.core.errors import FACTError, create_user_friendly_message
 
 
 logger = structlog.get_logger(__name__)
@@ -208,7 +213,7 @@ class FACTCLi:
                 return
             
             # Use the SQL tool to get schema
-            from ..tools.connectors.sql import sql_get_schema
+            from src.tools.connectors.sql import sql_get_schema
             schema_info = await sql_get_schema()
             
             if schema_info.get("status") == "success":
@@ -233,7 +238,7 @@ class FACTCLi:
                 return
             
             # Use the SQL tool to get sample queries
-            from ..tools.connectors.sql import sql_get_sample_queries
+            from src.tools.connectors.sql import sql_get_sample_queries
             samples = sql_get_sample_queries()
             
             print("📝 Sample Queries:")
@@ -314,10 +319,10 @@ async def main() -> None:
     args = parser.parse_args()
     
     # Configure logging
+    import logging
+    log_level = getattr(logging, args.log_level.upper(), logging.INFO)
     structlog.configure(
-        wrapper_class=structlog.make_filtering_bound_logger(
-            getattr(structlog.stdlib, args.log_level.upper())
-        ),
+        wrapper_class=structlog.make_filtering_bound_logger(log_level),
         logger_factory=structlog.stdlib.LoggerFactory(),
         processors=[
             structlog.stdlib.filter_by_level,

@@ -11,7 +11,7 @@ import urllib.parse
 from typing import Any, Dict, List, Optional, Union
 import structlog
 
-from ..core.errors import SecurityError, ValidationError
+from core.errors import SecurityError, ValidationError
 
 
 logger = structlog.get_logger(__name__)

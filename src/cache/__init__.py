@@ -11,7 +11,7 @@ Provides comprehensive caching functionality for the FACT system including:
 This module implements the caching requirements specified in the FACT architecture.
 """
 
-from .manager import (
+from manager import (
     CacheManager,
     CacheEntry,
     CacheMetrics,
@@ -21,14 +21,14 @@ from .manager import (
     invalidate_on_schema_change
 )
 
-from .strategy import (
+from strategy import (
     CacheStrategy,
     CacheOptimizer,
     get_cache_optimizer,
     optimize_cache_automatically
 )
 
-from .metrics import (
+from metrics import (
     MetricsCollector,
     PerformanceMetric,
     CostAnalysis,
@@ -38,7 +38,7 @@ from .metrics import (
     start_metrics_monitoring
 )
 
-from .warming import (
+from warming import (
     CacheWarmer,
     WarmupQuery,
     WarmupResult,
@@ -47,7 +47,7 @@ from .warming import (
     warm_cache_startup
 )
 
-from .validation import (
+from validation import (
     CacheValidator,
     ValidationLevel,
     ValidationResult,
@@ -56,7 +56,7 @@ from .validation import (
     validate_cache_integrity
 )
 
-from ..core.errors import CacheError
+from core.errors import CacheError
 
 import asyncio
 import time

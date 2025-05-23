@@ -5,7 +5,7 @@ Comprehensive benchmarking, profiling, and performance monitoring
 for the FACT implementation.
 """
 
-from .framework import (
+from framework import (
     BenchmarkFramework,
     BenchmarkRunner,
     BenchmarkConfig,
@@ -13,7 +13,7 @@ from .framework import (
     BenchmarkSummary
 )
 
-from .comparisons import (
+from comparisons import (
     RAGComparison,
     PerformanceComparison,
     ComparisonResult,
@@ -21,7 +21,7 @@ from .comparisons import (
     SystemType
 )
 
-from .profiler import (
+from profiler import (
     SystemProfiler,
     BottleneckAnalyzer,
     ProfileResult,
@@ -29,7 +29,7 @@ from .profiler import (
     ProfilePoint
 )
 
-from .monitoring import (
+from monitoring import (
     ContinuousMonitor,
     PerformanceTracker,
     MonitoringConfig,
@@ -37,7 +37,7 @@ from .monitoring import (
     PerformanceTrend
 )
 
-from .visualization import (
+from visualization import (
     BenchmarkVisualizer,
     ReportGenerator,
     BenchmarkReport,

@@ -1,6 +1,6 @@
 """
 FACT System Tool Decorators
-
+ 
 This module provides decorators and utilities for defining and registering
 tools in the FACT system following the architecture specification.
 """
@@ -8,13 +8,14 @@ tools in the FACT system following the architecture specification.
 import json
 import time
 import functools
+import asyncio
 from typing import Dict, Any, Callable, Optional, List
 from dataclasses import dataclass
 import structlog
 
-from ..core.errors import (
-    ToolValidationError, 
-    ToolExecutionError, 
+from src.core.errors import (
+    ToolValidationError,
+    ToolExecutionError,
     ValidationError,
     InvalidArgumentsError
 )
@@ -106,14 +107,18 @@ class ToolRegistry:
     
     def export_all_schemas(self) -> List[Dict[str, Any]]:
         """
-        Export all tool schemas in Claude-compatible format.
+        Export all tool schemas in OpenAI-compatible format.
         
         Returns:
-            List of tool schemas for Claude API
+            List of tool schemas for OpenAI API (with dots converted to underscores)
         """
         schema_list = []
         for tool_name in self.tools:
-            schema_list.append(self.schemas[tool_name])
+            schema = self.schemas[tool_name].copy()
+            # Convert dots to underscores for OpenAI API compatibility
+            if 'function' in schema and 'name' in schema['function']:
+                schema['function']['name'] = schema['function']['name'].replace('.', '_')
+            schema_list.append(schema)
         
         logger.debug("Exported tool schemas", count=len(schema_list))
         return schema_list
@@ -303,61 +308,121 @@ def Tool(name: str,
             pass
     """
     def decorator(tool_function: Callable) -> Callable:
-        @functools.wraps(tool_function)
-        def wrapped_tool(*args, **kwargs) -> Dict[str, Any]:
-            """Wrapped tool function with validation and error handling."""
-            start_time = time.time()
-            
-            try:
-                # Validate input parameters against schema
-                if args or kwargs:
-                    # Convert positional args to kwargs based on function signature
-                    import inspect
-                    sig = inspect.signature(tool_function)
-                    bound_args = sig.bind(*args, **kwargs)
-                    bound_args.apply_defaults()
-                    validated_kwargs = dict(bound_args.arguments)
+        # Check if the original function is async
+        is_async = asyncio.iscoroutinefunction(tool_function)
+        
+        if is_async:
+            @functools.wraps(tool_function)
+            async def wrapped_tool(*args, **kwargs) -> Dict[str, Any]:
+                """Wrapped async tool function with validation and error handling."""
+                start_time = time.time()
+                
+                try:
+                    # Validate input parameters against schema
+                    if args or kwargs:
+                        # Convert positional args to kwargs based on function signature
+                        import inspect
+                        sig = inspect.signature(tool_function)
+                        bound_args = sig.bind(*args, **kwargs)
+                        bound_args.apply_defaults()
+                        validated_kwargs = dict(bound_args.arguments)
+                        
+                        # Validate against parameter schema
+                        validate_tool_parameters(validated_kwargs, parameters)
+                    else:
+                        validated_kwargs = {}
                     
-                    # Validate against parameter schema
-                    validate_tool_parameters(validated_kwargs, parameters)
-                else:
-                    validated_kwargs = {}
+                    # Execute original async function
+                    result = await tool_function(**validated_kwargs)
+                    
+                    # Validate output format
+                    if not isinstance(result, dict):
+                        result = {"result": result}
+                    
+                    # Ensure result is JSON serializable
+                    json.dumps(result)
+                    
+                    execution_time = (time.time() - start_time) * 1000
+                    result["execution_time_ms"] = execution_time
+                    result["status"] = "success"
+                    
+                    logger.debug("Tool executed successfully",
+                               tool_name=name,
+                               execution_time_ms=execution_time)
+                    
+                    return result
+                    
+                except ValidationError as e:
+                    execution_time = (time.time() - start_time) * 1000
+                    logger.error("Tool parameter validation failed",
+                               tool_name=name,
+                               error=str(e),
+                               execution_time_ms=execution_time)
+                    raise ToolValidationError(f"Parameter validation failed: {e}")
+                    
+                except Exception as e:
+                    execution_time = (time.time() - start_time) * 1000
+                    logger.error("Tool execution failed",
+                               tool_name=name,
+                               error=str(e),
+                               execution_time_ms=execution_time)
+                    raise ToolExecutionError(f"Tool execution failed: {e}")
+        else:
+            @functools.wraps(tool_function)
+            def wrapped_tool(*args, **kwargs) -> Dict[str, Any]:
+                """Wrapped sync tool function with validation and error handling."""
+                start_time = time.time()
                 
-                # Execute original function
-                result = tool_function(**validated_kwargs)
-                
-                # Validate output format
-                if not isinstance(result, dict):
-                    result = {"result": result}
-                
-                # Ensure result is JSON serializable
-                json.dumps(result)
-                
-                execution_time = (time.time() - start_time) * 1000
-                result["execution_time_ms"] = execution_time
-                result["status"] = "success"
-                
-                logger.debug("Tool executed successfully",
-                           tool_name=name,
-                           execution_time_ms=execution_time)
-                
-                return result
-                
-            except ValidationError as e:
-                execution_time = (time.time() - start_time) * 1000
-                logger.error("Tool parameter validation failed",
-                           tool_name=name,
-                           error=str(e),
-                           execution_time_ms=execution_time)
-                raise ToolValidationError(f"Parameter validation failed: {e}")
-                
-            except Exception as e:
-                execution_time = (time.time() - start_time) * 1000
-                logger.error("Tool execution failed",
-                           tool_name=name,
-                           error=str(e),
-                           execution_time_ms=execution_time)
-                raise ToolExecutionError(f"Tool execution failed: {e}")
+                try:
+                    # Validate input parameters against schema
+                    if args or kwargs:
+                        # Convert positional args to kwargs based on function signature
+                        import inspect
+                        sig = inspect.signature(tool_function)
+                        bound_args = sig.bind(*args, **kwargs)
+                        bound_args.apply_defaults()
+                        validated_kwargs = dict(bound_args.arguments)
+                        
+                        # Validate against parameter schema
+                        validate_tool_parameters(validated_kwargs, parameters)
+                    else:
+                        validated_kwargs = {}
+                    
+                    # Execute original sync function
+                    result = tool_function(**validated_kwargs)
+                    
+                    # Validate output format
+                    if not isinstance(result, dict):
+                        result = {"result": result}
+                    
+                    # Ensure result is JSON serializable
+                    json.dumps(result)
+                    
+                    execution_time = (time.time() - start_time) * 1000
+                    result["execution_time_ms"] = execution_time
+                    result["status"] = "success"
+                    
+                    logger.debug("Tool executed successfully",
+                               tool_name=name,
+                               execution_time_ms=execution_time)
+                    
+                    return result
+                    
+                except ValidationError as e:
+                    execution_time = (time.time() - start_time) * 1000
+                    logger.error("Tool parameter validation failed",
+                               tool_name=name,
+                               error=str(e),
+                               execution_time_ms=execution_time)
+                    raise ToolValidationError(f"Parameter validation failed: {e}")
+                    
+                except Exception as e:
+                    execution_time = (time.time() - start_time) * 1000
+                    logger.error("Tool execution failed",
+                               tool_name=name,
+                               error=str(e),
+                               execution_time_ms=execution_time)
+                    raise ToolExecutionError(f"Tool execution failed: {e}")
         
         # Create tool definition
         tool_definition = ToolDefinition(

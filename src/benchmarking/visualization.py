@@ -14,10 +14,10 @@ import structlog
 
 try:
     # Try relative imports first (when used as package)
-    from .framework import BenchmarkResult, BenchmarkSummary
-    from .comparisons import ComparisonResult
-    from .profiler import ProfileResult, BottleneckAnalysis
-    from .monitoring import PerformanceAlert, PerformanceTrend
+    from framework import BenchmarkResult, BenchmarkSummary
+    from comparisons import ComparisonResult
+    from profiler import ProfileResult, BottleneckAnalysis
+    from monitoring import PerformanceAlert, PerformanceTrend
 except ImportError:
     # Fall back to absolute imports (when run as script)
     import sys

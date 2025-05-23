@@ -13,8 +13,8 @@ from dataclasses import dataclass
 from enum import Enum
 import structlog
 
-from .manager import CacheManager, CacheEntry
-from ..core.errors import CacheError
+from manager import CacheManager, CacheEntry
+from core.errors import CacheError
 
 
 logger = structlog.get_logger(__name__)

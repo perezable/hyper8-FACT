@@ -9,9 +9,9 @@ import time
 from typing import Dict, Any
 import structlog
 
-from ...core.errors import DatabaseError, SecurityError, InvalidSQLError
-from ...db.connection import DatabaseManager
-from ..decorators import Tool
+from src.core.errors import DatabaseError, SecurityError, InvalidSQLError
+from src.db.connection import DatabaseManager
+from src.tools.decorators import Tool
 
 
 logger = structlog.get_logger(__name__)
@@ -55,21 +55,32 @@ class SQLQueryTool:
             # Execute query through database manager (includes validation)
             result = await self.database_manager.execute_query(statement)
             
-            # Format response
+            # Format response with safe statement handling
+            safe_statement = str(statement) if statement is not None else "None"
+            # Safe length check to prevent NoneType errors
+            safe_statement_len = len(safe_statement) if safe_statement is not None else 0
+            truncated_statement = safe_statement[:100] + "..." if safe_statement_len > 100 else safe_statement
+            
+            # Safe access to result attributes with null checks
+            rows = getattr(result, 'rows', []) if result is not None else []
+            row_count = getattr(result, 'row_count', 0) if result is not None else 0
+            columns = getattr(result, 'columns', []) if result is not None else []
+            execution_time_ms = getattr(result, 'execution_time_ms', 0) if result is not None else 0
+            
             response = {
                 "query_id": query_id,
-                "rows": result.rows,
-                "row_count": result.row_count,
-                "columns": result.columns,
-                "execution_time_ms": result.execution_time_ms,
-                "statement": statement[:100] + "..." if len(statement) > 100 else statement,
+                "rows": rows,
+                "row_count": row_count,
+                "columns": columns,
+                "execution_time_ms": execution_time_ms,
+                "statement": truncated_statement,
                 "status": "success"
             }
             
             logger.info("SQL query executed successfully",
                        query_id=query_id,
-                       row_count=result.row_count,
-                       execution_time_ms=result.execution_time_ms)
+                       row_count=row_count,
+                       execution_time_ms=execution_time_ms)
             
             return response
             
@@ -82,13 +93,18 @@ class SQLQueryTool:
                         error_type=type(e).__name__,
                         execution_time_ms=execution_time)
             
-            # Return error response
+            # Return error response with safe statement handling
+            safe_statement = str(statement) if statement is not None else "None"
+            # Safe length check to prevent NoneType errors
+            safe_statement_len = len(safe_statement) if safe_statement is not None else 0
+            truncated_statement = safe_statement[:100] + "..." if safe_statement_len > 100 else safe_statement
+            
             return {
                 "query_id": query_id,
                 "error": str(e),
                 "error_type": type(e).__name__,
                 "execution_time_ms": execution_time,
-                "statement": statement[:100] + "..." if len(statement) > 100 else statement,
+                "statement": truncated_statement,
                 "status": "failed"
             }
 
@@ -111,11 +127,11 @@ def initialize_sql_tool(database_manager: DatabaseManager) -> None:
 
 @Tool(
     name="SQL.QueryReadonly",
-    description="Execute SELECT queries on the finance database to retrieve financial data, company information, and analytics. Only read-only SELECT statements are allowed for security.",
+    description="Execute SELECT queries on the finance database to retrieve financial data, company information, and analytics. Only read-only SELECT statements are allowed for security. IMPORTANT: Use table names 'companies' and 'financial_records' (NOT 'financials').",
     parameters={
         "statement": {
             "type": "string",
-            "description": "SQL SELECT statement to execute. Must start with SELECT and cannot contain data modification operations (INSERT, UPDATE, DELETE, etc.). Example: 'SELECT * FROM companies WHERE sector = \"Technology\"'",
+            "description": "SQL SELECT statement to execute. Must start with SELECT and cannot contain data modification operations (INSERT, UPDATE, DELETE, etc.). CRITICAL: Use correct table names: 'companies' and 'financial_records'. Example: 'SELECT * FROM companies WHERE sector = \"Technology\"' or 'SELECT c.name, f.revenue FROM companies c JOIN financial_records f ON c.id = f.company_id'",
             "minLength": 10,
             "maxLength": 1000
         }
@@ -192,51 +208,81 @@ async def sql_get_schema() -> Dict[str, Any]:
         
         tables_result = await _sql_tool_instance.execute_query(tables_query)
         
+        # Safe access to tables_result with comprehensive null checks
+        tables_rows = None
+        if tables_result is not None and isinstance(tables_result, dict):
+            tables_rows = tables_result.get("rows")
+        
+        # Safe length calculation to prevent NoneType errors
+        total_tables = 0
+        if tables_rows is not None and hasattr(tables_rows, '__len__'):
+            total_tables = len(tables_rows)
+        
         schema_info = {
             "tables": [],
-            "total_tables": len(tables_result["rows"]),
+            "total_tables": total_tables,
             "database_type": "SQLite",
-            "status": "success"
+            "status": "success",
+            "important_notes": [
+                "CRITICAL: The financial data table is named 'financial_records' (NOT 'financials')",
+                "CRITICAL: Always use 'companies' and 'financial_records' as table names",
+                "JOIN syntax: companies.id = financial_records.company_id"
+            ]
         }
         
-        # Get column information for each table
-        for table_row in tables_result["rows"]:
-            table_name = table_row["table_name"]
-            
-            # Validate table name before using in PRAGMA
-            if not _sql_tool_instance.database_manager._is_valid_table_name(table_name):
-                logger.warning("Invalid table name in schema query", table_name=table_name)
-                continue
-            
-            # Use safe table name in PRAGMA (cannot be parameterized)
-            # PRAGMA queries are read-only and table name is validated
-            columns_query = f'PRAGMA table_info("{table_name}")'
-            
-            try:
-                columns_result = await _sql_tool_instance.execute_query(columns_query)
+        # Safe iteration over potentially None result sets
+        if tables_rows is not None:
+            for table_row in tables_rows:
+                # Additional safety check for table_row
+                if table_row is None or not isinstance(table_row, dict):
+                    continue
+                    
+                table_name = table_row["table_name"]
                 
-                table_info = {
-                    "name": table_name,
-                    "columns": []
-                }
+                # Validate table name before using in PRAGMA
+                if not _sql_tool_instance.database_manager._is_valid_table_name(table_name):
+                    logger.warning("Invalid table name in schema query", table_name=table_name)
+                    continue
                 
-                for col_row in columns_result["rows"]:
-                    column_info = {
-                        "name": col_row["name"],
-                        "type": col_row["type"],
-                        "nullable": not col_row["notnull"],
-                        "primary_key": bool(col_row["pk"])
+                # Use safe table name in PRAGMA (cannot be parameterized)
+                # PRAGMA queries are read-only and table name is validated
+                columns_query = f'PRAGMA table_info("{table_name}")'
+                
+                try:
+                    columns_result = await _sql_tool_instance.execute_query(columns_query)
+                    
+                    table_info = {
+                        "name": table_name,
+                        "columns": []
                     }
-                    table_info["columns"].append(column_info)
-                
-                schema_info["tables"].append(table_info)
-                
-            except Exception as e:
-                logger.error("Failed to get column info for table",
-                           table_name=table_name,
-                           error=str(e))
-                # Continue with other tables
-                continue
+                    
+                    # Safe iteration over column results
+                    columns_rows = None
+                    if columns_result is not None and isinstance(columns_result, dict):
+                        columns_rows = columns_result.get("rows")
+                    
+                    if columns_rows is not None:
+                        for col_row in columns_rows:
+                            # Additional safety check for col_row
+                            if col_row is None or not isinstance(col_row, dict):
+                                continue
+                                
+                            column_info = {
+                                "name": col_row.get("name", ""),
+                                "type": col_row.get("type", ""),
+                                "nullable": not col_row.get("notnull", False),
+                                "primary_key": bool(col_row.get("pk", False))
+                            }
+                            table_info["columns"].append(column_info)
+                    
+                    schema_info["tables"].append(table_info)
+                    
+                except Exception as e:
+                    logger.error("Failed to get column info for table",
+                               table_name=table_name,
+                               error=str(e))
+                    # Continue with other tables
+                    continue
         
         return schema_info
         

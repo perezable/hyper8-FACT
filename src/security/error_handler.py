@@ -11,7 +11,7 @@ from typing import Any, Dict, Optional, Tuple
 from dataclasses import dataclass
 import structlog
 
-from ..core.errors import (
+from core.errors import (
     SecurityError, 
     AuthenticationError, 
     ValidationError,

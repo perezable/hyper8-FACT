@@ -9,9 +9,9 @@ import asyncio
 from typing import Dict, Any, Optional
 import structlog
 
-from .client import ArcadeClient
-from .errors import ArcadeError, ArcadeExecutionError
-from ..core.errors import ToolExecutionError
+from src.arcade.client import ArcadeClient
+from src.arcade.errors import ArcadeError, ArcadeExecutionError
+from src.core.errors import ToolExecutionError
 
 
 logger = structlog.get_logger(__name__)

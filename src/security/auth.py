@@ -11,11 +11,20 @@ from typing import Dict, Any, List, Optional, Set
 from dataclasses import dataclass
 import structlog
 
-from ..core.errors import (
-    AuthenticationError,
-    UnauthorizedError,
-    ValidationError
-)
+# Use try/except to handle both relative and absolute imports
+try:
+    from ..core.errors import (
+        AuthenticationError,
+        UnauthorizedError,
+        ValidationError
+    )
+except ImportError:
+    # Fallback to absolute imports when called from scripts
+    from core.errors import (
+        AuthenticationError,
+        UnauthorizedError,
+        ValidationError
+    )
 
 
 logger = structlog.get_logger(__name__)
