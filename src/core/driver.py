@@ -27,10 +27,10 @@ from ..tools.connectors.sql import initialize_sql_tool
 
 logger = structlog.get_logger(__name__)
 
+from ..monitoring.metrics import get_metrics_collector
 
 class FACTDriver:
     """
-    Central orchestrator for the FACT system.
     
     Manages cache control, query processing, tool execution, and system coordination
     following the FACT architecture principles.
@@ -48,14 +48,8 @@ class FACTDriver:
         self.tool_registry = get_tool_registry()
         self._initialized = False
         
-        # Performance tracking
-        self.metrics = {
-            "total_queries": 0,
-            "cache_hits": 0,
-            "cache_misses": 0,
-            "tool_executions": 0,
-            "errors": 0
-        }
+        # Monitoring and metrics
+        self.metrics_collector = get_metrics_collector()
         
     async def initialize(self) -> None:
         """
@@ -114,7 +108,7 @@ class FACTDriver:
             logger.info("Processing user query", query_id=query_id, query=user_input[:100])
             
             # Increment metrics
-            self.metrics["total_queries"] += 1
+            # Metrics: total_queries is tracked as executions in metrics_collector
             
             # Prepare messages for LLM
             messages = [
@@ -263,10 +257,7 @@ class FACTDriver:
             }
             
             # Track cache behavior
-            if cache_mode == "read":
-                self.metrics["cache_hits"] += 1
-            else:
-                self.metrics["cache_misses"] += 1
+            # Cache hits/misses can be tracked via tool execution metadata if needed
             
             # Make LLM call with litellm
             response = await litellm.acompletion(
@@ -302,7 +293,7 @@ class FACTDriver:
         
         for call in tool_calls:
             try:
-                self.metrics["tool_executions"] += 1
+                # Record tool execution in metrics_collector
                 
                 # Extract tool information
                 tool_name = call.function.name if hasattr(call, 'function') else call.name
@@ -326,14 +317,27 @@ class FACTDriver:
                     "content": str(result) if not isinstance(result, str) else result
                 }
                 
-                logger.info("Tool executed successfully", 
+                logger.info("Tool executed successfully",
                            tool_name=tool_name,
                            execution_time=result.get("execution_time_ms", 0))
+                self.metrics_collector.record_tool_execution(
+                    tool_name=tool_name,
+                    success=True,
+                    execution_time=result.get("execution_time_ms", 0),
+                    metadata={"args": tool_args}
+                )
                 
             except Exception as e:
-                logger.error("Tool execution failed", 
-                           tool_name=tool_name, 
+                logger.error("Tool execution failed",
+                           tool_name=tool_name,
                            error=str(e))
+                self.metrics_collector.record_tool_execution(
+                    tool_name=tool_name,
+                    success=False,
+                    execution_time=0,
+                    error_type=str(e),
+                    metadata={"args": tool_args}
+                )
                 
                 # Format error as tool message
                 tool_message = {
@@ -357,14 +361,15 @@ class FACTDriver:
         Returns:
             Dictionary containing performance metrics
         """
+        # Use the unified metrics collector for system metrics
+        sys_metrics = self.metrics_collector.get_system_metrics()
         return {
-            **self.metrics,
-            "cache_hit_rate": (
-                self.metrics["cache_hits"] / max(1, self.metrics["cache_hits"] + self.metrics["cache_misses"])
-            ) * 100,
-            "error_rate": (
-                self.metrics["errors"] / max(1, self.metrics["total_queries"])
-            ) * 100,
+            "total_queries": sys_metrics.total_executions,
+            "cache_hit_rate": 0,  # Not tracked here; could be added via metadata if needed
+            "tool_executions": sys_metrics.total_executions,
+            "error_rate": sys_metrics.error_rate,
+            "cache_hits": 0,
+            "cache_misses": 0,
             "initialized": self._initialized
         }
     

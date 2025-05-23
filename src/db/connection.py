@@ -101,7 +101,6 @@ class DatabaseManager:
         except Exception as e:
             logger.error("Database initialization failed", error=str(e))
             raise DatabaseError(f"Failed to initialize database: {e}")
-    
     def validate_sql_query(self, statement: str) -> None:
         """
         Validate SQL query for security and syntax.
@@ -119,15 +118,44 @@ class DatabaseManager:
         if not normalized_statement.startswith("select"):
             raise SecurityError("Only SELECT statements are allowed")
         
-        # Check for dangerous keywords
+        # Enhanced dangerous keyword detection
         dangerous_keywords = [
             "drop", "delete", "update", "insert", "alter", "create",
-            "truncate", "replace", "merge", "exec", "execute"
+            "truncate", "replace", "merge", "exec", "execute", "pragma",
+            "attach", "detach", "vacuum", "reindex", "analyze"
         ]
         
+        # Check for dangerous keywords with word boundaries
+        import re
         for keyword in dangerous_keywords:
-            if keyword in normalized_statement:
+            pattern = r'\b' + re.escape(keyword) + r'\b'
+            if re.search(pattern, normalized_statement, re.IGNORECASE):
                 raise SecurityError(f"Dangerous SQL keyword detected: {keyword}")
+        
+        # Check for SQL injection patterns
+        injection_patterns = [
+            r'--',  # SQL comments
+            r'/\*.*?\*/',  # Multi-line comments
+            r';\s*\w+',  # Multiple statements
+            r'\bunion\s+select\b',  # Union injection
+            r'\bor\s+1\s*=\s*1\b',  # Always true conditions
+            r'\band\s+1\s*=\s*1\b',  # Always true conditions
+            r'\'.*\'.*\'',  # Multiple quotes
+            r'\\x[0-9a-f]{2}',  # Hex encoding
+        ]
+        
+        for pattern in injection_patterns:
+            if re.search(pattern, normalized_statement, re.IGNORECASE):
+                raise SecurityError(f"Potential SQL injection pattern detected")
+        
+        # Limit query complexity
+        if len(statement) > 5000:
+            raise SecurityError("Query too long - potential DoS attack")
+        
+        # Count nested subqueries to prevent complex injection attacks
+        subquery_count = normalized_statement.count('select')
+        if subquery_count > 5:
+            raise SecurityError("Too many nested subqueries - potential injection attack")
         
         # Basic syntax validation using sqlite3 parser
         try:
@@ -138,6 +166,38 @@ class DatabaseManager:
         except sqlite3.Error as e:
             raise InvalidSQLError(f"SQL syntax error: {e}")
         
+        logger.debug("SQL query validation passed", statement=statement[:100])
+    
+    def _is_valid_table_name(self, table_name: str) -> bool:
+        """
+        Validate table name to prevent SQL injection.
+        
+        Args:
+            table_name: Table name to validate
+            
+        Returns:
+            True if table name is valid
+        """
+        import re
+        
+        # Table name should only contain alphanumeric characters and underscores
+        if not re.match(r'^[a-zA-Z_][a-zA-Z0-9_]*$', table_name):
+            return False
+        
+        # Reasonable length limit
+        if len(table_name) > 64:
+            return False
+        
+        # Check against known system tables that should not be accessed
+        forbidden_tables = {
+            'sqlite_master', 'sqlite_temp_master', 'sqlite_sequence',
+            'sqlite_stat1', 'sqlite_stat2', 'sqlite_stat3', 'sqlite_stat4'
+        }
+        
+        if table_name.lower() in forbidden_tables:
+            return False
+        
+        return True
         logger.debug("SQL query validation passed", statement=statement[:100])
     
     async def execute_query(self, statement: str) -> QueryResult:
@@ -222,7 +282,7 @@ class DatabaseManager:
             async with aiosqlite.connect(self.database_path) as db:
                 # Get table information
                 cursor = await db.execute("""
-                    SELECT name FROM sqlite_master 
+                    SELECT name FROM sqlite_master
                     WHERE type='table' AND name NOT LIKE 'sqlite_%'
                 """)
                 tables = await cursor.fetchall()
@@ -230,8 +290,14 @@ class DatabaseManager:
                 
                 table_info = {}
                 for (table_name,) in tables:
-                    # Get row count for each table
-                    cursor = await db.execute(f"SELECT COUNT(*) FROM {table_name}")
+                    # Validate table name to prevent injection
+                    if not self._is_valid_table_name(table_name):
+                        logger.warning("Invalid table name detected", table_name=table_name)
+                        continue
+                    
+                    # Get row count for each table using parameterized query
+                    # Note: Table names cannot be parameterized, so we validate them first
+                    cursor = await db.execute(f"SELECT COUNT(*) FROM \"{table_name}\"")
                     count = (await cursor.fetchone())[0]
                     await cursor.close()
                     table_info[table_name] = {"row_count": count}

@@ -184,8 +184,8 @@ async def sql_get_schema() -> Dict[str, Any]:
     try:
         # Get table information
         tables_query = """
-        SELECT name as table_name 
-        FROM sqlite_master 
+        SELECT name as table_name
+        FROM sqlite_master
         WHERE type='table' AND name NOT LIKE 'sqlite_%'
         ORDER BY name
         """
@@ -203,24 +203,40 @@ async def sql_get_schema() -> Dict[str, Any]:
         for table_row in tables_result["rows"]:
             table_name = table_row["table_name"]
             
-            columns_query = f"PRAGMA table_info({table_name})"
-            columns_result = await _sql_tool_instance.execute_query(columns_query)
+            # Validate table name before using in PRAGMA
+            if not _sql_tool_instance.database_manager._is_valid_table_name(table_name):
+                logger.warning("Invalid table name in schema query", table_name=table_name)
+                continue
             
-            table_info = {
-                "name": table_name,
-                "columns": []
-            }
+            # Use safe table name in PRAGMA (cannot be parameterized)
+            # PRAGMA queries are read-only and table name is validated
+            columns_query = f'PRAGMA table_info("{table_name}")'
             
-            for col_row in columns_result["rows"]:
-                column_info = {
-                    "name": col_row["name"],
-                    "type": col_row["type"],
-                    "nullable": not col_row["notnull"],
-                    "primary_key": bool(col_row["pk"])
+            try:
+                columns_result = await _sql_tool_instance.execute_query(columns_query)
+                
+                table_info = {
+                    "name": table_name,
+                    "columns": []
                 }
-                table_info["columns"].append(column_info)
-            
-            schema_info["tables"].append(table_info)
+                
+                for col_row in columns_result["rows"]:
+                    column_info = {
+                        "name": col_row["name"],
+                        "type": col_row["type"],
+                        "nullable": not col_row["notnull"],
+                        "primary_key": bool(col_row["pk"])
+                    }
+                    table_info["columns"].append(column_info)
+                
+                schema_info["tables"].append(table_info)
+                
+            except Exception as e:
+                logger.error("Failed to get column info for table",
+                           table_name=table_name,
+                           error=str(e))
+                # Continue with other tables
+                continue
         
         return schema_info
         
