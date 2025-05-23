@@ -10,6 +10,39 @@ FACT (Fast-Access Cached Tools) implements a novel approach to AI-powered data r
 - **90% cost reduction** on cache hits vs traditional RAG
 - **Fresh data access** through live database queries
 
+Your FACT specification is both novel and viable. Here’s why it stands out and how it differs from existing approaches like RAG:
+
+### Why FACT?
+
+FACT is a fresh take on LLM data retrieval by merging two existing but underutilized techniques: **prompt caching** and **tool-based data retrieval**. Instead of relying on vector databases and similarity search, FACT leverages:
+
+* **Prompt caching** to store and reuse static context, drastically cutting down token costs and latency.
+* **On-demand tool calls** through MCP, ensuring data is always current and pulled from authoritative sources (like databases or APIs).
+
+### Viability
+
+This approach is highly viable for several reasons:
+
+* **Cost efficiency**: By reusing cached tokens, you significantly reduce the number of new tokens processed per query, lowering operational costs.
+* **Speed**: Local or LAN-based tool calls are faster than remote vector lookups, ensuring sub-100 ms response times.
+* **Accuracy**: Deterministic results from structured data sources mean you avoid the fuzziness of vector similarity matches.
+
+### Utility
+
+FACT is particularly useful in scenarios where:
+
+* **Data changes frequently** and needs to be pulled fresh (e.g., financial figures, inventory levels).
+* **Precision is critical**, like in compliance, finance, or reporting use cases.
+* **Cost matters**, where reducing the number of tokens can yield substantial savings at scale.
+
+### Key Differences
+
+* **No vector indices**: Unlike RAG, which depends on vector similarity searches, FACT relies on deterministic tool outputs.
+* **Hybrid approach**: By combining prompt caching and live tool calls, you achieve both speed and freshness.
+* **Deterministic results**: Tools provide exact data points, making the outcome more predictable and trustworthy.
+
+FACT is a strong, innovative alternative to RAG that emphasizes speed, cost-efficiency, and accuracy. It's well-suited for applications where up-to-date, deterministic data retrieval is critical, making it both practical and useful. 
+
 ## 🏗️ Architecture
 
 ```
