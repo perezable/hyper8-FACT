@@ -3,7 +3,8 @@
 FACT Comprehensive Benchmarking Script
 
 Executes complete performance validation including benchmarks, comparisons,
-profiling, and report generation.
+profiling, and report generation with automatic logs directory creation,
+comprehensive visualizations, and detailed console summaries.
 """
 
 import asyncio
@@ -11,6 +12,8 @@ import argparse
 import json
 import sys
 import time
+import os
+from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
@@ -30,10 +33,96 @@ from benchmarking import (
 from cache.manager import CacheManager
 
 
+def create_logs_directory(base_dir: str = "logs") -> Path:
+    """Create timestamped logs directory and return the path."""
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    logs_dir = Path(base_dir) / f"benchmark_{timestamp}"
+    logs_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Create subdirectories for better organization
+    (logs_dir / "charts").mkdir(exist_ok=True)
+    (logs_dir / "raw_data").mkdir(exist_ok=True)
+    (logs_dir / "reports").mkdir(exist_ok=True)
+    
+    return logs_dir
+
+
+def print_performance_summary(validation_results, comparison_result=None, load_test_results=None):
+    """Print a comprehensive performance summary to console."""
+    print("\n" + "="*80)
+    print("📊 FACT SYSTEM PERFORMANCE SUMMARY")
+    print("="*80)
+    
+    # Overall Status
+    overall_pass = validation_results['overall_pass']
+    status_emoji = "🎉" if overall_pass else "⚠️"
+    status_text = "ALL TARGETS MET" if overall_pass else "IMPROVEMENTS NEEDED"
+    print(f"\n{status_emoji} OVERALL STATUS: {status_text}")
+    
+    # Performance Targets Summary
+    print(f"\n📈 PERFORMANCE TARGETS:")
+    print("-" * 50)
+    target_validation = validation_results['target_validation']
+    
+    for target_name, target_data in target_validation.items():
+        status = "✅ PASS" if target_data['met'] else "❌ FAIL"
+        if 'latency' in target_name:
+            actual_val = f"{target_data.get('actual_ms', 0):.1f}ms"
+            target_val = f"{target_data.get('target_ms', 0):.1f}ms"
+        else:
+            actual_val = f"{target_data.get('actual_percent', 0):.1f}%"
+            target_val = f"{target_data.get('target_percent', 0):.1f}%"
+        
+        print(f"  {target_name:25} {status:8} Actual: {actual_val:10} Target: {target_val}")
+    
+    # Cache Performance
+    summary = validation_results.get('benchmark_summary', {})
+    if summary:
+        print(f"\n🗄️  CACHE PERFORMANCE:")
+        print("-" * 50)
+        print(f"  Cache Hit Rate:           {summary.get('cache_hit_rate', 0)*100:.1f}%")
+        print(f"  Avg Response Time (Hit):  {summary.get('avg_hit_latency_ms', 0):.1f}ms")
+        print(f"  Avg Response Time (Miss): {summary.get('avg_miss_latency_ms', 0):.1f}ms")
+        print(f"  Total Requests:           {summary.get('total_requests', 0)}")
+        print(f"  Success Rate:             {summary.get('success_rate', 0)*100:.1f}%")
+    
+    # RAG Comparison Results
+    if comparison_result:
+        print(f"\n⚔️  FACT vs TRADITIONAL RAG:")
+        print("-" * 50)
+        latency_improvement = comparison_result.improvement_factors.get('latency', 1.0)
+        cost_savings = comparison_result.cost_savings.get('percentage', 0.0)
+        print(f"  Latency Improvement:      {latency_improvement:.1f}x faster")
+        print(f"  Cost Savings:             {cost_savings:.1f}%")
+        print(f"  Recommendation:           {comparison_result.recommendation}")
+    
+    # Load Test Results
+    if load_test_results:
+        print(f"\n🚦 LOAD TEST PERFORMANCE:")
+        print("-" * 50)
+        print(f"  Concurrent Users:         {load_test_results.get('concurrent_users', 0)}")
+        print(f"  Throughput:               {load_test_results.get('throughput_qps', 0):.1f} QPS")
+        print(f"  Avg Response Time:        {load_test_results.get('avg_response_time_ms', 0):.1f}ms")
+        print(f"  Error Rate:               {load_test_results.get('error_rate', 0):.1f}%")
+    
+    print("="*80)
+
+
 async def run_comprehensive_benchmark(args):
     """Run comprehensive benchmark suite."""
     print("🚀 Starting FACT Comprehensive Benchmark Suite")
     print("=" * 60)
+    
+    # Create timestamped logs directory
+    if args.output_dir == './benchmark_results':
+        # Use logs directory by default
+        logs_dir = create_logs_directory()
+        print(f"📁 Created logs directory: {logs_dir}")
+    else:
+        # Use specified directory
+        logs_dir = Path(args.output_dir)
+        logs_dir.mkdir(parents=True, exist_ok=True)
+        print(f"📁 Using output directory: {logs_dir}")
     
     # Initialize components
     config = BenchmarkConfig(
@@ -129,8 +218,8 @@ async def run_comprehensive_benchmark(args):
         print(f"Avg Response Time: {load_test_results['avg_response_time_ms']:.1f}ms")
         print(f"Error Rate: {load_test_results['error_rate']:.1f}%")
     
-    # Phase 5: Report Generation
-    print("\n📝 Phase 5: Report Generation")
+    # Phase 5: Report Generation & Visualization
+    print("\n📝 Phase 5: Report Generation & Visualization")
     print("-" * 40)
     
     benchmark_summary = validation_results['benchmark_summary']
@@ -143,51 +232,93 @@ async def run_comprehensive_benchmark(args):
         alerts=None  # No alerts in batch mode
     )
     
-    # Save reports
-    output_dir = Path(args.output_dir)
-    output_dir.mkdir(exist_ok=True)
+    # Generate timestamp for consistent naming
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
-    # JSON report
-    json_report_path = output_dir / f"benchmark_report_{int(time.time())}.json"
+    # Save comprehensive JSON report
+    json_report_path = logs_dir / "reports" / f"benchmark_report_{timestamp}.json"
     with open(json_report_path, 'w') as f:
         f.write(report_generator.export_report_json(report))
     
-    # Text summary
-    text_report_path = output_dir / f"benchmark_summary_{int(time.time())}.txt"
+    # Save text summary
+    text_report_path = logs_dir / "reports" / f"benchmark_summary_{timestamp}.txt"
     with open(text_report_path, 'w') as f:
         f.write(report_generator.export_report_summary_text(report))
     
-    # Chart data (for external visualization)
-    charts_dir = output_dir / "charts"
-    charts_dir.mkdir(exist_ok=True)
+    # Save raw data for further analysis
+    raw_data_path = logs_dir / "raw_data" / f"raw_results_{timestamp}.json"
+    raw_data = {
+        'validation_results': validation_results,
+        'comparison_result': comparison_result.__dict__ if comparison_result else None,
+        'profile_result': profile_result.__dict__ if profile_result else None,
+        'load_test_results': load_test_results,
+        'config': config.__dict__,
+        'timestamp': timestamp,
+        'args': vars(args)
+    }
+    with open(raw_data_path, 'w') as f:
+        json.dump(raw_data, f, indent=2, default=str)
     
+    # Generate and save visualizations
+    charts_dir = logs_dir / "charts"
+    
+    print("📊 Generating performance visualizations...")
+    
+    # Performance charts
     for i, chart in enumerate(report.charts):
-        chart_path = charts_dir / f"chart_{i}_{chart.chart_type}.json"
+        chart_path = charts_dir / f"chart_{i}_{chart.chart_type}_{timestamp}.json"
         with open(chart_path, 'w') as f:
             f.write(visualizer.export_chart_data_json(chart))
     
-    print(f"📄 Reports saved to: {output_dir}")
+    # Additional visualizations if comparison data available
+    if comparison_result:
+        # Latency comparison chart
+        latency_chart = visualizer.create_latency_comparison_chart(
+            benchmark_summary, comparison_result
+        )
+        latency_chart_path = charts_dir / f"latency_comparison_{timestamp}.json"
+        with open(latency_chart_path, 'w') as f:
+            f.write(visualizer.export_chart_data_json(latency_chart))
+        
+        # Cost savings chart
+        cost_chart = visualizer.create_cost_analysis_chart(comparison_result)
+        cost_chart_path = charts_dir / f"cost_analysis_{timestamp}.json"
+        with open(cost_chart_path, 'w') as f:
+            f.write(visualizer.export_chart_data_json(cost_chart))
+    
+    # Cache performance chart
+    cache_chart = visualizer.create_cache_performance_chart(benchmark_summary)
+    cache_chart_path = charts_dir / f"cache_performance_{timestamp}.json"
+    with open(cache_chart_path, 'w') as f:
+        f.write(visualizer.export_chart_data_json(cache_chart))
+    
+    print(f"📄 Reports saved to: {logs_dir}")
     print(f"📄 JSON Report: {json_report_path}")
     print(f"📄 Summary: {text_report_path}")
+    print(f"📄 Raw Data: {raw_data_path}")
     print(f"📈 Charts: {charts_dir}")
     
-    # Final Summary
-    print("\n🎯 Final Summary")
-    print("-" * 40)
+    # Print comprehensive performance summary to console
+    print_performance_summary(validation_results, comparison_result, load_test_results)
     
+    # Performance Grade
     grade = report.summary.get('performance_grade', 'N/A')
-    print(f"Performance Grade: {grade}")
-    
-    if validation_results['overall_pass']:
-        print("🎉 All performance targets achieved!")
-    else:
-        print("⚠️  Some performance targets not met. Review optimization strategies.")
+    print(f"\n🏆 Performance Grade: {grade}")
     
     # Print key recommendations
     if report.recommendations:
-        print("\n🔧 Key Recommendations:")
+        print(f"\n🔧 KEY RECOMMENDATIONS:")
+        print("-" * 50)
         for i, rec in enumerate(report.recommendations[:5], 1):
             print(f"  {i}. {rec}")
+    
+    # Final status message
+    if validation_results['overall_pass']:
+        print(f"\n🎉 Benchmark completed successfully! All performance targets achieved.")
+        print(f"   Results saved to: {logs_dir}")
+    else:
+        print(f"\n⚠️  Benchmark completed with some targets not met.")
+        print(f"   Review optimization strategies and detailed reports in: {logs_dir}")
     
     return validation_results['overall_pass']
 
@@ -242,15 +373,21 @@ async def run_continuous_monitoring(args):
         
         monitoring_report = monitor.export_monitoring_report()
         
-        # Save monitoring report
-        output_dir = Path(args.output_dir)
-        output_dir.mkdir(exist_ok=True)
+        # Create logs directory for monitoring
+        if args.output_dir == './benchmark_results':
+            logs_dir = create_logs_directory()
+        else:
+            logs_dir = Path(args.output_dir)
+            logs_dir.mkdir(parents=True, exist_ok=True)
         
-        report_path = output_dir / f"monitoring_report_{int(time.time())}.json"
+        # Save monitoring report with timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        report_path = logs_dir / "reports" / f"monitoring_report_{timestamp}.json"
         with open(report_path, 'w') as f:
             json.dump(monitoring_report, f, indent=2, default=str)
         
         print(f"\n📄 Monitoring report saved: {report_path}")
+        print(f"📁 All monitoring data in: {logs_dir}")
 
 
 def main():
@@ -307,7 +444,7 @@ Examples:
     parser.add_argument('--monitor-duration', type=int, default=0, help='Monitoring duration (0=indefinite)')
     
     # Output configuration
-    parser.add_argument('--output-dir', default='./benchmark_results', help='Output directory for reports')
+    parser.add_argument('--output-dir', default='./benchmark_results', help='Output directory for reports (default: creates timestamped logs directory)')
     
     args = parser.parse_args()
     

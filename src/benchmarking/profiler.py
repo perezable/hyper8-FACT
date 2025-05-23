@@ -14,8 +14,21 @@ from dataclasses import dataclass, field
 from contextlib import asynccontextmanager
 import structlog
 
-from ..cache.manager import CacheManager
-from ..monitoring.metrics import get_metrics_collector
+try:
+    # Try relative imports first (when used as package)
+    from ..cache.manager import CacheManager
+    from ..monitoring.metrics import get_metrics_collector
+except ImportError:
+    # Fall back to absolute imports (when run as script)
+    import sys
+    from pathlib import Path
+    # Add src to path if not already there
+    src_path = str(Path(__file__).parent.parent)
+    if src_path not in sys.path:
+        sys.path.insert(0, src_path)
+    
+    from cache.manager import CacheManager
+    from monitoring.metrics import get_metrics_collector
 
 logger = structlog.get_logger(__name__)
 

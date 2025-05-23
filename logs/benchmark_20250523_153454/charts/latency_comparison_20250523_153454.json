@@ -1,0 +1,9 @@
+{
+  "chart_type": "latency_comparison",
+  "title": "FACT vs Traditional RAG Latency",
+  "data": {
+    "fact_latency": 42.3,
+    "rag_latency": 135.35999999999999,
+    "improvement_factor": 3.2
+  }
+}
