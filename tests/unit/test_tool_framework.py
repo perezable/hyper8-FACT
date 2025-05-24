@@ -7,9 +7,9 @@ Following TDD principles - these tests will fail until implementation is complet
 import pytest
 import json
 from unittest.mock import Mock, AsyncMock, patch, MagicMock
-from src.tools.decorators import tool, register_tool
+from src.tools.decorators import Tool, get_tool_registry
 from src.tools.connectors.sql import SQLQueryTool
-from src.core.errors import ToolError, AuthorizationError, ValidationError
+from src.core.errors import ToolExecutionError, UnauthorizedError, ValidationError
 
 
 class TestToolDecorator:

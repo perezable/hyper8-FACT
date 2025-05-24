@@ -81,12 +81,46 @@ CREATE TABLE IF NOT EXISTS financial_records (
     UNIQUE(company_id, quarter, year)
 );
 
+-- Financial data table (alias/view for validation compatibility)
+CREATE TABLE IF NOT EXISTS financial_data (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    company_id INTEGER NOT NULL,
+    quarter TEXT NOT NULL,
+    year INTEGER NOT NULL,
+    revenue REAL NOT NULL,
+    profit REAL NOT NULL,
+    expenses REAL NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (company_id) REFERENCES companies (id),
+    UNIQUE(company_id, quarter, year)
+);
+
+-- Benchmarks table for performance tracking
+CREATE TABLE IF NOT EXISTS benchmarks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    test_name TEXT NOT NULL,
+    test_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    duration_ms REAL NOT NULL,
+    queries_executed INTEGER DEFAULT 0,
+    cache_hit_rate REAL DEFAULT 0.0,
+    average_response_time_ms REAL DEFAULT 0.0,
+    success_rate REAL DEFAULT 1.0,
+    notes TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Create indexes for better query performance
 CREATE INDEX IF NOT EXISTS idx_financial_records_company_id ON financial_records(company_id);
 CREATE INDEX IF NOT EXISTS idx_financial_records_year ON financial_records(year);
 CREATE INDEX IF NOT EXISTS idx_financial_records_quarter ON financial_records(quarter);
+CREATE INDEX IF NOT EXISTS idx_financial_data_company_id ON financial_data(company_id);
+CREATE INDEX IF NOT EXISTS idx_financial_data_year ON financial_data(year);
+CREATE INDEX IF NOT EXISTS idx_financial_data_quarter ON financial_data(quarter);
 CREATE INDEX IF NOT EXISTS idx_companies_symbol ON companies(symbol);
 CREATE INDEX IF NOT EXISTS idx_companies_sector ON companies(sector);
+CREATE INDEX IF NOT EXISTS idx_benchmarks_test_name ON benchmarks(test_name);
+CREATE INDEX IF NOT EXISTS idx_benchmarks_test_date ON benchmarks(test_date);
 """
 
 # Sample data for demonstration
@@ -199,7 +233,7 @@ def validate_schema_integrity(tables_info: List[Dict[str, Any]]) -> bool:
     Returns:
         True if schema is valid, False otherwise
     """
-    expected_tables = {"companies", "financial_records"}
+    expected_tables = {"companies", "financial_records", "financial_data", "benchmarks"}
     actual_tables = {table["name"] for table in tables_info}
     
     if not expected_tables.issubset(actual_tables):

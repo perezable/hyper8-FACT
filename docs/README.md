@@ -1,297 +1,295 @@
-# FACT System Documentation
+# FACT System - Complete Documentation Suite
 
-## 📚 Complete Documentation Suite
+## Overview
 
-Welcome to the FACT (Fast-Access Cached Tools) system documentation. This comprehensive guide covers everything from basic usage to advanced development and deployment.
+Welcome to the comprehensive documentation for the FACT (Fast-Access Cached Tools) benchmark system. This documentation suite provides everything you need to understand, install, configure, optimize, and troubleshoot the FACT system.
 
-## 📖 Documentation Structure
+## 📚 Documentation Structure
 
-### Core Documentation (Read in Order)
-
-1. **[Project Overview](1_overview_project.md)** 
-   - System introduction, features, and capabilities
-   - Target users and use cases
-   - Quick start preview and requirements
-
-2. **[Installation and Setup](2_installation_setup.md)**
-   - System requirements and prerequisites
-   - Step-by-step installation guide
-   - Configuration and API key setup
-   - Verification and troubleshooting
-
-3. **[Core Concepts](3_core_concepts.md)**
-   - Cache-first architecture
-   - Tool-based system design
-   - Natural language processing
-   - Security and performance model
-
-4. **[User Guide](4_user_guide.md)**
-   - Basic usage and CLI commands
-   - Financial query examples
-   - Advanced query patterns
-   - Workflow examples for different user types
-
-5. **[API Reference](5_api_reference.md)**
-   - Complete REST API documentation
-   - Authentication and authorization
-   - Request/response formats
-   - SDK examples and integration patterns
-
-### Advanced Documentation
-
-6. **[Tool Creation Guide](6_tool_creation_guide.md)**
-   - Creating custom tools
-   - Security best practices
-   - Testing and deployment
-   - Performance optimization
-
-7. **[Advanced Usage](7_advanced_usage.md)**
-   - Performance optimization techniques
-   - Cache management strategies
-   - Load testing and benchmarking
-   - Custom integration patterns
-
-8. **[Troubleshooting Guide](8_troubleshooting_guide.md)**
-   - Common issues and solutions
-   - Diagnostic procedures
-   - Performance optimization
-   - Frequently asked questions
-
-## 🚀 Quick Navigation
+The documentation is organized in a logical progression from basic setup to advanced usage:
 
 ### Getting Started
-- **New Users**: Start with [Project Overview](1_overview_project.md) → [Installation](2_installation_setup.md) → [User Guide](4_user_guide.md)
-- **Developers**: Review [Core Concepts](3_core_concepts.md) → [API Reference](5_api_reference.md) → [Tool Creation](6_tool_creation_guide.md)
-- **System Administrators**: Focus on [Installation](2_installation_setup.md) → [Advanced Usage](7_advanced_usage.md) → [Troubleshooting](8_troubleshooting_guide.md)
 
-### Common Tasks
-- **Installing FACT**: [Installation Guide](2_installation_setup.md)
-- **First Query**: [User Guide - Basic Usage](4_user_guide.md#basic-usage)
-- **API Integration**: [API Reference](5_api_reference.md)
-- **Creating Tools**: [Tool Creation Guide](6_tool_creation_guide.md)
-- **Performance Tuning**: [Advanced Usage](7_advanced_usage.md)
-- **Solving Problems**: [Troubleshooting Guide](8_troubleshooting_guide.md)
+| Document | Purpose | When to Use |
+|----------|---------|-------------|
+| [**📋 Project Overview**](1_overview_project.md) | System introduction and core concepts | Start here for system understanding |
+| [**⚡ Complete Setup Guide**](9_complete_setup_guide.md) | **Comprehensive installation and configuration** | **Primary setup resource** |
+| [**🔧 Installation & Setup**](2_installation_setup.md) | Detailed installation instructions | Reference for specific installation steps |
 
-## 📋 Technical Documentation
+### Core Understanding
 
-### Architecture and Design
-- **[Architecture Specification](architecture.md)** - System design and components
-- **[Domain Model](domain-model.md)** - Data models and relationships
-- **[API Specification](api-specification.md)** - Complete API documentation
-- **[Security Guidelines](security-guidelines.md)** - Security best practices
-- **[Performance Benchmarks](performance-benchmarks.md)** - Performance analysis
+| Document | Purpose | When to Use |
+|----------|---------|-------------|
+| [**🧠 Core Concepts**](3_core_concepts.md) | System principles and architecture basics | After installation, before usage |
+| [**🏗️ System Architecture**](12_system_architecture_components.md) | **Complete architecture and component overview** | **For developers and system architects** |
+| [**👤 User Guide**](4_user_guide.md) | Basic usage and common workflows | Daily usage reference |
 
-### Development Resources
-- **[Tool Framework](tool-execution-framework.md)** - Tool development framework
-- **[Testing Strategy](testing-strategy.md)** - Testing approaches and frameworks
-- **[Implementation Roadmap](implementation-roadmap.md)** - Development timeline
-- **[Cache Implementation](cache-implementation.md)** - Caching system details
+### Performance and Optimization
 
-## 🎯 Use Case Specific Guides
+| Document | Purpose | When to Use |
+|----------|---------|-------------|
+| [**📊 Benchmarking Guide**](10_benchmarking_performance_guide.md) | **Complete benchmarking and optimization** | **Performance validation and tuning** |
+| [**📈 Performance Optimization**](performance_optimization_guide.md) | Advanced performance strategies | When fine-tuning system performance |
+| [**📉 Benchmarking System**](benchmarking-guide.md) | Original benchmarking framework | Reference for benchmark implementation |
 
-### Financial Analysts
-```
-Start Here: Project Overview → User Guide → Financial Query Examples
-Key Sections:
-- Natural language query patterns
-- Financial data exploration
-- Report generation workflows
-- Performance metrics
-```
+### Troubleshooting and Maintenance
 
-### Data Scientists
-```
-Start Here: Core Concepts → API Reference → Advanced Usage
-Key Sections:
-- Programmatic query execution
-- Batch processing techniques
-- Data analysis workflows
-- Performance optimization
-```
+| Document | Purpose | When to Use |
+|----------|---------|-------------|
+| [**🔧 Troubleshooting Guide**](11_troubleshooting_configuration_guide.md) | **Complete troubleshooting and configuration** | **When issues arise** |
+| [**❓ FAQ & Common Issues**](8_troubleshooting_guide.md) | Quick solutions to common problems | First stop for issue resolution |
 
-### Software Developers
-```
-Start Here: Core Concepts → API Reference → Tool Creation Guide
-Key Sections:
-- API integration patterns
-- Custom tool development
-- SDK usage examples
-- Security implementation
-```
+### Development and Extension
 
-### System Administrators
-```
-Start Here: Installation → Advanced Usage → Troubleshooting
-Key Sections:
-- Deployment and configuration
-- Performance monitoring
-- Security management
-- Operational procedures
-```
+| Document | Purpose | When to Use |
+|----------|---------|-------------|
+| [**🔌 API Reference**](5_api_reference.md) | Complete API documentation | When developing integrations |
+| [**🛠️ Tool Creation Guide**](6_tool_creation_guide.md) | Custom tool development | When extending system capabilities |
+| [**🚀 Advanced Usage**](7_advanced_usage.md) | Advanced features and customization | For power users and developers |
 
-## 🔧 Reference Materials
+### Technical Reference
 
-### Configuration
-- **Environment Variables**: See [Installation Guide](2_installation_setup.md#configuration)
-- **API Keys**: See [Installation Guide](2_installation_setup.md#api-key-configuration)
-- **Cache Settings**: See [Advanced Usage](7_advanced_usage.md#cache-optimization-strategies)
-- **Security Config**: See [Security Guidelines](security-guidelines.md)
+| Document | Purpose | When to Use |
+|----------|---------|-------------|
+| [**🏛️ Architecture Specification**](architecture.md) | Detailed technical architecture | System design and integration planning |
+| [**🔗 API Specification**](api-specification.md) | Technical API details | API integration development |
+| [**📐 Domain Model**](domain-model.md) | Data models and relationships | Database design and tool development |
 
-### API Reference
-- **Authentication**: [API Reference - Authentication](5_api_reference.md#authentication)
-- **Query Processing**: [API Reference - Query Processing](5_api_reference.md#query-processing)
-- **Tool Management**: [API Reference - Tool Management](5_api_reference.md#tool-management)
-- **Error Handling**: [API Reference - Error Handling](5_api_reference.md#error-handling)
+## 🚀 Quick Start Paths
 
-### Tool Development
-- **Tool Architecture**: [Tool Creation Guide](6_tool_creation_guide.md#tool-architecture)
-- **Security Practices**: [Tool Creation Guide](6_tool_creation_guide.md#security-best-practices)
-- **Testing Tools**: [Tool Creation Guide](6_tool_creation_guide.md#testing-tools)
-- **Deployment**: [Tool Creation Guide](6_tool_creation_guide.md#deployment-and-monitoring)
+### New User (Just Want to Use FACT)
+1. **[Complete Setup Guide](9_complete_setup_guide.md)** - Full installation and configuration
+2. **[User Guide](4_user_guide.md)** - Learn basic usage
+3. **[Troubleshooting Guide](11_troubleshooting_configuration_guide.md)** - When issues occur
 
-## 📊 Performance and Monitoring
+### Developer (Want to Extend FACT)
+1. **[Project Overview](1_overview_project.md)** - Understand the system
+2. **[System Architecture](12_system_architecture_components.md)** - Learn the architecture
+3. **[API Reference](5_api_reference.md)** - Development APIs
+4. **[Tool Creation Guide](6_tool_creation_guide.md)** - Build custom tools
 
-### Benchmarks and Metrics
-- **Query Performance**: <100ms for simple queries, <500ms for complex
-- **Cache Hit Rate**: Target 85%+ for optimal performance
-- **Concurrent Users**: 100+ supported with proper configuration
-- **Cost Savings**: Up to 90% reduction in API costs through caching
+### System Administrator (Want to Deploy FACT)
+1. **[Complete Setup Guide](9_complete_setup_guide.md)** - Installation and configuration
+2. **[System Architecture](12_system_architecture_components.md)** - Deployment architectures
+3. **[Benchmarking Guide](10_benchmarking_performance_guide.md)** - Performance validation
+4. **[Troubleshooting Guide](11_troubleshooting_configuration_guide.md)** - Maintenance and issues
 
-### Monitoring Tools
-- **Built-in Metrics**: `FACT> metrics` command
-- **Performance Dashboard**: [Advanced Usage](7_advanced_usage.md#performance-monitoring)
-- **Health Checks**: [Advanced Usage](7_advanced_usage.md#health-monitoring)
-- **Benchmarking**: [Advanced Usage](7_advanced_usage.md#load-testing-and-benchmarking)
+### Performance Engineer (Want to Optimize FACT)
+1. **[Benchmarking Guide](10_benchmarking_performance_guide.md)** - Performance testing
+2. **[Performance Optimization](performance_optimization_guide.md)** - Optimization strategies
+3. **[System Architecture](12_system_architecture_components.md)** - Component understanding
+4. **[Advanced Usage](7_advanced_usage.md)** - Advanced optimization techniques
 
-## 🛡️ Security and Compliance
+## 🎯 Key Documentation Features
 
-### Security Features
-- **SQL Injection Protection**: Comprehensive query validation
-- **Read-Only Access**: Database permissions limited to SELECT operations
-- **Authentication**: API key and OAuth support
-- **Audit Trail**: Complete logging of all operations
+### 📊 Comprehensive Setup Coverage
+- **API Key Configuration**: Step-by-step setup for Anthropic and Arcade APIs
+- **Environment Configuration**: Complete .env file guidance
+- **Database Setup**: Automated and manual database initialization
+- **Performance Tuning**: Cache optimization and system tuning
+- **Validation**: System health checks and verification
 
-### Best Practices
-- **API Key Management**: [Troubleshooting Guide](8_troubleshooting_guide.md#api-and-authentication-issues)
-- **Input Validation**: [Tool Creation Guide](6_tool_creation_guide.md#security-best-practices)
-- **Access Control**: [API Reference](5_api_reference.md#authentication)
-- **Security Monitoring**: [Advanced Usage](7_advanced_usage.md#security-enhancements)
+### 🔍 Detailed Troubleshooting
+- **API Issues**: Authentication, rate limiting, connectivity problems
+- **Configuration Problems**: Environment, database, tool registration
+- **Performance Issues**: Cache optimization, memory management, query tuning
+- **Emergency Procedures**: System recovery and performance response
 
-## 🚨 Common Issues and Solutions
+### 📈 Performance Optimization
+- **Benchmark Targets**: Clear performance goals and measurement
+- **Cache Strategies**: Intelligent warming and optimization
+- **System Tuning**: Memory, connection, and resource optimization
+- **Monitoring**: Real-time performance tracking and alerting
 
-### Quick Fixes
-- **API Key Errors**: [Troubleshooting - API Issues](8_troubleshooting_guide.md#api-and-authentication-issues)
-- **Database Problems**: [Troubleshooting - Database Issues](8_troubleshooting_guide.md#database-issues)
-- **Performance Issues**: [Troubleshooting - Performance](8_troubleshooting_guide.md#performance-optimization)
-- **Installation Problems**: [Troubleshooting - Installation](8_troubleshooting_guide.md#installation-and-setup-issues)
+### 🏗️ Architecture Understanding
+- **Component Overview**: Detailed explanation of all system components
+- **Data Flow**: How information moves through the system
+- **Extension Points**: How to customize and extend the system
+- **Deployment Options**: From development to production deployment
 
-### Diagnostic Commands
+## 🛠️ Essential Commands Reference
+
+### Quick Health Check
 ```bash
-# System health check
+# Complete system validation
 python main.py validate
 
 # Performance metrics
-FACT> metrics
+python main.py cli
+# Then in CLI: metrics
 
-# View logs
+# View recent logs
 tail -f logs/fact.log
-
-# Test configuration
-python main.py demo
 ```
 
-## 📱 Integration Examples
-
-### Python SDK
-```python
-from fact_sdk import FACTClient
-import asyncio
-
-async def main():
-    client = FACTClient(api_key="your_key")
-    result = await client.query("What was Q1 2025 revenue?")
-    print(result.response)
-    await client.close()
-
-asyncio.run(main())
-```
-
-### REST API
+### Emergency Commands
 ```bash
-curl -X POST "http://localhost:8000/api/v1/query" \
-  -H "Authorization: Bearer your_token" \
-  -H "Content-Type: application/json" \
-  -d '{"query": "Show me technology companies", "user_id": "analyst@company.com"}'
+# Reset cache
+python main.py --clear-cache
+
+# Reinitialize database
+python main.py init --force
+
+# Emergency performance optimization
+python -c "
+import asyncio
+from src.cache.warming import get_cache_warmer
+async def emergency():
+    warmer = get_cache_warmer()
+    await warmer.warm_cache_intelligently(max_queries=50)
+asyncio.run(emergency())
+"
 ```
 
-### Webhook Integration
-```python
-# Real-time notifications
-webhook_config = {
-    "url": "https://your-app.com/fact-webhook",
-    "events": ["query.completed", "system.alert"]
-}
+### Performance Testing
+```bash
+# Basic benchmark
+python scripts/run_benchmarks.py
+
+# Comprehensive benchmark
+python scripts/run_benchmarks.py \
+    --iterations 20 \
+    --include-rag-comparison \
+    --include-profiling
 ```
 
-## 🎓 Learning Path
+## 📋 Performance Targets Reference
 
-### Beginner (0-2 hours)
-1. Read [Project Overview](1_overview_project.md) (15 min)
-2. Complete [Installation](2_installation_setup.md) (30 min)
-3. Try [User Guide examples](4_user_guide.md) (45 min)
-4. Explore basic queries and CLI commands (30 min)
+| Metric | Target | Critical | Production Goal |
+|--------|--------|----------|-----------------|
+| Cache Hit Latency | ≤ 48ms | ≤ 60ms | ≤ 25ms |
+| Cache Miss Latency | ≤ 140ms | ≤ 180ms | ≤ 100ms |
+| Cache Hit Rate | ≥ 60% | ≥ 45% | ≥ 80% |
+| Cost Reduction | ≥ 90% | ≥ 75% | ≥ 95% |
+| Error Rate | ≤ 1% | ≤ 5% | ≤ 0.5% |
 
-### Intermediate (2-8 hours)
-1. Study [Core Concepts](3_core_concepts.md) (45 min)
-2. Practice [Advanced Query Patterns](4_user_guide.md#advanced-query-patterns) (2 hours)
-3. Review [API Reference](5_api_reference.md) (2 hours)
-4. Set up monitoring and optimization (2 hours)
+## 🔧 Configuration Quick Reference
 
-### Advanced (8+ hours)
-1. Master [Tool Creation](6_tool_creation_guide.md) (4 hours)
-2. Implement [Advanced Usage patterns](7_advanced_usage.md) (4 hours)
-3. Build custom integrations and tools (8+ hours)
-4. Contribute to system improvements
+### Essential Environment Variables
+```bash
+# Required API Keys
+ANTHROPIC_API_KEY=your_anthropic_key_here
+ARCADE_API_KEY=your_arcade_key_here
 
-## 📞 Getting Help
+# Performance Optimization
+CACHE_MAX_SIZE=5000
+CACHE_TTL=3600
+MAX_CONCURRENT_QUERIES=50
 
-### Self-Service Resources
-1. **Search Documentation**: Use Ctrl+F to search within guides
-2. **Check FAQ**: [Troubleshooting Guide FAQ](8_troubleshooting_guide.md#frequently-asked-questions-faq)
-3. **Review Examples**: Each guide includes practical examples
-4. **Run Diagnostics**: Use built-in diagnostic commands
+# Production Settings
+LOG_LEVEL=INFO
+METRICS_ENABLED=true
+CACHE_WARMING_ENABLED=true
+```
 
-### Support Channels
-1. **Documentation Issues**: Create issues for documentation improvements
-2. **Bug Reports**: Include logs and reproduction steps
-3. **Feature Requests**: Describe use case and expected behavior
-4. **Community Discussions**: Share tips and best practices
+### Common Configuration Patterns
+```bash
+# High Performance
+CACHE_MAX_SIZE=10000
+CONNECTION_POOL_SIZE=50
+MAX_CONCURRENT_QUERIES=200
 
-### Before Requesting Help
-- [ ] Check relevant documentation section
-- [ ] Run `python main.py validate` 
-- [ ] Review recent logs in `logs/fact.log`
-- [ ] Try troubleshooting steps from [Troubleshooting Guide](8_troubleshooting_guide.md)
-- [ ] Gather system information and error details
+# Resource Constrained
+CACHE_MAX_SIZE=2000
+CONNECTION_POOL_SIZE=10
+MAX_CONCURRENT_QUERIES=20
 
-## 📈 System Status
+# Development
+LOG_LEVEL=DEBUG
+CACHE_MAX_SIZE=1000
+METRICS_ENABLED=false
+```
 
-### Current Version: 1.0.0
-- ✅ Production ready
-- ✅ Full documentation
-- ✅ Comprehensive testing
-- ✅ Security audited
-- ✅ Performance optimized
+## 🚨 Common Issues Quick Reference
 
-### Recent Updates
-- Complete documentation suite
-- Advanced monitoring capabilities
-- Enhanced security features
-- Performance optimizations
-- Expanded tool framework
+### API Key Problems
+```bash
+# Check keys are set
+python -c "
+import os
+print('Anthropic:', bool(os.getenv('ANTHROPIC_API_KEY')))
+print('Arcade:', bool(os.getenv('ARCADE_API_KEY')))
+"
+
+# Test connectivity
+python -c "
+import asyncio
+from src.core.driver import test_api_connections
+asyncio.run(test_api_connections())
+"
+```
+
+### Performance Issues
+```bash
+# Check cache performance
+python main.py cli
+# In CLI: metrics
+
+# Emergency cache warming
+python -c "
+import asyncio
+from src.cache.warming import get_cache_warmer
+async def warm(): 
+    warmer = get_cache_warmer()
+    await warmer.warm_cache_intelligently(max_queries=30)
+asyncio.run(warm())
+"
+```
+
+### Database Issues
+```bash
+# Check database
+sqlite3 data/fact_demo.db "SELECT COUNT(*) FROM companies;"
+
+# Reset if needed
+rm data/fact_demo.db
+python main.py init
+```
+
+## 📖 Documentation Maintenance
+
+### Keeping Documentation Current
+The documentation is designed to be:
+- **Modular**: Each guide focuses on specific topics
+- **Cross-Referenced**: Links between related topics
+- **Practical**: Code examples and real commands
+- **Comprehensive**: Covers beginner to advanced use cases
+
+### Documentation Updates
+When updating the system:
+1. Update relevant sections in affected documents
+2. Verify all code examples still work
+3. Update performance targets if they change
+4. Cross-check references between documents
+
+## 🎯 Getting Help
+
+### Immediate Help
+1. **[Troubleshooting Guide](11_troubleshooting_configuration_guide.md)** - Most common issues
+2. **System Validation**: `python main.py validate`
+3. **Log Analysis**: `tail -f logs/fact.log`
+4. **Performance Check**: CLI `metrics` command
+
+### Documentation Feedback
+If you find issues with the documentation:
+1. Check if the information is in another document
+2. Verify you're using the correct commands for your environment
+3. Report issues with specific steps that don't work
+4. Include your system information and error messages
+
+### Advanced Support
+For complex issues:
+1. Provide complete system information
+2. Include relevant log entries
+3. Describe expected vs. actual behavior
+4. Share configuration (without API keys)
 
 ---
 
-**Ready to get started?** Begin with the [Project Overview](1_overview_project.md) to understand what FACT can do for you, then proceed to [Installation and Setup](2_installation_setup.md) to get the system running.
+## 🎉 Welcome to FACT!
 
-**Need something specific?** Use the navigation above to jump directly to the section you need.
+This documentation suite is designed to get you from zero to expert with the FACT system. Whether you're a new user looking to get started or an experienced developer wanting to extend the system, you'll find the guidance you need.
+
+**Start with the [Complete Setup Guide](9_complete_setup_guide.md) to get your system running, then explore the other guides based on your needs.**
+
+**Happy benchmarking! 🚀**

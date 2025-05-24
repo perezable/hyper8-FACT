@@ -11,8 +11,8 @@ import os
 from typing import Dict, List, Any, Optional
 import structlog
 
-# Import LiteLLM for LLM abstraction
-import litellm
+# Import Anthropic SDK directly (LiteLLM has compatibility issues)
+import anthropic
 
 from .config import Config, get_config, validate_configuration
 from .errors import (
@@ -20,14 +20,30 @@ from .errors import (
     classify_error, create_user_friendly_message, log_error_with_context,
     provide_graceful_degradation
 )
-from ..db.connection import DatabaseManager
-from ..tools.decorators import get_tool_registry
-from ..tools.connectors.sql import initialize_sql_tool
+try:
+    # Try relative imports first (when used as package)
+    from ..db.connection import DatabaseManager
+    from ..tools.decorators import get_tool_registry
+    from ..tools.connectors.sql import initialize_sql_tool
+    from ..monitoring.metrics import get_metrics_collector
+    from ..cache import initialize_cache_system, get_cache_system, FACTCacheSystem
+except ImportError:
+    # Fall back to absolute imports (when run as script)
+    import sys
+    from pathlib import Path
+    # Add src to path if not already there
+    src_path = str(Path(__file__).parent.parent)
+    if src_path not in sys.path:
+        sys.path.insert(0, src_path)
+    
+    from db.connection import DatabaseManager
+    from tools.decorators import get_tool_registry
+    from tools.connectors.sql import initialize_sql_tool
+    from monitoring.metrics import get_metrics_collector
+    from cache import initialize_cache_system, get_cache_system, FACTCacheSystem
 
 
 logger = structlog.get_logger(__name__)
-
-from ..monitoring.metrics import get_metrics_collector
 
 class FACTDriver:
     """
@@ -46,6 +62,7 @@ class FACTDriver:
         self.config = config or get_config()
         self.database_manager: Optional[DatabaseManager] = None
         self.tool_registry = get_tool_registry()
+        self.cache_system: Optional[FACTCacheSystem] = None
         self._initialized = False
         
         # Monitoring and metrics
@@ -71,6 +88,9 @@ class FACTDriver:
             
             # Initialize database
             await self._initialize_database()
+            
+            # Initialize cache system
+            await self._initialize_cache()
             
             # Initialize tools
             await self._initialize_tools()
@@ -107,13 +127,29 @@ class FACTDriver:
         try:
             logger.info("Processing user query", query_id=query_id, query=user_input[:100])
             
-            # Increment metrics
-            # Metrics: total_queries is tracked as executions in metrics_collector
+            # Step 1: Check cache first (cache-first pattern)
+            cached_response = None
+            if self.cache_system:
+                cached_response = await self.cache_system.get_cached_response(user_input)
+            
+            if cached_response:
+                # Cache hit - return cached response
+                end_time = time.time()
+                latency = (end_time - start_time) * 1000
+                
+                logger.info("Cache hit - returning cached response",
+                           query_id=query_id,
+                           latency_ms=latency)
+                
+                return cached_response
+            
+            # Step 2: Cache miss - process query normally
+            logger.info("Cache miss - processing query with LLM", query_id=query_id)
             
             # Prepare messages for LLM
             messages = [
                 {
-                    "role": "user", 
+                    "role": "user",
                     "content": user_input
                 }
             ]
@@ -145,13 +181,19 @@ class FACTDriver:
                     cache_mode="read"
                 )
             
-            # Extract response content
-            if hasattr(response, 'content'):
-                response_text = response.content
-            elif hasattr(response, 'choices') and response.choices:
-                response_text = response.choices[0].message.content
+            # Extract response content from Anthropic SDK response
+            if hasattr(response, 'content') and response.content:
+                response_text = response.content[0].text
             else:
                 response_text = str(response)
+            
+            # Step 3: Store response in cache for future use
+            if self.cache_system and response_text:
+                cache_stored = await self.cache_system.store_response(user_input, response_text)
+                if cache_stored:
+                    logger.debug("Response stored in cache", query_id=query_id)
+                else:
+                    logger.debug("Response not suitable for caching", query_id=query_id)
             
             # Log performance metrics
             end_time = time.time()
@@ -168,8 +210,14 @@ class FACTDriver:
             end_time = time.time()
             latency = (end_time - start_time) * 1000
             
-            # Increment error metrics
-            self.metrics["errors"] += 1
+            # Record error in metrics collector
+            self.metrics_collector.record_tool_execution(
+                tool_name="fact_query",
+                success=False,
+                execution_time=latency,
+                error_type=type(e).__name__,
+                metadata={"query_id": query_id}
+            )
             
             # Log error with context
             log_error_with_context(e, {
@@ -197,6 +245,22 @@ class FACTDriver:
             logger.error("Database initialization failed", error=str(e))
             raise ConfigurationError(f"Database initialization failed: {e}")
     
+    async def _initialize_cache(self) -> None:
+        """Initialize cache system with configuration."""
+        try:
+            cache_config = self.config.cache_config
+            self.cache_system = await initialize_cache_system(
+                config=cache_config,
+                enable_background_tasks=True
+            )
+            logger.info("Cache system initialized successfully",
+                       prefix=cache_config["prefix"],
+                       max_size=cache_config["max_size"])
+            
+        except Exception as e:
+            logger.error("Cache system initialization failed", error=str(e))
+            raise ConfigurationError(f"Cache system initialization failed: {e}")
+    
     async def _initialize_tools(self) -> None:
         """Initialize and register system tools."""
         try:
@@ -219,11 +283,11 @@ class FACTDriver:
                 await self.database_manager.get_database_info()
                 logger.info("Database connection test passed")
             
-            # Test LLM connection with a simple call
-            test_response = await litellm.acompletion(
+            # Test LLM connection with direct Anthropic SDK
+            client = anthropic.Anthropic(api_key=self.config.anthropic_api_key)
+            test_response = client.messages.create(
                 model=self.config.claude_model,
                 messages=[{"role": "user", "content": "Test"}],
-                api_key=self.config.anthropic_api_key,
                 max_tokens=10
             )
             
@@ -259,18 +323,18 @@ class FACTDriver:
             # Track cache behavior
             # Cache hits/misses can be tracked via tool execution metadata if needed
             
-            # Make LLM call with litellm
-            response = await litellm.acompletion(
+            # Make LLM call with direct Anthropic SDK
+            client = anthropic.Anthropic(api_key=self.config.anthropic_api_key)
+            
+            # Anthropic API requires system prompt as separate parameter, not in messages
+            response = client.messages.create(
                 model=self.config.claude_model,
-                messages=[
-                    {"role": "system", "content": self.config.system_prompt},
-                    *messages
-                ],
-                tools=tools if tools else None,
-                api_key=self.config.anthropic_api_key,
+                system=self.config.system_prompt,
+                messages=messages,
+                max_tokens=4096,
                 timeout=self.config.request_timeout,
-                # Note: Cache control would be implemented based on actual Anthropic API support
-                # cache_control=cache_control
+                # Note: tools parameter would be added when tool integration is complete
+                # tools=tools if tools else None,
             )
             
             return response
@@ -363,19 +427,51 @@ class FACTDriver:
         """
         # Use the unified metrics collector for system metrics
         sys_metrics = self.metrics_collector.get_system_metrics()
+        
+        # Get cache metrics if cache system is available
+        cache_metrics = {}
+        if self.cache_system:
+            try:
+                # Get basic cache metrics directly
+                basic_cache_metrics = self.cache_system.cache_manager.get_metrics()
+                cache_metrics = {
+                    "cache_hit_rate": basic_cache_metrics.hit_rate,
+                    "cache_hits": basic_cache_metrics.cache_hits,
+                    "cache_misses": basic_cache_metrics.cache_misses,
+                    "cache_total_entries": basic_cache_metrics.total_entries,
+                    "cache_total_size": basic_cache_metrics.total_size,
+                    "cache_token_efficiency": basic_cache_metrics.token_efficiency
+                }
+            except Exception as e:
+                logger.warning("Failed to get cache metrics", error=str(e))
+                cache_metrics = {
+                    "cache_hit_rate": 0,
+                    "cache_hits": 0,
+                    "cache_misses": 0
+                }
+        else:
+            cache_metrics = {
+                "cache_hit_rate": 0,
+                "cache_hits": 0,
+                "cache_misses": 0
+            }
+        
         return {
             "total_queries": sys_metrics.total_executions,
-            "cache_hit_rate": 0,  # Not tracked here; could be added via metadata if needed
             "tool_executions": sys_metrics.total_executions,
             "error_rate": sys_metrics.error_rate,
-            "cache_hits": 0,
-            "cache_misses": 0,
-            "initialized": self._initialized
+            "initialized": self._initialized,
+            **cache_metrics
         }
     
     async def shutdown(self) -> None:
         """Gracefully shutdown the FACT system."""
         logger.info("Shutting down FACT system")
+        
+        # Shutdown cache system
+        if self.cache_system:
+            await self.cache_system.shutdown()
+            self.cache_system = None
         
         # Close database connections
         if self.database_manager:
@@ -416,3 +512,19 @@ async def shutdown_driver() -> None:
     if _driver_instance:
         await _driver_instance.shutdown()
         _driver_instance = None
+
+
+async def process_user_query(query: str) -> str:
+    """
+    Process user query using the global driver instance.
+    
+    This is a compatibility wrapper for the benchmarking framework.
+    
+    Args:
+        query: User query string
+        
+    Returns:
+        Response string
+    """
+    driver = await get_driver()
+    return await driver.process_query(query)

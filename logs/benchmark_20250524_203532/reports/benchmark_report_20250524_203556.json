@@ -1,0 +1,173 @@
+{
+  "report_id": "fact_benchmark_1748118956",
+  "title": "FACT System Performance Benchmark Report",
+  "generated_at": 1748118956.838662,
+  "summary": {
+    "benchmark_execution": {
+      "total_queries": 100,
+      "execution_time_seconds": 24.427356255999257,
+      "success_rate": 100.0
+    },
+    "performance_grade": "D",
+    "key_findings": [
+      "Response time performance needs improvement",
+      "Cache performance below optimal, requires attention",
+      "Good cost efficiency with substantial savings"
+    ],
+    "action_required": "IMMEDIATE ACTION REQUIRED: Low cache efficiency"
+  },
+  "sections": [
+    {
+      "section_id": "executive_summary",
+      "title": "Executive Summary",
+      "content_type": "metrics",
+      "content": {
+        "overall_assessment": "NEEDS_IMPROVEMENT",
+        "cache_assessment": "NEEDS_IMPROVEMENT",
+        "key_metrics": {
+          "avg_response_time_ms": 156.06586163999964,
+          "cache_hit_rate": 0.0,
+          "error_rate": 0.0,
+          "throughput_qps": 4.093770891618303
+        },
+        "target_compliance": {
+          "hit_latency_target_met": true,
+          "miss_latency_target_met": false,
+          "cost_reduction_target_met": false,
+          "cache_hit_rate_target_met": false
+        }
+      },
+      "priority": 1
+    },
+    {
+      "section_id": "performance_metrics",
+      "title": "Detailed Performance Metrics",
+      "content_type": "table",
+      "content": {
+        "latency_metrics": {
+          "average_ms": 156.06586163999964,
+          "minimum_ms": 0.22530999922310002,
+          "maximum_ms": 2497.9451170001994,
+          "p50_ms": 0.28266150002309587,
+          "p95_ms": 2194.4884512497993,
+          "p99_ms": 2497.541797140202
+        },
+        "cache_metrics": {
+          "hit_rate_percent": 0.0,
+          "hit_count": 0,
+          "miss_count": 100,
+          "avg_hit_latency_ms": 0.0,
+          "avg_miss_latency_ms": 156.06586163999964
+        },
+        "reliability_metrics": {
+          "success_rate_percent": 100.0,
+          "error_rate_percent": 0.0,
+          "total_queries": 100,
+          "failed_queries": 0
+        },
+        "cost_metrics": {
+          "total_cost_usd": 0.08376,
+          "avg_cost_per_query_usd": 0.0008376,
+          "estimated_savings_usd": 0.27624,
+          "cost_reduction_percentage": 76.73333333333333
+        }
+      },
+      "priority": 1
+    },
+    {
+      "section_id": "target_compliance",
+      "title": "Performance Target Compliance",
+      "content_type": "table",
+      "content": {
+        "overall_compliance": false,
+        "overall_status": "FAIL",
+        "target_details": {
+          "cache_hit_latency": {
+            "target_ms": 48.0,
+            "actual_ms": 0.0,
+            "met": true,
+            "status": "PASS"
+          },
+          "cache_miss_latency": {
+            "target_ms": 140.0,
+            "actual_ms": 156.06586163999964,
+            "met": false,
+            "status": "FAIL"
+          },
+          "cost_reduction": {
+            "target_percent": 75.0,
+            "actual_percent": 76.73333333333333,
+            "met": false,
+            "status": "FAIL"
+          },
+          "cache_hit_rate": {
+            "target_percent": 60.0,
+            "actual_percent": 0.0,
+            "met": false,
+            "status": "FAIL"
+          }
+        },
+        "compliance_score": 25.0
+      },
+      "priority": 1
+    },
+    {
+      "section_id": "recommendations",
+      "title": "Optimization Recommendations",
+      "content_type": "text",
+      "content": {
+        "priority_recommendations": [
+          "Investigate high response times - consider caching optimization",
+          "Improve cache hit rate through better warming strategies"
+        ],
+        "all_recommendations": [
+          "Investigate high response times - consider caching optimization",
+          "Improve cache hit rate through better warming strategies"
+        ],
+        "implementation_priority": "MEDIUM"
+      },
+      "priority": 1
+    }
+  ],
+  "charts": [],
+  "recommendations": [
+    "Optimize response time through caching and query optimization",
+    "Implement cache warming and improve hit rate strategies",
+    "Implement continuous performance monitoring",
+    "Establish performance regression testing",
+    "Document optimization strategies and results"
+  ],
+  "raw_data": {
+    "benchmark_summary": {
+      "total_queries": 100,
+      "successful_queries": 100,
+      "failed_queries": 0,
+      "cache_hits": 0,
+      "cache_misses": 100,
+      "avg_response_time_ms": 156.06586163999964,
+      "min_response_time_ms": 0.22530999922310002,
+      "max_response_time_ms": 2497.9451170001994,
+      "p50_response_time_ms": 0.28266150002309587,
+      "p95_response_time_ms": 2194.4884512497993,
+      "p99_response_time_ms": 2497.541797140202,
+      "avg_hit_latency_ms": 0.0,
+      "avg_miss_latency_ms": 156.06586163999964,
+      "total_token_cost": 0.08376,
+      "avg_token_cost": 0.0008376,
+      "estimated_savings": 0.27624,
+      "cost_reduction_percentage": 76.73333333333333,
+      "hit_latency_target_met": true,
+      "miss_latency_target_met": false,
+      "cost_reduction_target_met": false,
+      "cache_hit_rate_target_met": false,
+      "error_rate": 0.0,
+      "cache_hit_rate": 0.0,
+      "throughput_qps": 4.093770891618303,
+      "execution_time_seconds": 24.427356255999257,
+      "timestamp": 1748118956.8384259
+    },
+    "comparison_result": null,
+    "profile_result": null,
+    "alerts": null
+  }
+}

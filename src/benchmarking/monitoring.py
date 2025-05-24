@@ -8,7 +8,7 @@ for production FACT systems.
 import time
 import asyncio
 import json
-from typing import Dict, List, Any, Optional, Callable
+from typing import Dict, List, Any, Optional, Callable, Tuple
 from dataclasses import dataclass, field, asdict
 from collections import deque
 from datetime import datetime, timedelta

@@ -128,10 +128,17 @@ class BenchmarkVisualizer:
             }
         )
     
-    def create_cache_performance_chart(self, results: List[BenchmarkResult]) -> ChartData:
+    def create_cache_performance_chart(self, benchmark_summary) -> ChartData:
         """Create cache hit/miss performance visualization."""
-        hit_latencies = [r.response_time_ms for r in results if r.success and r.cache_hit]
-        miss_latencies = [r.response_time_ms for r in results if r.success and not r.cache_hit]
+        # Handle both BenchmarkSummary and List[BenchmarkResult]
+        if hasattr(benchmark_summary, 'avg_hit_latency_ms'):
+            # BenchmarkSummary object
+            hit_latencies = [benchmark_summary.avg_hit_latency_ms] if benchmark_summary.cache_hits > 0 else []
+            miss_latencies = [benchmark_summary.avg_miss_latency_ms] if benchmark_summary.cache_misses > 0 else []
+        else:
+            # List of BenchmarkResult objects
+            hit_latencies = [r.response_time_ms for r in benchmark_summary if r.success and r.cache_hit]
+            miss_latencies = [r.response_time_ms for r in benchmark_summary if r.success and not r.cache_hit]
         
         data_series = [
             {
@@ -159,7 +166,7 @@ class BenchmarkVisualizer:
                 "miss_avg": sum(miss_latencies) / len(miss_latencies) if miss_latencies else 0,
                 "hit_count": len(hit_latencies),
                 "miss_count": len(miss_latencies),
-                "cache_hit_rate": len(hit_latencies) / len(results) * 100 if results else 0
+                "cache_hit_rate": len(hit_latencies) / (len(hit_latencies) + len(miss_latencies)) * 100 if (len(hit_latencies) + len(miss_latencies)) > 0 else 0
             }
         )
     

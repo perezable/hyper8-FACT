@@ -13,19 +13,42 @@ from typing import Dict, Any, List, Optional, Union
 from dataclasses import dataclass
 import structlog
 
-from ..core.errors import (
-    ToolExecutionError,
-    ToolValidationError, 
-    ToolNotFoundError,
-    UnauthorizedError,
-    SecurityError,
-    FinalRetryError
-)
-from .decorators import get_tool_registry, ToolDefinition
-from .validation import ParameterValidator, SecurityValidator
-from ..security.auth import AuthorizationManager
-from ..arcade.client import ArcadeClient
-from ..monitoring.metrics import MetricsCollector
+try:
+    # Try relative imports first (when used as package)
+    from ..core.errors import (
+        ToolExecutionError,
+        ToolValidationError,
+        ToolNotFoundError,
+        UnauthorizedError,
+        SecurityError,
+        FinalRetryError
+    )
+    from .decorators import get_tool_registry, ToolDefinition
+    from .validation import ParameterValidator, SecurityValidator
+    from ..arcade.client import ArcadeClient
+except ImportError:
+    # Fall back to absolute imports (when run as script)
+    import sys
+    from pathlib import Path
+    # Add src to path if not already there
+    src_path = str(Path(__file__).parent.parent)
+    if src_path not in sys.path:
+        sys.path.insert(0, src_path)
+    
+    from core.errors import (
+        ToolExecutionError,
+        ToolValidationError,
+        ToolNotFoundError,
+        UnauthorizedError,
+        SecurityError,
+        FinalRetryError
+    )
+    from tools.decorators import get_tool_registry, ToolDefinition
+    from tools.validation import ParameterValidator, SecurityValidator
+    from arcade.client import ArcadeClient
+    from security.auth import AuthorizationManager
+    from arcade.client import ArcadeClient
+    from monitoring.metrics import MetricsCollector
 
 
 logger = structlog.get_logger(__name__)

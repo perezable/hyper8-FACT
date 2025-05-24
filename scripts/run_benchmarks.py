@@ -80,11 +80,11 @@ def print_performance_summary(validation_results, comparison_result=None, load_t
     if summary:
         print(f"\n🗄️  CACHE PERFORMANCE:")
         print("-" * 50)
-        print(f"  Cache Hit Rate:           {summary.get('cache_hit_rate', 0)*100:.1f}%")
-        print(f"  Avg Response Time (Hit):  {summary.get('avg_hit_latency_ms', 0):.1f}ms")
-        print(f"  Avg Response Time (Miss): {summary.get('avg_miss_latency_ms', 0):.1f}ms")
-        print(f"  Total Requests:           {summary.get('total_requests', 0)}")
-        print(f"  Success Rate:             {summary.get('success_rate', 0)*100:.1f}%")
+        print(f"  Cache Hit Rate:           {summary.cache_hit_rate*100:.1f}%")
+        print(f"  Avg Response Time (Hit):  {summary.avg_hit_latency_ms:.1f}ms")
+        print(f"  Avg Response Time (Miss): {summary.avg_miss_latency_ms:.1f}ms")
+        print(f"  Total Requests:           {summary.total_queries}")
+        print(f"  Success Rate:             {(summary.successful_queries/summary.total_queries)*100:.1f}%")
     
     # RAG Comparison Results
     if comparison_result:
@@ -145,7 +145,16 @@ async def run_comprehensive_benchmark(args):
     # Initialize cache manager if available
     cache_manager = None
     try:
-        cache_manager = CacheManager()
+        # Create cache config for CacheManager
+        cache_config = {
+            "prefix": "fact_benchmark",
+            "min_tokens": 50,
+            "max_size": "10MB",
+            "ttl_seconds": 3600,
+            "hit_target_ms": 48,
+            "miss_target_ms": 140
+        }
+        cache_manager = CacheManager(cache_config)
         print("✅ Cache manager initialized")
     except Exception as e:
         print(f"⚠️  Cache manager not available: {e}")
@@ -342,7 +351,16 @@ async def run_continuous_monitoring(args):
     # Initialize cache manager
     cache_manager = None
     try:
-        cache_manager = CacheManager()
+        # Create cache config for CacheManager
+        cache_config = {
+            "prefix": "fact_benchmark",
+            "min_tokens": 50,
+            "max_size": "10MB",
+            "ttl_seconds": 3600,
+            "hit_target_ms": 48,
+            "miss_target_ms": 140
+        }
+        cache_manager = CacheManager(cache_config)
         print("✅ Cache manager initialized")
     except Exception as e:
         print(f"⚠️  Cache manager not available: {e}")
@@ -428,8 +446,8 @@ Examples:
     # Performance targets
     parser.add_argument('--hit-target', type=float, default=48.0, help='Cache hit latency target (ms)')
     parser.add_argument('--miss-target', type=float, default=140.0, help='Cache miss latency target (ms)')
-    parser.add_argument('--cost-reduction', type=float, default=90.0, help='Cost reduction target (%)')
-    parser.add_argument('--cache-hit-rate', type=float, default=60.0, help='Cache hit rate target (%)')
+    parser.add_argument('--cost-reduction', type=float, default=90.0, help='Cost reduction target (percent)')
+    parser.add_argument('--cache-hit-rate', type=float, default=60.0, help='Cache hit rate target (percent)')
     
     # Optional components
     parser.add_argument('--include-rag-comparison', action='store_true', help='Include RAG comparison')

@@ -1,0 +1,67 @@
+{
+  "validation_results": {
+    "timestamp": 1748107735.7441068,
+    "benchmark_summary": "BenchmarkSummary(total_queries=100, successful_queries=100, failed_queries=0, cache_hits=0, cache_misses=100, avg_response_time_ms=1389.2850158800047, min_response_time_ms=795.7626070001425, max_response_time_ms=2467.731571000513, p50_response_time_ms=1351.8158210004003, p95_response_time_ms=2012.6876619499853, p99_response_time_ms=2463.727302060506, avg_hit_latency_ms=0.0, avg_miss_latency_ms=1389.2850158800047, total_token_cost=0.106179, avg_token_cost=0.00106179, estimated_savings=0.21235799999999996, cost_reduction_percentage=66.66666666666666, hit_latency_target_met=True, miss_latency_target_met=False, cost_reduction_target_met=False, cache_hit_rate_target_met=False, error_rate=0.0, cache_hit_rate=0.0, throughput_qps=0.6570094232489522, execution_time_seconds=152.20481847199972, timestamp=1748107735.7439978)",
+    "target_validation": {
+      "cache_hit_latency": {
+        "target_ms": 48.0,
+        "actual_ms": 0.0,
+        "met": true,
+        "margin_ms": 48.0
+      },
+      "cache_miss_latency": {
+        "target_ms": 140.0,
+        "actual_ms": 1389.2850158800047,
+        "met": false,
+        "margin_ms": -1249.2850158800047
+      },
+      "cost_reduction": {
+        "target_percent": 90.0,
+        "actual_percent": 66.66666666666666,
+        "met": false,
+        "margin_percent": -23.333333333333343
+      },
+      "cache_hit_rate": {
+        "target_percent": 60.0,
+        "actual_percent": 0.0,
+        "met": false,
+        "margin_percent": -60.0
+      }
+    },
+    "overall_pass": false
+  },
+  "comparison_result": null,
+  "profile_result": null,
+  "load_test_results": null,
+  "config": {
+    "iterations": 10,
+    "warmup_iterations": 3,
+    "concurrent_users": 1,
+    "timeout_seconds": 30,
+    "measure_token_costs": true,
+    "target_cache_hit_rate": 0.6,
+    "target_hit_latency_ms": 48.0,
+    "target_miss_latency_ms": 140.0,
+    "target_cost_reduction_hit": 0.9,
+    "target_cost_reduction_miss": 0.65
+  },
+  "timestamp": "20250524_172855",
+  "args": {
+    "mode": "benchmark",
+    "iterations": 10,
+    "warmup": 3,
+    "concurrent_users": 1,
+    "timeout": 30,
+    "hit_target": 48.0,
+    "miss_target": 140.0,
+    "cost_reduction": 90.0,
+    "cache_hit_rate": 60.0,
+    "include_rag_comparison": false,
+    "include_profiling": false,
+    "include_load_test": false,
+    "load_test_users": 10,
+    "load_test_duration": 60,
+    "monitor_duration": 0,
+    "output_dir": "./benchmark_results"
+  }
+}

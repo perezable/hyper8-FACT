@@ -1,0 +1,35 @@
+{
+  "benchmark_summary": {
+    "total_queries": 450,
+    "successful_queries": 0,
+    "cache_hits": 0,
+    "cache_misses": 450,
+    "cache_hit_rate": 0.0,
+    "avg_hit_latency_ms": 0.0,
+    "avg_miss_latency_ms": 0.0,
+    "avg_response_time_ms": 0.0,
+    "cost_reduction_percentage": 90.0,
+    "error_rate": 100.0,
+    "throughput_qps": 69.21292210382032
+  },
+  "cache_metrics": {
+    "total_entries": 22,
+    "memory_utilization_percent": 0.20673116048177081,
+    "hit_rate_percent": 0.0,
+    "token_efficiency": 107.97761102226596
+  },
+  "optimization_status": {
+    "optimization_enabled": true,
+    "current_strategy": "balanced",
+    "last_optimization": 0.0,
+    "optimization_interval": 300,
+    "total_optimizations": 0,
+    "recent_actions": [],
+    "performance_targets": {
+      "cache_hit_latency_ms": 48.0,
+      "cache_miss_latency_ms": 140.0,
+      "cache_hit_rate_percent": 60.0,
+      "cost_reduction_percent": 90.0
+    }
+  }
+}

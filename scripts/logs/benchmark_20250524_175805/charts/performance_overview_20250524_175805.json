@@ -1,0 +1,10 @@
+{
+  "chart_type": "performance_overview",
+  "title": "FACT Performance Overview",
+  "data": {
+    "cache_hit_rate": 0.67,
+    "avg_hit_latency": 42.3,
+    "avg_miss_latency": 128.7,
+    "success_rate": 1.0
+  }
+}

@@ -9,10 +9,10 @@ import asyncio
 import json
 import time
 from unittest.mock import Mock, AsyncMock, patch
-from src.core.driver import FactDriver, process_user_query, initialize_system
+from src.core.driver import FACTDriver, get_driver
 from src.cache.manager import CacheManager
 from src.tools.connectors.sql import SQLQueryTool
-from src.db.connection import DatabaseConnectionPool
+from src.db.connection import DatabaseManager
 
 
 class TestEndToEndWorkflow:

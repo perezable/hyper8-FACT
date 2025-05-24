@@ -8,8 +8,8 @@ import pytest
 import sqlite3
 import json
 from unittest.mock import Mock, patch, MagicMock
-from src.db.connection import DatabaseConnectionPool
-from src.db.models import QueryResult, QueryValidator
+from src.db.connection import DatabaseManager
+from src.db.models import QueryResult
 from src.core.errors import SecurityError, DatabaseError
 
 

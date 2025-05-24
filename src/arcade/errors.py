@@ -6,7 +6,19 @@ errors and error handling utilities.
 """
 
 from typing import Optional, Dict, Any
-from ..core.errors import FACTError
+try:
+    # Try relative imports first (when used as package)
+    from ..core.errors import FACTError
+except ImportError:
+    # Fall back to absolute imports (when run as script)
+    import sys
+    from pathlib import Path
+    # Add src to path if not already there
+    src_path = str(Path(__file__).parent.parent)
+    if src_path not in sys.path:
+        sys.path.insert(0, src_path)
+    
+    from core.errors import FACTError
 
 
 class ArcadeError(FACTError):

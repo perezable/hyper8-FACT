@@ -11,7 +11,19 @@ import urllib.parse
 from typing import Any, Dict, List, Optional, Union
 import structlog
 
-from ..core.errors import SecurityError, ValidationError
+try:
+    # Try relative imports first (when used as package)
+    from ..core.errors import SecurityError, ValidationError
+except ImportError:
+    # Fall back to absolute imports (when run as script)
+    import sys
+    from pathlib import Path
+    # Add src to path if not already there
+    src_path = str(Path(__file__).parent.parent)
+    if src_path not in sys.path:
+        sys.path.insert(0, src_path)
+    
+    from core.errors import SecurityError, ValidationError
 
 
 logger = structlog.get_logger(__name__)
@@ -62,17 +74,17 @@ class InputSanitizer:
             r'0x[0-9a-f]+',
         ]
         
-        # Command injection patterns
+        # Command injection patterns (more specific to avoid false positives)
         self.command_injection_patterns = [
-            r'[;&|`$]',
-            r'\$\(',
-            r'`.*`',
-            r'\|\s*\w+',
-            r'&&\s*\w+',
-            r'\|\|\s*\w+',
-            r'>\s*\w+',
-            r'<\s*\w+',
-            r'\\\w+',
+            r';\s*(rm|del|cat|ls|dir|mkdir|rmdir|cp|mv|chmod|chown)\b',  # Specific dangerous commands after semicolon
+            r'\|\s*(rm|del|cat|ls|dir|mkdir|rmdir|cp|mv|chmod|chown)\b',  # Pipe to dangerous commands
+            r'`[^`]*`',  # Backticks for command execution
+            r'\$\([^)]*\)',  # Command substitution
+            r'&&\s*(rm|del|cat|ls|dir|mkdir|rmdir|cp|mv|chmod|chown)\b',  # AND command execution with dangerous commands
+            r'\|\|\s*(rm|del|cat|ls|dir|mkdir|rmdir|cp|mv|chmod|chown)\b',  # OR command execution with dangerous commands
+            r'>\s*/(?:etc|bin|usr|var|sys|proc)\b',  # Redirect to system paths
+            r'<\s*/(?:etc|bin|usr|var|sys|proc)\b',  # Input from system paths
+            r'\\\\x[0-9a-f]{2}',  # Hex escape sequences
         ]
         
         # Path traversal patterns

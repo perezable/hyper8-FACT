@@ -56,7 +56,19 @@ from .validation import (
     validate_cache_integrity
 )
 
-from ..core.errors import CacheError
+try:
+    # Try relative imports first (when used as package)
+    from ..core.errors import CacheError
+except ImportError:
+    # Fall back to absolute imports (when run as script)
+    import sys
+    from pathlib import Path
+    # Add src to path if not already there
+    src_path = str(Path(__file__).parent.parent)
+    if src_path not in sys.path:
+        sys.path.insert(0, src_path)
+    
+    from core.errors import CacheError
 
 import asyncio
 import time
@@ -193,7 +205,10 @@ class FACTCacheSystem:
         
         try:
             # Check if content should be cached
-            context = {"query": query}
+            context = {
+                "query": query,
+                "min_tokens": self.config.get("min_tokens", 50)
+            }
             should_cache = self.cache_optimizer.should_cache_content(response, context)
             
             if not should_cache:

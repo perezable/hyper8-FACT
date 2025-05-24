@@ -9,9 +9,23 @@ import time
 from typing import Dict, Any
 import structlog
 
-from ...core.errors import DatabaseError, SecurityError, InvalidSQLError
-from ...db.connection import DatabaseManager
-from ..decorators import Tool
+try:
+    # Try relative imports first (when used as package)
+    from ...core.errors import DatabaseError, SecurityError, InvalidSQLError
+    from ...db.connection import DatabaseManager
+    from ..decorators import Tool
+except ImportError:
+    # Fall back to absolute imports (when run as script)
+    import sys
+    from pathlib import Path
+    # Add src to path if not already there
+    src_path = str(Path(__file__).parent.parent.parent)
+    if src_path not in sys.path:
+        sys.path.insert(0, src_path)
+    
+    from core.errors import DatabaseError, SecurityError, InvalidSQLError
+    from db.connection import DatabaseManager
+    from tools.decorators import Tool
 
 
 logger = structlog.get_logger(__name__)

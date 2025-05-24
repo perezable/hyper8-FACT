@@ -8,13 +8,27 @@ consistency, and performance compliance.
 import time
 import hashlib
 import asyncio
+import os
 from typing import Dict, List, Any, Optional, Tuple, Set
 from dataclasses import dataclass
 from enum import Enum
 import structlog
 
-from .manager import CacheManager, CacheEntry
-from ..core.errors import CacheError
+try:
+    # Try relative imports first (when used as package)
+    from .manager import CacheManager, CacheEntry
+    from ..core.errors import CacheError
+except ImportError:
+    # Fall back to absolute imports (when run as script)
+    import sys
+    from pathlib import Path
+    # Add src to path if not already there
+    src_path = str(Path(__file__).parent.parent)
+    if src_path not in sys.path:
+        sys.path.insert(0, src_path)
+    
+    from cache.manager import CacheManager, CacheEntry
+    from core.errors import CacheError
 
 
 logger = structlog.get_logger(__name__)
@@ -55,18 +69,61 @@ class IntegrityIssue:
 class CacheValidator:
     """Main cache validation engine."""
     
-    def __init__(self, cache_manager: CacheManager):
+    def __init__(self, cache_manager: Optional[CacheManager] = None, config: Optional[Dict[str, Any]] = None):
+        """
+        Initialize cache validator.
+        
+        Args:
+            cache_manager: Optional cache manager instance
+            config: Optional configuration dictionary
+        """
         self.cache_manager = cache_manager
         self.validation_history: List[ValidationResult] = []
+        self.config = config or {}
         
-        # Validation thresholds
+        # If no cache manager provided, create a default one
+        if self.cache_manager is None:
+            try:
+                # Try to load configuration from environment
+                from .config import load_cache_config_from_env, get_default_cache_config
+                try:
+                    env_config = load_cache_config_from_env()
+                    default_config = env_config.to_dict()
+                except Exception:
+                    logger.warning("Failed to load environment config, using defaults")
+                    default_config = get_default_cache_config()
+                
+                from .manager import get_cache_manager
+                self.cache_manager = get_cache_manager(default_config)
+                logger.info("Cache validator initialized with default manager")
+                
+            except Exception as e:
+                logger.warning("Failed to create default cache manager", error=str(e))
+                # Create a minimal mock cache manager for validation
+                self.cache_manager = self._create_mock_cache_manager()
+        
+        # Enhanced validation thresholds with configuration support
         self.thresholds = {
-            "max_corruption_rate": 0.05,  # 5% max corruption
-            "max_expiry_rate": 0.20,      # 20% max expired entries
-            "min_token_efficiency": 50.0,  # tokens per KB
-            "max_entry_age_hours": 24.0,   # 24 hours max age
-            "min_access_frequency": 0.1    # minimum access rate
+            "max_corruption_rate": self.config.get("max_corruption_rate", 0.05),  # 5% max corruption
+            "max_expiry_rate": self.config.get("max_expiry_rate", 0.20),          # 20% max expired entries
+            "min_token_efficiency": self.config.get("min_token_efficiency", 50.0), # tokens per KB
+            "max_entry_age_hours": self.config.get("max_entry_age_hours", 24.0),   # 24 hours max age
+            "min_access_frequency": self.config.get("min_access_frequency", 0.1),  # minimum access rate
+            "max_cache_size_mb": self.config.get("max_cache_size_mb", 100.0),      # 100MB max cache
+            "min_hit_rate": self.config.get("min_hit_rate", 0.60),                 # 60% minimum hit rate
+            "max_avg_latency_ms": self.config.get("max_avg_latency_ms", 100.0),    # 100ms max average latency
         }
+        
+        # Database integration for cache validation
+        self.db_manager = None
+        try:
+            database_path = self.config.get("database_path") or os.getenv("DATABASE_PATH", "data/fact_demo.db")
+            if database_path and os.path.exists(database_path):
+                from ..db.connection import create_database_manager
+                self.db_manager = create_database_manager(database_path)
+                logger.info("Database manager initialized for cache validation")
+        except Exception as e:
+            logger.warning("Failed to initialize database manager for validation", error=str(e))
     
     async def validate_cache(self, level: ValidationLevel = ValidationLevel.STANDARD) -> ValidationResult:
         """
@@ -525,11 +582,198 @@ class CacheValidator:
                             repair_summary["warnings_addressed"] += 1
             
             logger.info("Auto-repair completed", **repair_summary)
-            return repair_summary
+            return freed_space
             
         except Exception as e:
             logger.error("Auto-repair failed", error=str(e))
             raise CacheError(f"Auto-repair failed: {e}")
+    
+    def _create_mock_cache_manager(self) -> 'CacheManager':
+        """Create a minimal mock cache manager for validation when real manager unavailable."""
+        try:
+            from .manager import CacheManager
+            
+            # Create minimal configuration
+            mock_config = {
+                "prefix": "mock_cache",
+                "min_tokens": 500,
+                "max_size": "1MB",
+                "ttl_seconds": 3600,
+                "hit_target_ms": 50,
+                "miss_target_ms": 150
+            }
+            
+            return CacheManager(mock_config)
+            
+        except Exception as e:
+            logger.error("Failed to create mock cache manager", error=str(e))
+            # Return a minimal object with required interface
+            class MockCacheManager:
+                def __init__(self):
+                    self.cache = {}
+                    self.prefix = "mock_cache"
+                    self.ttl_seconds = 3600
+                    self._lock = type('MockLock', (), {'__enter__': lambda self: None, '__exit__': lambda self, *args: None})()
+            
+            return MockCacheManager()
+    
+    async def validate_database_cache_integrity(self) -> Dict[str, Any]:
+        """
+        Validate cache integrity against database tables.
+        
+        Returns:
+            Dictionary with validation results for database cache
+        """
+        if not self.db_manager:
+            return {
+                "database_validation": "skipped",
+                "reason": "Database manager not available"
+            }
+        
+        try:
+            # Get database info
+            db_info = await self.db_manager.get_database_info()
+            
+            # Validate cache entries against database tables
+            validation_results = {
+                "database_tables_checked": len(db_info.get("tables", {})),
+                "cache_database_mismatches": 0,
+                "stale_database_cache_entries": 0,
+                "recommendations": []
+            }
+            
+            # Check for cache entries related to database queries
+            with self.cache_manager._lock:
+                for entry_key, entry in self.cache_manager.cache.items():
+                    # Check if this is a database query cache entry
+                    if any(table in entry.content.lower() for table in ["financial_data", "benchmarks", "companies", "financial_records"]):
+                        # Additional validation for database-related cache entries
+                        age_hours = (time.time() - entry.created_at) / 3600
+                        
+                        # Check if database cache is stale (older than 30 minutes for financial data)
+                        if age_hours > 0.5 and "financial" in entry.content.lower():
+                            validation_results["stale_database_cache_entries"] += 1
+            
+            # Generate recommendations
+            if validation_results["stale_database_cache_entries"] > 0:
+                validation_results["recommendations"].append(
+                    "Consider implementing shorter TTL for financial data cache entries"
+                )
+            
+            logger.info("Database cache validation completed", **validation_results)
+            return validation_results
+            
+        except Exception as e:
+            logger.error("Database cache validation failed", error=str(e))
+            return {
+                "database_validation": "failed",
+                "error": str(e)
+            }
+    
+    async def generate_comprehensive_report(self, validation_level: ValidationLevel = ValidationLevel.COMPREHENSIVE) -> Dict[str, Any]:
+        """
+        Generate comprehensive cache validation report.
+        
+        Args:
+            validation_level: Level of validation to perform
+            
+        Returns:
+            Comprehensive validation report
+        """
+        try:
+            # Perform main cache validation
+            validation_result = await self.validate_cache(validation_level)
+            
+            # Perform database cache validation
+            db_validation = await self.validate_database_cache_integrity()
+            
+            # Get cache performance metrics
+            metrics = self.cache_manager.get_metrics()
+            
+            # Generate comprehensive report
+            report = {
+                "timestamp": time.time(),
+                "validation_level": validation_level.value,
+                "cache_validation": validation_result.__dict__,
+                "database_validation": db_validation,
+                "performance_metrics": metrics.__dict__,
+                "system_health": {
+                    "overall_status": validation_result.overall_health,
+                    "cache_hit_rate": metrics.hit_rate,
+                    "cache_efficiency": metrics.token_efficiency,
+                    "total_entries": metrics.total_entries,
+                    "cache_size_mb": metrics.total_size / (1024 * 1024)
+                },
+                "recommendations": validation_result.recommendations,
+                "validation_history_count": len(self.validation_history)
+            }
+            
+            # Add security assessment
+            security_issues = await self._assess_security_risks()
+            report["security_assessment"] = security_issues
+            
+            logger.info("Comprehensive validation report generated",
+                       overall_status=report["system_health"]["overall_status"],
+                       total_issues=len(validation_result.issues_found),
+                       security_issues=len(security_issues.get("issues", [])))
+            
+            return report
+            
+        except Exception as e:
+            logger.error("Failed to generate comprehensive report", error=str(e))
+            raise CacheError(f"Failed to generate comprehensive report: {e}")
+    
+    async def _assess_security_risks(self) -> Dict[str, Any]:
+        """Assess security risks in cache content."""
+        try:
+            from .config import load_security_config_from_env
+            security_config = load_security_config_from_env()
+            
+            security_issues = {
+                "total_entries_scanned": 0,
+                "sensitive_data_detected": 0,
+                "issues": [],
+                "risk_level": "low"
+            }
+            
+            with self.cache_manager._lock:
+                for entry_key, entry in self.cache_manager.cache.items():
+                    security_issues["total_entries_scanned"] += 1
+                    
+                    # Skip large content to avoid performance issues
+                    if len(entry.content) > security_config.max_content_length:
+                        continue
+                    
+                    # Check for sensitive data patterns
+                    for pattern in security_config.sensitive_data_patterns:
+                        import re
+                        if re.search(pattern, entry.content, re.IGNORECASE):
+                            security_issues["sensitive_data_detected"] += 1
+                            security_issues["issues"].append({
+                                "entry_key": entry_key[:16] + "...",
+                                "issue_type": "sensitive_data",
+                                "pattern_matched": pattern,
+                                "severity": "high"
+                            })
+                            break
+            
+            # Determine risk level
+            if security_issues["sensitive_data_detected"] > 0:
+                security_issues["risk_level"] = "high"
+            elif security_issues["total_entries_scanned"] > 1000:
+                security_issues["risk_level"] = "medium"
+            
+            return security_issues
+            
+        except Exception as e:
+            logger.error("Security assessment failed", error=str(e))
+            return {
+                "total_entries_scanned": 0,
+                "sensitive_data_detected": 0,
+                "issues": [],
+                "risk_level": "unknown",
+                "error": str(e)
+            }
 
 
 # Global validator instance

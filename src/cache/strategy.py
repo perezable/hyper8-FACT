@@ -12,8 +12,21 @@ from dataclasses import dataclass
 from enum import Enum
 import structlog
 
-from .manager import CacheManager, CacheEntry, CacheMetrics
-from ..core.errors import CacheError
+try:
+    # Try relative imports first (when used as package)
+    from .manager import CacheManager, CacheEntry, CacheMetrics
+    from ..core.errors import CacheError
+except ImportError:
+    # Fall back to absolute imports (when run as script)
+    import sys
+    from pathlib import Path
+    # Add src to path if not already there
+    src_path = str(Path(__file__).parent.parent)
+    if src_path not in sys.path:
+        sys.path.insert(0, src_path)
+    
+    from cache.manager import CacheManager, CacheEntry, CacheMetrics
+    from core.errors import CacheError
 
 
 logger = structlog.get_logger(__name__)
@@ -82,7 +95,8 @@ class LRUStrategy:
     def should_cache(self, content: str, context: Dict[str, Any]) -> bool:
         """Cache everything that meets minimum requirements."""
         token_count = CacheEntry._count_tokens(content)
-        return token_count >= 500
+        min_tokens = context.get('min_tokens', 50)  # Use context minimum or 50 as fallback
+        return token_count >= min_tokens
     
     def get_priority_score(self, entry: CacheEntry, context: Dict[str, Any]) -> float:
         """Higher score for more recently accessed entries."""
@@ -118,7 +132,8 @@ class LFUStrategy:
     def should_cache(self, content: str, context: Dict[str, Any]) -> bool:
         """Cache content with high reuse potential."""
         token_count = CacheEntry._count_tokens(content)
-        if token_count < 500:
+        min_tokens = context.get('min_tokens', 50)  # Use context minimum or 50 as fallback
+        if token_count < min_tokens:
             return False
         
         # Check if this is a common query pattern
@@ -135,7 +150,7 @@ class LFUStrategy:
 class TokenOptimizedStrategy:
     """Strategy optimized for token efficiency and cost reduction."""
     
-    def __init__(self, target_efficiency: float = 100.0):
+    def __init__(self, target_efficiency: float = 10.0):
         self.target_efficiency = target_efficiency  # tokens per KB
         self.name = "TokenOptimized"
     
@@ -168,11 +183,14 @@ class TokenOptimizedStrategy:
     def should_cache(self, content: str, context: Dict[str, Any]) -> bool:
         """Cache content with high token efficiency."""
         token_count = CacheEntry._count_tokens(content)
-        if token_count < 500:
+        min_tokens = context.get('min_tokens', 50)
+        
+        if token_count < min_tokens:
             return False
         
+        # Calculate token efficiency
         content_size_kb = len(content.encode('utf-8')) / 1024
-        efficiency = token_count / content_size_kb
+        efficiency = token_count / content_size_kb if content_size_kb > 0 else 0
         
         return efficiency >= self.target_efficiency
     
@@ -365,11 +383,13 @@ class CacheOptimizer:
             True if content should be cached
         """
         try:
-            return self.strategy_impl.should_cache(content, context)
+            result = self.strategy_impl.should_cache(content, context)
+            return result
         except Exception as e:
             logger.warning("Cache strategy evaluation failed", error=str(e))
             # Default: cache if meets minimum requirements
-            return CacheEntry._count_tokens(content) >= 500
+            min_tokens = context.get('min_tokens', 50)
+            return CacheEntry._count_tokens(content) >= min_tokens
     
     def get_cache_priority(self, entry: CacheEntry, context: Dict[str, Any]) -> float:
         """

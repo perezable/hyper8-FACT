@@ -135,6 +135,38 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+# FACT System Specific Environment Files
+.env.local
+.env.development
+.env.staging
+.env.production
+.env.test
+
+# FACT Database files
+*.db
+*.sqlite
+*.sqlite3
+data/*.db
+data/*.sqlite*
+
+# FACT Cache files
+cache/
+.cache/
+*.cache
+
+# FACT Log files
+logs/*.log
+fact_*.log
+
+# FACT Output files
+output/*.json
+output/*.csv
+output/*.txt
+benchmarks/results/
+
+# FACT Configuration backups
+*.env.backup
+config/*.backup
 
 # Spyder project settings
 .spyderproject

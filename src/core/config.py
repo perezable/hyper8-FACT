@@ -55,10 +55,10 @@ class Config:
             
     def _validate_required_keys(self) -> None:
         """
-        Validate that all required configuration keys are present.
+        Validate that all required configuration keys are present and valid.
         
         Raises:
-            ConfigurationError: If any required keys are missing
+            ConfigurationError: If any required keys are missing or invalid
         """
         required_keys = [
             "ANTHROPIC_API_KEY",
@@ -66,16 +66,41 @@ class Config:
         ]
         
         missing_keys = []
+        invalid_keys = []
+        
         for key in required_keys:
-            if not os.getenv(key):
+            value = os.getenv(key)
+            if not value:
                 missing_keys.append(key)
+            elif not value.strip():
+                missing_keys.append(key)  # Treat whitespace-only as missing
+            elif self._is_placeholder_key(value.strip()):
+                invalid_keys.append(key)
                 
         if missing_keys:
             raise ConfigurationError(
                 f"Missing required configuration keys: {', '.join(missing_keys)}"
             )
             
+        if invalid_keys:
+            raise ConfigurationError(
+                f"Invalid placeholder values for keys: {', '.join(invalid_keys)}. Please set real API keys."
+            )
+            
         logger.info("Configuration validation passed")
+    
+    def _is_placeholder_key(self, value: str) -> bool:
+        """Check if a configuration value is a placeholder."""
+        placeholder_patterns = [
+            "your_anthropic_api_key_here",
+            "your_arcade_api_key_here",
+            "your_api_key_here",
+            "placeholder",
+            "changeme",
+            "todo",
+            "fix_me"
+        ]
+        return any(pattern in value.lower() for pattern in placeholder_patterns)
         
     @property
     def anthropic_api_key(self) -> str:
@@ -101,6 +126,18 @@ class Config:
     def cache_prefix(self) -> str:
         """Get cache prefix for Claude caching."""
         return os.getenv("CACHE_PREFIX", "fact_v1")
+    
+    @property
+    def cache_config(self) -> Dict[str, Any]:
+        """Get cache configuration dictionary."""
+        return {
+            "prefix": self.cache_prefix,
+            "min_tokens": int(os.getenv("CACHE_MIN_TOKENS", "50")),
+            "max_size": os.getenv("CACHE_MAX_SIZE", "10MB"),
+            "ttl_seconds": int(os.getenv("CACHE_TTL_SECONDS", "3600")),
+            "hit_target_ms": float(os.getenv("CACHE_HIT_TARGET_MS", "30")),
+            "miss_target_ms": float(os.getenv("CACHE_MISS_TARGET_MS", "120"))
+        }
         
     @property
     def system_prompt(self) -> str:
@@ -113,8 +150,7 @@ class Config:
     @property
     def claude_model(self) -> str:
         """Get Claude model name."""
-        return os.getenv("CLAUDE_MODEL", "claude-3-5-sonnet-20241022")
-        
+        return os.getenv("CLAUDE_MODEL", "claude-3-haiku-20240307")
     @property
     def max_retries(self) -> int:
         """Get maximum retry attempts for failed operations."""

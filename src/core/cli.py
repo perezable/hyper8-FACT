@@ -8,6 +8,7 @@ providing user interaction and command processing.
 import asyncio
 import sys
 import argparse
+import logging
 from typing import Optional
 import structlog
 
@@ -316,7 +317,7 @@ async def main() -> None:
     # Configure logging
     structlog.configure(
         wrapper_class=structlog.make_filtering_bound_logger(
-            getattr(structlog.stdlib, args.log_level.upper())
+            getattr(logging, args.log_level.upper())
         ),
         logger_factory=structlog.stdlib.LoggerFactory(),
         processors=[

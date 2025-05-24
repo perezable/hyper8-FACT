@@ -1,0 +1,29 @@
+{
+  "chart_type": "histogram",
+  "title": "Response Time Distribution: Cache Hits vs Misses",
+  "x_label": "Response Time (ms)",
+  "y_label": "Frequency",
+  "data_series": [
+    {
+      "name": "Cache Hits",
+      "data": [],
+      "color": "#32CD32",
+      "type": "histogram"
+    },
+    {
+      "name": "Cache Misses",
+      "data": [
+        0.0
+      ],
+      "color": "#FF6347",
+      "type": "histogram"
+    }
+  ],
+  "metadata": {
+    "hit_avg": 0,
+    "miss_avg": 0.0,
+    "hit_count": 0,
+    "miss_count": 1,
+    "cache_hit_rate": 0.0
+  }
+}
