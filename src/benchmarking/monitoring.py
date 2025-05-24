@@ -16,10 +16,10 @@ import structlog
 
 try:
     # Try relative imports first (when used as package)
-    from .framework import BenchmarkFramework, BenchmarkResult
-    from .profiler import SystemProfiler, BottleneckAnalyzer
-    from ..cache.manager import CacheManager
-    from ..cache.metrics import get_metrics_collector
+    from framework import BenchmarkFramework, BenchmarkResult
+    from profiler import SystemProfiler, BottleneckAnalyzer
+    from cache.manager import CacheManager
+    from cache.metrics import get_metrics_collector
 except ImportError:
     # Fall back to absolute imports (when run as script)
     import sys

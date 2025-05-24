@@ -15,9 +15,9 @@ import structlog
 
 try:
     # Try relative imports first (when used as package)
-    from ..cache.manager import CacheManager
-    from ..core.driver import process_user_query
-    from ..monitoring.metrics import get_metrics_collector
+    from cache.manager import CacheManager
+    from core.driver import process_user_query
+    from monitoring.metrics import get_metrics_collector
 except ImportError:
     # Fall back to absolute imports (when run as script)
     import sys

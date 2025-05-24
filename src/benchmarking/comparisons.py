@@ -15,8 +15,8 @@ import structlog
 
 try:
     # Try relative imports first (when used as package)
-    from .framework import BenchmarkResult, BenchmarkSummary, BenchmarkFramework
-    from ..cache.manager import CacheManager
+    from framework import BenchmarkResult, BenchmarkSummary, BenchmarkFramework
+    from cache.manager import CacheManager
 except ImportError:
     # Fall back to absolute imports (when run as script)
     import sys

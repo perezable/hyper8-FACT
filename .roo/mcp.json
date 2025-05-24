@@ -23,7 +23,21 @@
       ]
     },
     "perplexityai": {
-      "url": "https://mcp.composio.dev/composio/server/639cb323-8245-493a-a808-7fdf217cc865"
+      "url": "https://mcp.composio.dev/composio/server/639cb323-8245-493a-a808-7fdf217cc865",
+      "alwaysAllow": [
+        "PERPLEXITYAI_PERPLEXITY_AI_SEARCH"
+      ]
+    },
+    "Context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "alwaysAllow": [
+        "get-library-docs",
+        "resolve-library-id"
+      ]
     }
   }
 }
