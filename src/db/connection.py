@@ -9,6 +9,7 @@ import aiosqlite
 import sqlite3
 import os
 import time
+import asyncio
 from typing import Dict, List, Any, Optional, Tuple
 from contextlib import asynccontextmanager
 import structlog
@@ -45,6 +46,79 @@ except ImportError:
 logger = structlog.get_logger(__name__)
 
 
+class AsyncConnectionPool:
+    """
+    Async connection pool for SQLite database connections.
+    
+    Provides connection reuse and management to reduce connection overhead.
+    """
+    
+    def __init__(self, database_path: str, pool_size: int = 10):
+        """
+        Initialize connection pool.
+        
+        Args:
+            database_path: Path to SQLite database
+            pool_size: Maximum number of connections in pool
+        """
+        self.database_path = database_path
+        self.pool_size = pool_size
+        self.pool: asyncio.Queue = asyncio.Queue(maxsize=pool_size)
+        self.created_connections = 0
+        self._lock = asyncio.Lock()
+        
+    async def get_connection(self) -> aiosqlite.Connection:
+        """Get a connection from the pool or create a new one."""
+        try:
+            # Try to get existing connection
+            conn = self.pool.get_nowait()
+            logger.debug("Reused pooled connection")
+            return conn
+        except asyncio.QueueEmpty:
+            # Create new connection if pool is empty and we haven't hit limit
+            async with self._lock:
+                if self.created_connections < self.pool_size:
+                    conn = await aiosqlite.connect(self.database_path)
+                    self.created_connections += 1
+                    logger.debug("Created new pooled connection",
+                               total_connections=self.created_connections)
+                    return conn
+                else:
+                    # Wait for a connection to become available
+                    conn = await self.pool.get()
+                    logger.debug("Retrieved connection from pool after wait")
+                    return conn
+    
+    async def return_connection(self, conn: aiosqlite.Connection):
+        """Return a connection to the pool."""
+        try:
+            self.pool.put_nowait(conn)
+            logger.debug("Returned connection to pool")
+        except asyncio.QueueFull:
+            # Pool is full, close the connection
+            await conn.close()
+            async with self._lock:
+                self.created_connections -= 1
+            logger.debug("Closed excess connection",
+                        total_connections=self.created_connections)
+    
+    async def close_all(self):
+        """Close all connections in the pool."""
+        connections_closed = 0
+        while not self.pool.empty():
+            try:
+                conn = self.pool.get_nowait()
+                await conn.close()
+                connections_closed += 1
+            except asyncio.QueueEmpty:
+                break
+        
+        async with self._lock:
+            self.created_connections = 0
+        
+        logger.info("Closed all pooled connections", connections_closed=connections_closed)
+
+
 class DatabaseManager:
     """
     Manages SQLite database connections and operations for the FACT system.
@@ -53,15 +127,20 @@ class DatabaseManager:
     connection pooling, and performance monitoring.
     """
     
-    def __init__(self, database_path: str):
+    def __init__(self, database_path: str, pool_size: int = 10):
         """
-        Initialize database manager.
+        Initialize database manager with connection pooling.
         
         Args:
             database_path: Path to SQLite database file
+            pool_size: Maximum number of connections in pool
         """
         self.database_path = database_path
+        self.pool_size = pool_size
+        self.connection_pool = AsyncConnectionPool(database_path, pool_size)
         self._ensure_directory_exists()
+        self._query_plan_cache = {}  # Cache for validated queries
+        self._cache_max_size = 1000
         
     def _ensure_directory_exists(self) -> None:
         """Ensure the database directory exists."""
@@ -99,25 +178,23 @@ class DatabaseManager:
                 await cursor.close()
                 
                 if company_count == 0:
-                    # Insert sample companies
-                    for company in SAMPLE_COMPANIES:
-                        await db.execute("""
-                            INSERT INTO companies (name, symbol, sector, founded_year, employees, market_cap)
-                            VALUES (:name, :symbol, :sector, :founded_year, :employees, :market_cap)
-                        """, company)
+                    # Batch insert sample companies for better performance
+                    await db.executemany("""
+                        INSERT INTO companies (name, symbol, sector, founded_year, employees, market_cap)
+                        VALUES (:name, :symbol, :sector, :founded_year, :employees, :market_cap)
+                    """, SAMPLE_COMPANIES)
                     
-                    # Insert sample financial records
-                    for record in SAMPLE_FINANCIAL_RECORDS:
-                        await db.execute("""
-                            INSERT INTO financial_records (company_id, quarter, year, revenue, profit, expenses)
-                            VALUES (:company_id, :quarter, :year, :revenue, :profit, :expenses)
-                        """, record)
-                        
-                        # Also insert into financial_data table for validation compatibility
-                        await db.execute("""
-                            INSERT INTO financial_data (company_id, quarter, year, revenue, profit, expenses)
-                            VALUES (:company_id, :quarter, :year, :revenue, :profit, :expenses)
-                        """, record)
+                    # Batch insert sample financial records
+                    await db.executemany("""
+                        INSERT INTO financial_records (company_id, quarter, year, revenue, profit, expenses)
+                        VALUES (:company_id, :quarter, :year, :revenue, :profit, :expenses)
+                    """, SAMPLE_FINANCIAL_RECORDS)
+                    
+                    # Batch insert into financial_data table for validation compatibility
+                    await db.executemany("""
+                        INSERT INTO financial_data (company_id, quarter, year, revenue, profit, expenses)
+                        VALUES (:company_id, :quarter, :year, :revenue, :profit, :expenses)
+                    """, SAMPLE_FINANCIAL_RECORDS)
                     
                     # Insert sample benchmark data
                     sample_benchmarks = [
@@ -214,7 +291,7 @@ class DatabaseManager:
             raise DatabaseError(f"Failed to initialize database: {e}")
     def validate_sql_query(self, statement: str) -> None:
         """
-        Validate SQL query for security and syntax.
+        Validate SQL query for security and syntax with caching.
         
         Args:
             statement: SQL statement to validate
@@ -223,6 +300,15 @@ class DatabaseManager:
             SecurityError: If statement contains dangerous operations
             InvalidSQLError: If statement has syntax errors
         """
+        # Generate cache key for query validation
+        import hashlib
+        query_hash = hashlib.md5(statement.encode()).hexdigest()
+        
+        # Check cache first
+        if query_hash in self._query_plan_cache:
+            logger.debug("Query validation cache hit", statement=statement[:100])
+            return
+        
         normalized_statement = statement.lower().strip()
         
         # Security check: only allow SELECT statements
@@ -276,7 +362,15 @@ class DatabaseManager:
         except sqlite3.Error as e:
             raise InvalidSQLError(f"SQL syntax error: {e}")
         
-        logger.debug("SQL query validation passed", statement=statement[:100])
+        # Cache successful validation
+        if len(self._query_plan_cache) >= self._cache_max_size:
+            # Simple eviction: remove oldest entries
+            oldest_keys = list(self._query_plan_cache.keys())[:100]
+            for key in oldest_keys:
+                del self._query_plan_cache[key]
+        
+        self._query_plan_cache[query_hash] = time.time()
+        logger.debug("SQL query validation passed and cached", statement=statement[:100])
     
     def _is_valid_table_name(self, table_name: str) -> bool:
         """
@@ -312,7 +406,7 @@ class DatabaseManager:
     
     async def execute_query(self, statement: str) -> QueryResult:
         """
-        Execute a validated SQL query and return structured results.
+        Execute a validated SQL query using connection pool.
         
         Args:
             statement: SQL SELECT statement to execute
@@ -325,13 +419,16 @@ class DatabaseManager:
             SecurityError: If statement violates security rules
             InvalidSQLError: If statement has syntax errors
         """
-        # Validate query first
+        # Validate query first (with caching)
         self.validate_sql_query(statement)
         
         start_time = time.time()
         
         try:
-            async with aiosqlite.connect(self.database_path) as db:
+            # Get connection from pool
+            db = await self.connection_pool.get_connection()
+            
+            try:
                 # Enable row factory for dictionary-like access
                 db.row_factory = aiosqlite.Row
                 
@@ -369,6 +466,10 @@ class DatabaseManager:
                            execution_time_ms=execution_time_ms)
                 
                 return result
+                
+            finally:
+                # Always return connection to pool
+                await self.connection_pool.return_connection(db)
                 
         except Exception as e:
             end_time = time.time()
@@ -426,6 +527,16 @@ class DatabaseManager:
             logger.error("Failed to get database info", error=str(e))
             raise DatabaseError(f"Failed to get database info: {e}")
     
+    async def cleanup(self):
+        """
+        Cleanup database resources including connection pool.
+        """
+        try:
+            await self.connection_pool.close_all()
+            logger.info("Database manager cleanup completed")
+        except Exception as e:
+            logger.error("Database cleanup failed", error=str(e))
+    
     @asynccontextmanager
     async def get_connection(self):
         """
@@ -434,12 +545,15 @@ class DatabaseManager:
         Yields:
             aiosqlite.Connection: Database connection
         """
-        async with aiosqlite.connect(self.database_path) as conn:
-            try:
-                yield conn
-            except Exception as e:
-                logger.error("Database connection error", error=str(e))
-                raise DatabaseError(f"Database connection error: {e}")
+        # Use connection pool instead of creating new connections
+        conn = await self.connection_pool.get_connection()
+        try:
+            yield conn
+        except Exception as e:
+            logger.error("Database connection error", error=str(e))
+            raise DatabaseError(f"Database connection error: {e}")
+        finally:
+            await self.connection_pool.return_connection(conn)
 
 
 def create_database_manager(database_path: str) -> DatabaseManager:

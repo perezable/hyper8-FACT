@@ -47,7 +47,7 @@ class TestCacheEntry:
         
         # Act & Assert
         for content, expected_tokens in test_cases:
-            entry = CacheEntry(prefix="test", content=content)
+            entry = CacheEntry(prefix="test", content=content, skip_min_tokens=True, skip_content_validation=True)
             # Allow for reasonable token counting variations
             assert abs(entry.token_count - expected_tokens) <= expected_tokens * 0.1
     
@@ -80,7 +80,7 @@ class TestCacheEntry:
     def test_cache_entry_serialization_to_dict(self):
         """TEST: Cache entry serialization to dictionary format"""
         # Arrange
-        entry = CacheEntry(prefix="test", content="Test content " * 100)
+        entry = CacheEntry(prefix="test", content="Test content " * 100, skip_min_tokens=True)
         entry.record_access()
         
         # Act

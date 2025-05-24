@@ -50,7 +50,8 @@ class CacheEntry:
     def __init__(self, prefix: str, content: str, token_count: Optional[int] = None,
                  created_at: Optional[float] = None, version: str = "1.0",
                  is_valid: bool = True, access_count: int = 0,
-                 last_accessed: Optional[float] = None, validate: bool = True):
+                 last_accessed: Optional[float] = None, validate: bool = True,
+                 skip_min_tokens: bool = False, skip_content_validation: bool = False):
         """Initialize cache entry with optional automatic token counting."""
         self.prefix = prefix
         self.content = content
@@ -60,29 +61,34 @@ class CacheEntry:
         self.is_valid = is_valid
         self.access_count = access_count
         self.last_accessed = last_accessed
+        self._skip_min_tokens = skip_min_tokens
+        self._skip_content_validation = skip_content_validation
         
         # Validate after initialization if requested
         if validate:
             self._validate()
-    
     def _validate(self):
         """Validate cache entry after initialization."""
-        # Only validate non-empty content and prefix
+        # Always validate prefix
         if not self.prefix:
             raise CacheError(
                 "Cache entry must have non-empty prefix",
                 error_code="CACHE_EMPTY_PREFIX"
             )
         
-        # Check if we're in a test environment
-        import sys
-        in_test = 'pytest' in sys.modules or 'test' in sys.argv[0] if sys.argv else False
-        
-        # In production, require non-empty content
-        if not in_test and not self.content:
+        # Validate content is not empty (skip if requested for testing)
+        if not getattr(self, '_skip_content_validation', False) and not self.content:
             raise CacheError(
                 "Cache entry must have non-empty content",
                 error_code="CACHE_EMPTY_CONTENT"
+            )
+        
+        # Validate minimum token count (critical for caching efficiency)
+        # Skip validation if explicitly requested (for testing purposes)
+        if not getattr(self, '_skip_min_tokens', False) and self.token_count < 500:
+            raise CacheError(
+                f"Cache entry must have minimum 500 tokens, got {self.token_count}",
+                error_code="CACHE_MIN_TOKENS"
             )
     
     @classmethod
@@ -93,21 +99,25 @@ class CacheEntry:
     @staticmethod
     def _count_tokens(text: str) -> int:
         """
-        Estimate token count for cache content.
+        Fast token count estimation using character-based approach.
         
-        Uses word-based counting to match test expectations.
+        Optimized for performance while maintaining accuracy.
         """
         if not text:
             return 0
         
-        # Use word count for more predictable results in tests
-        word_count = len(text.split())
+        # Fast character-based estimation (4.2 chars per token average)
+        char_count = len(text)
+        if char_count <= 20:  # Very short text
+            return max(1, char_count // 3)
         
-        # For single character repeated patterns, use character count
-        if len(set(text.replace(' ', ''))) == 1:  # Single repeated character
-            return len(text.replace(' ', ''))
+        # For longer text, use more accurate estimation
+        # Check for repeated character patterns first (faster than set operations)
+        if char_count > 0 and text.count(text[0]) == char_count:
+            return char_count  # All same character
         
-        return word_count
+        # Standard estimation: ~4.2 characters per token
+        return max(1, int(char_count / 4.2))
     
     def record_access(self) -> None:
         """Record an access to this cache entry."""
