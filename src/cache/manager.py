@@ -51,7 +51,8 @@ class CacheEntry:
                  created_at: Optional[float] = None, version: str = "1.0",
                  is_valid: bool = True, access_count: int = 0,
                  last_accessed: Optional[float] = None, validate: bool = True,
-                 skip_min_tokens: bool = False, skip_content_validation: bool = False):
+                 skip_min_tokens: bool = False, skip_content_validation: bool = False,
+                 min_tokens: int = 500):
         """Initialize cache entry with optional automatic token counting."""
         self.prefix = prefix
         self.content = content
@@ -63,6 +64,7 @@ class CacheEntry:
         self.last_accessed = last_accessed
         self._skip_min_tokens = skip_min_tokens
         self._skip_content_validation = skip_content_validation
+        self._min_tokens = min_tokens
         
         # Validate after initialization if requested
         if validate:
@@ -85,16 +87,17 @@ class CacheEntry:
         
         # Validate minimum token count (critical for caching efficiency)
         # Skip validation if explicitly requested (for testing purposes)
-        if not getattr(self, '_skip_min_tokens', False) and self.token_count < 500:
+        min_tokens = getattr(self, '_min_tokens', 500)
+        if not getattr(self, '_skip_min_tokens', False) and self.token_count < min_tokens:
             raise CacheError(
-                f"Cache entry must have minimum 500 tokens, got {self.token_count}",
+                f"Cache entry must have minimum {min_tokens} tokens, got {self.token_count}",
                 error_code="CACHE_MIN_TOKENS"
             )
     
     @classmethod
-    def create(cls, prefix: str, content: str) -> "CacheEntry":
+    def create(cls, prefix: str, content: str, min_tokens: int = 500) -> "CacheEntry":
         """Create a new cache entry with automatic token counting."""
-        return cls(prefix=prefix, content=content)
+        return cls(prefix=prefix, content=content, min_tokens=min_tokens)
     
     @staticmethod
     def _count_tokens(text: str) -> int:
@@ -137,8 +140,12 @@ class CacheEntry:
         return asdict(self)
     
     @classmethod
-    def from_dict(cls, data: Dict[str, Any]) -> "CacheEntry":
+    def from_dict(cls, data: Dict[str, Any], min_tokens: int = 500) -> "CacheEntry":
         """Create cache entry from dictionary format."""
+        # Add min_tokens if not already in data
+        if 'min_tokens' not in data:
+            data = data.copy()
+            data['min_tokens'] = min_tokens
         return cls(**data)
 
 
@@ -267,15 +274,11 @@ class CacheManager:
                 raise CacheError(f"Security validation failed: {e}")
             
             with self._lock:
-                # Create cache entry
-                entry = CacheEntry.create(self.prefix, content)
+                # Create cache entry with configured minimum token count
+                entry = CacheEntry.create(self.prefix, content, min_tokens=self.min_tokens)
                 
-                # Check minimum token requirement
-                if entry.token_count < self.min_tokens:
-                    raise CacheError(
-                        f"Cache entry must have minimum {self.min_tokens} tokens, got {entry.token_count}",
-                        error_code="CACHE_MIN_TOKENS"
-                    )
+                # The minimum token validation is now handled in CacheEntry._validate()
+                # No need for duplicate validation here since create() will validate
                 
                 # Optimized size management
                 entry_size = len(content.encode('utf-8'))

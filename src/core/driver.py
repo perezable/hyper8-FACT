@@ -18,7 +18,7 @@ from .config import Config, get_config, validate_configuration
 from .errors import (
     FACTError, ConfigurationError, ConnectionError, ToolExecutionError,
     classify_error, create_user_friendly_message, log_error_with_context,
-    provide_graceful_degradation
+    provide_graceful_degradation, CacheError
 )
 try:
     # Try relative imports first (when used as package)
@@ -27,6 +27,7 @@ try:
     from ..tools.connectors.sql import initialize_sql_tool
     from ..monitoring.metrics import get_metrics_collector
     from ..cache import initialize_cache_system, get_cache_system, FACTCacheSystem
+    from ..cache.resilience import ResilientCacheWrapper, CacheCircuitBreaker
 except ImportError:
     # Fall back to absolute imports (when run as script)
     import sys
@@ -41,6 +42,7 @@ except ImportError:
     from tools.connectors.sql import initialize_sql_tool
     from monitoring.metrics import get_metrics_collector
     from cache import initialize_cache_system, get_cache_system, FACTCacheSystem
+    from cache.resilience import ResilientCacheWrapper, CacheCircuitBreaker
 
 
 logger = structlog.get_logger(__name__)
@@ -67,6 +69,11 @@ class FACTDriver:
         
         # Monitoring and metrics
         self.metrics_collector = get_metrics_collector()
+        
+        # Cache resilience components
+        self.cache_circuit_breaker: Optional[CacheCircuitBreaker] = None
+        self.resilient_cache: Optional[ResilientCacheWrapper] = None
+        self._cache_degraded = False
         
     async def initialize(self) -> None:
         """
@@ -127,10 +134,33 @@ class FACTDriver:
         try:
             logger.info("Processing user query", query_id=query_id, query=user_input[:100])
             
-            # Step 1: Check cache first (cache-first pattern)
+            # Step 1: Check cache first (cache-first pattern) with resilience
             cached_response = None
-            if self.cache_system:
-                cached_response = await self.cache_system.get_cached_response(user_input)
+            if not self._cache_degraded:
+                try:
+                    if self.resilient_cache:
+                        # Use resilient cache with circuit breaker
+                        query_hash = self.resilient_cache.generate_hash(user_input)
+                        cache_entry = await self.resilient_cache.get(query_hash)
+                        if cache_entry:
+                            cached_response = cache_entry.content
+                    elif self.cache_system:
+                        # Fallback to direct cache system
+                        cached_response = await self.cache_system.get_cached_response(user_input)
+                        
+                except CacheError as e:
+                    if "CIRCUIT_BREAKER" in str(e.error_code):
+                        logger.info("Cache circuit breaker active - proceeding without cache",
+                                   query_id=query_id,
+                                   circuit_state=self.cache_circuit_breaker.get_state().value if self.cache_circuit_breaker else "unknown")
+                    else:
+                        logger.warning("Cache operation failed - continuing without cache",
+                                     query_id=query_id,
+                                     error=str(e))
+                except Exception as e:
+                    logger.warning("Unexpected cache error - continuing without cache",
+                                 query_id=query_id,
+                                 error=str(e))
             
             if cached_response:
                 # Cache hit - return cached response
@@ -187,13 +217,36 @@ class FACTDriver:
             else:
                 response_text = str(response)
             
-            # Step 3: Store response in cache for future use
-            if self.cache_system and response_text:
-                cache_stored = await self.cache_system.store_response(user_input, response_text)
-                if cache_stored:
-                    logger.debug("Response stored in cache", query_id=query_id)
-                else:
-                    logger.debug("Response not suitable for caching", query_id=query_id)
+            # Step 3: Store response in cache for future use with resilience
+            if not self._cache_degraded and response_text:
+                try:
+                    if self.resilient_cache:
+                        # Use resilient cache with circuit breaker
+                        query_hash = self.resilient_cache.generate_hash(user_input)
+                        cache_entry = await self.resilient_cache.store(query_hash, response_text)
+                        if cache_entry:
+                            logger.debug("Response stored in cache", query_id=query_id)
+                        else:
+                            logger.debug("Response not suitable for caching", query_id=query_id)
+                    elif self.cache_system:
+                        # Fallback to direct cache system
+                        cache_stored = await self.cache_system.store_response(user_input, response_text)
+                        if cache_stored:
+                            logger.debug("Response stored in cache", query_id=query_id)
+                        else:
+                            logger.debug("Response not suitable for caching", query_id=query_id)
+                            
+                except CacheError as e:
+                    if "CIRCUIT_BREAKER" in str(e.error_code):
+                        logger.debug("Cache storage skipped - circuit breaker active", query_id=query_id)
+                    else:
+                        logger.warning("Cache storage failed - continuing without cache storage",
+                                     query_id=query_id,
+                                     error=str(e))
+                except Exception as e:
+                    logger.warning("Unexpected cache storage error",
+                                 query_id=query_id,
+                                 error=str(e))
             
             # Log performance metrics
             end_time = time.time()
@@ -246,20 +299,50 @@ class FACTDriver:
             raise ConfigurationError(f"Database initialization failed: {e}")
     
     async def _initialize_cache(self) -> None:
-        """Initialize cache system with configuration."""
+        """Initialize cache system with resilience and circuit breaker protection."""
         try:
             cache_config = self.config.cache_config
+            
+            # Initialize base cache system
             self.cache_system = await initialize_cache_system(
                 config=cache_config,
                 enable_background_tasks=True
             )
-            logger.info("Cache system initialized successfully",
+            
+            # Initialize circuit breaker for cache resilience
+            from ..cache.resilience import CircuitBreakerConfig
+            
+            circuit_config = CircuitBreakerConfig(
+                failure_threshold=5,  # Open after 5 failures
+                success_threshold=3,  # Close after 3 successes
+                timeout_seconds=60.0,  # Wait 60s before retry
+                rolling_window_seconds=300.0,  # 5-minute window
+                gradual_recovery=True,
+                recovery_factor=0.5  # 50% of requests during recovery
+            )
+            
+            self.cache_circuit_breaker = CacheCircuitBreaker(circuit_config)
+            
+            # Wrap cache system with resilient wrapper
+            if hasattr(self.cache_system, 'cache_manager'):
+                self.resilient_cache = ResilientCacheWrapper(
+                    self.cache_system.cache_manager,
+                    self.cache_circuit_breaker
+                )
+                
+                # Start health monitoring
+                await self.resilient_cache.start_monitoring()
+            
+            logger.info("Cache system with resilience initialized successfully",
                        prefix=cache_config["prefix"],
-                       max_size=cache_config["max_size"])
+                       max_size=cache_config["max_size"],
+                       circuit_breaker_enabled=True)
             
         except Exception as e:
             logger.error("Cache system initialization failed", error=str(e))
-            raise ConfigurationError(f"Cache system initialization failed: {e}")
+            # Enable graceful degradation - continue without cache
+            self._cache_degraded = True
+            logger.warning("Continuing with cache degradation mode")
     
     async def _initialize_tools(self) -> None:
         """Initialize and register system tools."""
@@ -277,6 +360,11 @@ class FACTDriver:
     
     async def _test_connections(self) -> None:
         """Test connections to external services."""
+        # Skip API validation if configured for testing
+        if os.getenv("SKIP_API_VALIDATION", "false").lower() == "true":
+            logger.info("Skipping API validation for testing environment")
+            return
+            
         try:
             # Test database connection
             if self.database_manager:
@@ -428,32 +516,60 @@ class FACTDriver:
         # Use the unified metrics collector for system metrics
         sys_metrics = self.metrics_collector.get_system_metrics()
         
-        # Get cache metrics if cache system is available
+        # Get cache metrics including circuit breaker metrics
         cache_metrics = {}
-        if self.cache_system:
+        if not self._cache_degraded:
             try:
-                # Get basic cache metrics directly
-                basic_cache_metrics = self.cache_system.cache_manager.get_metrics()
-                cache_metrics = {
-                    "cache_hit_rate": basic_cache_metrics.hit_rate,
-                    "cache_hits": basic_cache_metrics.cache_hits,
-                    "cache_misses": basic_cache_metrics.cache_misses,
-                    "cache_total_entries": basic_cache_metrics.total_entries,
-                    "cache_total_size": basic_cache_metrics.total_size,
-                    "cache_token_efficiency": basic_cache_metrics.token_efficiency
-                }
+                if self.resilient_cache:
+                    # Get comprehensive metrics from resilient cache
+                    resilient_metrics = self.resilient_cache.get_metrics()
+                    
+                    # Extract cache metrics
+                    cache_data = resilient_metrics.get("cache", {})
+                    circuit_data = resilient_metrics.get("circuit_breaker", {})
+                    
+                    cache_metrics = {
+                        "cache_hit_rate": cache_data.get("hit_rate", 0),
+                        "cache_hits": cache_data.get("cache_hits", 0),
+                        "cache_misses": cache_data.get("cache_misses", 0),
+                        "cache_total_entries": cache_data.get("total_entries", 0),
+                        "cache_total_size": cache_data.get("total_size", 0),
+                        "cache_token_efficiency": cache_data.get("token_efficiency", 0),
+                        
+                        # Circuit breaker metrics
+                        "circuit_breaker_state": circuit_data.get("state", "unknown"),
+                        "circuit_breaker_failures": circuit_data.get("failure_count", 0),
+                        "circuit_breaker_successes": circuit_data.get("success_count", 0),
+                        "circuit_breaker_failure_rate": circuit_data.get("failure_rate", 0),
+                        "circuit_breaker_state_changes": circuit_data.get("state_changes", 0)
+                    }
+                elif self.cache_system:
+                    # Fallback to basic cache metrics
+                    basic_cache_metrics = self.cache_system.cache_manager.get_metrics()
+                    cache_metrics = {
+                        "cache_hit_rate": basic_cache_metrics.hit_rate,
+                        "cache_hits": basic_cache_metrics.cache_hits,
+                        "cache_misses": basic_cache_metrics.cache_misses,
+                        "cache_total_entries": basic_cache_metrics.total_entries,
+                        "cache_total_size": basic_cache_metrics.total_size,
+                        "cache_token_efficiency": basic_cache_metrics.token_efficiency,
+                        "circuit_breaker_state": "disabled"
+                    }
             except Exception as e:
                 logger.warning("Failed to get cache metrics", error=str(e))
                 cache_metrics = {
                     "cache_hit_rate": 0,
                     "cache_hits": 0,
-                    "cache_misses": 0
+                    "cache_misses": 0,
+                    "circuit_breaker_state": "error"
                 }
         else:
             cache_metrics = {
                 "cache_hit_rate": 0,
                 "cache_hits": 0,
-                "cache_misses": 0
+                "cache_misses": 0,
+                "cache_degraded": True,
+                "circuit_breaker_state": "degraded"
             }
         
         return {
@@ -468,6 +584,22 @@ class FACTDriver:
         """Gracefully shutdown the FACT system."""
         logger.info("Shutting down FACT system")
         
+        # Shutdown resilient cache monitoring
+        if self.resilient_cache:
+            try:
+                await self.resilient_cache.stop_monitoring()
+                self.resilient_cache = None
+            except Exception as e:
+                logger.warning("Error stopping cache monitoring", error=str(e))
+        
+        # Shutdown cache circuit breaker
+        if self.cache_circuit_breaker:
+            try:
+                await self.cache_circuit_breaker.stop_health_monitoring()
+                self.cache_circuit_breaker = None
+            except Exception as e:
+                logger.warning("Error stopping circuit breaker", error=str(e))
+        
         # Shutdown cache system
         if self.cache_system:
             await self.cache_system.shutdown()
@@ -479,6 +611,7 @@ class FACTDriver:
             pass
         
         self._initialized = False
+        self._cache_degraded = False
         logger.info("FACT system shutdown complete")
 
 
