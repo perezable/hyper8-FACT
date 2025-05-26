@@ -1,147 +1,69 @@
-# FACT: Fast Augmented Context Tools
+# Revolutionizing Financial Data Analysis with FACT: The Next-Generation Framework for Augmented Context in Tools
 
-A revolutionary approach to LLM data retrieval that replaces RAG with prompt caching and deterministic tool execution under the Model Context Protocol
+*How intelligent caching, natural language processing, and hybrid cloud execution are transforming enterprise financial analytics*
+
 ---
 
-## TL;DR
-FACT (Fast Augmented Context Tools) introduces a new paradigm for language model–powered data retrieval by replacing vector-based retrieval with a prompt-and-tool approach under the Model Context Protocol (MCP). The result? Sub-100ms responses, 60-90% cost reduction, and deterministic, auditable results with no vector stores required.
-## Why FACT? RAG Had Its Moment. It's Time for Something Smarter.
+## Table of Contents
 
-RAG (Retrieval-Augmented Generation) made sense when vector search was the best we had. But vectors are slow, fuzzy, and expensive to maintain. They're inherently imprecise, forcing you to tune similarity thresholds, re-embed documents, and accept that relevance is always a bit of a guess.
+1. [Introduction to FACT](#introduction-to-fact)
+2. [Benefits of FACT](#benefits-of-fact)
+3. [Performance Benchmarks](#performance-benchmarks)
+4. [Usage Examples](#usage-examples)
+5. [Arcade-dev Integration](#arcade-dev-integration)
+6. [Additional Capabilities](#additional-capabilities)
+7. [Benchmarking Guide](#benchmarking-guide)
+8. [Repository Information](#repository-information)
 
-What we needed was something **explicit. Deterministic. Cheap. Fast.**
-
-FACT isn't about fetching similar chunks of data. It's about giving models **structured, exact answers** via tool execution and pairing that with intelligent prompt caching. Prompt caches work like brains with memory. Tools act like hands that do. And when you combine the two—prompt caching + MCP-based tools—you can skip vector search entirely.
-
-Instead of saying "Find me something like this," FACT says: "Run this exact SQL call. Return this live API result. Use this schema. Cache the output."
+---
 
 ## Introduction to FACT
 
-**FACT (Fast Augmented Context Tools)** introduces a new paradigm for language model–powered data retrieval by replacing vector-based retrieval with a prompt-and-tool approach under the Model Context Protocol (MCP). Instead of relying on embeddings and similarity searches, FACT combines intelligent prompt caching with deterministic tool invocation to deliver fresh, precise, and auditable results.
+**FACT (Framework for Augmented Context in Tools)** represents a fundamental breakthrough in how organizations interact with financial data. By combining cutting-edge natural language processing with intelligent caching and secure tool execution, FACT eliminates the complexity barriers that have traditionally separated business users from critical data insights.
 
-### Key Differences from RAG
+### The Innovation Behind FACT
 
-FACT represents a fundamental shift from traditional RAG (Retrieval-Augmented Generation) approaches:
-
-**Retrieval Mechanism**
-- **RAG**: Embeddings → Vector search → LLM completion
-- **FACT**: Prompt cache → MCP tool calls → LLM refinement
-
-**Data Freshness**
-- **RAG**: Periodic re-indexing required
-- **FACT**: Live data via on-demand tool execution
-
-**Accuracy**
-- **RAG**: Probabilistic, fuzzy matches
-- **FACT**: Exact outputs from SQL, API, or custom tools
-
-**Cost & Latency**
-- **RAG**: Embedding + lookup + token costs
-- **FACT**: Cache hits eliminate tokens; cache misses trigger fast tool calls
+FACT introduces a revolutionary **cache-first architecture** that leverages Claude Sonnet-4's native caching capabilities to deliver unprecedented performance improvements. Unlike traditional systems that treat caching as an afterthought, FACT is built from the ground up around intelligent caching strategies.
 
 #### Core Architectural Innovation
 
 ```
-Traditional RAG Approach:
-User Query → Embedding → Vector Search → Context Retrieval → LLM → Response (2-5 seconds)
+Traditional Approach:
+User Query → Database → Processing → Response (2-5 seconds)
 
-FACT MCP Approach:
-User Query → Prompt Cache → [If Miss] → MCP Tool Execution → Cache Update → Response (50-200ms)
-
+FACT Approach:
+User Query → Intelligent Cache → [If Miss] → Optimized Processing → Response (50ms)
 ```
-### Agentic Engineering & Intelligent Caching
-
-FACT enables **agentic workflows** where AI systems make intelligent decisions about data retrieval, caching, and tool execution in complex, multi-step processes. Unlike static vector databases that treat all data equally, FACT implements **intelligent caching** that understands the dynamic nature of different data types.
-
-#### The Vector Problem with Dynamic Data
-
-Vectors excel at static content that changes infrequently, but they're fundamentally ill-suited for:
-
-- **Real-time data** that changes moment-by-moment
-- **Request-specific context** that varies per user or session  
-- **Dynamic calculations** that depend on current parameters
-- **Time-sensitive information** with specific TTL requirements
-
-When data needs to change request-by-request with precise time-to-live characteristics, **vectors are the worst possible choice**.
-
-#### Intelligent Cache Decision-Making
-
-FACT's caching system makes sophisticated decisions about what to cache and when:
-
-```
-Cache Strategy Engine:
-├── Static Content → Long-term cache (hours/days)
-│   ├── System prompts and schemas
-│   ├── Configuration data
-│   └── Reference documentation
-├── Semi-Dynamic → Medium-term cache (minutes/hours)  
-│   ├── Database schemas
-│   ├── User preferences
-│   └── System metrics
-└── Dynamic Content → Short-term cache (seconds/minutes)
-    ├── Live API responses
-    ├── Real-time calculations
-    └── User-specific queries
-```
-
-#### Recursive Tool Execution & Feedback Loops
-
-FACT supports complex agentic patterns:
-
-- **Tool Chaining**: Output from one tool becomes input for the next
-- **Conditional Execution**: Tools execute based on previous results
-- **Feedback Loops**: Systems learn from execution patterns to optimize caching
-- **Self-Optimization**: Cache strategies adapt based on usage patterns
- 
 
 ### What Makes FACT Different
 
-#### 1. Intelligent Cache-First Design Philosophy
-FACT leverages Claude's native caching with intelligent decision-making to store and reuse responses automatically, eliminating the need for complex vector databases or RAG systems:
+#### 1. Cache-First Design Philosophy
+FACT leverages Claude's native caching to store and reuse responses automatically, eliminating the need for complex vector databases or RAG systems:
 
-- **Context-Aware Caching**: System determines optimal cache duration based on data type
-- **Adaptive TTL Management**: Cache expiration varies by content volatility
-- **Smart Invalidation**: Proactive cache updates based on data change patterns
-- **Multi-Tier Strategy**: Different caching approaches for static vs. dynamic content
+- **Static Content Caching**: System prompts and documentation (≥500 tokens)
+- **Dynamic Query Caching**: User queries and processed responses
+- **Tool Result Caching**: Execution results for identical parameters
+- **Intelligent Invalidation**: Automatic cache management and optimization
 
 #### 2. Natural Language Interface
-Powered by Claude Sonnet-4, FACT understands complex queries in natural language:
+Powered by Claude Sonnet-4, FACT understands complex financial queries in natural language:
 
 ```
-"Show me the latest inventory levels for products with low stock alerts"
+"What was TechCorp's Q1 2025 revenue growth compared to the previous quarter?"
 ```
 
-#### Agentic Workflow Example
+This query is automatically transformed into optimized SQL execution and returns formatted results in milliseconds.
 
-```
-Complex Multi-Step Query: "Generate a sales report for Q1 with trend analysis and recommendations"
+#### 3. Secure Tool-Based Architecture
+FACT employs a secure, containerized tool execution framework:
 
-Step 1: Cache Check → System prompts (CACHE HIT - 0ms)
-Step 2: Tool Execution → Fetch Q1 sales data (Database query - 45ms)
-Step 3: Cache Decision → Store raw data (TTL: 1 hour - data changes daily)
-Step 4: Tool Execution → Calculate trends (Analysis tool - 23ms)
-Step 5: Cache Decision → Store trends (TTL: 30 min - calculations may vary)
-Step 6: Tool Execution → Generate recommendations (AI reasoning - 67ms)
-Step 7: Cache Decision → Short TTL (5 min - recommendations are context-specific)
-Step 8: Response Assembly → Final formatted report (8ms)
-
-Total Time: 143ms (vs. 3+ seconds with vector retrieval)
-Cache Strategy: Multi-tier with intelligent TTL based on data volatility
-```
-
-This demonstrates how FACT's agentic system makes nuanced decisions about what to cache and for how long, something impossible with static vector approaches.
-This query is automatically transformed into optimized tool execution and returns formatted results in milliseconds.
-
-#### 3. MCP Tool-Based Architecture
-FACT employs the Model Context Protocol for secure, standardized tool execution:
-
-- **Read-Only Data Access**: Prevents data modification
-- **Input Validation**: Comprehensive query validation
+- **Read-Only Database Access**: Prevents data modification
+- **SQL Injection Protection**: Comprehensive query validation
 - **Audit Trail**: Complete logging of all operations
-- **Security Patterns**: Advanced injection protection
+- **Input Sanitization**: Advanced security pattern detection
 
 #### 4. Hybrid Execution Model
-Integration with cloud services enables intelligent routing between local and remote execution:
+Integration with Arcade.dev enables intelligent routing between local and cloud execution:
 
 - **Local Execution**: Speed-optimized for simple queries
 - **Cloud Execution**: Feature-rich for complex analytics
@@ -217,11 +139,6 @@ FACT transforms operational characteristics of financial analytics:
 - **99%+ Uptime**: Robust error handling and graceful degradation
 - **Zero SQL Knowledge Required**: Complete natural language interface
 - **Enterprise Security**: Comprehensive audit and compliance features
-### FACT's Enterprise-Ready Results
-
-With FACT, your system becomes intelligent enough to decide what to cache, when to execute tools, and how to route requests in real time—without guessing. RAG brought retrieval to language models. But FACT makes retrieval **intentional**, **structured**, and **enterprise-ready**.
-
-Smart systems don't just retrieve. They *know what to retrieve, how to get it, and when to remember it*.
 - **Automated Optimization**: Self-tuning performance characteristics
 
 ### Technical Advantages
@@ -828,7 +745,7 @@ asyncio.run(custom_benchmark())
 #### Quick Installation
 ```bash
 # Clone the repository
-git clone https://github.com/ruvnet/FACT
+git clone <repository-url>
 cd FACT
 
 # Install dependencies
@@ -940,4 +857,7 @@ Ready to revolutionize your financial data analysis?
 4. **Join our community** for support and best practices
 
 **The future of financial analytics is here. Welcome to FACT.**
- 
+
+---
+
+*Last updated: January 26, 2025 | Version: 1.0.0 | License: MIT*

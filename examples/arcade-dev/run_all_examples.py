@@ -13,6 +13,10 @@ import subprocess
 from pathlib import Path
 from typing import List, Dict, Any
 import time
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 class ExampleRunner:
@@ -35,9 +39,54 @@ class ExampleRunner:
                 'description': 'Basic API client integration'
             },
             {
+                'name': 'Tool Registration',
+                'script': '02_tool_registration/register_fact_tools.py',
+                'description': 'Register FACT tools with Arcade.dev'
+            },
+            {
+                'name': 'Intelligent Routing',
+                'script': '03_intelligent_routing/hybrid_execution.py',
+                'description': 'Hybrid execution with intelligent routing'
+            },
+            {
+                'name': 'Error Handling',
+                'script': '04_error_handling/resilient_execution.py',
+                'description': 'Resilient execution with error handling'
+            },
+            {
+                'name': 'Cache Integration (Enhanced)',
+                'script': '05_cache_integration/cached_arcade_client_enhanced.py',
+                'description': 'Enhanced cached API client'
+            },
+            {
+                'name': 'Security',
+                'script': '06_security/secure_tool_execution.py',
+                'description': 'Secure tool execution with validation'
+            },
+            {
                 'name': 'Cache Integration',
                 'script': '07_cache_integration/cached_arcade_client.py',
                 'description': 'Cached API client with performance optimization'
+            },
+            {
+                'name': 'Advanced Tools',
+                'script': '08_advanced_tools/advanced_tool_usage.py',
+                'description': 'Advanced tool usage patterns'
+            },
+            {
+                'name': 'Testing',
+                'script': '09_testing/arcade_integration_tests.py',
+                'description': 'Integration testing framework'
+            },
+            {
+                'name': 'Production Deployment',
+                'script': '10_deployment/production_deployment.py',
+                'description': 'Production deployment configuration'
+            },
+            {
+                'name': 'Monitoring',
+                'script': '12_monitoring/arcade_monitoring.py',
+                'description': 'Monitoring and observability'
             }
         ]
         

@@ -253,7 +253,7 @@ class FactToolRegistrar:
                 demo_tools = [
                     {
                         "id": "demo_tool_text_processcontent",
-                        "name": "Text.ProcessContent",
+                        "name": "Text_ProcessContent",
                         "version": "1.0.0",
                         "status": "active",
                         "requires_auth": True,
@@ -261,7 +261,7 @@ class FactToolRegistrar:
                     },
                     {
                         "id": "demo_tool_data_transform",
-                        "name": "Data.Transform",
+                        "name": "Data_Transform",
                         "version": "1.0.0",
                         "status": "active",
                         "requires_auth": False,
@@ -357,7 +357,7 @@ class FactToolRegistrar:
         try:
             if self.config.demo_mode:
                 # In demo mode, simulate that some tools already exist
-                if tool_name in ["Text.ProcessContent"]:
+                if tool_name in ["Text_ProcessContent"]:
                     return {
                         "id": f"demo_tool_{tool_name.replace('.', '_').lower()}",
                         "name": tool_name,
@@ -506,7 +506,7 @@ class FactToolRegistrar:
 
 # Example FACT tools to register
 @Tool(
-    name="Text.ProcessContent",
+    name="Text_ProcessContent",
     description="Process and analyze text content for patterns and insights",
     parameters={
         "content": {
@@ -540,7 +540,7 @@ def process_text_content(content: str, analysis_type: str = "summary") -> Dict[s
 
 
 @Tool(
-    name="Data.Transform",
+    name="Data_Transform",
     description="Transform data between different formats and structures",
     parameters={
         "data": {
@@ -653,7 +653,7 @@ async def main():
         # Demonstrate permission updates
         print("\n🔐 Demonstrating permission updates...")
         success = await registrar.update_tool_permissions(
-            "Text.ProcessContent",
+            "Text_ProcessContent",
             {
                 "require_authentication": True,
                 "allowed_scopes": ["tool:execute", "data:read"],

@@ -393,7 +393,7 @@ class ResilientExecutor:
             raise ToolExecutionError("No local executor available")
         
         # For demo purposes, use the unreliable_service function
-        if tool_call.name == "Test.UnreliableService":
+        if tool_call.name == "Test_UnreliableService":
             return unreliable_service(**tool_call.arguments)
         
         raise ToolNotFoundError(f"Tool {tool_call.name} not found")
@@ -454,7 +454,7 @@ class ResilientExecutor:
 
 # Example tools and usage demonstration
 @Tool(
-    name="Test.UnreliableService",
+    name="Test_UnreliableService",
     description="Unreliable service for testing error handling",
     parameters={
         "failure_rate": {"type": "number", "description": "Probability of failure (0.0-1.0)", "default": 0.3},
@@ -587,7 +587,7 @@ async def demonstrate_error_handling():
         
         tool_call = ToolCall(
             id=f"test_{i}",
-            name="Test.UnreliableService",
+            name="Test_UnreliableService",
             arguments=scenario,
             user_id="demo_user"
         )

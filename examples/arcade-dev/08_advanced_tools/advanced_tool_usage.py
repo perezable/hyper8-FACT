@@ -372,7 +372,13 @@ class AdvancedToolOrchestrator:
         )
         
         if result.errors:
-            await self.metrics.record_counter('tool_chain_errors', len(result.errors))
+            # Record error metrics using the correct method signature
+            self.metrics.record_tool_execution(
+                tool_name="tool_chain_errors",
+                success=False,
+                execution_time=0,
+                metadata={"error_count": len(result.errors)}
+            )
             
     async def create_conditional_branch(
         self, 

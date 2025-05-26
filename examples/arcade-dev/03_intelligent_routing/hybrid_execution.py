@@ -2,9 +2,8 @@
 """
 Intelligent Routing and Hybrid Execution Example
 
-This example demonstrates intelligent routing between local FACT tools and 
-Arcade.dev remote execution, including decision logic, fallback mechanisms,
-performance monitoring, and handling different response formats.
+This example demonstrates advanced routing strategies for tool execution,
+allowing dynamic decision-making between local and remote execution modes.
 """
 
 import os
@@ -682,7 +681,7 @@ class IntelligentRouter:
 
 # Example tools for testing routing
 @Tool(
-    name="Cache.FastLookup",
+    name="Cache_FastLookup",
     description="Fast cache lookup operation",
     parameters={
         "key": {"type": "string", "description": "Cache key to lookup"}
@@ -696,7 +695,7 @@ def fast_cache_lookup(key: str) -> Dict[str, Any]:
 
 
 @Tool(
-    name="AI.ComplexAnalysis",
+    name="AI_ComplexAnalysis",
     description="Complex AI analysis requiring significant resources",
     parameters={
         "data": {"type": "object", "description": "Data to analyze"},
@@ -715,7 +714,7 @@ def complex_ai_analysis(data: Dict[str, Any], model_type: str) -> Dict[str, Any]
 
 
 @Tool(
-    name="Util.StringHelper",
+    name="Util_StringHelper",
     description="Simple string utility function",
     parameters={
         "text": {"type": "string", "description": "Text to process"}
@@ -786,9 +785,9 @@ async def main():
     router = IntelligentRouter(arcade_client, cache_manager)
     
     # Register tools with the local executor
-    router.local_executor.register_tool("Cache.FastLookup", fast_cache_lookup)
-    router.local_executor.register_tool("AI.ComplexAnalysis", complex_ai_analysis)
-    router.local_executor.register_tool("Util.StringHelper", string_helper)
+    router.local_executor.register_tool("Cache_FastLookup", fast_cache_lookup)
+    router.local_executor.register_tool("AI_ComplexAnalysis", complex_ai_analysis)
+    router.local_executor.register_tool("Util_StringHelper", string_helper)
     
     # Add custom routing rules
     print("\n📋 Setting up custom routing rules...")
@@ -815,15 +814,15 @@ async def main():
             "name": "Fast cache lookup",
             "tool_call": ToolCall(
                 id="test_1",
-                name="Cache.FastLookup",
+                name="Cache_FastLookup",
                 arguments={"key": "user_123"}
             )
         },
         {
-            "name": "Complex AI analysis", 
+            "name": "Complex AI analysis",
             "tool_call": ToolCall(
                 id="test_2",
-                name="AI.ComplexAnalysis",
+                name="AI_ComplexAnalysis",
                 arguments={
                     "data": {"items": list(range(100))},
                     "model_type": "neural_network"
@@ -833,8 +832,8 @@ async def main():
         {
             "name": "Simple string utility",
             "tool_call": ToolCall(
-                id="test_3", 
-                name="Util.StringHelper",
+                id="test_3",
+                name="Util_StringHelper",
                 arguments={"text": "Hello, intelligent routing world!"}
             )
         }

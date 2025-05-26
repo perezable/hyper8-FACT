@@ -16,12 +16,14 @@ Fixed multiple issues in the advanced tool usage example to ensure robust execut
 ### 2. MetricsCollector Method Mismatch
 **Problem**: Code was calling non-existent methods `record_gauge()` and `record_counter()` on MetricsCollector.
 
-**Fix**: 
+**Fix**:
 - Replaced with correct method `record_tool_execution()` that accepts:
   - `tool_name`: Name of the tool
   - `success`: Boolean success status
   - `execution_time`: Time in milliseconds
   - `metadata`: Optional dictionary with additional data
+- Updated error recording to use consistent method signature
+- Fixed async/sync method usage patterns
 
 ### 3. Function Signature Issues in Sample Tools
 **Problem**: Sample tools (`validate_data`, `transform_data`, `analyze_results`) had rigid parameter signatures that didn't handle context passing from tool chains.
