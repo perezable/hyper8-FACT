@@ -311,16 +311,23 @@ class DatabaseManager:
         
         normalized_statement = statement.lower().strip()
         
-        # Security check: only allow SELECT statements
-        if not normalized_statement.startswith("select"):
-            raise SecurityError("Only SELECT statements are allowed")
+        # Security check: allow SELECT statements and safe PRAGMA queries
+        is_select = normalized_statement.startswith("select")
+        is_safe_pragma = normalized_statement.startswith("pragma table_info")
         
-        # Enhanced dangerous keyword detection
+        if not (is_select or is_safe_pragma):
+            raise SecurityError("Only SELECT statements and PRAGMA table_info queries are allowed")
+        
+        # Enhanced dangerous keyword detection (excluding safe pragma)
         dangerous_keywords = [
             "drop", "delete", "update", "insert", "alter", "create",
-            "truncate", "replace", "merge", "exec", "execute", "pragma",
+            "truncate", "replace", "merge", "exec", "execute",
             "attach", "detach", "vacuum", "reindex", "analyze"
         ]
+        
+        # For PRAGMA queries, only allow table_info
+        if normalized_statement.startswith("pragma") and not normalized_statement.startswith("pragma table_info"):
+            raise SecurityError("Only PRAGMA table_info queries are allowed")
         
         # Check for dangerous keywords with word boundaries
         import re
@@ -330,21 +337,23 @@ class DatabaseManager:
                 raise SecurityError(f"Dangerous SQL keyword detected: {keyword}")
         
         # Check for SQL injection patterns
-        injection_patterns = [
-            r'--',  # SQL comments
-            r'/\*.*?\*/',  # Multi-line comments
-            r';\s*\w+',  # Multiple statements
-            r'\bunion\s+select\b',  # Union injection
-            r'\bor\s+1\s*=\s*1\b',  # Always true conditions
-            r'\band\s+1\s*=\s*1\b',  # Always true conditions
-            r'\'.*\'.*\'',  # Multiple quotes
-            r'\\x[0-9a-f]{2}',  # Hex encoding
-        ]
-        
-        for pattern in injection_patterns:
-            if re.search(pattern, normalized_statement, re.IGNORECASE):
-                raise SecurityError(f"Potential SQL injection pattern detected")
-        
+        # Check for SQL injection patterns (skip for safe PRAGMA queries)
+        if not normalized_statement.startswith("pragma table_info"):
+            injection_patterns = [
+                r'--',  # SQL comments
+                r'/\*.*?\*/',  # Multi-line comments
+                r';\s*\w+',  # Multiple statements
+                r'\bunion\s+select\b',  # Union injection
+                r'\bor\s+1\s*=\s*1\b',  # Always true conditions
+                r'\band\s+1\s*=\s*1\b',  # Always true conditions
+                r'\bor\s+\'.*?\'\s*=\s*\'.*?\'',  # Suspicious OR with string comparisons
+                r'\'.*?\'\s*or\s*\'.*?\'',  # Injection with OR between quotes
+                r'\\x[0-9a-f]{2}',  # Hex encoding
+            ]
+            
+            for pattern in injection_patterns:
+                if re.search(pattern, normalized_statement, re.IGNORECASE):
+                    raise SecurityError(f"Potential SQL injection pattern detected: {pattern} in query: {normalized_statement[:100]}")
         # Limit query complexity
         if len(statement) > 5000:
             raise SecurityError("Query too long - potential DoS attack")

@@ -1,3 +1,4 @@
+
 """
 FACT System Tool Execution Engine
 
@@ -26,6 +27,8 @@ try:
     from .decorators import get_tool_registry, ToolDefinition
     from .validation import ParameterValidator, SecurityValidator
     from ..arcade.client import ArcadeClient
+    from ..security.auth import AuthorizationManager
+    from ..monitoring.metrics import MetricsCollector
 except ImportError:
     # Fall back to absolute imports (when run as script)
     import sys
@@ -426,11 +429,20 @@ class ToolExecutor:
     async def _execute_locally(self, tool_call: ToolCall, tool_definition: ToolDefinition) -> Dict[str, Any]:
         """Execute tool locally with timeout protection."""
         try:
-            # Execute with timeout
-            result = await asyncio.wait_for(
-                asyncio.to_thread(tool_definition.function, **tool_call.arguments),
-                timeout=tool_definition.timeout_seconds
-            )
+            # Check if function is async
+            import inspect
+            if inspect.iscoroutinefunction(tool_definition.function):
+                # Execute async function directly
+                result = await asyncio.wait_for(
+                    tool_definition.function(**tool_call.arguments),
+                    timeout=tool_definition.timeout_seconds
+                )
+            else:
+                # Execute sync function in thread
+                result = await asyncio.wait_for(
+                    asyncio.to_thread(tool_definition.function, **tool_call.arguments),
+                    timeout=tool_definition.timeout_seconds
+                )
             
             # Ensure result is a dictionary
             if not isinstance(result, dict):

@@ -124,7 +124,7 @@ def initialize_sql_tool(database_manager: DatabaseManager) -> None:
 
 
 @Tool(
-    name="SQL.QueryReadonly",
+    name="SQL_QueryReadonly",
     description="Execute SELECT queries on the finance database to retrieve financial data, company information, and analytics. Only read-only SELECT statements are allowed for security.",
     parameters={
         "statement": {
@@ -174,7 +174,7 @@ async def sql_query_readonly(statement: str) -> Dict[str, Any]:
 
 
 @Tool(
-    name="SQL.GetSchema",
+    name="SQL_GetSchema",
     description="Get database schema information including table structures, column details, and relationships",
     parameters={},
     requires_auth=False,
@@ -264,14 +264,14 @@ async def sql_get_schema() -> Dict[str, Any]:
 
 
 @Tool(
-    name="SQL.GetSampleQueries",
+    name="SQL_GetSampleQueries",
     description="Get sample SQL queries for exploring the financial database",
     parameters={},
     requires_auth=False,
     timeout_seconds=5,
     version="1.0.0"
 )
-def sql_get_sample_queries() -> Dict[str, Any]:
+async def sql_get_sample_queries() -> Dict[str, Any]:
     """
     Get sample SQL queries that can be used to explore the financial database.
     

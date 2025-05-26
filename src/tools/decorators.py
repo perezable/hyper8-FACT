@@ -199,21 +199,22 @@ class ToolRegistry:
         Returns:
             True if name follows convention, False otherwise
         """
-        # Expected format: Category.ActionName (e.g., SQL.QueryReadonly)
-        if "." not in name:
+        # Expected format: Category_ActionName (e.g., SQL_QueryReadonly)
+        # Anthropic API requires names to match ^[a-zA-Z0-9_-]{1,64}$
+        if "_" not in name:
             return False
         
-        parts = name.split(".")
+        parts = name.split("_", 1)  # Split on first underscore only
         if len(parts) != 2:
             return False
         
         category, action = parts
         
-        # Basic validation - alphanumeric with some special chars
+        # Validation for Anthropic API compatibility
         import re
-        pattern = r'^[A-Za-z][A-Za-z0-9_]*$'
+        pattern = r'^[a-zA-Z0-9_-]{1,64}$'
         
-        return bool(re.match(pattern, category) and re.match(pattern, action))
+        return bool(re.match(pattern, name) and len(name) <= 64)
     
     def _is_newer_version(self, new_version: str, existing_version: str) -> bool:
         """
@@ -245,16 +246,14 @@ class ToolRegistry:
         Returns:
             Claude-compatible tool schema
         """
+        # Anthropic Claude format - no "type": "function" wrapper
         schema = {
-            "type": "function",
-            "function": {
-                "name": tool_definition.name,
-                "description": tool_definition.description,
-                "parameters": {
-                    "type": "object",
-                    "properties": tool_definition.parameters,
-                    "required": self._extract_required_params(tool_definition.parameters)
-                }
+            "name": tool_definition.name,
+            "description": tool_definition.description,
+            "input_schema": {
+                "type": "object",
+                "properties": tool_definition.parameters,
+                "required": self._extract_required_params(tool_definition.parameters)
             }
         }
         
@@ -320,82 +319,148 @@ def Tool(name: str,
             pass
     """
     def decorator(tool_function: Callable) -> Callable:
-        @functools.wraps(tool_function)
-        def wrapped_tool(*args, **kwargs) -> Dict[str, Any]:
-            """Wrapped tool function with validation and error handling."""
-            start_time = time.time()
+            import asyncio
+            import inspect
             
-            try:
-                # Validate input parameters against schema
-                if args or kwargs:
-                    # Convert positional args to kwargs based on function signature
-                    import inspect
-                    sig = inspect.signature(tool_function)
-                    bound_args = sig.bind(*args, **kwargs)
-                    bound_args.apply_defaults()
-                    validated_kwargs = dict(bound_args.arguments)
+            # Determine if we need async or sync wrapper
+            is_async_tool = asyncio.iscoroutinefunction(tool_function)
+            
+            # Create the appropriate wrapper function
+            if is_async_tool:
+                @functools.wraps(tool_function)
+                async def async_wrapped_tool(*args, **kwargs) -> Dict[str, Any]:
+                    """Wrapped async tool function with validation and error handling."""
+                    start_time = time.time()
                     
-                    # Validate against parameter schema
-                    validate_tool_parameters(validated_kwargs, parameters)
-                else:
-                    validated_kwargs = {}
+                    try:
+                        # Validate input parameters against schema
+                        if args or kwargs:
+                            # Convert positional args to kwargs based on function signature
+                            sig = inspect.signature(tool_function)
+                            bound_args = sig.bind(*args, **kwargs)
+                            bound_args.apply_defaults()
+                            validated_kwargs = dict(bound_args.arguments)
+                            
+                            # Validate against parameter schema
+                            validate_tool_parameters(validated_kwargs, parameters)
+                        else:
+                            validated_kwargs = {}
+                        
+                        # Execute async function
+                        result = await tool_function(**validated_kwargs)
+                        
+                        # Validate output format
+                        if not isinstance(result, dict):
+                            result = {"result": result}
+                        
+                        # Ensure result is JSON serializable
+                        json.dumps(result)
+                        
+                        execution_time = (time.time() - start_time) * 1000
+                        result["execution_time_ms"] = execution_time
+                        result["status"] = "success"
+                        
+                        logger.debug("Tool executed successfully",
+                                   tool_name=name,
+                                   execution_time_ms=execution_time)
+                        
+                        return result
+                        
+                    except ValidationError as e:
+                        execution_time = (time.time() - start_time) * 1000
+                        logger.error("Tool parameter validation failed",
+                                   tool_name=name,
+                                   error=str(e),
+                                   execution_time_ms=execution_time)
+                        raise ToolValidationError(f"Parameter validation failed: {e}")
+                        
+                    except Exception as e:
+                        execution_time = (time.time() - start_time) * 1000
+                        logger.error("Tool execution failed",
+                                   tool_name=name,
+                                   error=str(e),
+                                   execution_time_ms=execution_time)
+                        raise ToolExecutionError(f"Tool execution failed: {e}")
                 
-                # Execute original function
-                result = tool_function(**validated_kwargs)
+                wrapped_tool = async_wrapped_tool
                 
-                # Validate output format
-                if not isinstance(result, dict):
-                    result = {"result": result}
+            else:
+                @functools.wraps(tool_function)
+                def sync_wrapped_tool(*args, **kwargs) -> Dict[str, Any]:
+                    """Wrapped sync tool function with validation and error handling."""
+                    start_time = time.time()
+                    
+                    try:
+                        # Validate input parameters against schema
+                        if args or kwargs:
+                            # Convert positional args to kwargs based on function signature
+                            sig = inspect.signature(tool_function)
+                            bound_args = sig.bind(*args, **kwargs)
+                            bound_args.apply_defaults()
+                            validated_kwargs = dict(bound_args.arguments)
+                            
+                            # Validate against parameter schema
+                            validate_tool_parameters(validated_kwargs, parameters)
+                        else:
+                            validated_kwargs = {}
+                        
+                        # Execute sync function
+                        result = tool_function(**validated_kwargs)
+                        
+                        # Validate output format
+                        if not isinstance(result, dict):
+                            result = {"result": result}
+                        
+                        # Ensure result is JSON serializable
+                        json.dumps(result)
+                        
+                        execution_time = (time.time() - start_time) * 1000
+                        result["execution_time_ms"] = execution_time
+                        result["status"] = "success"
+                        
+                        logger.debug("Tool executed successfully",
+                                   tool_name=name,
+                                   execution_time_ms=execution_time)
+                        
+                        return result
+                        
+                    except ValidationError as e:
+                        execution_time = (time.time() - start_time) * 1000
+                        logger.error("Tool parameter validation failed",
+                                   tool_name=name,
+                                   error=str(e),
+                                   execution_time_ms=execution_time)
+                        raise ToolValidationError(f"Parameter validation failed: {e}")
+                        
+                    except Exception as e:
+                        execution_time = (time.time() - start_time) * 1000
+                        logger.error("Tool execution failed",
+                                   tool_name=name,
+                                   error=str(e),
+                                   execution_time_ms=execution_time)
+                        raise ToolExecutionError(f"Tool execution failed: {e}")
                 
-                # Ensure result is JSON serializable
-                json.dumps(result)
-                
-                execution_time = (time.time() - start_time) * 1000
-                result["execution_time_ms"] = execution_time
-                result["status"] = "success"
-                
-                logger.debug("Tool executed successfully",
-                           tool_name=name,
-                           execution_time_ms=execution_time)
-                
-                return result
-                
-            except ValidationError as e:
-                execution_time = (time.time() - start_time) * 1000
-                logger.error("Tool parameter validation failed",
-                           tool_name=name,
-                           error=str(e),
-                           execution_time_ms=execution_time)
-                raise ToolValidationError(f"Parameter validation failed: {e}")
-                
-            except Exception as e:
-                execution_time = (time.time() - start_time) * 1000
-                logger.error("Tool execution failed",
-                           tool_name=name,
-                           error=str(e),
-                           execution_time_ms=execution_time)
-                raise ToolExecutionError(f"Tool execution failed: {e}")
-        
-        # Create tool definition
-        tool_definition = ToolDefinition(
-            name=name,
-            description=description,
-            parameters=parameters,
-            function=wrapped_tool,
-            created_at=time.time(),
-            version=version,
-            requires_auth=requires_auth,
-            timeout_seconds=timeout_seconds
-        )
-        
-        # Attach metadata to function
-        wrapped_tool.tool_definition = tool_definition
-        
-        # Register tool automatically
-        _tool_registry.register_tool(tool_definition)
-        
-        return wrapped_tool
-    
+                wrapped_tool = sync_wrapped_tool
+            
+            # Create tool definition
+            tool_definition = ToolDefinition(
+                name=name,
+                description=description,
+                parameters=parameters,
+                function=wrapped_tool,
+                created_at=time.time(),
+                version=version,
+                requires_auth=requires_auth,
+                timeout_seconds=timeout_seconds
+            )
+            
+            # Attach metadata to function
+            wrapped_tool.tool_definition = tool_definition
+            
+            # Register tool automatically
+            _tool_registry.register_tool(tool_definition)
+            
+            return wrapped_tool
     return decorator
 
 

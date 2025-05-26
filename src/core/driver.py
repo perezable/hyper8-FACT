@@ -194,12 +194,25 @@ class FACTDriver:
                 cache_mode="read"
             )
             
-            # Handle tool calls if present
-            if hasattr(response, 'tool_calls') and response.tool_calls:
-                logger.info("Processing tool calls", count=len(response.tool_calls))
+            # Handle tool calls if present (Anthropic format)
+            tool_use_blocks = []
+            if hasattr(response, 'content') and response.content:
+                for block in response.content:
+                    if hasattr(block, 'type') and block.type == 'tool_use':
+                        tool_use_blocks.append(block)
+            
+            if tool_use_blocks:
+                logger.info("Processing tool calls", count=len(tool_use_blocks))
+                
+                # Add assistant message with tool_use blocks to conversation
+                assistant_message = {
+                    "role": "assistant",
+                    "content": response.content
+                }
+                messages.append(assistant_message)
                 
                 # Execute tool calls
-                tool_results = await self._execute_tool_calls(response.tool_calls)
+                tool_results = await self._execute_tool_calls(tool_use_blocks)
                 
                 # Add tool results to message history
                 messages.extend(tool_results)
@@ -210,12 +223,61 @@ class FACTDriver:
                     tools=tool_schemas,
                     cache_mode="read"
                 )
+                
+                # Check if the final response also has tool calls
+                final_tool_blocks = []
+                if hasattr(response, 'content') and response.content:
+                    for block in response.content:
+                        if hasattr(block, 'type') and block.type == 'tool_use':
+                            final_tool_blocks.append(block)
+                
+                # Execute any final tool calls and continue until we get text response
+                max_iterations = 5  # Prevent infinite loops
+                iteration = 0
+                
+                while final_tool_blocks and iteration < max_iterations:
+                    logger.info("Processing final tool calls", count=len(final_tool_blocks), iteration=iteration)
+                    
+                    # Add assistant message with tool_use blocks
+                    assistant_message = {
+                        "role": "assistant",
+                        "content": response.content
+                    }
+                    messages.append(assistant_message)
+                    
+                    # Execute final tool calls
+                    final_tool_results = await self._execute_tool_calls(final_tool_blocks)
+                    
+                    # Add final tool results
+                    messages.extend(final_tool_results)
+                    
+                    # Get final response
+                    response = await self._call_llm_with_cache(
+                        messages=messages,
+                        tools=tool_schemas,
+                        cache_mode="read"
+                    )
+                    
+                    # Check if this response also has tool calls
+                    final_tool_blocks = []
+                    if hasattr(response, 'content') and response.content:
+                        for block in response.content:
+                            if hasattr(block, 'type') and block.type == 'tool_use':
+                                final_tool_blocks.append(block)
+                    
+                    iteration += 1
             
             # Extract response content from Anthropic SDK response
+            response_text = ""
             if hasattr(response, 'content') and response.content:
-                response_text = response.content[0].text
-            else:
-                response_text = str(response)
+                for block in response.content:
+                    if hasattr(block, 'type') and block.type == 'text':
+                        response_text += block.text
+            
+            # If no text content found, provide informative message
+            if not response_text:
+                logger.warning("No text response received from LLM", query_id=query_id)
+                response_text = "I apologize, but I was unable to generate a proper response. Please try rephrasing your question."
             
             # Step 3: Store response in cache for future use with resilience
             if not self._cache_degraded and response_text:
@@ -421,8 +483,8 @@ class FACTDriver:
                 messages=messages,
                 max_tokens=4096,
                 timeout=self.config.request_timeout,
-                # Note: tools parameter would be added when tool integration is complete
-                # tools=tools if tools else None,
+                tools=tools if tools else None,
+                tool_choice={"type": "any"} if tools else None,
             )
             
             return response
@@ -447,26 +509,33 @@ class FACTDriver:
             try:
                 # Record tool execution in metrics_collector
                 
-                # Extract tool information
-                tool_name = call.function.name if hasattr(call, 'function') else call.name
-                tool_args = call.function.arguments if hasattr(call, 'function') else call.arguments
+                # Extract tool information (Anthropic format)
+                tool_name = call.name
+                tool_args = call.input
                 
-                # Parse arguments if they're a string
+                # tool_args should already be a dict in Anthropic format
                 if isinstance(tool_args, str):
                     import json
                     tool_args = json.loads(tool_args)
-                
                 # Get tool definition
                 tool_definition = self.tool_registry.get_tool(tool_name)
                 
-                # Execute tool
-                result = await tool_definition.function(**tool_args)
+                # Execute tool with proper async handling
+                if asyncio.iscoroutinefunction(tool_definition.function):
+                    result = await tool_definition.function(**tool_args)
+                else:
+                    result = tool_definition.function(**tool_args)
                 
-                # Format as tool message
+                # Format as tool message (Anthropic format)
                 tool_message = {
-                    "role": "tool",
-                    "tool_call_id": getattr(call, 'id', f"call_{int(time.time())}"),
-                    "content": str(result) if not isinstance(result, str) else result
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "tool_result",
+                            "tool_use_id": call.id,
+                            "content": str(result) if not isinstance(result, str) else result
+                        }
+                    ]
                 }
                 
                 logger.info("Tool executed successfully",
@@ -491,15 +560,20 @@ class FACTDriver:
                     metadata={"args": tool_args}
                 )
                 
-                # Format error as tool message
+                # Format error as tool message (Anthropic format)
                 tool_message = {
-                    "role": "tool",
-                    "tool_call_id": getattr(call, 'id', f"call_{int(time.time())}"),
-                    "content": str({
-                        "error": "Tool execution failed",
-                        "details": str(e),
-                        "status": "failed"
-                    })
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "tool_result",
+                            "tool_use_id": call.id,
+                            "content": str({
+                                "error": "Tool execution failed",
+                                "details": str(e),
+                                "status": "failed"
+                            })
+                        }
+                    ]
                 }
             
             tool_messages.append(tool_message)
