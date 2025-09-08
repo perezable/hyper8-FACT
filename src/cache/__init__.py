@@ -56,6 +56,12 @@ from .validation import (
     validate_cache_integrity
 )
 
+from .resilience import (
+    CacheCircuitBreaker,
+    ResilientCacheWrapper,
+    CircuitState
+)
+
 try:
     # Try relative imports first (when used as package)
     from ..core.errors import CacheError
@@ -493,6 +499,11 @@ __all__ = [
     'ValidationLevel',
     'ValidationResult',
     'IntegrityIssue',
+    
+    # Resilience
+    'CacheCircuitBreaker',
+    'ResilientCacheWrapper',
+    'CircuitState',
     
     # Utility functions
     'get_cache_manager',
