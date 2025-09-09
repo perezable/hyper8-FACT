@@ -186,13 +186,21 @@ app = FastAPI(
 )
 
 # Add CORS middleware for web clients
-# Configure CORS based on environment
-cors_origins = os.getenv("CORS_ORIGINS", "https://api.vapi.ai,https://dashboard.vapi.ai").split(",")
+# Configure CORS based on environment - defaults to permissive for testing
+cors_origins_env = os.getenv("CORS_ORIGINS", "")
+if cors_origins_env:
+    # If CORS_ORIGINS is explicitly set, use it
+    cors_origins = cors_origins_env.split(",")
+else:
+    # Default to permissive CORS for testing
+    cors_origins = ["*"]
+    logger.warning("CORS is permissive (allowing all origins). Set CORS_ORIGINS env var for production.")
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins,
-    allow_credentials=True,
-    allow_methods=["GET", "POST"],
+    allow_credentials=True if cors_origins != ["*"] else False,  # Credentials not allowed with wildcard
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
 

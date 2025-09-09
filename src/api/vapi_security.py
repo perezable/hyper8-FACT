@@ -195,11 +195,19 @@ def get_security_config() -> Dict[str, Any]:
     """Get security configuration from environment variables."""
     import os
     
+    # Check if security is enabled at all
+    security_enabled = os.getenv("VAPI_SECURITY_ENABLED", "false").lower() == "true"
+    
+    # If webhook secret is set, automatically enable security
+    if os.getenv("VAPI_WEBHOOK_SECRET"):
+        security_enabled = True
+    
     return {
+        "enabled": security_enabled,
         "webhook_secret": os.getenv("VAPI_WEBHOOK_SECRET"),
         "api_keys": os.getenv("VAPI_API_KEYS", "").split(",") if os.getenv("VAPI_API_KEYS") else None,
         "allowed_ips": os.getenv("VAPI_ALLOWED_IPS", "").split(",") if os.getenv("VAPI_ALLOWED_IPS") else None,
-        "rate_limit_enabled": os.getenv("VAPI_RATE_LIMIT", "true").lower() == "true",
+        "rate_limit_enabled": os.getenv("VAPI_RATE_LIMIT", "false").lower() == "true",
         "max_requests_per_minute": int(os.getenv("VAPI_MAX_REQUESTS", "100"))
     }
 
@@ -250,15 +258,21 @@ async def verify_vapi_request(request: Request,
     if not _security_handler:
         init_security()
     
-    # Rate limiting
+    # Check if security is enabled
+    config = get_security_config()
+    if not config["enabled"]:
+        logger.debug("Security checks disabled")
+        return True
+    
+    # Rate limiting (separate control)
     if _rate_limiter:
         client_id = request.client.host
         if not _rate_limiter.check_rate_limit(client_id):
             logger.warning(f"Rate limit exceeded for {client_id}")
             raise HTTPException(status_code=429, detail="Rate limit exceeded")
     
-    # Security verification
-    if _security_handler:
+    # Security verification (only if handler exists and is configured)
+    if _security_handler and _security_handler.webhook_secret:
         await _security_handler.verify_webhook_request(
             request=request,
             signature=x_vapi_signature,
