@@ -54,9 +54,9 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:${PORT}/health || exit 1
 
-# Copy and set entrypoint script
-COPY entrypoint.sh /app/entrypoint.sh
-RUN chmod +x /app/entrypoint.sh
+# Copy wrapper script
+COPY railway_wrapper.py /app/railway_wrapper.py
+RUN chmod +x /app/railway_wrapper.py
 
-# Run the application via entrypoint script
-CMD ["/bin/bash", "/app/entrypoint.sh"]
+# Run the application via Railway wrapper to prevent proxy injection
+CMD ["python", "railway_wrapper.py"]
