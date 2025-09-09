@@ -9,11 +9,21 @@ Provides resilience patterns for cache operations including:
 
 import asyncio
 import time
-from typing import Dict, Any, Optional, Callable
+from typing import Dict, Any, Optional, Callable, Union
+from dataclasses import dataclass
 from enum import Enum
 import structlog
 
 logger = structlog.get_logger(__name__)
+
+
+@dataclass
+class CircuitBreakerConfig:
+    """Configuration for circuit breaker."""
+    failure_threshold: int = 5
+    recovery_timeout: float = 60.0
+    success_threshold: int = 2
+    half_open_max_calls: int = 3
 
 
 class CircuitState(Enum):
@@ -32,20 +42,27 @@ class CacheCircuitBreaker:
     """
     
     def __init__(self, 
-                 failure_threshold: int = 5,
-                 recovery_timeout: float = 60.0,
-                 success_threshold: int = 2):
+                 config: Optional[CircuitBreakerConfig] = None,
+                 failure_threshold: Optional[int] = None,
+                 recovery_timeout: Optional[float] = None,
+                 success_threshold: Optional[int] = None):
         """
         Initialize circuit breaker.
         
         Args:
+            config: CircuitBreakerConfig object
             failure_threshold: Number of failures before opening circuit
             recovery_timeout: Seconds to wait before attempting recovery
             success_threshold: Successful operations needed to close circuit
         """
-        self.failure_threshold = failure_threshold
-        self.recovery_timeout = recovery_timeout
-        self.success_threshold = success_threshold
+        if config:
+            self.failure_threshold = config.failure_threshold
+            self.recovery_timeout = config.recovery_timeout
+            self.success_threshold = config.success_threshold
+        else:
+            self.failure_threshold = failure_threshold or 5
+            self.recovery_timeout = recovery_timeout or 60.0
+            self.success_threshold = success_threshold or 2
         
         self.state = CircuitState.CLOSED
         self.failure_count = 0
@@ -391,6 +408,7 @@ class ResilientCacheWrapper:
 
 # Export classes
 __all__ = [
+    'CircuitBreakerConfig',
     'CacheCircuitBreaker',
     'ResilientCacheWrapper',
     'CircuitState'

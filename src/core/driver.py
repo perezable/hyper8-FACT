@@ -377,10 +377,8 @@ class FACTDriver:
             circuit_config = CircuitBreakerConfig(
                 failure_threshold=5,  # Open after 5 failures
                 success_threshold=3,  # Close after 3 successes
-                timeout_seconds=60.0,  # Wait 60s before retry
-                rolling_window_seconds=300.0,  # 5-minute window
-                gradual_recovery=True,
-                recovery_factor=0.5  # 50% of requests during recovery
+                recovery_timeout=60.0,  # Wait 60s before retry
+                half_open_max_calls=3  # Max calls in half-open state
             )
             
             self.cache_circuit_breaker = CacheCircuitBreaker(circuit_config)
@@ -434,12 +432,25 @@ class FACTDriver:
                 logger.info("Database connection test passed")
             
             # Test LLM connection with direct Anthropic SDK
-            client = anthropic.Anthropic(api_key=self.config.anthropic_api_key)
-            test_response = client.messages.create(
-                model=self.config.claude_model,
-                messages=[{"role": "user", "content": "Test"}],
-                max_tokens=10
-            )
+            # Clear any proxy environment variables that might cause issues
+            import os
+            proxy_env_vars = ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy']
+            saved_proxies = {}
+            for var in proxy_env_vars:
+                if var in os.environ:
+                    saved_proxies[var] = os.environ.pop(var)
+            
+            try:
+                client = anthropic.Anthropic(api_key=self.config.anthropic_api_key)
+                test_response = client.messages.create(
+                    model=self.config.claude_model,
+                    messages=[{"role": "user", "content": "Test"}],
+                    max_tokens=10
+                )
+            finally:
+                # Restore proxy settings
+                for var, value in saved_proxies.items():
+                    os.environ[var] = value
             
             if test_response:
                 logger.info("LLM connection test passed")
@@ -474,7 +485,20 @@ class FACTDriver:
             # Cache hits/misses can be tracked via tool execution metadata if needed
             
             # Make LLM call with direct Anthropic SDK
-            client = anthropic.Anthropic(api_key=self.config.anthropic_api_key)
+            # Clear any proxy environment variables that might cause issues
+            import os
+            proxy_env_vars = ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy']
+            saved_proxies = {}
+            for var in proxy_env_vars:
+                if var in os.environ:
+                    saved_proxies[var] = os.environ.pop(var)
+            
+            try:
+                client = anthropic.Anthropic(api_key=self.config.anthropic_api_key)
+            finally:
+                # Restore proxy settings
+                for var, value in saved_proxies.items():
+                    os.environ[var] = value
             
             # Anthropic API requires system prompt as separate parameter, not in messages
             response = client.messages.create(

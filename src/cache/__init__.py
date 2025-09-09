@@ -57,6 +57,7 @@ from .validation import (
 )
 
 from .resilience import (
+    CircuitBreakerConfig,
     CacheCircuitBreaker,
     ResilientCacheWrapper,
     CircuitState
@@ -501,6 +502,7 @@ __all__ = [
     'IntegrityIssue',
     
     # Resilience
+    'CircuitBreakerConfig',
     'CacheCircuitBreaker',
     'ResilientCacheWrapper',
     'CircuitState',
