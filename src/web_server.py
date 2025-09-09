@@ -7,18 +7,21 @@ suitable for deployment on Railway and other cloud platforms.
 
 import os
 import asyncio
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 from contextlib import asynccontextmanager
 from datetime import datetime
 import uvicorn
-from fastapi import FastAPI, HTTPException, BackgroundTasks
+from fastapi import FastAPI, HTTPException, BackgroundTasks, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 import structlog
+import tempfile
+import json
 
 from core.driver import get_driver, shutdown_driver
 from core.config import get_config
-from core.errors import FACTError, ConfigurationError
+from core.errors import FACTError, ConfigurationError, ValidationError
+from data_upload import DataUploader
 
 logger = structlog.get_logger(__name__)
 
@@ -37,6 +40,37 @@ class QueryResponse(BaseModel):
     timestamp: str = Field(..., description="Response timestamp")
 
 
+class KnowledgeSearchRequest(BaseModel):
+    """Request model for knowledge base search."""
+    query: str = Field(..., description="Search query for knowledge base")
+    category: Optional[str] = Field(None, description="Filter by category")
+    state: Optional[str] = Field(None, description="Filter by state")
+    difficulty: Optional[str] = Field(None, description="Filter by difficulty level")
+    limit: Optional[int] = Field(10, description="Maximum number of results")
+
+
+class KnowledgeEntry(BaseModel):
+    """Model for knowledge base entry."""
+    id: int = Field(..., description="Entry ID")
+    question: str = Field(..., description="Question or topic")
+    answer: str = Field(..., description="Answer or explanation")
+    category: str = Field(..., description="Category")
+    tags: Optional[str] = Field(None, description="Tags")
+    state: Optional[str] = Field(None, description="State code")
+    priority: str = Field(..., description="Priority level")
+    difficulty: str = Field(..., description="Difficulty level")
+    personas: Optional[str] = Field(None, description="Target personas")
+    source: Optional[str] = Field(None, description="Source reference")
+
+
+class KnowledgeSearchResponse(BaseModel):
+    """Response model for knowledge base search."""
+    results: List[KnowledgeEntry] = Field(..., description="Search results")
+    total_count: int = Field(..., description="Total number of results found")
+    query: str = Field(..., description="Original search query")
+    timestamp: str = Field(..., description="Response timestamp")
+
+
 class HealthResponse(BaseModel):
     """Response model for health check."""
     status: str = Field(..., description="Service status")
@@ -51,6 +85,30 @@ class ErrorResponse(BaseModel):
     error: str = Field(..., description="Error message")
     detail: Optional[str] = Field(None, description="Error details")
     timestamp: str = Field(..., description="Error timestamp")
+
+
+class DataUploadRequest(BaseModel):
+    """Request model for data upload endpoint."""
+    data_type: str = Field(..., description="Type of data: 'companies' or 'financial_records'")
+    data: List[Dict[str, Any]] = Field(..., description="Array of data records")
+    clear_existing: bool = Field(False, description="Whether to clear existing data first")
+
+
+class DataUploadResponse(BaseModel):
+    """Response model for data upload endpoint."""
+    status: str = Field(..., description="Upload status")
+    records_uploaded: int = Field(..., description="Number of records uploaded")
+    cleared_existing: bool = Field(..., description="Whether existing data was cleared")
+    timestamp: str = Field(..., description="Upload timestamp")
+
+
+class DataTemplateResponse(BaseModel):
+    """Response model for data template endpoint."""
+    description: str = Field(..., description="Template description")
+    required_fields: List[str] = Field(..., description="Required fields")
+    optional_fields: List[str] = Field(..., description="Optional fields")
+    example_data: List[Dict[str, Any]] = Field(..., description="Example data records")
+    field_descriptions: Dict[str, str] = Field(..., description="Field descriptions")
 
 
 # Global driver instance
@@ -264,6 +322,441 @@ async def initialize_system():
         raise HTTPException(
             status_code=500,
             detail=f"Initialization failed: {str(e)}"
+        )
+
+
+@app.post("/upload-data", response_model=DataUploadResponse)
+async def upload_data(request: DataUploadRequest):
+    """
+    Upload custom data to replace sample data.
+    
+    Supports uploading companies or financial records data.
+    """
+    try:
+        uploader = DataUploader()
+        
+        if request.data_type == "companies":
+            result = await uploader.upload_companies(
+                request.data, 
+                clear_existing=request.clear_existing
+            )
+        elif request.data_type == "financial_records":
+            result = await uploader.upload_financial_records(
+                request.data,
+                clear_existing=request.clear_existing
+            )
+        else:
+            raise HTTPException(
+                status_code=400,
+                detail="Invalid data_type. Must be 'companies' or 'financial_records'"
+            )
+        
+        return DataUploadResponse(
+            status=result["status"],
+            records_uploaded=result.get("companies_uploaded", result.get("records_uploaded", 0)),
+            cleared_existing=result["cleared_existing"],
+            timestamp=result["timestamp"]
+        )
+        
+    except ValidationError as e:
+        logger.error(f"Data validation error: {e}")
+        raise HTTPException(
+            status_code=400,
+            detail=str(e)
+        )
+    except Exception as e:
+        logger.error(f"Data upload failed: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Data upload failed: {str(e)}"
+        )
+
+
+@app.post("/upload-file")
+async def upload_file(
+    data_type: str = Form(...),
+    clear_existing: bool = Form(False),
+    file: UploadFile = File(...)
+):
+    """
+    Upload data from CSV or JSON file.
+    
+    Args:
+        data_type: Type of data ('companies' or 'financial_records')
+        clear_existing: Whether to clear existing data first
+        file: CSV or JSON file containing data
+    """
+    if data_type not in ["companies", "financial_records"]:
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid data_type. Must be 'companies' or 'financial_records'"
+        )
+    
+    # Check file type
+    filename = file.filename.lower() if file.filename else ""
+    if not (filename.endswith('.csv') or filename.endswith('.json')):
+        raise HTTPException(
+            status_code=400,
+            detail="File must be CSV or JSON format"
+        )
+    
+    try:
+        # Save uploaded file to temporary location
+        with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(filename)[1]) as temp_file:
+            content = await file.read()
+            temp_file.write(content)
+            temp_file_path = temp_file.name
+        
+        try:
+            uploader = DataUploader()
+            
+            if filename.endswith('.csv'):
+                result = await uploader.load_from_csv(
+                    temp_file_path, 
+                    data_type, 
+                    clear_existing
+                )
+            else:  # JSON
+                result = await uploader.load_from_json(
+                    temp_file_path, 
+                    data_type, 
+                    clear_existing
+                )
+            
+            return {
+                "status": result["status"],
+                "records_uploaded": result.get("companies_uploaded", result.get("records_uploaded", 0)),
+                "cleared_existing": result["cleared_existing"],
+                "filename": file.filename,
+                "timestamp": result["timestamp"]
+            }
+            
+        finally:
+            # Clean up temporary file
+            os.unlink(temp_file_path)
+            
+    except ValidationError as e:
+        logger.error(f"File upload validation error: {e}")
+        raise HTTPException(
+            status_code=400,
+            detail=str(e)
+        )
+    except Exception as e:
+        logger.error(f"File upload failed: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"File upload failed: {str(e)}"
+        )
+
+
+@app.get("/data-template/{data_type}", response_model=DataTemplateResponse)
+async def get_data_template(data_type: str):
+    """
+    Get data upload template with example data and field descriptions.
+    
+    Args:
+        data_type: Type of template ('companies' or 'financial_records')
+    """
+    try:
+        uploader = DataUploader()
+        template = await uploader.get_upload_template(data_type)
+        
+        return DataTemplateResponse(**template)
+        
+    except ValidationError as e:
+        logger.error(f"Invalid template request: {e}")
+        raise HTTPException(
+            status_code=400,
+            detail=str(e)
+        )
+    except Exception as e:
+        logger.error(f"Failed to get template: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to get template: {str(e)}"
+        )
+
+
+@app.delete("/data/{data_type}")
+async def clear_data(data_type: str):
+    """
+    Clear existing data from specified table.
+    
+    Args:
+        data_type: Type of data to clear ('companies', 'financial_records', or 'all')
+    """
+    valid_types = {"companies", "financial_records", "all"}
+    
+    if data_type not in valid_types:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Invalid data_type. Must be one of: {valid_types}"
+        )
+    
+    try:
+        uploader = DataUploader()
+        
+        if data_type == "all":
+            # Clear all data tables
+            await uploader.clear_existing_data("financial_records")
+            await uploader.clear_existing_data("financial_data")
+            await uploader.clear_existing_data("companies")
+            message = "All data cleared successfully"
+        else:
+            await uploader.clear_existing_data(data_type)
+            if data_type == "financial_records":
+                # Also clear financial_data for consistency
+                await uploader.clear_existing_data("financial_data")
+            message = f"{data_type} data cleared successfully"
+        
+        return {
+            "status": "success",
+            "message": message,
+            "timestamp": datetime.utcnow().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Failed to clear data: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to clear data: {str(e)}"
+        )
+
+
+@app.post("/knowledge/search", response_model=KnowledgeSearchResponse)
+async def search_knowledge_base(request: KnowledgeSearchRequest):
+    """
+    Search the knowledge base for relevant Q&A entries.
+    
+    Supports filtering by category, state, difficulty, and text search.
+    """
+    try:
+        global _driver
+        if _driver is None:
+            raise HTTPException(
+                status_code=503,
+                detail="FACT system not initialized"
+            )
+        
+        # Build SQL query with filters
+        query_parts = ["SELECT * FROM knowledge_base WHERE 1=1"]
+        
+        # Add text search on question and answer fields
+        if request.query:
+            query_parts.append("AND (question LIKE '%{}%' OR answer LIKE '%{}%' OR tags LIKE '%{}%')".format(
+                request.query.replace("'", "''"),  # Basic SQL injection prevention
+                request.query.replace("'", "''"),
+                request.query.replace("'", "''")
+            ))
+        
+        # Add category filter
+        if request.category:
+            safe_category = request.category.replace("'", "''")
+            query_parts.append(f"AND category = '{safe_category}'")
+        
+        # Add state filter
+        if request.state:
+            safe_state = request.state.upper().replace("'", "''")
+            query_parts.append(f"AND state = '{safe_state}'")
+        
+        # Add difficulty filter
+        if request.difficulty:
+            safe_difficulty = request.difficulty.lower().replace("'", "''")
+            query_parts.append(f"AND difficulty = '{safe_difficulty}'")
+        
+        # Order by priority and limit results
+        query_parts.append("ORDER BY CASE priority WHEN 'critical' THEN 1 WHEN 'high' THEN 2 WHEN 'normal' THEN 3 ELSE 4 END, id")
+        query_parts.append(f"LIMIT {min(request.limit, 100)}")  # Cap at 100 results
+        
+        sql_query = " ".join(query_parts)
+        
+        # Execute query
+        db_result = await _driver.database_manager.execute_query(sql_query)
+        
+        # Convert to response format
+        results = []
+        for row in db_result.rows:
+            results.append(KnowledgeEntry(
+                id=row["id"],
+                question=row["question"],
+                answer=row["answer"],
+                category=row["category"],
+                tags=row.get("tags"),
+                state=row.get("state"),
+                priority=row["priority"],
+                difficulty=row["difficulty"],
+                personas=row.get("personas"),
+                source=row.get("source")
+            ))
+        
+        return KnowledgeSearchResponse(
+            results=results,
+            total_count=len(results),
+            query=request.query,
+            timestamp=datetime.utcnow().isoformat()
+        )
+        
+    except Exception as e:
+        logger.error(f"Knowledge base search failed: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Knowledge base search failed: {str(e)}"
+        )
+
+
+@app.get("/knowledge/categories")
+async def get_knowledge_categories():
+    """
+    Get all available knowledge base categories with counts.
+    """
+    try:
+        global _driver
+        if _driver is None:
+            raise HTTPException(
+                status_code=503,
+                detail="FACT system not initialized"
+            )
+        
+        # Get category counts
+        sql_query = """
+            SELECT category, 
+                   COUNT(*) as count,
+                   COUNT(CASE WHEN priority = 'critical' THEN 1 END) as critical_count,
+                   COUNT(CASE WHEN priority = 'high' THEN 1 END) as high_count
+            FROM knowledge_base 
+            GROUP BY category 
+            ORDER BY count DESC
+        """
+        
+        result = await _driver.database_manager.execute_query(sql_query)
+        
+        categories = []
+        for row in result.rows:
+            categories.append({
+                "category": row["category"],
+                "count": row["count"],
+                "critical_count": row["critical_count"],
+                "high_count": row["high_count"]
+            })
+        
+        return {
+            "categories": categories,
+            "total_categories": len(categories),
+            "timestamp": datetime.utcnow().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Failed to get categories: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to get categories: {str(e)}"
+        )
+
+
+@app.get("/knowledge/states")
+async def get_knowledge_states():
+    """
+    Get all states that have knowledge base entries.
+    """
+    try:
+        global _driver
+        if _driver is None:
+            raise HTTPException(
+                status_code=503,
+                detail="FACT system not initialized"
+            )
+        
+        sql_query = """
+            SELECT state, COUNT(*) as count
+            FROM knowledge_base 
+            WHERE state IS NOT NULL AND state != ''
+            GROUP BY state 
+            ORDER BY count DESC
+        """
+        
+        result = await _driver.database_manager.execute_query(sql_query)
+        
+        states = []
+        for row in result.rows:
+            states.append({
+                "state": row["state"],
+                "count": row["count"]
+            })
+        
+        return {
+            "states": states,
+            "total_states": len(states),
+            "timestamp": datetime.utcnow().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Failed to get states: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to get states: {str(e)}"
+        )
+
+
+@app.get("/knowledge/stats")
+async def get_knowledge_stats():
+    """
+    Get knowledge base statistics and overview.
+    """
+    try:
+        global _driver
+        if _driver is None:
+            raise HTTPException(
+                status_code=503,
+                detail="FACT system not initialized"
+            )
+        
+        # Get overall stats
+        stats_query = """
+            SELECT 
+                COUNT(*) as total_entries,
+                COUNT(DISTINCT category) as total_categories,
+                COUNT(DISTINCT state) as total_states,
+                COUNT(CASE WHEN priority = 'critical' THEN 1 END) as critical_priority,
+                COUNT(CASE WHEN priority = 'high' THEN 1 END) as high_priority,
+                COUNT(CASE WHEN priority = 'normal' THEN 1 END) as normal_priority,
+                COUNT(CASE WHEN difficulty = 'basic' THEN 1 END) as basic_difficulty,
+                COUNT(CASE WHEN difficulty = 'intermediate' THEN 1 END) as intermediate_difficulty,
+                COUNT(CASE WHEN difficulty = 'advanced' THEN 1 END) as advanced_difficulty
+            FROM knowledge_base
+        """
+        
+        result = await _driver.database_manager.execute_query(stats_query)
+        
+        if result.rows:
+            stats = result.rows[0]
+            return {
+                "total_entries": stats["total_entries"],
+                "total_categories": stats["total_categories"],
+                "total_states": stats["total_states"],
+                "priority_breakdown": {
+                    "critical": stats["critical_priority"],
+                    "high": stats["high_priority"],
+                    "normal": stats["normal_priority"]
+                },
+                "difficulty_breakdown": {
+                    "basic": stats["basic_difficulty"],
+                    "intermediate": stats["intermediate_difficulty"],
+                    "advanced": stats["advanced_difficulty"]
+                },
+                "timestamp": datetime.utcnow().isoformat()
+            }
+        else:
+            return {
+                "total_entries": 0,
+                "message": "No knowledge base entries found",
+                "timestamp": datetime.utcnow().isoformat()
+            }
+        
+    except Exception as e:
+        logger.error(f"Failed to get knowledge stats: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to get knowledge stats: {str(e)}"
         )
 
 

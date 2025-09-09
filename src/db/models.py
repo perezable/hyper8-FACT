@@ -51,9 +51,26 @@ class QueryResult:
     execution_time_ms: float
 
 
-# Database schema for SQLite
+# Database schema for SQLite - Knowledge Base for AI Voice Agent
 DATABASE_SCHEMA = """
--- Companies table
+-- Knowledge base entries for Q&A retrieval
+CREATE TABLE IF NOT EXISTS knowledge_base (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    question TEXT NOT NULL,
+    answer TEXT NOT NULL,
+    category TEXT NOT NULL,
+    tags TEXT, -- Comma-separated tags
+    metadata TEXT, -- JSON metadata
+    state TEXT, -- For state-specific information
+    priority TEXT DEFAULT 'normal', -- normal, high, critical
+    personas TEXT, -- Target user personas (comma-separated)
+    source TEXT, -- Source file or reference
+    difficulty TEXT DEFAULT 'basic', -- basic, intermediate, advanced
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Legacy companies table (for backward compatibility)
 CREATE TABLE IF NOT EXISTS companies (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL UNIQUE,
@@ -66,7 +83,7 @@ CREATE TABLE IF NOT EXISTS companies (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Financial records table
+-- Legacy financial records table (for backward compatibility)
 CREATE TABLE IF NOT EXISTS financial_records (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     company_id INTEGER NOT NULL,
@@ -81,7 +98,7 @@ CREATE TABLE IF NOT EXISTS financial_records (
     UNIQUE(company_id, quarter, year)
 );
 
--- Financial data table (alias/view for validation compatibility)
+-- Legacy financial data table (for validation compatibility)
 CREATE TABLE IF NOT EXISTS financial_data (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     company_id INTEGER NOT NULL,
@@ -111,6 +128,15 @@ CREATE TABLE IF NOT EXISTS benchmarks (
 );
 
 -- Create indexes for better query performance
+CREATE INDEX IF NOT EXISTS idx_knowledge_base_category ON knowledge_base(category);
+CREATE INDEX IF NOT EXISTS idx_knowledge_base_tags ON knowledge_base(tags);
+CREATE INDEX IF NOT EXISTS idx_knowledge_base_state ON knowledge_base(state);
+CREATE INDEX IF NOT EXISTS idx_knowledge_base_priority ON knowledge_base(priority);
+CREATE INDEX IF NOT EXISTS idx_knowledge_base_difficulty ON knowledge_base(difficulty);
+CREATE INDEX IF NOT EXISTS idx_knowledge_base_question_fts ON knowledge_base(question);
+CREATE INDEX IF NOT EXISTS idx_knowledge_base_answer_fts ON knowledge_base(answer);
+
+-- Legacy indexes (for backward compatibility)
 CREATE INDEX IF NOT EXISTS idx_financial_records_company_id ON financial_records(company_id);
 CREATE INDEX IF NOT EXISTS idx_financial_records_year ON financial_records(year);
 CREATE INDEX IF NOT EXISTS idx_financial_records_quarter ON financial_records(quarter);
@@ -123,7 +149,59 @@ CREATE INDEX IF NOT EXISTS idx_benchmarks_test_name ON benchmarks(test_name);
 CREATE INDEX IF NOT EXISTS idx_benchmarks_test_date ON benchmarks(test_date);
 """
 
-# Sample data for demonstration
+# Sample data for AI voice agent knowledge base
+SAMPLE_KNOWLEDGE_BASE = [
+    {
+        "question": "Georgia Contractor License Requirements",
+        "answer": "Georgia requires contractors to be licensed for work over $2,500. General contractor license requires 4 years experience or equivalent education. Application fee is $200, with total costs ranging $300-400. Two exams required: Business & Law (110 questions, 4 hours) and Trade exam (110 questions, 4 hours). Both require 70% passing score. $10,000 surety bond required for general contractors.",
+        "category": "state_licensing_requirements",
+        "tags": "georgia,general_contractor,license_requirements,exam_info,fees,bond",
+        "metadata": '{"category":"state_licensing_requirements","difficulty":"basic","urgency":"normal","personas":["overwhelmed_veteran","confused_newcomer","urgent_operator"],"source":"state_requirements_complete.json - GA section","state":"GA","tags":["georgia","general_contractor","license_requirements","exam_info","fees","bond"]}',
+        "state": "GA",
+        "priority": "normal",
+        "personas": "overwhelmed_veteran,confused_newcomer,urgent_operator",
+        "source": "state_requirements_complete.json - GA section",
+        "difficulty": "basic"
+    },
+    {
+        "question": "What is the PSI exam?",
+        "answer": "PSI is a national testing service that administers contractor licensing exams in many states. They provide both business/law exams and trade-specific exams. PSI exams are computer-based and typically held at designated testing centers. You must schedule your exam appointment through the PSI website or phone system.",
+        "category": "exam_preparation_testing",
+        "tags": "psi,exam_service,testing_centers,scheduling",
+        "metadata": '{"category":"exam_preparation_testing","difficulty":"basic","urgency":"normal","personas":["confused_newcomer","urgent_operator"],"source":"exam_preparation_guide.json","tags":["psi","exam_service","testing_centers","scheduling"]}',
+        "state": "",
+        "priority": "normal",
+        "personas": "confused_newcomer,urgent_operator",
+        "source": "exam_preparation_guide.json",
+        "difficulty": "basic"
+    },
+    {
+        "question": "How do I get a surety bond?",
+        "answer": "Surety bonds are obtained through licensed surety companies or insurance agents. You'll need to provide financial information, credit history, and sometimes collateral. Bond costs typically range from 1-15% of the bond amount annually, depending on your credit score. The bond protects consumers if you don't complete work properly.",
+        "category": "business_operations_finance",
+        "tags": "surety_bond,insurance,bonding_company,financial_requirements",
+        "metadata": '{"category":"business_operations_finance","difficulty":"intermediate","urgency":"high","personas":["overwhelmed_veteran","urgent_operator"],"source":"business_operations_guide.json","tags":["surety_bond","insurance","bonding_company","financial_requirements"]}',
+        "state": "",
+        "priority": "high",
+        "personas": "overwhelmed_veteran,urgent_operator",
+        "source": "business_operations_guide.json",
+        "difficulty": "intermediate"
+    },
+    {
+        "question": "What happens if I fail the contractor exam?",
+        "answer": "If you fail the contractor exam, you can typically retake it after a waiting period (usually 30-60 days). You'll need to pay the exam fee again. Some states limit the number of retakes within a certain period. Use the score report to identify weak areas and focus your study efforts. Consider taking a prep course if you've failed multiple times.",
+        "category": "troubleshooting_problems",
+        "tags": "exam_failure,retake_policy,study_help,prep_courses",
+        "metadata": '{"category":"troubleshooting_problems","difficulty":"basic","urgency":"high","personas":["stressed_exam_taker","confused_newcomer"],"source":"troubleshooting_solutions.json","tags":["exam_failure","retake_policy","study_help","prep_courses"]}',
+        "state": "",
+        "priority": "high",
+        "personas": "stressed_exam_taker,confused_newcomer",
+        "source": "troubleshooting_solutions.json", 
+        "difficulty": "basic"
+    }
+]
+
+# Legacy sample data for demonstration (financial/company data)
 SAMPLE_COMPANIES = [
     {
         "name": "TechCorp Inc.",
@@ -233,13 +311,24 @@ def validate_schema_integrity(tables_info: List[Dict[str, Any]]) -> bool:
     Returns:
         True if schema is valid, False otherwise
     """
-    expected_tables = {"companies", "financial_records", "financial_data", "benchmarks"}
+    # Primary tables for knowledge base system
+    expected_tables = {"knowledge_base", "benchmarks"}
+    
+    # Legacy tables for backward compatibility
+    legacy_tables = {"companies", "financial_records", "financial_data"}
+    
     actual_tables = {table["name"] for table in tables_info}
     
+    # Check for primary knowledge base tables
     if not expected_tables.issubset(actual_tables):
         missing_tables = expected_tables - actual_tables
-        logger.error("Missing database tables", missing=list(missing_tables))
+        logger.error("Missing primary database tables", missing=list(missing_tables))
         return False
+    
+    # Warn about missing legacy tables but don't fail
+    missing_legacy = legacy_tables - actual_tables
+    if missing_legacy:
+        logger.warning("Missing legacy tables (non-critical)", missing=list(missing_legacy))
     
     logger.info("Database schema validation passed")
     return True

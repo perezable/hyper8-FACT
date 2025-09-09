@@ -20,7 +20,8 @@ try:
     from .models import (
         DATABASE_SCHEMA,
         SAMPLE_COMPANIES,
-        SAMPLE_FINANCIAL_RECORDS,
+        SAMPLE_FINANCIAL_RECORDS, 
+        SAMPLE_KNOWLEDGE_BASE,
         QueryResult,
         validate_schema_integrity
     )
@@ -38,6 +39,7 @@ except ImportError:
         DATABASE_SCHEMA,
         SAMPLE_COMPANIES,
         SAMPLE_FINANCIAL_RECORDS,
+        SAMPLE_KNOWLEDGE_BASE,
         QueryResult,
         validate_schema_integrity
     )
@@ -162,7 +164,12 @@ class DatabaseManager:
                 await db.executescript(DATABASE_SCHEMA)
                 await db.commit()
                 
-                # Check if data already exists
+                # Check if knowledge base data already exists
+                cursor = await db.execute("SELECT COUNT(*) FROM knowledge_base")
+                knowledge_count = (await cursor.fetchone())[0]
+                await cursor.close()
+                
+                # Check if legacy data already exists
                 cursor = await db.execute("SELECT COUNT(*) FROM companies")
                 company_count = (await cursor.fetchone())[0]
                 await cursor.close()
@@ -177,6 +184,16 @@ class DatabaseManager:
                 benchmarks_count = (await cursor.fetchone())[0]
                 await cursor.close()
                 
+                # Initialize knowledge base with sample data (primary focus)
+                if knowledge_count == 0:
+                    # Batch insert sample knowledge base entries
+                    await db.executemany("""
+                        INSERT INTO knowledge_base (question, answer, category, tags, metadata, state, priority, personas, source, difficulty)
+                        VALUES (:question, :answer, :category, :tags, :metadata, :state, :priority, :personas, :source, :difficulty)
+                    """, SAMPLE_KNOWLEDGE_BASE)
+                    logger.info("Sample knowledge base data inserted")
+                
+                # Initialize legacy data for backward compatibility
                 if company_count == 0:
                     # Batch insert sample companies for better performance
                     await db.executemany("""

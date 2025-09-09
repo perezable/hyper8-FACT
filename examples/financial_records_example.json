@@ -1,0 +1,18 @@
+[
+  {
+    "company_id": 1,
+    "quarter": "Q1",
+    "year": 2025,
+    "revenue": 2000000000.0,
+    "profit": 400000000.0,
+    "expenses": 1600000000.0
+  },
+  {
+    "company_id": 2,
+    "quarter": "Q1",
+    "year": 2025,
+    "revenue": 800000000.0,
+    "profit": 120000000.0,
+    "expenses": 680000000.0
+  }
+]
