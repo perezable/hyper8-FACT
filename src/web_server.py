@@ -32,6 +32,15 @@ except ImportError:
     logger = structlog.get_logger(__name__)
     logger.warning("Knowledge API module not available")
 
+# Import the VAPI webhook router
+try:
+    from api.vapi_webhook import router as vapi_router
+    VAPI_WEBHOOK_AVAILABLE = True
+except ImportError:
+    VAPI_WEBHOOK_AVAILABLE = False
+    logger = structlog.get_logger(__name__)
+    logger.warning("VAPI webhook module not available")
+
 logger = structlog.get_logger(__name__)
 
 
@@ -172,6 +181,11 @@ app.add_middleware(
 if KNOWLEDGE_API_AVAILABLE:
     app.include_router(knowledge_router)
     logger.info("Knowledge API endpoints loaded")
+
+# Include the VAPI webhook router if available
+if VAPI_WEBHOOK_AVAILABLE:
+    app.include_router(vapi_router)
+    logger.info("VAPI webhook endpoints loaded")
 
 
 @app.get("/", response_model=HealthResponse)

@@ -1,0 +1,190 @@
+{
+  "assistant": {
+    "name": "CLP Contractor Licensing Expert",
+    "firstMessage": "Hi! I'm here to help you get your contractor's license. What state are you calling from?",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-4-turbo",
+      "temperature": 0.7,
+      "maxTokens": 500,
+      "systemPrompt": "You are an expert contractor licensing advisor. Use the searchKnowledge function to retrieve accurate information about licensing requirements. Be empathetic and helpful. Keep responses concise for voice interaction."
+    },
+    "voice": {
+      "provider": "elevenlabs",
+      "voiceId": "21m00Tcm4TlvDq8ikWAM",
+      "stability": 0.5,
+      "similarityBoost": 0.75,
+      "optimizeStreamingLatency": 3
+    },
+    "silenceTimeoutSeconds": 30,
+    "responseDelaySeconds": 0.4,
+    "llmRequestDelaySeconds": 0.1,
+    "numWordsToInterruptAssistant": 2,
+    "functions": [
+      {
+        "name": "searchKnowledge",
+        "description": "Search the FACT knowledge base for contractor licensing information",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "The search query"
+            },
+            "state": {
+              "type": "string",
+              "description": "Two-letter state code (optional)"
+            },
+            "category": {
+              "type": "string",
+              "description": "Category filter (optional)",
+              "enum": [
+                "state_licensing_requirements",
+                "exam_preparation_testing",
+                "qualifier_network_programs",
+                "business_formation_operations",
+                "insurance_bonding",
+                "financial_planning_roi",
+                "success_stories_case_studies",
+                "troubleshooting_problem_resolution"
+              ]
+            }
+          },
+          "required": ["query"]
+        },
+        "serverUrl": "https://hyper8-fact-fact-system.up.railway.app/vapi/webhook"
+      },
+      {
+        "name": "detectPersona",
+        "description": "Detect the caller's persona to adjust conversation style",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "description": "Recent conversation text to analyze"
+            }
+          },
+          "required": ["text"]
+        },
+        "serverUrl": "https://hyper8-fact-fact-system.up.railway.app/vapi/webhook"
+      },
+      {
+        "name": "calculateTrust",
+        "description": "Calculate current trust score based on conversation events",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "events": {
+              "type": "array",
+              "description": "Array of trust events",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": ["positive", "negative", "neutral"]
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": ["events"]
+        },
+        "serverUrl": "https://hyper8-fact-fact-system.up.railway.app/vapi/webhook"
+      },
+      {
+        "name": "getStateRequirements",
+        "description": "Get specific state contractor licensing requirements",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "state": {
+              "type": "string",
+              "description": "Two-letter state code"
+            }
+          },
+          "required": ["state"]
+        },
+        "serverUrl": "https://hyper8-fact-fact-system.up.railway.app/vapi/webhook"
+      },
+      {
+        "name": "handleObjection",
+        "description": "Get appropriate response for common objections",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "Type of objection",
+              "enum": ["too_expensive", "need_time", "not_sure", "already_tried", "too_complicated"]
+            }
+          },
+          "required": ["type"]
+        },
+        "serverUrl": "https://hyper8-fact-fact-system.up.railway.app/vapi/webhook"
+      }
+    ],
+    "serverMessages": [
+      "Hold on a moment while I look that up for you.",
+      "Let me find that information.",
+      "One second, checking our database."
+    ],
+    "endCallFunctionEnabled": true,
+    "dialKeypadFunctionEnabled": false,
+    "fillersEnabled": true,
+    "fillers": [
+      "Um...",
+      "Well...",
+      "Let me see..."
+    ]
+  },
+  "squad": {
+    "name": "CLP Expert Squad",
+    "members": [
+      {
+        "assistantId": "asst_overwhelmed_veteran",
+        "name": "Veteran Specialist",
+        "transferCondition": "When persona is 'overwhelmed_veteran'",
+        "systemPrompt": "You specialize in helping experienced contractors who feel overwhelmed. Be extra patient, empathetic, and break things down step-by-step."
+      },
+      {
+        "assistantId": "asst_confused_newcomer",
+        "name": "Newcomer Guide",
+        "transferCondition": "When persona is 'confused_newcomer'",
+        "systemPrompt": "You specialize in helping people new to contracting. Use simple language, avoid jargon, and provide clear guidance."
+      },
+      {
+        "assistantId": "asst_urgent_operator",
+        "name": "Fast Track Specialist",
+        "transferCondition": "When persona is 'urgent_operator'",
+        "systemPrompt": "You help contractors who need licensing urgently. Be efficient, direct, and focus on expedited options."
+      },
+      {
+        "assistantId": "asst_qualifier_specialist",
+        "name": "Qualifier Network Expert",
+        "transferCondition": "When interested in passive income or qualifier programs",
+        "systemPrompt": "You specialize in the qualifier network program for passive income opportunities."
+      }
+    ],
+    "transferMode": "warm",
+    "transferMessage": "Let me connect you with our specialist who can better help with your specific situation."
+  },
+  "telephony": {
+    "provider": "twilio",
+    "twilioConfig": {
+      "recordingEnabled": true,
+      "transcriptionEnabled": true
+    }
+  },
+  "analytics": {
+    "enabled": true,
+    "trackPersonaDetection": true,
+    "trackTrustScore": true,
+    "trackKnowledgeQueries": true,
+    "webhookUrl": "https://hyper8-fact-fact-system.up.railway.app/vapi/webhook/call-status"
+  }
+}
