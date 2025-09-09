@@ -8,16 +8,32 @@ formatted responses optimized for voice interactions.
 
 from typing import Dict, List, Any, Optional
 from datetime import datetime
-from fastapi import APIRouter, HTTPException, Request, Response
+from fastapi import APIRouter, HTTPException, Request, Response, Depends, Header
 from pydantic import BaseModel, Field
 import json
 import asyncio
 import structlog
+import os
 
 logger = structlog.get_logger(__name__)
 
 # Create VAPI webhook router
 router = APIRouter(prefix="/vapi", tags=["vapi"])
+
+# Import security module if available
+try:
+    from .vapi_security import verify_vapi_request, init_security
+    SECURITY_AVAILABLE = True
+    # Initialize security on module load
+    init_security()
+except ImportError:
+    SECURITY_AVAILABLE = False
+    logger.warning("VAPI security module not available, webhooks will be unprotected")
+    # Dummy function when security not available
+    async def verify_vapi_request(request: Request, 
+                                 x_vapi_signature: Optional[str] = Header(None),
+                                 x_api_key: Optional[str] = Header(None)):
+        return True
 
 
 class VAPIFunctionCall(BaseModel):
@@ -205,12 +221,13 @@ async def calculate_trust_score(call_id: str, events: List[Dict]) -> Dict[str, A
     }
 
 
-@router.post("/webhook", response_model=VAPIWebhookResponse)
+@router.post("/webhook", response_model=VAPIWebhookResponse, dependencies=[Depends(verify_vapi_request)])
 async def vapi_webhook(request: VAPIWebhookRequest):
     """
     Main VAPI webhook handler for function calls.
     
     Processes VAPI function calls and returns voice-optimized responses.
+    Secured with signature verification and optional API key.
     """
     try:
         logger.info(f"VAPI webhook called", 
@@ -319,10 +336,11 @@ async def vapi_webhook(request: VAPIWebhookRequest):
         )
 
 
-@router.post("/webhook/call-status")
+@router.post("/webhook/call-status", dependencies=[Depends(verify_vapi_request)])
 async def vapi_call_status(request: Request):
     """
     Handle VAPI call status updates (started, ended, etc.).
+    Secured with signature verification.
     """
     try:
         data = await request.json()
@@ -349,10 +367,10 @@ async def vapi_call_status(request: Request):
 async def webhook_health():
     """
     Health check for VAPI webhook endpoint.
+    Public endpoint - does not expose sensitive information.
     """
     return {
         "status": "healthy",
         "endpoint": "VAPI Webhook Handler",
-        "cache_size": len(conversation_cache),
         "timestamp": datetime.utcnow().isoformat()
     }

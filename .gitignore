@@ -204,3 +204,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+.env.template
+.env
