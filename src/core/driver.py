@@ -432,15 +432,30 @@ class FACTDriver:
                 logger.info("Database connection test passed")
             
             # Test LLM connection with direct Anthropic SDK
-            # Clear any proxy environment variables that might cause issues
-            proxy_env_vars = ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy']
+            # Create httpx client without proxy support to avoid proxy issues
+            import httpx
+            
+            # Clear proxy environment variables temporarily
+            proxy_env_vars = ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy', 
+                              'ALL_PROXY', 'all_proxy', 'NO_PROXY', 'no_proxy']
             saved_proxies = {}
             for var in proxy_env_vars:
                 if var in os.environ:
                     saved_proxies[var] = os.environ.pop(var)
             
             try:
-                client = anthropic.Anthropic(api_key=self.config.anthropic_api_key)
+                # Create httpx client explicitly without proxy
+                http_client = httpx.Client(
+                    proxies=None,  # Explicitly disable proxies
+                    trust_env=False  # Don't use environment proxy settings
+                )
+                
+                # Initialize Anthropic client with custom http client
+                client = anthropic.Anthropic(
+                    api_key=self.config.anthropic_api_key,
+                    http_client=http_client
+                )
+                
                 test_response = client.messages.create(
                     model=self.config.claude_model,
                     messages=[{"role": "user", "content": "Test"}],
@@ -484,15 +499,29 @@ class FACTDriver:
             # Cache hits/misses can be tracked via tool execution metadata if needed
             
             # Make LLM call with direct Anthropic SDK
-            # Clear any proxy environment variables that might cause issues
-            proxy_env_vars = ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy']
+            # Create httpx client without proxy support to avoid proxy issues
+            import httpx
+            
+            # Clear proxy environment variables temporarily
+            proxy_env_vars = ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy',
+                              'ALL_PROXY', 'all_proxy', 'NO_PROXY', 'no_proxy']
             saved_proxies = {}
             for var in proxy_env_vars:
                 if var in os.environ:
                     saved_proxies[var] = os.environ.pop(var)
             
             try:
-                client = anthropic.Anthropic(api_key=self.config.anthropic_api_key)
+                # Create httpx client explicitly without proxy
+                http_client = httpx.Client(
+                    proxies=None,  # Explicitly disable proxies
+                    trust_env=False  # Don't use environment proxy settings
+                )
+                
+                # Initialize Anthropic client with custom http client
+                client = anthropic.Anthropic(
+                    api_key=self.config.anthropic_api_key,
+                    http_client=http_client
+                )
             finally:
                 # Restore proxy settings
                 for var, value in saved_proxies.items():
