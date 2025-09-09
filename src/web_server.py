@@ -23,6 +23,15 @@ from core.config import get_config
 from core.errors import FACTError, ConfigurationError, ValidationError
 from data_upload import DataUploader
 
+# Import the knowledge API router
+try:
+    from api.knowledge_api import router as knowledge_router
+    KNOWLEDGE_API_AVAILABLE = True
+except ImportError:
+    KNOWLEDGE_API_AVAILABLE = False
+    logger = structlog.get_logger(__name__)
+    logger.warning("Knowledge API module not available")
+
 logger = structlog.get_logger(__name__)
 
 
@@ -158,6 +167,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include the knowledge API router if available
+if KNOWLEDGE_API_AVAILABLE:
+    app.include_router(knowledge_router)
+    logger.info("Knowledge API endpoints loaded")
 
 
 @app.get("/", response_model=HealthResponse)
