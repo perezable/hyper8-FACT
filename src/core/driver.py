@@ -47,6 +47,70 @@ except ImportError:
 
 logger = structlog.get_logger(__name__)
 
+
+def create_anthropic_client(api_key: str):
+    """
+    Create an Anthropic client safely, handling potential proxy issues.
+    
+    Args:
+        api_key: Anthropic API key
+        
+    Returns:
+        Configured Anthropic client
+    """
+    import httpx
+    
+    # Save and clear ALL environment variables that might affect proxy settings
+    proxy_env_vars = [
+        'HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy',
+        'ALL_PROXY', 'all_proxy', 'NO_PROXY', 'no_proxy',
+        'REQUESTS_CA_BUNDLE', 'CURL_CA_BUNDLE'
+    ]
+    saved_env = {}
+    for var in proxy_env_vars:
+        if var in os.environ:
+            saved_env[var] = os.environ.pop(var)
+    
+    try:
+        # Try to create client with explicit no-proxy http client
+        try:
+            http_client = httpx.Client(
+                proxies=None,
+                trust_env=False,
+                verify=True
+            )
+            client = anthropic.Anthropic(
+                api_key=api_key,
+                http_client=http_client
+            )
+            logger.debug("Successfully created Anthropic client with custom httpx client")
+            return client
+        except Exception as e:
+            # Log the exact error for debugging
+            logger.warning(f"Failed to create client with httpx: {e}, error type: {type(e).__name__}")
+            
+            # If httpx client approach fails, try direct initialization
+            try:
+                client = anthropic.Anthropic(api_key=api_key)
+                logger.debug("Successfully created Anthropic client with direct initialization")
+                return client
+            except Exception as e2:
+                logger.error(f"Failed to create Anthropic client: {e2}, error type: {type(e2).__name__}")
+                # Try one more time with absolutely minimal configuration
+                import sys
+                import importlib
+                # Reload anthropic module to clear any cached state
+                if 'anthropic' in sys.modules:
+                    importlib.reload(anthropic)
+                client = anthropic.Anthropic(api_key=api_key)
+                logger.debug("Successfully created Anthropic client after module reload")
+                return client
+    finally:
+        # Restore environment variables
+        for var, value in saved_env.items():
+            os.environ[var] = value
+
+
 class FACTDriver:
     """
     
@@ -432,39 +496,12 @@ class FACTDriver:
                 logger.info("Database connection test passed")
             
             # Test LLM connection with direct Anthropic SDK
-            # Create httpx client without proxy support to avoid proxy issues
-            import httpx
-            
-            # Clear proxy environment variables temporarily
-            proxy_env_vars = ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy', 
-                              'ALL_PROXY', 'all_proxy', 'NO_PROXY', 'no_proxy']
-            saved_proxies = {}
-            for var in proxy_env_vars:
-                if var in os.environ:
-                    saved_proxies[var] = os.environ.pop(var)
-            
-            try:
-                # Create httpx client explicitly without proxy
-                http_client = httpx.Client(
-                    proxies=None,  # Explicitly disable proxies
-                    trust_env=False  # Don't use environment proxy settings
-                )
-                
-                # Initialize Anthropic client with custom http client
-                client = anthropic.Anthropic(
-                    api_key=self.config.anthropic_api_key,
-                    http_client=http_client
-                )
-                
-                test_response = client.messages.create(
-                    model=self.config.claude_model,
-                    messages=[{"role": "user", "content": "Test"}],
-                    max_tokens=10
-                )
-            finally:
-                # Restore proxy settings
-                for var, value in saved_proxies.items():
-                    os.environ[var] = value
+            client = create_anthropic_client(self.config.anthropic_api_key)
+            test_response = client.messages.create(
+                model=self.config.claude_model,
+                messages=[{"role": "user", "content": "Test"}],
+                max_tokens=10
+            )
             
             if test_response:
                 logger.info("LLM connection test passed")
@@ -499,33 +536,7 @@ class FACTDriver:
             # Cache hits/misses can be tracked via tool execution metadata if needed
             
             # Make LLM call with direct Anthropic SDK
-            # Create httpx client without proxy support to avoid proxy issues
-            import httpx
-            
-            # Clear proxy environment variables temporarily
-            proxy_env_vars = ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy',
-                              'ALL_PROXY', 'all_proxy', 'NO_PROXY', 'no_proxy']
-            saved_proxies = {}
-            for var in proxy_env_vars:
-                if var in os.environ:
-                    saved_proxies[var] = os.environ.pop(var)
-            
-            try:
-                # Create httpx client explicitly without proxy
-                http_client = httpx.Client(
-                    proxies=None,  # Explicitly disable proxies
-                    trust_env=False  # Don't use environment proxy settings
-                )
-                
-                # Initialize Anthropic client with custom http client
-                client = anthropic.Anthropic(
-                    api_key=self.config.anthropic_api_key,
-                    http_client=http_client
-                )
-            finally:
-                # Restore proxy settings
-                for var, value in saved_proxies.items():
-                    os.environ[var] = value
+            client = create_anthropic_client(self.config.anthropic_api_key)
             
             # Anthropic API requires system prompt as separate parameter, not in messages
             response = client.messages.create(
