@@ -66,6 +66,9 @@ def create_anthropic_client(api_key: str):
     Returns:
         Configured Anthropic client
     """
+    # Import anthropic here to ensure it's available
+    import anthropic
+    
     # Clear proxy environment variables as a precaution for Railway deployment
     proxy_env_vars = [
         'HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy',
@@ -94,9 +97,10 @@ def create_anthropic_client(api_key: str):
             import importlib
             if 'anthropic' in sys.modules:
                 del sys.modules['anthropic']
-            import anthropic
+            # Re-import anthropic after clearing from sys.modules
+            import anthropic as anthropic_fresh
             
-            client = anthropic.Anthropic(api_key=api_key)
+            client = anthropic_fresh.Anthropic(api_key=api_key)
             logger.debug("Created Anthropic client with fresh import")
             return client
         else:
