@@ -14,10 +14,6 @@ import argparse
 # Add src directory to Python path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
-# Apply Anthropic patch BEFORE any other imports to prevent proxy injection
-from src.core.anthropic_patch import patch_anthropic
-patch_anthropic()
-
 from src.core.cli import main as cli_main
 from src.core.config import get_config
 from src.core.driver import get_driver

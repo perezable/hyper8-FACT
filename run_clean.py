@@ -34,15 +34,11 @@ def main():
     print("FACT System Clean Runner")
     print("=" * 60)
     
-    # Clear proxy environment
+    # Clear proxy environment (still useful for Railway)
     clear_proxy_environment()
     
     # Add src to path
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-    
-    # Apply Anthropic patch BEFORE any other imports
-    from src.core.anthropic_patch import patch_anthropic
-    patch_anthropic()
     
     # Import and run the main application
     print("\nStarting FACT system...")

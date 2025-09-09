@@ -1,7 +1,7 @@
 # FACT System Dependencies
 # Core dependencies
 anthropic==0.19.1
-litellm==1.0.0
+# litellm removed - was causing proxy injection issues with Anthropic SDK
 aiohttp==3.9.5
 python-dotenv==1.0.1
 pydantic==2.8.2
