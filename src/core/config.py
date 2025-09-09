@@ -72,10 +72,20 @@ class Config:
             value = os.getenv(key)
             if not value:
                 missing_keys.append(key)
+                logger.warning(f"Environment variable {key} is not set")
             elif not value.strip():
                 missing_keys.append(key)  # Treat whitespace-only as missing
-            elif self._is_placeholder_key(value.strip()):
-                invalid_keys.append(key)
+                logger.warning(f"Environment variable {key} is empty or whitespace-only")
+            else:
+                # Clean the value like we do in the properties
+                cleaned_value = value.strip().strip('"').strip("'").strip()
+                if self._is_placeholder_key(cleaned_value):
+                    invalid_keys.append(key)
+                    logger.warning(f"Environment variable {key} contains placeholder value")
+                else:
+                    # Log successful load (but mask the actual key value)
+                    masked_value = cleaned_value[:4] + "..." + cleaned_value[-4:] if len(cleaned_value) > 8 else "***"
+                    logger.info(f"Loaded {key}: {masked_value}")
                 
         if missing_keys:
             raise ConfigurationError(
@@ -104,13 +114,19 @@ class Config:
         
     @property
     def anthropic_api_key(self) -> str:
-        """Get Anthropic API key."""
-        return os.getenv("ANTHROPIC_API_KEY", "")
+        """Get Anthropic API key, cleaned of any extra quotes or whitespace."""
+        key = os.getenv("ANTHROPIC_API_KEY", "")
+        # Strip quotes, whitespace, and newlines that might be added by Railway
+        key = key.strip().strip('"').strip("'").strip()
+        return key
         
     @property
     def arcade_api_key(self) -> str:
-        """Get Arcade API key."""
-        return os.getenv("ARCADE_API_KEY", "")
+        """Get Arcade API key, cleaned of any extra quotes or whitespace."""
+        key = os.getenv("ARCADE_API_KEY", "")
+        # Strip quotes, whitespace, and newlines that might be added by Railway
+        key = key.strip().strip('"').strip("'").strip()
+        return key
         
     @property
     def arcade_base_url(self) -> str:

@@ -14,7 +14,11 @@ ENV PYTHONUNBUFFERED=1 \
     http_proxy="" \
     https_proxy="" \
     NO_PROXY="*" \
-    no_proxy="*"
+    no_proxy="*" \
+    # Enable Python to see Railway environment variables
+    PYTHONPATH=/app \
+    # Log level for debugging
+    LOG_LEVEL=DEBUG
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
