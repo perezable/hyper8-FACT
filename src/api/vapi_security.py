@@ -114,7 +114,11 @@ class VAPIWebhookSecurity:
             body = await request.body()
             
             # 1. Verify signature
-            if self.webhook_secret and signature:
+            if self.webhook_secret:
+                # If secret is configured, signature is required
+                if not signature:
+                    logger.warning("Missing webhook signature")
+                    raise HTTPException(status_code=401, detail="Missing signature")
                 if not self.verify_webhook_signature(body, signature):
                     logger.warning("Invalid webhook signature")
                     raise HTTPException(status_code=401, detail="Invalid signature")
