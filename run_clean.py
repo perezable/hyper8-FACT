@@ -37,6 +37,13 @@ def main():
     # Clear proxy environment
     clear_proxy_environment()
     
+    # Add src to path
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+    
+    # Apply Anthropic patch BEFORE any other imports
+    from src.core.anthropic_patch import patch_anthropic
+    patch_anthropic()
+    
     # Import and run the main application
     print("\nStarting FACT system...")
     
@@ -44,11 +51,10 @@ def main():
         # Import main module
         import main
         
-        # Run the main function
-        if hasattr(main, 'main'):
-            main.main()
-        else:
-            print("ERROR: main.py does not have a main() function")
+        # Run the main function using asyncio
+        import asyncio
+        exit_code = asyncio.run(main.main())
+        sys.exit(exit_code)
             
     except Exception as e:
         print(f"ERROR running application: {e}")

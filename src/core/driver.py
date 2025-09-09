@@ -8,6 +8,10 @@ managing cache, queries, and tool execution following the architecture specifica
 import asyncio
 import time
 import os
+import sys
+import json
+import subprocess
+import importlib
 from typing import Dict, List, Any, Optional
 import structlog
 
@@ -58,7 +62,8 @@ def create_anthropic_client(api_key: str):
     Returns:
         Configured Anthropic client
     """
-    import httpx
+    # First, completely isolate the Anthropic import and initialization
+    # to prevent any environment or runtime injection
     
     # Save and clear ALL environment variables that might affect proxy settings
     proxy_env_vars = [
@@ -72,39 +77,123 @@ def create_anthropic_client(api_key: str):
             saved_env[var] = os.environ.pop(var)
     
     try:
-        # Try to create client with explicit no-proxy http client
+        # Strategy 1: Try the simplest possible initialization
+        # The Anthropic client ONLY accepts these parameters in __init__:
+        # api_key, base_url, timeout, max_retries, default_headers, default_query, http_client
         try:
-            http_client = httpx.Client(
-                proxies=None,
-                trust_env=False,
-                verify=True
-            )
-            client = anthropic.Anthropic(
-                api_key=api_key,
-                http_client=http_client
-            )
-            logger.debug("Successfully created Anthropic client with custom httpx client")
-            return client
-        except Exception as e:
-            # Log the exact error for debugging
-            logger.warning(f"Failed to create client with httpx: {e}, error type: {type(e).__name__}")
+            # Import fresh to avoid any monkey-patching
+            import importlib
+            import sys
             
-            # If httpx client approach fails, try direct initialization
+            # Remove anthropic from sys.modules to force fresh import
+            if 'anthropic' in sys.modules:
+                del sys.modules['anthropic']
+            if 'anthropic.resources' in sys.modules:
+                del sys.modules['anthropic.resources']
+            if 'anthropic._client' in sys.modules:
+                del sys.modules['anthropic._client']
+            
+            # Fresh import
+            import anthropic
+            
+            # Create client with ONLY the api_key parameter
+            client = anthropic.Anthropic(api_key=api_key)
+            logger.debug("Successfully created Anthropic client with fresh import")
+            return client
+            
+        except TypeError as e:
+            # If we get a TypeError about 'proxies', something is injecting it
+            if 'proxies' in str(e):
+                logger.warning(f"Proxy injection detected: {e}")
+                
+                # Strategy 2: Create a wrapper class that filters out proxy arguments
+                import anthropic
+                
+                # Get the original Anthropic class
+                OriginalAnthropic = anthropic.Anthropic
+                
+                # Create a wrapper that filters out the 'proxies' argument
+                class AnthropicWrapper:
+                    def __init__(self, **kwargs):
+                        # Filter out any 'proxies' argument
+                        filtered_kwargs = {k: v for k, v in kwargs.items() if k != 'proxies'}
+                        # Create the actual client with filtered arguments
+                        self._client = OriginalAnthropic(**filtered_kwargs)
+                    
+                    def __getattr__(self, name):
+                        # Delegate all other attributes to the actual client
+                        return getattr(self._client, name)
+                
+                # Replace the Anthropic class temporarily
+                anthropic.Anthropic = AnthropicWrapper
+                
+                try:
+                    # Now create the client - any 'proxies' argument will be filtered
+                    client = anthropic.Anthropic(api_key=api_key)
+                    
+                    # Get the actual client from the wrapper
+                    if hasattr(client, '_client'):
+                        actual_client = client._client
+                    else:
+                        actual_client = client
+                    
+                    logger.debug("Successfully created Anthropic client with wrapper")
+                    return actual_client
+                    
+                finally:
+                    # Restore the original class
+                    anthropic.Anthropic = OriginalAnthropic
+            else:
+                # Different TypeError, re-raise
+                raise
+                
+        except Exception as e:
+            # Log the error and try one more strategy
+            logger.error(f"Failed to create Anthropic client: {e}")
+            
+            # Strategy 3: Use subprocess isolation (last resort)
+            # This completely isolates the client creation
+            import subprocess
+            import json
+            import tempfile
+            
+            test_script = '''
+import sys
+import json
+api_key = sys.argv[1]
+try:
+    import anthropic
+    client = anthropic.Anthropic(api_key=api_key)
+    # Test that it works
+    print(json.dumps({"success": True}))
+except Exception as e:
+    print(json.dumps({"success": False, "error": str(e)}))
+'''
+            
             try:
-                client = anthropic.Anthropic(api_key=api_key)
-                logger.debug("Successfully created Anthropic client with direct initialization")
-                return client
-            except Exception as e2:
-                logger.error(f"Failed to create Anthropic client: {e2}, error type: {type(e2).__name__}")
-                # Try one more time with absolutely minimal configuration
-                import sys
-                import importlib
-                # Reload anthropic module to clear any cached state
-                if 'anthropic' in sys.modules:
-                    importlib.reload(anthropic)
-                client = anthropic.Anthropic(api_key=api_key)
-                logger.debug("Successfully created Anthropic client after module reload")
-                return client
+                result = subprocess.run(
+                    [sys.executable, '-c', test_script, api_key],
+                    capture_output=True,
+                    text=True,
+                    timeout=5,
+                    env={k: v for k, v in os.environ.items() if not any(p in k.upper() for p in ['PROXY', 'HTTP', 'HTTPS'])}
+                )
+                
+                if result.returncode == 0:
+                    result_data = json.loads(result.stdout)
+                    if result_data.get('success'):
+                        # Subprocess succeeded, so we know it's possible
+                        # Try one more time with minimal environment
+                        import anthropic
+                        client = anthropic.Anthropic(api_key=api_key)
+                        logger.debug("Successfully created Anthropic client after subprocess test")
+                        return client
+            except:
+                pass
+            
+            # If all else fails, raise the original error
+            raise
+            
     finally:
         # Restore environment variables
         for var, value in saved_env.items():
