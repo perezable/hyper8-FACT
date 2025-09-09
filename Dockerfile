@@ -1,10 +1,10 @@
 # Railway-optimized Dockerfile for FACT System
-# Single-stage build optimized for Railway deployment
+# Single-stage build optimized for Railway deployment with web server
 
 FROM python:3.11-slim
 
 # Cache busting - change this value to force rebuild
-ARG CACHE_BUST=2024-01-09-v2
+ARG CACHE_BUST=2025-01-09-web-v1
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
@@ -62,5 +62,6 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
 COPY railway_wrapper.py /app/railway_wrapper.py
 RUN chmod +x /app/railway_wrapper.py
 
-# Run the application via Railway wrapper to prevent proxy injection
-CMD ["python", "railway_wrapper.py"]
+# Run the application directly - main.py now detects Railway environment
+# and automatically starts web server mode
+CMD ["python", "main.py"]

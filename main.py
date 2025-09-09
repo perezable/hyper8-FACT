@@ -77,6 +77,28 @@ async def demo_command():
 
 async def main():
     """Main entry point with command routing."""
+    
+    # Check if running in Railway or other cloud environment
+    is_railway = os.environ.get("RAILWAY_ENVIRONMENT") is not None
+    is_cloud = (
+        is_railway or 
+        os.environ.get("PORT") is not None or
+        os.environ.get("DYNO") is not None or  # Heroku
+        os.environ.get("RENDER") is not None or  # Render
+        os.environ.get("K_SERVICE") is not None  # Google Cloud Run
+    )
+    
+    # If running in cloud environment, start web server instead of CLI
+    if is_cloud:
+        print(f"🌐 Detected cloud environment (Railway={is_railway})")
+        print("🚀 Starting FACT web server...")
+        
+        # Import and start the web server
+        from src.web_server import start_server
+        start_server()
+        return 0
+    
+    # Otherwise, run in CLI mode
     parser = argparse.ArgumentParser(
         description="FACT System - Fast-Access Cached Tools",
         formatter_class=argparse.RawDescriptionHelpFormatter
@@ -85,7 +107,7 @@ async def main():
     parser.add_argument(
         "command",
         nargs="?",
-        choices=["init", "demo", "interactive"],
+        choices=["init", "demo", "interactive", "server"],
         default="interactive",
         help="Command to execute (default: interactive)"
     )
@@ -96,6 +118,13 @@ async def main():
         help="Process a single query and exit"
     )
     
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=8000,
+        help="Port for web server (default: 8000)"
+    )
+    
     args = parser.parse_args()
     
     try:
@@ -103,6 +132,12 @@ async def main():
             return await init_command()
         elif args.command == "demo":
             return await demo_command()
+        elif args.command == "server":
+            # Manually start web server
+            print("🚀 Starting FACT web server...")
+            from src.web_server import start_server
+            start_server(port=args.port)
+            return 0
         elif args.command == "interactive" or args.query:
             # Pass control to the CLI main function
             return await cli_main()
@@ -126,7 +161,37 @@ if __name__ == "__main__":
         python main.py                          # Interactive mode
         python main.py init                     # Initialize system
         python main.py demo                     # Run demo
+        python main.py server                   # Web server mode
         python main.py --query "..."            # Single query mode
     """
-    exit_code = asyncio.run(main())
-    sys.exit(exit_code)
+    # Check if we should run in server mode directly (for Railway)
+    is_railway = os.environ.get("RAILWAY_ENVIRONMENT") is not None
+    is_cloud = (
+        is_railway or 
+        os.environ.get("PORT") is not None or
+        os.environ.get("DYNO") is not None or
+        os.environ.get("RENDER") is not None or
+        os.environ.get("K_SERVICE") is not None
+    )
+    
+    if is_cloud:
+        # Run server directly without asyncio.run
+        print(f"🌐 Detected cloud environment (Railway={is_railway})")
+        print("🚀 Starting FACT web server...")
+        from src.web_server import start_server
+        start_server()
+    else:
+        # Check if server command is specified
+        if len(sys.argv) > 1 and sys.argv[1] == "server":
+            # Run server directly
+            print("🚀 Starting FACT web server...")
+            from src.web_server import start_server
+            port = 8000
+            for i, arg in enumerate(sys.argv):
+                if arg == "--port" and i + 1 < len(sys.argv):
+                    port = int(sys.argv[i + 1])
+            start_server(port=port)
+        else:
+            # Run async main for other commands
+            exit_code = asyncio.run(main())
+            sys.exit(exit_code)

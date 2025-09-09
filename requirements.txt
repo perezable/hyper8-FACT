@@ -22,3 +22,8 @@ mypy==1.11.0
 
 # Monitoring and logging
 structlog==24.1.0
+
+# Web server dependencies (for Railway deployment)
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic>=2.0.0
