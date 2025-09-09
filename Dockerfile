@@ -3,6 +3,9 @@
 
 FROM python:3.11-slim
 
+# Cache busting - change this value to force rebuild
+ARG CACHE_BUST=2024-01-09-v2
+
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -33,8 +36,9 @@ WORKDIR /app
 # Copy requirements files
 COPY requirements.txt requirements-security.txt ./
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt && \
+# Force fresh install of all dependencies
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir --force-reinstall -r requirements.txt && \
     pip install --no-cache-dir -r requirements-security.txt
 
 # Copy the entire application

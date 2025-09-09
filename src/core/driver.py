@@ -54,10 +54,10 @@ logger = structlog.get_logger(__name__)
 
 def create_anthropic_client(api_key: str):
     """
-    Create an Anthropic client safely, working around Railway's proxy injection.
+    Create an Anthropic client safely.
     
-    Railway's environment is somehow injecting a 'proxies' parameter even after
-    removing litellm. This function uses a wrapper class to filter it out.
+    With anthropic>=0.25.6, the SDK should handle proxy settings correctly.
+    We still clear environment variables as a precaution for Railway.
     
     Args:
         api_key: Anthropic API key
@@ -65,7 +65,10 @@ def create_anthropic_client(api_key: str):
     Returns:
         Configured Anthropic client
     """
-    # Clear proxy environment variables first
+    import anthropic
+    
+    # Clear proxy environment variables as a precaution
+    # Newer anthropic versions should handle this better
     proxy_env_vars = [
         'HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy',
         'ALL_PROXY', 'all_proxy', 'NO_PROXY', 'no_proxy'
@@ -74,84 +77,18 @@ def create_anthropic_client(api_key: str):
     for var in proxy_env_vars:
         if var in os.environ:
             saved_env[var] = os.environ.pop(var)
+            logger.debug(f"Cleared proxy env var: {var}")
     
     try:
-        # Import anthropic fresh
-        import anthropic
+        # With newer anthropic SDK, this should work without issues
+        client = anthropic.Anthropic(api_key=api_key)
+        logger.debug("Successfully created Anthropic client with v0.25.6+")
+        return client
         
-        # Create a wrapper class that filters out the 'proxies' parameter
-        class AnthropicClientWrapper:
-            """Wrapper that filters out unwanted parameters before creating client."""
-            
-            def __init__(self, api_key, **kwargs):
-                # Log what parameters are being passed
-                if kwargs:
-                    logger.warning(f"Extra parameters passed to Anthropic client: {list(kwargs.keys())}")
-                    # Filter out any problematic parameters
-                    filtered_kwargs = {k: v for k, v in kwargs.items() 
-                                     if k not in ['proxies', 'proxy', 'http_proxy', 'https_proxy']}
-                    if filtered_kwargs != kwargs:
-                        logger.info(f"Filtered out parameters: {set(kwargs.keys()) - set(filtered_kwargs.keys())}")
-                else:
-                    filtered_kwargs = {}
-                
-                # Create the actual client with only valid parameters
-                self._client = anthropic.Anthropic(api_key=api_key, **filtered_kwargs)
-            
-            def __getattr__(self, name):
-                # Delegate all attribute access to the real client
-                return getattr(self._client, name)
-        
-        # First try direct creation
-        try:
-            client = anthropic.Anthropic(api_key=api_key)
-            logger.debug("Successfully created Anthropic client directly")
-            return client
-        except TypeError as e:
-            if 'proxies' in str(e):
-                logger.warning(f"Proxy injection detected: {e}")
-                logger.info("Using wrapper to filter out proxy parameter")
-                
-                # Use our wrapper class
-                wrapper = AnthropicClientWrapper(api_key=api_key)
-                # Return the actual client from the wrapper
-                actual_client = wrapper._client
-                logger.debug("Successfully created Anthropic client using wrapper")
-                return actual_client
-            else:
-                raise
-                
     except Exception as e:
         logger.error(f"Failed to create Anthropic client: {e}")
-        
-        # Last resort: monkey-patch the Anthropic class itself
-        logger.info("Attempting monkey-patch solution")
-        import anthropic
-        
-        # Save the original class
-        OriginalAnthropic = anthropic.Anthropic
-        
-        # Create a patched version
-        class PatchedAnthropic(OriginalAnthropic):
-            def __init__(self, api_key, **kwargs):
-                # Remove proxies parameter if present
-                kwargs.pop('proxies', None)
-                kwargs.pop('proxy', None)
-                kwargs.pop('http_proxy', None)
-                kwargs.pop('https_proxy', None)
-                super().__init__(api_key=api_key, **kwargs)
-        
-        # Replace the class
-        anthropic.Anthropic = PatchedAnthropic
-        
-        try:
-            # Now try creating the client
-            client = anthropic.Anthropic(api_key=api_key)
-            logger.debug("Successfully created Anthropic client with monkey-patch")
-            return client
-        finally:
-            # Restore the original class
-            anthropic.Anthropic = OriginalAnthropic
+        logger.error(f"Anthropic version: {anthropic.__version__ if hasattr(anthropic, '__version__') else 'unknown'}")
+        raise
             
     finally:
         # Restore environment variables
