@@ -1,5 +1,5 @@
-# Railway-optimized Dockerfile for FACT System
-# Single-stage build optimized for Railway deployment
+# Railway-optimized Dockerfile with proxy injection fix
+# Uses a clean Python wrapper to prevent proxy parameter injection
 
 FROM python:3.11-slim
 
@@ -8,13 +8,17 @@ ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PIP_NO_CACHE_DIR=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1 \
-    # Disable any proxy environment variables that might interfere
+    # Explicitly disable ALL proxy variables
     HTTP_PROXY="" \
     HTTPS_PROXY="" \
     http_proxy="" \
     https_proxy="" \
+    ALL_PROXY="" \
+    all_proxy="" \
     NO_PROXY="*" \
     no_proxy="*" \
+    REQUESTS_CA_BUNDLE="" \
+    CURL_CA_BUNDLE="" \
     # Enable Python to see Railway environment variables
     PYTHONPATH=/app \
     # Log level for debugging
@@ -33,9 +37,9 @@ WORKDIR /app
 # Copy requirements files
 COPY requirements.txt requirements-security.txt ./
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt && \
-    pip install --no-cache-dir -r requirements-security.txt
+# Install Python dependencies with no proxy
+RUN pip install --no-cache-dir --no-proxy --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt && \
+    pip install --no-cache-dir --no-proxy --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements-security.txt
 
 # Copy the entire application
 COPY . .
@@ -44,7 +48,8 @@ COPY . .
 RUN mkdir -p /app/data /app/logs /app/output
 
 # Set proper permissions
-RUN chmod -R 755 /app
+RUN chmod -R 755 /app && \
+    chmod +x /app/run_clean.py
 
 # Railway uses PORT environment variable
 ENV PORT=8000
@@ -54,9 +59,5 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:${PORT}/health || exit 1
 
-# Copy and set entrypoint script
-COPY entrypoint.sh /app/entrypoint.sh
-RUN chmod +x /app/entrypoint.sh
-
-# Run the application via entrypoint script
-CMD ["/bin/bash", "/app/entrypoint.sh"]
+# Use the clean runner to avoid proxy injection
+CMD ["python", "run_clean.py"]
