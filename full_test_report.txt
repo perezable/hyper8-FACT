@@ -1,0 +1,86 @@
+================================================================================
+FACT KNOWLEDGE BASE COMPREHENSIVE TEST REPORT
+================================================================================
+Test Date: 2025-09-09T20:09:30.017201
+
+TEST SUMMARY
+----------------------------------------
+Total Tests Run: 1350
+Unique Questions: 357
+Variations per Question: 3.8
+Tests Passed: 356 (26.4%)
+Tests Failed: 994
+
+ACCURACY METRICS
+----------------------------------------
+Exact Match Rate: 22.6%
+Category Match Rate: 28.4%
+State Match Rate: 0.0%
+Average Similarity Score: 0.269
+Median Similarity Score: 0.000
+Score Range: 0.000 - 1.000
+Score Std Dev: 0.437
+
+PERFORMANCE METRICS
+----------------------------------------
+Average Response Time: 0.11ms
+Median Response Time: 0.11ms
+P95 Response Time: 0.15ms
+P99 Response Time: 0.20ms
+Response Time Range: 0.07ms - 0.81ms
+
+PROBLEMATIC QUESTIONS (Lowest Pass Rates)
+----------------------------------------
+1. Question: Georgia Contractor License Requirements...
+   Pass Rate: 33.3%
+   Avg Score: 0.328
+
+2. Question: What about georgia?...
+   Pass Rate: 33.3%
+   Avg Score: 0.333
+
+3. Question: Tell me about georgia...
+   Pass Rate: 0.0%
+   Avg Score: 0.000
+
+4. Question: How does georgia work?...
+   Pass Rate: 33.3%
+   Avg Score: 0.333
+
+5. Question: georgia information...
+   Pass Rate: 33.3%
+   Avg Score: 0.333
+
+6. Question: I need help with georgia...
+   Pass Rate: 33.3%
+   Avg Score: 0.333
+
+7. Question: What about general_contractor?...
+   Pass Rate: 0.0%
+   Avg Score: 0.000
+
+8. Question: Tell me about general_contractor...
+   Pass Rate: 33.3%
+   Avg Score: 0.333
+
+9. Question: 3-Month Payment Plan Details...
+   Pass Rate: 33.3%
+   Avg Score: 0.326
+
+10. Question: What about payment_plans?...
+   Pass Rate: 33.3%
+   Avg Score: 0.333
+
+OVERALL GRADE
+----------------------------------------
+Grade: F (Failing)
+
+RECOMMENDATIONS
+----------------------------------------
+• Review and improve search algorithm for better variation handling
+• Consider implementing fuzzy matching or semantic search
+• Review problematic questions for indexing or tagging improvements
+
+================================================================================
+END OF REPORT
+================================================================================

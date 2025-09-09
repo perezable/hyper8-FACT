@@ -1,0 +1,51 @@
+================================================================================
+FACT KNOWLEDGE BASE ENHANCED SEARCH TEST REPORT
+================================================================================
+Test Date: 2025-09-09T20:38:33.573626
+
+TEST SUMMARY
+----------------------------------------
+Total Tests Run: 500
+Unique Questions: 90
+Variations per Question: 5.6
+Tests Passed: 471 (94.2%)
+Tests Failed: 29
+
+MATCH TYPE BREAKDOWN
+----------------------------------------
+exact          :  293 (58.6%)
+fuzzy          :  165 (33.0%)
+none           :   17 (3.4%)
+keyword        :   20 (4.0%)
+partial        :    5 (1.0%)
+
+ACCURACY METRICS
+----------------------------------------
+Exact Match Rate: 67.0%
+Category Match Rate: 96.6%
+State Match Rate: 16.4%
+Average Similarity Score: 0.886
+Average Confidence: 0.912
+Median Confidence: 1.000
+
+PERFORMANCE METRICS
+----------------------------------------
+Average Response Time: 1.45ms
+Median Response Time: 1.49ms
+P95 Response Time: 2.66ms
+P99 Response Time: 3.28ms
+
+OVERALL GRADE
+----------------------------------------
+Grade: A (Very Good)
+Pass Rate: 94.2%
+
+IMPROVEMENT FROM BASELINE
+----------------------------------------
+Baseline Pass Rate: 26.4%
+Current Pass Rate: 94.2%
+Improvement: 256.8%
+
+================================================================================
+END OF REPORT
+================================================================================

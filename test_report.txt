@@ -1,0 +1,86 @@
+================================================================================
+FACT KNOWLEDGE BASE COMPREHENSIVE TEST REPORT
+================================================================================
+Test Date: 2025-09-09T20:09:11.334906
+
+TEST SUMMARY
+----------------------------------------
+Total Tests Run: 250
+Unique Questions: 49
+Variations per Question: 5.1
+Tests Passed: 46 (18.4%)
+Tests Failed: 204
+
+ACCURACY METRICS
+----------------------------------------
+Exact Match Rate: 16.8%
+Category Match Rate: 19.2%
+State Match Rate: 0.0%
+Average Similarity Score: 0.185
+Median Similarity Score: 0.000
+Score Range: 0.000 - 1.000
+Score Std Dev: 0.386
+
+PERFORMANCE METRICS
+----------------------------------------
+Average Response Time: 0.13ms
+Median Response Time: 0.12ms
+P95 Response Time: 0.18ms
+P99 Response Time: 0.30ms
+Response Time Range: 0.08ms - 1.35ms
+
+PROBLEMATIC QUESTIONS (Lowest Pass Rates)
+----------------------------------------
+1. Question: texas information...
+   Pass Rate: 20.0%
+   Avg Score: 0.200
+
+2. Question: Tell me about conservative_348...
+   Pass Rate: 0.0%
+   Avg Score: 0.000
+
+3. Question: What about bond_requirements?...
+   Pass Rate: 20.0%
+   Avg Score: 0.200
+
+4. Question: Tell me about roc...
+   Pass Rate: 20.0%
+   Avg Score: 0.200
+
+5. Question: I need help with study_options...
+   Pass Rate: 20.0%
+   Avg Score: 0.200
+
+6. Question: Interstate Compact Expansion 2025-2026...
+   Pass Rate: 20.0%
+   Avg Score: 0.200
+
+7. Question: I need help with arizona...
+   Pass Rate: 20.0%
+   Avg Score: 0.200
+
+8. Question: What about 2m_5m_revenue?...
+   Pass Rate: 20.0%
+   Avg Score: 0.200
+
+9. Question: market_positioning information...
+   Pass Rate: 20.0%
+   Avg Score: 0.200
+
+10. Question: Continuing Education Requirements by State...
+   Pass Rate: 20.0%
+   Avg Score: 0.200
+
+OVERALL GRADE
+----------------------------------------
+Grade: F (Failing)
+
+RECOMMENDATIONS
+----------------------------------------
+• Review and improve search algorithm for better variation handling
+• Consider implementing fuzzy matching or semantic search
+• Review problematic questions for indexing or tagging improvements
+
+================================================================================
+END OF REPORT
+================================================================================

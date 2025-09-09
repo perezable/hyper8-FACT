@@ -41,6 +41,15 @@ except ImportError:
     logger = structlog.get_logger(__name__)
     logger.warning("VAPI webhook module not available")
 
+# Import the enhanced retriever
+try:
+    from retrieval.enhanced_search import EnhancedRetriever
+    ENHANCED_SEARCH_AVAILABLE = True
+except ImportError:
+    ENHANCED_SEARCH_AVAILABLE = False
+    logger = structlog.get_logger(__name__)
+    logger.warning("Enhanced search module not available")
+
 logger = structlog.get_logger(__name__)
 
 
@@ -131,6 +140,8 @@ class DataTemplateResponse(BaseModel):
 
 # Global driver instance
 _driver = None
+# Global enhanced retriever instance
+_enhanced_retriever = None
 
 
 @asynccontextmanager
@@ -139,7 +150,7 @@ async def lifespan(app: FastAPI):
     Lifespan context manager for FastAPI.
     Handles startup and shutdown events.
     """
-    global _driver
+    global _driver, _enhanced_retriever
     
     # Startup
     logger.info("Starting FACT web server")
@@ -147,6 +158,12 @@ async def lifespan(app: FastAPI):
         config = get_config()
         _driver = await get_driver(config)
         logger.info("FACT system initialized successfully")
+        
+        # Initialize enhanced retriever if available
+        if ENHANCED_SEARCH_AVAILABLE and _driver and _driver.database_manager:
+            _enhanced_retriever = EnhancedRetriever(_driver.database_manager)
+            await _enhanced_retriever.initialize()
+            logger.info("Enhanced retriever initialized successfully")
     except Exception as e:
         logger.error(f"Failed to initialize FACT system: {e}")
         # Don't prevent startup, allow health checks to report unhealthy
@@ -557,15 +574,56 @@ async def search_knowledge_base(request: KnowledgeSearchRequest):
     Search the knowledge base for relevant Q&A entries.
     
     Supports filtering by category, state, difficulty, and text search.
+    Uses enhanced retriever when available for better matching.
     """
     try:
-        global _driver
+        global _driver, _enhanced_retriever
         if _driver is None:
             raise HTTPException(
                 status_code=503,
                 detail="FACT system not initialized"
             )
         
+        # Use enhanced retriever if available
+        if _enhanced_retriever and request.query:
+            # Use enhanced search for better matching
+            search_results = await _enhanced_retriever.search(
+                query=request.query,
+                category=request.category,
+                state=request.state,
+                limit=request.limit
+            )
+            
+            # Convert search results to response format
+            results = []
+            for sr in search_results:
+                results.append(KnowledgeEntry(
+                    id=sr.id,
+                    question=sr.question,
+                    answer=sr.answer,
+                    category=sr.category,
+                    tags=sr.metadata.get("tags"),
+                    state=sr.state,
+                    priority=sr.metadata.get("priority", "normal"),
+                    difficulty=sr.metadata.get("difficulty", "basic"),
+                    personas=sr.metadata.get("personas"),
+                    source=sr.metadata.get("source"),
+                    metadata={
+                        "score": sr.score,
+                        "confidence": sr.confidence,
+                        "match_type": sr.match_type,
+                        "retrieval_time_ms": sr.retrieval_time_ms
+                    }
+                ))
+            
+            return KnowledgeSearchResponse(
+                results=results,
+                total_count=len(results),
+                query=request.query,
+                timestamp=datetime.utcnow().isoformat()
+            )
+        
+        # Fall back to SQL search if enhanced retriever not available
         # Build SQL query with filters
         query_parts = ["SELECT * FROM knowledge_base WHERE 1=1"]
         
