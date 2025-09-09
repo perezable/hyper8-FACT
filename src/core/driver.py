@@ -433,7 +433,6 @@ class FACTDriver:
             
             # Test LLM connection with direct Anthropic SDK
             # Clear any proxy environment variables that might cause issues
-            import os
             proxy_env_vars = ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy']
             saved_proxies = {}
             for var in proxy_env_vars:
@@ -486,7 +485,6 @@ class FACTDriver:
             
             # Make LLM call with direct Anthropic SDK
             # Clear any proxy environment variables that might cause issues
-            import os
             proxy_env_vars = ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy']
             saved_proxies = {}
             for var in proxy_env_vars:

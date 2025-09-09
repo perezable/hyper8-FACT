@@ -404,6 +404,22 @@ class ResilientCacheWrapper:
         """Clear the fallback cache."""
         self.fallback_cache.clear()
         logger.info("Fallback cache cleared")
+    
+    async def start_monitoring(self) -> None:
+        """Start monitoring the cache system (placeholder for future monitoring)."""
+        logger.info("Cache monitoring started")
+        # Placeholder for future monitoring implementation
+        # Could include background tasks for:
+        # - Circuit breaker state monitoring
+        # - Cache hit/miss ratio tracking
+        # - Performance metrics collection
+        pass
+    
+    async def stop_monitoring(self) -> None:
+        """Stop monitoring the cache system."""
+        logger.info("Cache monitoring stopped")
+        # Placeholder for stopping monitoring tasks
+        pass
 
 
 # Export classes
