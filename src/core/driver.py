@@ -480,17 +480,42 @@ class FACTDriver:
                 await self.database_manager.get_database_info()
                 logger.info("Database connection test passed")
             
-            # Test LLM connection with direct Anthropic SDK
-            client = create_anthropic_client(self.config.anthropic_api_key)
-            test_response = client.messages.create(
-                model=self.config.claude_model,
-                messages=[{"role": "user", "content": "Test"}],
-                max_tokens=10
-            )
+            # Test LLM connection with direct Anthropic SDK and retry logic
+            max_retries = 3
+            retry_delay = 2  # seconds
             
-            if test_response:
-                logger.info("LLM connection test passed")
-            
+            for attempt in range(max_retries):
+                try:
+                    client = create_anthropic_client(self.config.anthropic_api_key)
+                    test_response = client.messages.create(
+                        model=self.config.claude_model,
+                        messages=[{"role": "user", "content": "Test"}],
+                        max_tokens=10
+                    )
+                    
+                    if test_response:
+                        logger.info("LLM connection test passed")
+                        break  # Success, exit retry loop
+                        
+                except Exception as e:
+                    error_str = str(e)
+                    
+                    # Check if it's an overloaded error
+                    if "overloaded" in error_str.lower() or "529" in error_str:
+                        if attempt < max_retries - 1:
+                            wait_time = retry_delay * (attempt + 1)  # Exponential backoff
+                            logger.warning(f"Anthropic API overloaded, retrying in {wait_time}s (attempt {attempt + 1}/{max_retries})")
+                            import asyncio
+                            await asyncio.sleep(wait_time)
+                            continue
+                        else:
+                            logger.warning("Anthropic API overloaded after all retries, continuing without test")
+                            # Don't fail initialization for overload errors
+                            break
+                    else:
+                        # Non-overload error, fail immediately
+                        raise
+                        
         except Exception as e:
             logger.error("Connection test failed", error=str(e))
             raise ConnectionError(f"Service connection test failed: {e}")
