@@ -83,17 +83,12 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
     Connected to actual contractor licensing Q&A database.
     """
     try:
-        # Get the enhanced retriever from shared state
-        from shared_state import get_enhanced_retriever
-        _enhanced_retriever = get_enhanced_retriever()
-        
-        # If not available, try to create a new instance
-        if not _enhanced_retriever:
-            logger.info("Enhanced retriever not in shared state, creating new instance")
-            from retrieval.enhanced_search import EnhancedRetriever
-            enhanced_retriever = EnhancedRetriever(None)
-            await enhanced_retriever.initialize()
-            _enhanced_retriever = enhanced_retriever
+        # Always create a fresh enhanced retriever instance for Railway
+        logger.info("Creating enhanced retriever for search")
+        from retrieval.enhanced_search import EnhancedRetriever
+        _enhanced_retriever = EnhancedRetriever(None)
+        await _enhanced_retriever.initialize()
+        logger.info(f"Enhanced retriever initialized with {len(_enhanced_retriever.in_memory_index.entries)} entries")
         
         # Check if enhanced retriever is available
         if _enhanced_retriever:
