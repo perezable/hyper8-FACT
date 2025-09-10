@@ -519,6 +519,7 @@ class EnhancedRetriever:
                 try:
                     import aiosqlite
                     import os
+                    # Use fact_system.db which has the knowledge base data
                     db_path = os.getenv("DATABASE_PATH", "data/fact_system.db")
                     logger.info(f"Trying aiosqlite with path: {db_path}")
                     

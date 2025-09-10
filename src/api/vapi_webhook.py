@@ -83,12 +83,17 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
     Connected to actual contractor licensing Q&A database.
     """
     try:
-        # Try to use the enhanced retriever first
-        import sys
-        import os
-        # Add parent directory to path for imports
-        sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        from web_server import _enhanced_retriever, _driver
+        # Get the enhanced retriever from shared state
+        from shared_state import get_enhanced_retriever
+        _enhanced_retriever = get_enhanced_retriever()
+        
+        # If not available, try to create a new instance
+        if not _enhanced_retriever:
+            logger.info("Enhanced retriever not in shared state, creating new instance")
+            from retrieval.enhanced_search import EnhancedRetriever
+            enhanced_retriever = EnhancedRetriever(None)
+            await enhanced_retriever.initialize()
+            _enhanced_retriever = enhanced_retriever
         
         # Check if enhanced retriever is available
         if _enhanced_retriever:
@@ -121,7 +126,9 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
                 }
         
         # Fallback to direct SQL query if enhanced retriever not available
-        elif _driver and _driver.database_manager:
+        from shared_state import get_driver
+        _driver = get_driver()
+        if not _enhanced_retriever and _driver and _driver.database_manager:
             logger.info(f"Using SQL fallback for query: {query}")
             
             # Escape query for SQL

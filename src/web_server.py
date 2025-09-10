@@ -18,7 +18,7 @@ import structlog
 import tempfile
 import json
 
-from core.driver import get_driver, shutdown_driver
+from core.driver import get_driver as get_fact_driver, shutdown_driver
 from core.config import get_config
 from core.errors import FACTError, ConfigurationError, ValidationError
 from data_upload import DataUploader
@@ -152,6 +152,9 @@ class DataTemplateResponse(BaseModel):
     field_descriptions: Dict[str, str] = Field(..., description="Field descriptions")
 
 
+# Import shared state
+from shared_state import get_enhanced_retriever, set_enhanced_retriever, get_driver, set_driver
+
 # Global driver instance
 _driver = None
 # Global enhanced retriever instance
@@ -188,7 +191,8 @@ async def lifespan(app: FastAPI):
     
     try:
         config = get_config()
-        _driver = await get_driver(config)
+        _driver = await get_fact_driver(config)
+        set_driver(_driver)  # Store in shared state
         logger.info("FACT system initialized successfully")
         
         # Initialize enhanced retriever if available
@@ -200,9 +204,12 @@ async def lifespan(app: FastAPI):
                 logger.info("Enhanced retriever created, calling initialize...")
                 await _enhanced_retriever.initialize()
                 logger.info("Enhanced retriever initialized successfully")
+                # Set in shared state so other modules can access it
+                set_enhanced_retriever(_enhanced_retriever)
             except Exception as e:
                 logger.error(f"Enhanced retriever initialization failed: {e}", exc_info=True)
                 _enhanced_retriever = None
+                set_enhanced_retriever(None)
         else:
             logger.warning("Enhanced search module not available")
     except Exception as e:
