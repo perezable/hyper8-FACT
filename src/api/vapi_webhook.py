@@ -111,13 +111,12 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
             finally:
                 await conn.close()
             
-            # Create enhanced retriever and build index
+            # Create enhanced retriever and properly initialize it
             from retrieval.enhanced_search import EnhancedRetriever
             _enhanced_retriever = EnhancedRetriever(None)
-            # Manually build the index with loaded entries
+            # Build the index properly with the build_index method
             if entries:
-                _enhanced_retriever.in_memory_index.entries = entries
-                _enhanced_retriever.in_memory_index._build_fuzzy_index()
+                _enhanced_retriever.in_memory_index.build_index(entries)
                 logger.info(f"Enhanced retriever index built with {len(_enhanced_retriever.in_memory_index.entries)} entries")
                 
                 # Count entries by state for debugging
