@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Test VAPI webhook and compare with knowledge API.
+Test VAPI webhook with direct query including state parameter.
 """
 
+import hmac
+import hashlib
 import json
 import httpx
 import asyncio
-import hmac
-import hashlib
 
-RAILWAY_URL = "https://hyper8-fact-fact-system.up.railway.app"
+WEBHOOK_URL = "https://hyper8-fact-fact-system.up.railway.app/vapi/webhook"
 WEBHOOK_SECRET = "a87d2ad709e35cd969de0351aedf5b7aefca35c8b2d499014b39e6e526ccfbbb"
 
 def generate_signature(payload: str, secret: str) -> str:
@@ -20,86 +20,76 @@ def generate_signature(payload: str, secret: str) -> str:
         hashlib.sha256
     ).hexdigest()
 
-async def test_both_endpoints():
-    """Test both knowledge API and VAPI webhook."""
+async def test_query():
+    """Test with Georgia state parameter."""
     
-    query = "Georgia contractor license requirements"
+    query = "contractor license requirements"
+    
+    payload = {
+        "message": {
+            "type": "function-call",
+            "functionCall": {
+                "name": "searchKnowledge",
+                "parameters": {
+                    "query": query,
+                    "state": "GA",
+                    "limit": 1
+                }
+            }
+        },
+        "call": {
+            "id": f"test-{asyncio.get_event_loop().time()}"
+        }
+    }
+    
+    payload_str = json.dumps(payload, separators=(',', ':'))
+    signature = generate_signature(payload_str, WEBHOOK_SECRET)
+    
+    headers = {
+        "Content-Type": "application/json",
+        "x-vapi-signature": signature
+    }
+    
+    print(f"Testing query: '{query}' with state: GA")
+    print("-" * 60)
     
     async with httpx.AsyncClient(timeout=30.0) as client:
-        # Test knowledge API first
-        print("=" * 60)
-        print("Testing Knowledge API")
-        print("=" * 60)
-        
-        response = await client.post(
-            f"{RAILWAY_URL}/knowledge/search",
-            json={"query": query, "limit": 1}
-        )
-        
-        if response.status_code == 200:
-            data = response.json()
-            if data["results"]:
-                result = data["results"][0]
-                print(f"✅ Knowledge API Success!")
-                print(f"   Question: {result['question']}")
-                print(f"   Answer: {result['answer'][:150]}...")
-                print(f"   State: {result['state']}")
-                print(f"   Category: {result['category']}")
-        else:
-            print(f"❌ Knowledge API failed: {response.status_code}")
-        
-        print()
-        
-        # Test VAPI webhook
-        print("=" * 60)
-        print("Testing VAPI Webhook")
-        print("=" * 60)
-        
-        payload = {
-            "message": {
-                "type": "function-call",
-                "functionCall": {
-                    "name": "searchKnowledge",
-                    "parameters": {
-                        "query": query,
-                        "state": "GA"  # Try with explicit state
-                    }
-                }
-            },
-            "call": {
-                "id": f"test-{asyncio.get_event_loop().time()}"
-            }
-        }
-        
-        payload_str = json.dumps(payload, separators=(',', ':'))
-        signature = generate_signature(payload_str, WEBHOOK_SECRET)
-        
-        headers = {
-            "Content-Type": "application/json",
-            "x-vapi-signature": signature
-        }
-        
-        response = await client.post(
-            f"{RAILWAY_URL}/vapi/webhook",
-            content=payload_str,
-            headers=headers
-        )
-        
-        if response.status_code == 200:
-            data = response.json()
-            result = data.get("result", {})
-            print(f"✅ VAPI Webhook responded")
-            print(f"   Answer: {result.get('answer', 'No answer')[:150]}...")
-            print(f"   Confidence: {result.get('confidence', 0)}")
-            print(f"   Source: {result.get('source', 'unknown')}")
-            print(f"   State: {result.get('state', 'none')}")
+        try:
+            response = await client.post(
+                WEBHOOK_URL,
+                content=payload_str,
+                headers=headers
+            )
             
-            if result.get('source') == 'default':
-                print("\n⚠️  VAPI is returning default fallback instead of actual data!")
-                print("   This means the enhanced retriever is not finding matches.")
-        else:
-            print(f"❌ VAPI Webhook failed: {response.status_code}")
-            print(f"   Error: {response.text}")
+            print(f"Status: {response.status_code}")
+            
+            if response.status_code == 200:
+                result = response.json()
+                print(f"Response: {json.dumps(result, indent=2)}")
+                
+                # Check if we got real data
+                answer = result.get("result", {}).get("answer", "")
+                confidence = result.get("result", {}).get("confidence", 0)
+                source = result.get("result", {}).get("source", "")
+                
+                print("\n" + "=" * 60)
+                print("RESULTS ANALYSIS:")
+                print(f"Source: {source}")
+                print(f"Confidence: {confidence}")
+                print(f"Got real answer: {source == 'knowledge_base'}")
+                
+                if confidence > 0.7:
+                    print("✅ HIGH CONFIDENCE MATCH FOUND!")
+                elif confidence > 0.5:
+                    print("⚠️  Medium confidence - may need refinement")
+                else:
+                    print("❌ Low confidence - using default response")
+                    
+            else:
+                print(f"Error: {response.text}")
+                
+        except Exception as e:
+            print(f"Exception: {e}")
 
 if __name__ == "__main__":
-    asyncio.run(test_both_endpoints())
+    asyncio.run(test_query())

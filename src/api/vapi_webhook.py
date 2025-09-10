@@ -109,7 +109,9 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
             # Create enhanced retriever and build index
             from retrieval.enhanced_search import EnhancedRetriever
             _enhanced_retriever = EnhancedRetriever(None)
-            _enhanced_retriever.in_memory_index.build_index(entries)
+            # Manually build the index with loaded entries
+            _enhanced_retriever.in_memory_index.entries = entries
+            _enhanced_retriever.in_memory_index._build_fuzzy_index()
             logger.info(f"Enhanced retriever index built with {len(_enhanced_retriever.in_memory_index.entries)} entries")
             logger.info(f"Sample entry: {entries[0] if entries else 'No entries'}")
         else:
@@ -120,8 +122,9 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
             await _enhanced_retriever.initialize()
             logger.info(f"Enhanced retriever initialized with {len(_enhanced_retriever.in_memory_index.entries)} entries")
         
-        # Check if enhanced retriever is available
-        if _enhanced_retriever and len(_enhanced_retriever.in_memory_index.entries) > 0:
+        # Check if enhanced retriever is available  
+        # Always true since we just created it above
+        if len(_enhanced_retriever.in_memory_index.entries) > 0:
             logger.info(f"Using enhanced retriever for query: {query}")
             logger.info(f"Retriever has {len(_enhanced_retriever.in_memory_index.entries)} entries in memory")
             
