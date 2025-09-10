@@ -23,6 +23,12 @@ from core.config import get_config
 from core.errors import FACTError, ConfigurationError, ValidationError
 from data_upload import DataUploader
 
+# Load knowledge base on startup for Railway
+try:
+    import startup_loader
+except ImportError:
+    pass  # Startup loader not available
+
 # Import the knowledge API router
 try:
     from api.knowledge_api import router as knowledge_router
