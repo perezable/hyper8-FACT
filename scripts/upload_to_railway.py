@@ -18,15 +18,18 @@ async def upload():
         }
         
         async with session.post(
-            f"{RAILWAY_URL}/upload",
+            f"{RAILWAY_URL}/upload-data",
             json=upload_data,
             timeout=aiohttp.ClientTimeout(total=60)
         ) as response:
             if response.status == 200:
                 result = await response.json()
-                print(f"✅ Uploaded {result.get('records_processed')} entries")
+                print(f"✅ Uploaded {result.get('records_uploaded', 0)} entries")
+                print(f"   Status: {result.get('status')}")
             else:
+                text = await response.text()
                 print(f"❌ Upload failed: {response.status}")
+                print(f"   Error: {text[:200]}")
 
 if __name__ == "__main__":
     asyncio.run(upload())

@@ -486,7 +486,13 @@ class EnhancedRetriever:
             # Try PostgreSQL first if available
             try:
                 from db.postgres_adapter import postgres_adapter
-                if postgres_adapter and postgres_adapter.initialized:
+                # Check if PostgreSQL is available via environment variable
+                import os
+                if os.getenv("DATABASE_URL"):
+                    logger.info("DATABASE_URL detected, using PostgreSQL")
+                    if not postgres_adapter.initialized:
+                        logger.info("Initializing PostgreSQL adapter")
+                        await postgres_adapter.initialize()
                     logger.info("Loading from PostgreSQL")
                     entries = await postgres_adapter.get_all_entries()
                     
