@@ -171,8 +171,8 @@ class PostgresAdapter:
             
             insert_query = """
             INSERT INTO knowledge_base 
-            (question, answer, category, state, tags, priority, difficulty, personas, source)
-            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+            (id, question, answer, category, state, tags, priority, difficulty, personas, source)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
             ON CONFLICT (id) DO UPDATE SET
                 question = EXCLUDED.question,
                 answer = EXCLUDED.answer,
@@ -191,6 +191,7 @@ class PostgresAdapter:
                     for entry in entries:
                         await conn.execute(
                             insert_query,
+                            entry.get('id'),  # Include ID field
                             entry.get('question', ''),
                             entry.get('answer', ''),
                             entry.get('category'),
@@ -208,8 +209,10 @@ class PostgresAdapter:
                     cursor.execute(
                         insert_query.replace('$1', '%s').replace('$2', '%s').replace('$3', '%s')
                                    .replace('$4', '%s').replace('$5', '%s').replace('$6', '%s')
-                                   .replace('$7', '%s').replace('$8', '%s').replace('$9', '%s'),
+                                   .replace('$7', '%s').replace('$8', '%s').replace('$9', '%s')
+                                   .replace('$10', '%s'),
                         (
+                            entry.get('id'),  # Include ID field
                             entry.get('question', ''),
                             entry.get('answer', ''),
                             entry.get('category'),
