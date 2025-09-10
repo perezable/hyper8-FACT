@@ -116,7 +116,7 @@ class ErrorResponse(BaseModel):
 
 class DataUploadRequest(BaseModel):
     """Request model for data upload endpoint."""
-    data_type: str = Field(..., description="Type of data: 'companies' or 'financial_records'")
+    data_type: str = Field(..., description="Type of data: 'companies', 'financial_records', or 'knowledge_base'")
     data: List[Dict[str, Any]] = Field(..., description="Array of data records")
     clear_existing: bool = Field(False, description="Whether to clear existing data first")
 
@@ -385,7 +385,7 @@ async def upload_data(request: DataUploadRequest):
     """
     Upload custom data to replace sample data.
     
-    Supports uploading companies or financial records data.
+    Supports uploading companies, financial records, or knowledge base data.
     """
     try:
         uploader = DataUploader()
@@ -400,10 +400,15 @@ async def upload_data(request: DataUploadRequest):
                 request.data,
                 clear_existing=request.clear_existing
             )
+        elif request.data_type == "knowledge_base":
+            result = await uploader.upload_knowledge_base(
+                request.data,
+                clear_existing=request.clear_existing
+            )
         else:
             raise HTTPException(
                 status_code=400,
-                detail="Invalid data_type. Must be 'companies' or 'financial_records'"
+                detail="Invalid data_type. Must be 'companies', 'financial_records', or 'knowledge_base'"
             )
         
         return DataUploadResponse(
@@ -437,14 +442,14 @@ async def upload_file(
     Upload data from CSV or JSON file.
     
     Args:
-        data_type: Type of data ('companies' or 'financial_records')
+        data_type: Type of data ('companies', 'financial_records', or 'knowledge_base')
         clear_existing: Whether to clear existing data first
         file: CSV or JSON file containing data
     """
-    if data_type not in ["companies", "financial_records"]:
+    if data_type not in ["companies", "financial_records", "knowledge_base"]:
         raise HTTPException(
             status_code=400,
-            detail="Invalid data_type. Must be 'companies' or 'financial_records'"
+            detail="Invalid data_type. Must be 'companies', 'financial_records', or 'knowledge_base'"
         )
     
     # Check file type
@@ -510,7 +515,7 @@ async def get_data_template(data_type: str):
     Get data upload template with example data and field descriptions.
     
     Args:
-        data_type: Type of template ('companies' or 'financial_records')
+        data_type: Type of template ('companies', 'financial_records', or 'knowledge_base')
     """
     try:
         uploader = DataUploader()
