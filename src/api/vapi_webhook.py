@@ -87,16 +87,23 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
         import os
         if os.getenv("DATABASE_URL"):
             logger.info("DATABASE_URL detected, using PostgreSQL for search")
-            from db.postgres_adapter import postgres_adapter
-            logger.info(f"PostgreSQL adapter initialized status: {postgres_adapter.initialized}")
-            if not postgres_adapter.initialized:
-                logger.info("Initializing PostgreSQL adapter")
-                init_result = await postgres_adapter.initialize()
-                logger.info(f"PostgreSQL initialization result: {init_result}")
+            # Don't import postgres_adapter - it creates a new instance
+            # Instead, get entries directly from the database
+            import asyncpg
+            conn = await asyncpg.connect(os.getenv("DATABASE_URL"))
             
-            # Get all entries from PostgreSQL
-            entries = await postgres_adapter.get_all_entries()
-            logger.info(f"Loaded {len(entries)} entries from PostgreSQL")
+            try:
+                query = """
+                SELECT id, question, answer, category, state, tags, 
+                       priority, difficulty, personas, source
+                FROM knowledge_base
+                ORDER BY priority, id
+                """
+                rows = await conn.fetch(query)
+                entries = [dict(row) for row in rows]
+                logger.info(f"Loaded {len(entries)} entries directly from PostgreSQL")
+            finally:
+                await conn.close()
             
             # Create enhanced retriever and build index
             from retrieval.enhanced_search import EnhancedRetriever
