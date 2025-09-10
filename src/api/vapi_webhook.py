@@ -129,14 +129,21 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
             logger.info(f"Retriever has {len(_enhanced_retriever.in_memory_index.entries)} entries in memory")
             
             # Use the REAL enhanced retriever (96.7% accuracy)
-            search_results = await _enhanced_retriever.search(
-                query=query,
-                category=category,
-                state=state,
-                limit=limit
-            )
+            try:
+                search_results = await _enhanced_retriever.search(
+                    query=query,
+                    category=category,
+                    state=state,
+                    limit=limit
+                )
+            except Exception as search_error:
+                logger.error(f"Search failed: {search_error}")
+                search_results = None
             
             logger.info(f"Search returned {len(search_results) if search_results else 0} results")
+            logger.info(f"Search results type: {type(search_results)}")
+            if search_results:
+                logger.info(f"First result: {search_results[0] if search_results else 'None'}")
             
             if search_results and len(search_results) > 0:
                 best_result = search_results[0]
