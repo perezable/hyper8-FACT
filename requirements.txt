@@ -8,6 +8,8 @@ httpx>=0.24.0  # Required by newer anthropic versions
 
 # Database
 aiosqlite==0.20.0
+asyncpg==0.29.0  # PostgreSQL async driver for Railway
+psycopg2-binary==2.9.9  # PostgreSQL fallback driver
 
 # Testing dependencies
 pytest==8.3.2

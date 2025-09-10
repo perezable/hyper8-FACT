@@ -300,6 +300,59 @@ class DataUploader:
             DatabaseError: If upload fails
             ValidationError: If data validation fails
         """
+        # Try to use PostgreSQL if available
+        try:
+            from db.postgres_adapter import postgres_adapter
+            if postgres_adapter and postgres_adapter.initialized:
+                logger.info("Using PostgreSQL for knowledge base upload")
+                
+                # Prepare entries for PostgreSQL
+                postgres_entries = []
+                errors = []
+                
+                for i, entry in enumerate(kb_data):
+                    try:
+                        validated = self.validate_knowledge_base_data(entry)
+                        # Add ID if not present
+                        if 'id' not in entry:
+                            validated['id'] = f"KB_{i+1}_{datetime.now().timestamp()}"
+                        else:
+                            validated['id'] = str(entry['id'])
+                        postgres_entries.append(validated)
+                    except ValidationError as e:
+                        errors.append(f"Row {i+1}: {str(e)}")
+                
+                if errors:
+                    raise ValidationError(f"Validation errors: {'; '.join(errors)}")
+                
+                # Insert via PostgreSQL adapter
+                success = await postgres_adapter.insert_entries(postgres_entries, clear_existing)
+                
+                if success:
+                    logger.info("Successfully uploaded to PostgreSQL", count=len(postgres_entries))
+                    
+                    # Refresh enhanced retriever if available
+                    try:
+                        from retrieval.enhanced_search import EnhancedRetriever
+                        if hasattr(self, '_enhanced_retriever'):
+                            await self._enhanced_retriever.refresh_index()
+                    except:
+                        pass
+                    
+                    return {
+                        "status": "success",
+                        "records_uploaded": len(postgres_entries),
+                        "cleared_existing": clear_existing,
+                        "timestamp": datetime.utcnow().isoformat()
+                    }
+                else:
+                    logger.warning("PostgreSQL upload failed, falling back to SQLite")
+        except ImportError:
+            logger.info("PostgreSQL adapter not available, using SQLite")
+        except Exception as e:
+            logger.warning(f"PostgreSQL upload error: {e}, falling back to SQLite")
+        
+        # Fallback to SQLite
         if clear_existing:
             await self.clear_existing_data("knowledge_base")
         

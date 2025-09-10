@@ -431,6 +431,21 @@ class EnhancedRetriever:
         try:
             logger.info("Enhanced retriever initialize() called")
             
+            # Try PostgreSQL first if available
+            try:
+                from db.postgres_adapter import postgres_adapter
+                if postgres_adapter and postgres_adapter.initialized:
+                    logger.info("Loading from PostgreSQL")
+                    entries = await postgres_adapter.get_all_entries()
+                    
+                    if entries:
+                        # Build in-memory index
+                        self.in_memory_index.build_index(entries)
+                        logger.info(f"Enhanced retriever initialized with {len(entries)} entries from PostgreSQL")
+                        return
+            except ImportError:
+                pass
+            
             # Load all entries from database
             if self.db_manager:
                 logger.info("Using db_manager for connection")

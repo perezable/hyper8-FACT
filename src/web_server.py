@@ -29,6 +29,14 @@ try:
 except ImportError:
     pass  # Startup loader not available
 
+# Initialize PostgreSQL if available
+try:
+    from db.postgres_adapter import postgres_adapter
+    POSTGRES_AVAILABLE = True
+except ImportError:
+    POSTGRES_AVAILABLE = False
+    postgres_adapter = None
+
 # Import the knowledge API router
 try:
     from api.knowledge_api import router as knowledge_router
@@ -160,6 +168,24 @@ async def lifespan(app: FastAPI):
     
     # Startup
     logger.info("Starting FACT web server")
+    
+    # Initialize PostgreSQL if available
+    if POSTGRES_AVAILABLE and postgres_adapter:
+        try:
+            initialized = await postgres_adapter.initialize()
+            if initialized:
+                logger.info("PostgreSQL initialized successfully")
+                
+                # Load initial data if needed
+                entries = await postgres_adapter.get_all_entries()
+                if len(entries) < 4:
+                    logger.info("Loading initial knowledge base data...")
+                    # This will be handled by startup_loader or upload endpoint
+            else:
+                logger.warning("PostgreSQL initialization failed, using SQLite")
+        except Exception as e:
+            logger.error(f"PostgreSQL initialization error: {e}")
+    
     try:
         config = get_config()
         _driver = await get_driver(config)
