@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "export_date": "2025-09-10T10:49:19.668349",
+    "total_examples": 5,
+    "current_accuracy": 0.0,
+    "target_accuracy": 0.967
+  },
+  "training_examples": [
+    {
+      "query": "What are the requirements for a contractor license in Nevada?",
+      "expected": "",
+      "actual": "California Contractors State License Board (CSLB) requirements: Class A (General Engineering) and Class B (General Building) licenses available. 4 years experience required (up to 3 years education credit, minimum 1 year practical). $25,000 bond effective 2023 (increased from $15,000). Workers compensation now mandatory for ALL contractors effective 2025 regardless of employees. Application fees: $450 application + $200-$350 license fee. This information is time-sensitive.",
+      "feedback": "correct",
+      "score": 0.3951008215085885,
+      "timestamp": "2025-09-10T10:49:19.263528",
+      "metadata": {
+        "category": "state_licensing_requirements",
+        "match_type": "keyword",
+        "confidence": 0.47412098581030615
+      }
+    },
+    {
+      "query": "How much does a surety bond cost?",
+      "expected": "",
+      "actual": "Georgia requires contractors to be licensed for work over $2,500. General contractor license requires 4 years experience or equivalent education. Application fee is $200, with total costs ranging $300-400. Two exams required: Business & Law (110 questions, 4 hours) and Trade exam (110 questions, 4 hours). Both require 70% passing score. $10,000 surety bond required for general contractors. This information is time-sensitive.",
+      "feedback": "partial",
+      "score": 0.3823434343434344,
+      "timestamp": "2025-09-10T10:49:19.322599",
+      "metadata": {
+        "category": "state_licensing_requirements",
+        "match_type": "keyword",
+        "confidence": 0.4588121212121212
+      }
+    },
+    {
+      "query": "What's the ROI on getting licensed?",
+      "expected": "First project typically returns 3-10x the licensing investment",
+      "actual": "Ryan R., former superintendent, invested $3,345 in Georgia contractor license. Timeline: 35 days to license approval. Results: 150% income increase from $65K to $162K in first year. ROI: 2,735% first year return. Quote: 'I probably do about 30 projects per year now vs being assigned projects before.' Demonstrates typical income transformation for licensed contractors. This information is time-sensitive.",
+      "feedback": "incorrect",
+      "score": 0.32000000000000006,
+      "timestamp": "2025-09-10T10:49:19.382178",
+      "metadata": {
+        "category": "success_stories_case_studies",
+        "match_type": "keyword",
+        "confidence": 0.38400000000000006
+      }
+    },
+    {
+      "query": "Can I DIY the licensing process?",
+      "expected": "",
+      "actual": "When customers ask about DIY licensing: 'Absolutely, many contractors try the DIY route. However, here's what our data shows: DIY success rate is only 35-45% first-time approval with 60-70% exam pass rates. That means 55-65% face delays, reapplication fees, and lost opportunities. You'll invest 80-125 hours of your time worth $6,000-$18,750. Our clients save 76-118 hours and achieve 98% approval rates. The question isn't whether you CAN do it yourself, it's whether your time is better spent building your business while we handle the paperwork.' This information is time-sensitive.",
+      "feedback": "correct",
+      "score": 0.4640204865556979,
+      "timestamp": "2025-09-10T10:49:19.434273",
+      "metadata": {
+        "category": "objection_handling_scripts",
+        "match_type": "keyword",
+        "confidence": 0.5568245838668374
+      }
+    },
+    {
+      "query": "What if I flunk the test?",
+      "expected": "You can retake the exam after a waiting period, additional fees apply",
+      "actual": "Texas does not require state-level general contractor licensing. Must check municipal requirements for specific cities/counties. No age, experience, or educational requirements at state level. State licensing required for specific trades: Plumbing (Responsible Master Plumber), HVAC (Class A/B with insurance requirements), Electrical (2+ years journeyman before master). Municipal bonds may be required (example: San Antonio demolition $5,000 annual bond). This information is time-sensitive.",
+      "feedback": "incorrect",
+      "score": 0.30714285714285716,
+      "timestamp": "2025-09-10T10:49:19.485405",
+      "metadata": {
+        "category": "state_licensing_requirements",
+        "match_type": "partial",
+        "confidence": 0.3685714285714286
+      }
+    }
+  ],
+  "learned_patterns": {
+    "requirements_query": [
+      {
+        "query": "What are the requirements for a contractor license in Nevada?",
+        "answer": "California Contractors State License Board (CSLB) requirements: Class A (General Engineering) and Class B (General Building) licenses available. 4 years experience required (up to 3 years education credit, minimum 1 year practical). $25,000 bond effective 2023 (increased from $15,000). Workers compensation now mandatory for ALL contractors effective 2025 regardless of employees. Application fees: $450 application + $200-$350 license fee. This information is time-sensitive.",
+        "score": 0.3951008215085885,
+        "timestamp": 

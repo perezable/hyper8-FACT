@@ -436,3 +436,148 @@ async def webhook_health():
         "endpoint": "VAPI Webhook Handler",
         "timestamp": datetime.utcnow().isoformat()
     }
+
+
+@router.get("/webhook/schema")
+async def webhook_schema():
+    """
+    Return function schemas for VAPI integration.
+    This endpoint tells VAPI what functions are available and their parameters.
+    """
+    return {
+        "functions": [
+            {
+                "name": "searchKnowledge",
+                "description": "Search the contractor licensing knowledge base for accurate information",
+                "parameters": {
+                    "type": "object",
+                    "required": ["query"],
+                    "additionalProperties": False,  # This is what VAPI needs
+                    "properties": {
+                        "query": {
+                            "type": "string",
+                            "description": "The search query for contractor licensing information"
+                        },
+                        "state": {
+                            "type": "string",
+                            "description": "Two-letter US state code (e.g., GA, CA, TX)",
+                            "pattern": "^[A-Z]{2}$"
+                        },
+                        "category": {
+                            "type": "string",
+                            "description": "Category to filter results",
+                            "enum": [
+                                "state_licensing_requirements",
+                                "exam_preparation_testing",
+                                "qualifier_network_programs",
+                                "business_formation_operations",
+                                "insurance_bonding",
+                                "financial_planning_roi",
+                                "success_stories_case_studies",
+                                "troubleshooting_problem_resolution"
+                            ]
+                        },
+                        "limit": {
+                            "type": "integer",
+                            "description": "Maximum number of results to return",
+                            "minimum": 1,
+                            "maximum": 10,
+                            "default": 3
+                        }
+                    }
+                }
+            },
+            {
+                "name": "detectPersona",
+                "description": "Detect the caller's persona to adjust conversation style",
+                "parameters": {
+                    "type": "object",
+                    "required": ["text"],
+                    "additionalProperties": False,
+                    "properties": {
+                        "text": {
+                            "type": "string",
+                            "description": "Recent conversation text to analyze for persona detection"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "calculateTrust",
+                "description": "Calculate current trust score based on conversation events",
+                "parameters": {
+                    "type": "object",
+                    "required": ["events"],
+                    "additionalProperties": False,
+                    "properties": {
+                        "events": {
+                            "type": "array",
+                            "description": "Array of trust events from the conversation",
+                            "items": {
+                                "type": "object",
+                                "required": ["type"],
+                                "additionalProperties": False,
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "enum": ["positive", "negative", "neutral"],
+                                        "description": "Type of trust event"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "description": "Description of the event"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "name": "getStateRequirements",
+                "description": "Get specific state contractor licensing requirements",
+                "parameters": {
+                    "type": "object",
+                    "required": ["state"],
+                    "additionalProperties": False,
+                    "properties": {
+                        "state": {
+                            "type": "string",
+                            "description": "Two-letter US state code",
+                            "pattern": "^[A-Z]{2}$"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "handleObjection",
+                "description": "Get appropriate response for common objections",
+                "parameters": {
+                    "type": "object",
+                    "required": ["type"],
+                    "additionalProperties": False,
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "description": "Type of objection to handle",
+                            "enum": ["too_expensive", "need_time", "not_sure", "already_tried", "too_complicated"]
+                        }
+                    }
+                }
+            }
+        ],
+        "server": {
+            "url": "https://hyper8-fact-production.up.railway.app/vapi/webhook",
+            "description": "FACT System VAPI Webhook Handler"
+        }
+    }
+
+
+@router.options("/webhook")
+async def webhook_options():
+    """
+    Handle OPTIONS requests for VAPI webhook.
+    Returns available functions and their schemas.
+    """
+    schema = await webhook_schema()
+    return schema

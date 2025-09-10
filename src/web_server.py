@@ -255,6 +255,14 @@ if VAPI_WEBHOOK_AVAILABLE:
     app.include_router(vapi_router)
     logger.info("VAPI webhook endpoints loaded")
 
+# Include the training API router
+try:
+    from api.training_api import router as training_router
+    app.include_router(training_router)
+    logger.info("Training API endpoints loaded")
+except ImportError:
+    logger.warning("Training API module not available")
+
 
 @app.get("/", response_model=HealthResponse)
 async def root():
