@@ -453,6 +453,14 @@ async def upload_data(request: DataUploadRequest):
                 request.data,
                 clear_existing=request.clear_existing
             )
+            # Refresh enhanced retriever after knowledge base upload
+            global _enhanced_retriever
+            if _enhanced_retriever:
+                try:
+                    await _enhanced_retriever.refresh_index()
+                    logger.info("Enhanced retriever index refreshed after upload")
+                except Exception as e:
+                    logger.warning(f"Failed to refresh enhanced retriever: {e}")
         else:
             raise HTTPException(
                 status_code=400,

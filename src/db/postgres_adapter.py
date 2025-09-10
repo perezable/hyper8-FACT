@@ -81,7 +81,7 @@ class PostgresAdapter:
         """Create knowledge base tables if they don't exist."""
         create_table_sql = """
         CREATE TABLE IF NOT EXISTS knowledge_base (
-            id VARCHAR(50) PRIMARY KEY,
+            id SERIAL PRIMARY KEY,
             question TEXT NOT NULL,
             answer TEXT NOT NULL,
             category VARCHAR(100),
@@ -161,8 +161,8 @@ class PostgresAdapter:
             
             insert_query = """
             INSERT INTO knowledge_base 
-            (id, question, answer, category, state, tags, priority, difficulty, personas, source)
-            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+            (question, answer, category, state, tags, priority, difficulty, personas, source)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
             ON CONFLICT (id) DO UPDATE SET
                 question = EXCLUDED.question,
                 answer = EXCLUDED.answer,
@@ -181,7 +181,6 @@ class PostgresAdapter:
                     for entry in entries:
                         await conn.execute(
                             insert_query,
-                            entry.get('id', f'KB_{datetime.now().timestamp()}'),
                             entry.get('question', ''),
                             entry.get('answer', ''),
                             entry.get('category'),
@@ -199,10 +198,8 @@ class PostgresAdapter:
                     cursor.execute(
                         insert_query.replace('$1', '%s').replace('$2', '%s').replace('$3', '%s')
                                    .replace('$4', '%s').replace('$5', '%s').replace('$6', '%s')
-                                   .replace('$7', '%s').replace('$8', '%s').replace('$9', '%s')
-                                   .replace('$10', '%s'),
+                                   .replace('$7', '%s').replace('$8', '%s').replace('$9', '%s'),
                         (
-                            entry.get('id', f'KB_{datetime.now().timestamp()}'),
                             entry.get('question', ''),
                             entry.get('answer', ''),
                             entry.get('category'),
