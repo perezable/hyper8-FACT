@@ -93,13 +93,13 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
             conn = await asyncpg.connect(os.getenv("DATABASE_URL"))
             
             try:
-                query = """
+                sql_query = """
                 SELECT id, question, answer, category, state, tags, 
                        priority, difficulty, personas, source
                 FROM knowledge_base
                 ORDER BY priority, id
                 """
-                rows = await conn.fetch(query)
+                rows = await conn.fetch(sql_query)
                 entries = [dict(row) for row in rows]
                 logger.info(f"Loaded {len(entries)} entries directly from PostgreSQL")
             finally:
