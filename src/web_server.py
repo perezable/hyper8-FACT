@@ -278,6 +278,14 @@ try:
 except ImportError:
     logger.warning("Training API module not available")
 
+# Include debug endpoint
+try:
+    from api.debug_endpoint import router as debug_router
+    app.include_router(debug_router)
+    logger.info("Debug endpoints loaded")
+except ImportError:
+    logger.warning("Debug module not available")
+
 
 @app.get("/", response_model=HealthResponse)
 async def root():
