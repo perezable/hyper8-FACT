@@ -160,10 +160,15 @@ async def lifespan(app: FastAPI):
         logger.info("FACT system initialized successfully")
         
         # Initialize enhanced retriever if available
-        if ENHANCED_SEARCH_AVAILABLE and _driver and _driver.database_manager:
-            _enhanced_retriever = EnhancedRetriever(_driver.database_manager)
-            await _enhanced_retriever.initialize()
-            logger.info("Enhanced retriever initialized successfully")
+        if ENHANCED_SEARCH_AVAILABLE:
+            try:
+                # Initialize with None - the retriever will load data directly from database
+                _enhanced_retriever = EnhancedRetriever(None)
+                await _enhanced_retriever.initialize()
+                logger.info("Enhanced retriever initialized successfully")
+            except Exception as e:
+                logger.warning(f"Enhanced retriever initialization failed: {e}")
+                _enhanced_retriever = None
     except Exception as e:
         logger.error(f"Failed to initialize FACT system: {e}")
         # Don't prevent startup, allow health checks to report unhealthy

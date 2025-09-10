@@ -416,7 +416,7 @@ class EnhancedRetriever:
     Optimized for voice agent use cases with <20MB knowledge bases.
     """
     
-    def __init__(self, db_manager):
+    def __init__(self, db_manager=None):
         """Initialize the enhanced retriever."""
         self.db_manager = db_manager
         self.in_memory_index = InMemoryIndex()
@@ -430,12 +430,37 @@ class EnhancedRetriever:
         """Load knowledge base into memory for fast retrieval."""
         try:
             # Load all entries from database
-            async with self.db_manager.get_connection() as conn:
-                cursor = await conn.execute("""
-                    SELECT id, question, answer, category, tags, state, priority, difficulty
-                    FROM knowledge_base
-                """)
-                rows = await cursor.fetchall()
+            if self.db_manager:
+                async with self.db_manager.get_connection() as conn:
+                    cursor = await conn.execute("""
+                        SELECT id, question, answer, category, tags, state, priority, difficulty
+                        FROM knowledge_base
+                    """)
+                    rows = await cursor.fetchall()
+            else:
+                # Direct SQLite connection if no db_manager
+                try:
+                    import aiosqlite
+                    import os
+                    db_path = os.getenv("DATABASE_PATH", "data/fact_system.db")
+                    async with aiosqlite.connect(db_path) as conn:
+                        cursor = await conn.execute("""
+                            SELECT id, question, answer, category, tags, state, priority, difficulty
+                            FROM knowledge_base
+                        """)
+                        rows = await cursor.fetchall()
+                except ImportError:
+                    # Fallback to sync sqlite if aiosqlite not available
+                    import sqlite3
+                    import os
+                    db_path = os.getenv("DATABASE_PATH", "data/fact_system.db")
+                    conn = sqlite3.connect(db_path)
+                    cursor = conn.execute("""
+                        SELECT id, question, answer, category, tags, state, priority, difficulty
+                        FROM knowledge_base
+                    """)
+                    rows = cursor.fetchall()
+                    conn.close()
                 
                 entries = []
                 for row in rows:
