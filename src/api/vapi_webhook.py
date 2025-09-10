@@ -85,6 +85,7 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
     try:
         # Use PostgreSQL if available on Railway
         import os
+        logger.info(f"Starting search_knowledge_base for query: '{query}'")
         if os.getenv("DATABASE_URL"):
             logger.info("DATABASE_URL detected, using PostgreSQL for search")
             # Don't import postgres_adapter - it creates a new instance
@@ -110,6 +111,7 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
             _enhanced_retriever = EnhancedRetriever(None)
             _enhanced_retriever.in_memory_index.build_index(entries)
             logger.info(f"Enhanced retriever index built with {len(_enhanced_retriever.in_memory_index.entries)} entries")
+            logger.info(f"Sample entry: {entries[0] if entries else 'No entries'}")
         else:
             # Fallback to SQLite
             logger.info("Creating enhanced retriever with SQLite")
