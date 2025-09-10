@@ -157,6 +157,8 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
             logger.info(f"Search results type: {type(search_results)}")
             if search_results:
                 logger.info(f"First result: {search_results[0] if search_results else 'None'}")
+            else:
+                logger.warning(f"No results for query: '{query}', state: {state}, category: {category}")
             
             if search_results and len(search_results) > 0:
                 best_result = search_results[0]
