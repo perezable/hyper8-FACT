@@ -88,8 +88,11 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
         if os.getenv("DATABASE_URL"):
             logger.info("DATABASE_URL detected, using PostgreSQL for search")
             from db.postgres_adapter import postgres_adapter
+            logger.info(f"PostgreSQL adapter initialized status: {postgres_adapter.initialized}")
             if not postgres_adapter.initialized:
-                await postgres_adapter.initialize()
+                logger.info("Initializing PostgreSQL adapter")
+                init_result = await postgres_adapter.initialize()
+                logger.info(f"PostgreSQL initialization result: {init_result}")
             
             # Get all entries from PostgreSQL
             entries = await postgres_adapter.get_all_entries()

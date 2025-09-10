@@ -122,7 +122,10 @@ class PostgresAdapter:
     
     async def get_all_entries(self) -> List[Dict[str, Any]]:
         """Get all knowledge base entries."""
+        logger.info(f"get_all_entries called, initialized={self.initialized}")
+        
         if not self.initialized:
+            logger.warning("PostgreSQL adapter not initialized")
             return []
             
         query = """
@@ -134,20 +137,27 @@ class PostgresAdapter:
         
         try:
             if ASYNCPG_AVAILABLE and self.pool:
+                logger.info("Using asyncpg to get entries")
                 async with self.pool.acquire() as conn:
                     rows = await conn.fetch(query)
+                    logger.info(f"Retrieved {len(rows)} rows via asyncpg")
                     return [dict(row) for row in rows]
             else:
+                logger.info(f"Using psycopg2 to get entries, connection_string exists: {bool(self.connection_string)}")
                 conn = psycopg2.connect(self.connection_string)
                 cursor = conn.cursor(cursor_factory=RealDictCursor)
                 cursor.execute(query)
                 rows = cursor.fetchall()
+                logger.info(f"Retrieved {len(rows)} rows via psycopg2")
                 cursor.close()
                 conn.close()
-                return rows
+                # Convert RealDictRow objects to regular dictionaries
+                result = [dict(row) for row in rows]
+                logger.info(f"Converted to {len(result)} dictionaries")
+                return result
                 
         except Exception as e:
-            logger.error(f"Failed to get entries: {e}")
+            logger.error(f"Failed to get entries: {e}", exc_info=True)
             return []
     
     async def insert_entries(self, entries: List[Dict[str, Any]], clear_existing: bool = False):
