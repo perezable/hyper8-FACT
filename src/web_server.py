@@ -667,7 +667,7 @@ async def search_knowledge_base(request: KnowledgeSearchRequest):
         
         # Order by priority and limit results
         query_parts.append("ORDER BY CASE priority WHEN 'critical' THEN 1 WHEN 'high' THEN 2 WHEN 'normal' THEN 3 ELSE 4 END, id")
-        query_parts.append(f"LIMIT {min(request.limit, 100)}")  # Cap at 100 results
+        query_parts.append(f"LIMIT {min(request.limit, 1000)}")  # Cap at 1000 results for larger knowledge bases
         
         sql_query = " ".join(query_parts)
         
