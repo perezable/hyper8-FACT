@@ -6,7 +6,7 @@ import aiohttp
 RAILWAY_URL = "https://hyper8-fact-fact-system.up.railway.app"
 
 async def upload():
-    with open('data/knowledge_export_fixed.json', 'r') as f:
+    with open('data/knowledge_export_enhanced.json', 'r') as f:
         data = json.load(f)
     
     async with aiohttp.ClientSession() as session:
