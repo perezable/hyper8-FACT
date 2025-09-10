@@ -429,8 +429,11 @@ class EnhancedRetriever:
     async def initialize(self):
         """Load knowledge base into memory for fast retrieval."""
         try:
+            logger.info("Enhanced retriever initialize() called")
+            
             # Load all entries from database
             if self.db_manager:
+                logger.info("Using db_manager for connection")
                 async with self.db_manager.get_connection() as conn:
                     cursor = await conn.execute("""
                         SELECT id, question, answer, category, tags, state, priority, difficulty
@@ -438,22 +441,41 @@ class EnhancedRetriever:
                     """)
                     rows = await cursor.fetchall()
             else:
+                logger.info("No db_manager, using direct connection")
                 # Direct SQLite connection if no db_manager
                 try:
                     import aiosqlite
                     import os
                     db_path = os.getenv("DATABASE_PATH", "data/fact_system.db")
+                    logger.info(f"Trying aiosqlite with path: {db_path}")
+                    
+                    # Check if database file exists
+                    if not os.path.exists(db_path):
+                        logger.warning(f"Database file not found at {db_path}")
+                        # Try without data/ prefix for Railway
+                        db_path = "fact_system.db"
+                        logger.info(f"Trying alternative path: {db_path}")
+                    
                     async with aiosqlite.connect(db_path) as conn:
                         cursor = await conn.execute("""
                             SELECT id, question, answer, category, tags, state, priority, difficulty
                             FROM knowledge_base
                         """)
                         rows = await cursor.fetchall()
-                except ImportError:
+                        logger.info(f"Loaded {len(rows)} rows with aiosqlite")
+                except ImportError as e:
+                    logger.warning(f"aiosqlite not available: {e}")
                     # Fallback to sync sqlite if aiosqlite not available
                     import sqlite3
                     import os
                     db_path = os.getenv("DATABASE_PATH", "data/fact_system.db")
+                    
+                    # Check if database file exists
+                    if not os.path.exists(db_path):
+                        db_path = "fact_system.db"
+                        logger.info(f"Using alternative path: {db_path}")
+                    
+                    logger.info(f"Using sync sqlite3 with path: {db_path}")
                     conn = sqlite3.connect(db_path)
                     cursor = conn.execute("""
                         SELECT id, question, answer, category, tags, state, priority, difficulty
@@ -461,6 +483,7 @@ class EnhancedRetriever:
                     """)
                     rows = cursor.fetchall()
                     conn.close()
+                    logger.info(f"Loaded {len(rows)} rows with sqlite3")
                 
                 entries = []
                 for row in rows:
