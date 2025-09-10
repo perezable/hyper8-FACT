@@ -109,8 +109,9 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
             logger.info(f"Enhanced retriever initialized with {len(_enhanced_retriever.in_memory_index.entries)} entries")
         
         # Check if enhanced retriever is available
-        if _enhanced_retriever:
+        if _enhanced_retriever and len(_enhanced_retriever.in_memory_index.entries) > 0:
             logger.info(f"Using enhanced retriever for query: {query}")
+            logger.info(f"Retriever has {len(_enhanced_retriever.in_memory_index.entries)} entries in memory")
             
             # Use the REAL enhanced retriever (96.7% accuracy)
             search_results = await _enhanced_retriever.search(
@@ -120,16 +121,18 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
                 limit=limit
             )
             
-            if search_results:
+            logger.info(f"Search returned {len(search_results) if search_results else 0} results")
+            
+            if search_results and len(search_results) > 0:
                 best_result = search_results[0]
-                logger.info(f"Found result with score: {best_result.score}")
+                logger.info(f"Found result with score: {best_result.score}, question: {best_result.question[:50]}...")
                 
                 return {
                     "answer": best_result.answer,
                     "category": best_result.category or category or "general",
                     "confidence": best_result.score,
-                    "source": best_result.source or "knowledge_base",
-                    "state": state,
+                    "source": "knowledge_base",  # Fixed: source is not a field in SearchResult
+                    "state": best_result.state or state,  # Use result's state if available
                     "voice_optimized": True,
                     "match_type": best_result.match_type,
                     "metadata": {
@@ -137,6 +140,13 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
                         "retrieval_time_ms": best_result.retrieval_time_ms
                     }
                 }
+            else:
+                logger.warning(f"No results found for query: {query}")
+        else:
+            if _enhanced_retriever:
+                logger.warning(f"Enhanced retriever has no entries loaded (has {len(_enhanced_retriever.in_memory_index.entries)} entries)")
+            else:
+                logger.warning("Enhanced retriever is None")
         
         # Fallback to direct SQL query if enhanced retriever not available
         from shared_state import get_driver
