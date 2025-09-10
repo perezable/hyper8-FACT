@@ -83,12 +83,30 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
     Connected to actual contractor licensing Q&A database.
     """
     try:
-        # Always create a fresh enhanced retriever instance for Railway
-        logger.info("Creating enhanced retriever for search")
-        from retrieval.enhanced_search import EnhancedRetriever
-        _enhanced_retriever = EnhancedRetriever(None)
-        await _enhanced_retriever.initialize()
-        logger.info(f"Enhanced retriever initialized with {len(_enhanced_retriever.in_memory_index.entries)} entries")
+        # Use PostgreSQL if available on Railway
+        import os
+        if os.getenv("DATABASE_URL"):
+            logger.info("DATABASE_URL detected, using PostgreSQL for search")
+            from db.postgres_adapter import postgres_adapter
+            if not postgres_adapter.initialized:
+                await postgres_adapter.initialize()
+            
+            # Get all entries from PostgreSQL
+            entries = await postgres_adapter.get_all_entries()
+            logger.info(f"Loaded {len(entries)} entries from PostgreSQL")
+            
+            # Create enhanced retriever and build index
+            from retrieval.enhanced_search import EnhancedRetriever
+            _enhanced_retriever = EnhancedRetriever(None)
+            _enhanced_retriever.in_memory_index.build_index(entries)
+            logger.info(f"Enhanced retriever index built with {len(_enhanced_retriever.in_memory_index.entries)} entries")
+        else:
+            # Fallback to SQLite
+            logger.info("Creating enhanced retriever with SQLite")
+            from retrieval.enhanced_search import EnhancedRetriever
+            _enhanced_retriever = EnhancedRetriever(None)
+            await _enhanced_retriever.initialize()
+            logger.info(f"Enhanced retriever initialized with {len(_enhanced_retriever.in_memory_index.entries)} entries")
         
         # Check if enhanced retriever is available
         if _enhanced_retriever:
