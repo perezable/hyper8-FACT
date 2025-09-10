@@ -1,0 +1,14 @@
+{
+  "workflow_id": "2ec86d0d-f7dd-4cc7-b983-436f3155bd61",
+  "created_at": "2025-09-10T01:35:39.108832",
+  "name": "CLP Contractor Licensing Workflow",
+  "nodes": [
+    "main_router",
+    "veteran_support",
+    "newcomer_guide",
+    "fast_track",
+    "network_expert",
+    "collect_info",
+    "end_call"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-09-10T00:59:51.899975",
+  "router_id": "686ead20-ceb5-45b3-a224-4ddb62f58bda",
+  "status": "function_calling_fixed",
+  "assistant_mappings": {
+    "overwhelmed": "82efc90b-60f8-4fdd-b757-f089a8704123",
+    "new": "85ee06a0-b4fb-455a-8ef6-be1b169c57c7",
+    "urgent": "2a340cc3-474e-4d2c-92d0-6590a7a22e80",
+    "business": "d3ad7b67-93c4-4641-8c1f-130c4d1a284c"
+  }
+}

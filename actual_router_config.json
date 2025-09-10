@@ -1,0 +1,57 @@
+{
+  "id": "686ead20-ceb5-45b3-a224-4ddb62f58bda",
+  "orgId": "d03d94c5-fb17-4ff1-acf3-71e02949a782",
+  "name": "CLP-Main-Router",
+  "voice": {
+    "voiceId": "Paige",
+    "provider": "vapi"
+  },
+  "createdAt": "2025-09-10T03:49:59.781Z",
+  "updatedAt": "2025-09-10T05:10:57.932Z",
+  "functions": [
+    {
+      "name": "transferCall",
+      "description": "Transfer the call",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "destination": {
+            "description": "Assistant to transfer to",
+            "type": "string"
+          }
+        },
+        "required": [
+          "destination"
+        ]
+      }
+    }
+  ],
+  "model": {
+    "model": "gpt-4o-mini",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You route contractor licensing calls.\n\nWhen someone says \"overwhelmed\": Use transferCall with \"CLP-Veteran-Support\"\nWhen someone says \"new\": Use transferCall with \"CLP-Newcomer-Guide\"\nWhen someone says \"urgent\": Use transferCall with \"CLP-Fast-Track\"\nWhen someone says \"business\": Use transferCall with \"CLP-Network-Expert\"\n\nJust use the function. Don't announce anything."
+      }
+    ],
+    "provider": "openai",
+    "temperature": 0.1
+  },
+  "recordingEnabled": true,
+  "firstMessage": "Hello! How can I help with contractor licensing?",
+  "endCallFunctionEnabled": false,
+  "fillersEnabled": true,
+  "endCallMessage": "",
+  "transcriber": {
+    "model": "nova-2",
+    "language": "en",
+    "provider": "deepgram"
+  },
+  "silenceTimeoutSeconds": 30,
+  "responseDelaySeconds": 0.5,
+  "dialKeypadFunctionEnabled": false,
+  "llmRequestDelaySeconds": 0.1,
+  "numWordsToInterruptAssistant": 2,
+  "firstMessageMode": "assistant-speaks-first",
+  "isServerUrlSecretSet": false
+}

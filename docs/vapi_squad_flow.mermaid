@@ -1,0 +1,85 @@
+graph TB
+    Start([Incoming Call]) --> Squad[Squad: 860b548d-5199-4518-9a8e-7e0a665d3887]
+    
+    Squad --> VS[🤝 Veteran Support Specialist<br/>ID: 8caf929b-...]
+    
+    VS --> VSGreet[Delivers Greeting:<br/>'I understand this can feel overwhelming...']
+    
+    VSGreet --> DetectPersona{detectPersona<br/>Function}
+    
+    DetectPersona --> |Overwhelmed Veteran<br/>Confidence > 0.8| StayVS[Continue with<br/>Veteran Support]
+    DetectPersona --> |Confused Newcomer<br/>Confidence > 0.8| TransferNC[Recommend Transfer to<br/>📚 Newcomer Guide]
+    DetectPersona --> |Urgent Operator<br/>Confidence > 0.8| TransferFT[Recommend Transfer to<br/>⚡ Fast Track]
+    DetectPersona --> |Network Specialist<br/>Confidence > 0.8| TransferQN[Recommend Transfer to<br/>💼 Network Expert]
+    
+    TransferNC --> NC[📚 Newcomer Guide<br/>ID: d87e82ce-...]
+    TransferFT --> FT[⚡ Fast Track Specialist<br/>ID: 075cdd38-...]
+    TransferQN --> QN[💼 Network Expert<br/>ID: 6ee8dc58-...]
+    
+    StayVS --> SearchKnowledge1{searchKnowledge<br/>Function}
+    NC --> SearchKnowledge2{searchKnowledge<br/>Function}
+    FT --> SearchKnowledge3{searchKnowledge<br/>Function}
+    QN --> SearchKnowledge4{searchKnowledge<br/>Function}
+    
+    SearchKnowledge1 & SearchKnowledge2 & SearchKnowledge3 & SearchKnowledge4 --> FACT[(FACT Knowledge Base<br/>96.7% Accuracy)]
+    
+    FACT --> Response[Voice-Optimized<br/>Response]
+    
+    Response --> Trust{calculateTrust<br/>Function}
+    
+    Trust --> |Score < 50| RebuildRapport[Rebuild Rapport<br/>Strategy]
+    Trust --> |Score 50-70| BuildValue[Build Value<br/>Strategy]
+    Trust --> |Score > 70| MoveToClose[Move to Close<br/>Strategy]
+    
+    RebuildRapport & BuildValue & MoveToClose --> Monitor[Monitor for<br/>Transfer Triggers]
+    
+    Monitor --> |Detects New Persona| DetectPersona
+    Monitor --> |Conversation Continues| HandleObjection{handleObjection<br/>Function}
+    
+    HandleObjection --> |Too Expensive| ObjResponse1[Value-Based<br/>Response]
+    HandleObjection --> |Need Time| ObjResponse2[Patience<br/>Response]
+    HandleObjection --> |Not Sure| ObjResponse3[Clarity<br/>Response]
+    
+    ObjResponse1 & ObjResponse2 & ObjResponse3 --> Continue[Continue<br/>Conversation]
+    
+    Continue --> End([Call Ends])
+    
+    subgraph "Persona Detection Keywords"
+        K1[Overwhelmed: stressed, too much, drowning]
+        K2[Newcomer: new, beginner, don't understand]
+        K3[Urgent: quickly, ASAP, deadline]
+        K4[Network: business, money, opportunity]
+    end
+    
+    subgraph "Transfer Triggers"
+        T1[VS→FT: urgent, deadline, quickly]
+        T2[VS→QN: business, income, network]
+        T3[NC→VS: overwhelmed, too much]
+        T4[NC→FT: deadline, time-sensitive]
+        T5[FT→VS: stressed, pressure]
+        T6[QN→FT: need license quickly]
+    end
+    
+    subgraph "Function Endpoints"
+        F1[searchKnowledge - Knowledge retrieval]
+        F2[detectPersona - Persona analysis]
+        F3[calculateTrust - Trust scoring]
+        F4[getStateRequirements - State info]
+        F5[handleObjection - Objection handling]
+    end
+    
+    style Start fill:#e1f5fe
+    style End fill:#ffebee
+    style Squad fill:#fff3e0
+    style VS fill:#e8f5e9
+    style NC fill:#f3e5f5
+    style FT fill:#fff9c4
+    style QN fill:#e0f2f1
+    style FACT fill:#1a237e,color:#fff
+    style DetectPersona fill:#f57c00,color:#fff
+    style Trust fill:#388e3c,color:#fff
+    style SearchKnowledge1 fill:#0288d1,color:#fff
+    style SearchKnowledge2 fill:#0288d1,color:#fff
+    style SearchKnowledge3 fill:#0288d1,color:#fff
+    style SearchKnowledge4 fill:#0288d1,color:#fff
+    style HandleObjection fill:#7b1fa2,color:#fff

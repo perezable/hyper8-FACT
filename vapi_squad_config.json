@@ -1,0 +1,11 @@
+{
+  "squad_id": "860b548d-5199-4518-9a8e-7e0a665d3887",
+  "assistant_ids": {
+    "overwhelmed_veteran": "8caf929b-ada3-476b-8523-f80ef6855b10",
+    "confused_newcomer": "d87e82ce-bd5e-43b3-a992-c3790a214773",
+    "urgent_operator": "075cdd38-01e6-4adb-967c-8c6073a53af9",
+    "qualifier_network_specialist": "6ee8dc58-6b82-4885-ad3c-dcfdc4b30e9b"
+  },
+  "webhook_url": "https://hyper8-fact-fact-system.up.railway.app/vapi/webhook",
+  "created_at": "2025-09-09T21:35:00Z"
+}

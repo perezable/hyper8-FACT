@@ -1,0 +1,14 @@
+{
+  "squad_type": "silent_transfer",
+  "created_at": "2025-09-10T03:51:40.443736",
+  "assistant_ids": {
+    "CLP-Main-Router": "686ead20-ceb5-45b3-a224-4ddb62f58bda",
+    "CLP-Veteran-Support": "82efc90b-60f8-4fdd-b757-f089a8704123",
+    "CLP-Newcomer-Guide": "85ee06a0-b4fb-455a-8ef6-be1b169c57c7",
+    "CLP-Fast-Track": "2a340cc3-474e-4d2c-92d0-6590a7a22e80",
+    "CLP-Network-Expert": "d3ad7b67-93c4-4641-8c1f-130c4d1a284c"
+  },
+  "main_router_id": "686ead20-ceb5-45b3-a224-4ddb62f58bda",
+  "transfer_method": "silent",
+  "webhook_url": "https://hyper8-fact-fact-system.up.railway.app/vapi/webhook"
+}
