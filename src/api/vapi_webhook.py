@@ -98,11 +98,16 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
                 SELECT id, question, answer, category, state, tags, 
                        priority, difficulty, personas, source
                 FROM knowledge_base
-                ORDER BY priority, id
+                ORDER BY id
                 """
                 rows = await conn.fetch(sql_query)
                 entries = [dict(row) for row in rows]
                 logger.info(f"Loaded {len(entries)} entries directly from PostgreSQL")
+                
+                # Log sample entries for debugging
+                if entries:
+                    logger.info(f"First entry ID: {entries[0]['id']}, State: {entries[0].get('state', 'N/A')}")
+                    logger.info(f"Last entry ID: {entries[-1]['id']}, State: {entries[-1].get('state', 'N/A')}")
             finally:
                 await conn.close()
             
@@ -110,10 +115,19 @@ async def search_knowledge_base(query: str, state: Optional[str] = None,
             from retrieval.enhanced_search import EnhancedRetriever
             _enhanced_retriever = EnhancedRetriever(None)
             # Manually build the index with loaded entries
-            _enhanced_retriever.in_memory_index.entries = entries
-            _enhanced_retriever.in_memory_index._build_fuzzy_index()
-            logger.info(f"Enhanced retriever index built with {len(_enhanced_retriever.in_memory_index.entries)} entries")
-            logger.info(f"Sample entry: {entries[0] if entries else 'No entries'}")
+            if entries:
+                _enhanced_retriever.in_memory_index.entries = entries
+                _enhanced_retriever.in_memory_index._build_fuzzy_index()
+                logger.info(f"Enhanced retriever index built with {len(_enhanced_retriever.in_memory_index.entries)} entries")
+                
+                # Count entries by state for debugging
+                state_counts = {}
+                for entry in entries:
+                    state = entry.get('state', 'N/A')
+                    state_counts[state] = state_counts.get(state, 0) + 1
+                logger.info(f"Entries by state: {state_counts}")
+            else:
+                logger.error("No entries loaded from PostgreSQL!")
         else:
             # Fallback to SQLite
             logger.info("Creating enhanced retriever with SQLite")
