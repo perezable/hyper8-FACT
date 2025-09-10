@@ -1,0 +1,157 @@
+{
+  "timestamp": "2025-09-10T03:45:54.928013",
+  "url": "https://hyper8-fact-fact-system.up.railway.app",
+  "tests": [
+    {
+      "name": "Health Check",
+      "passed": true,
+      "details": "Status: healthy, Initialized: True",
+      "data": {
+        "status": "healthy",
+        "initialized": true,
+        "version": "1.0.0",
+        "timestamp": "2025-09-10T07:45:55.258532",
+        "metrics": {
+          "total_queries": 0,
+          "tool_executions": 0,
+          "error_rate": 0.0,
+          "initialized": true,
+          "cache_hit_rate": 0,
+          "cache_hits": 0,
+          "cache_misses": 0,
+          "cache_degraded": true,
+          "circuit_breaker_state": "degraded",
+          "enhanced_retriever": true,
+          "enhanced_retriever_entries": 450
+        }
+      }
+    },
+    {
+      "name": "Enhanced Retriever",
+      "passed": true,
+      "details": "Entries loaded: 450",
+      "data": {
+        "entries": 450
+      }
+    },
+    {
+      "name": "Metrics Endpoint",
+      "passed": true,
+      "details": "Metrics retrieved successfully",
+      "data": {
+        "total_queries": 0,
+        "tool_executions": 0,
+        "error_rate": 0.0,
+        "initialized": true,
+        "cache_hit_rate": 0,
+        "cache_hits": 0,
+        "cache_misses": 0,
+        "cache_degraded": true,
+        "circuit_breaker_state": "degraded"
+      }
+    },
+    {
+      "name": "Search: Georgia contractor license req",
+      "passed": true,
+      "details": "Found 3 results",
+      "data": {
+        "query": "Georgia contractor license requirements",
+        "results": 3,
+        "top_match": "Georgia Contractor License Requirements"
+      }
+    },
+    {
+      "name": "Search: California contractor license",
+      "passed": true,
+      "details": "Found 3 results",
+      "data": {
+        "query": "California contractor license",
+        "results": 3,
+        "top_match": "California Contractor License Updates 2025"
+      }
+    },
+    {
+      "name": "Search: What is a mechanics lien",
+      "passed": false,
+      "details": "No results found",
+      "data": null
+    },
+    {
+      "name": "Search: exam preparation tips",
+      "passed": false,
+      "details": "No results found",
+      "data": null
+    },
+    {
+      "name": "Search: contractor bond requirements",
+      "passed": true,
+      "details": "Found 3 results",
+      "data": {
+        "query": "contractor bond requirements",
+        "results": 3,
+        "top_match": "Contractor Bond Requirements and Costs"
+      }
+    },
+    {
+      "name": "Knowledge Stats",
+      "passed": true,
+      "details": "Total entries: 450",
+      "data": {
+        "total_entries": 450,
+        "total_categories": 11,
+        "total_states": 5,
+        "priority_breakdown": {
+          "critical": 54,
+          "high": 162,
+          "normal": 229
+        },
+        "difficulty_breakdown": {
+          "basic": 72,
+          "intermediate": 207,
+          "advanced": 171
+        },
+        "timestamp": "2025-09-10T07:45:55.643185"
+      }
+    },
+    {
+      "name": "VAPI Webhook",
+      "passed": false,
+      "details": "HTTP 401: {\"detail\":\"Invalid signature\"}",
+      "data": null
+    },
+    {
+      "name": "Performance",
+      "passed": true,
+      "details": "Single: 56.1ms, Concurrent avg: 47.8ms",
+      "data": {
+        "single_latency_ms": 56.12587928771973,
+        "concurrent_requests": 5,
+        "total_time_s": 0.23912596702575684,
+        "avg_latency_ms": 47.82519340515137
+      }
+    },
+    {
+      "name": "404 Handling",
+      "passed": true,
+      "details": "HTTP 404",
+      "data": null
+    },
+    {
+      "name": "Invalid Query Handling",
+      "passed": true,
+      "details": "HTTP 200",
+      "data": null
+    },
+    {
+      "name": "Large Limit Handling",
+      "passed": true,
+      "details": "Returned 27 results",
+      "data": null
+    }
+  ],
+  "summary": {
+    "total": 14,
+    "passed": 11,
+    "failed": 3
+  }
+}

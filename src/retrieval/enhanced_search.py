@@ -64,15 +64,20 @@ class QueryPreprocessor:
         
         # Common synonyms for contractor licensing domain
         self.synonyms = {
-            "license": ["permit", "certification", "credential", "authorization"],
+            "license": ["permit", "certification", "credential", "authorization", "licensing"],
             "requirements": ["prerequisites", "qualifications", "criteria", "needs"],
             "contractor": ["builder", "construction professional", "tradesperson"],
-            "cost": ["fee", "price", "expense", "charge", "payment"],
+            "cost": ["fee", "price", "expense", "charge", "payment", "costs"],
             "test": ["exam", "examination", "assessment", "evaluation"],
             "get": ["obtain", "acquire", "secure", "receive"],
             "need": ["require", "must have", "necessary", "essential"],
             "help": ["assist", "guide", "support", "aid"],
-            "state": ["location", "jurisdiction", "region", "area"]
+            "state": ["location", "jurisdiction", "region", "area"],
+            "roi": ["return", "investment", "payback", "profit"],
+            "diy": ["yourself", "self", "own"],
+            "workers": ["worker", "workman", "workmans"],
+            "comp": ["compensation", "insurance"],
+            "fail": ["failure", "failed", "failing", "unsuccessful"]
         }
         
         # Stop words to remove for keyword extraction
@@ -209,7 +214,7 @@ class FuzzyMatcher:
         return len(intersection) / len(union) if union else 0.0
     
     @staticmethod
-    def fuzzy_match_score(query: str, text: str, threshold: float = 0.6) -> float:
+    def fuzzy_match_score(query: str, text: str, threshold: float = 0.3) -> float:
         """
         Calculate fuzzy match score combining multiple metrics.
         
@@ -310,12 +315,33 @@ class InMemoryIndex:
         query_variations = self.preprocessor.generate_query_variations(query)
         query_keywords = self.preprocessor.extract_keywords(query)
         
+        # Add individual words from query as keywords if short query
+        query_words = query.lower().split()
+        if len(query_words) <= 5:
+            for word in query_words:
+                if word not in self.preprocessor.stop_words and len(word) > 2:
+                    if word not in query_keywords:
+                        query_keywords.append(word)
+        
         # Score each entry
         scores = defaultdict(float)
         match_types = {}
         
         # Get candidate entries based on filters
         candidate_ids = set(range(len(self.entries)))
+        
+        # Check if query mentions a state
+        query_lower = query.lower()
+        mentioned_state = None
+        state_names = {
+            'georgia': 'GA', 'california': 'CA', 'florida': 'FL', 
+            'texas': 'TX', 'new york': 'NY', 'nevada': 'NV',
+            'arizona': 'AZ', 'utah': 'UT', 'oregon': 'OR'
+        }
+        for state_name, state_code in state_names.items():
+            if state_name in query_lower:
+                mentioned_state = state_code
+                break
         
         if category:
             category_ids = {self.id_to_index[id_] for id_ in self.category_index.get(category.lower(), set())}
@@ -338,11 +364,16 @@ class InMemoryIndex:
             
             # Fuzzy matching on question
             question_score = self.fuzzy_matcher.fuzzy_match_score(
-                query, entry.get('question', ''), threshold=0.5
+                query, entry.get('question', ''), threshold=0.3
             )
             
-            # Keyword matching
-            entry_text = f"{entry.get('question', '')} {entry.get('answer', '')}"
+            # Also check fuzzy matching on answer
+            answer_score = self.fuzzy_matcher.fuzzy_match_score(
+                query, entry.get('answer', ''), threshold=0.3
+            )
+            
+            # Keyword matching on combined text
+            entry_text = f"{entry.get('question', '')} {entry.get('answer', '')} {entry.get('tags', '')}"
             keyword_score = self._calculate_keyword_score(query_keywords, entry_text)
             
             # Check for query variations
@@ -351,14 +382,18 @@ class InMemoryIndex:
                 if variation.lower() in entry_text.lower():
                     variation_score = max(variation_score, 0.7)
             
-            # Combine scores
+            # Combine scores - include answer score
             total_score = (
-                question_score * 0.5 +
-                keyword_score * 0.3 +
+                max(question_score, answer_score) * 0.4 +
+                keyword_score * 0.4 +
                 variation_score * 0.2
             )
             
-            if total_score > 0.3:  # Minimum threshold
+            # Boost score if state matches
+            if mentioned_state and entry.get('state') == mentioned_state:
+                total_score *= 1.5
+            
+            if total_score > 0.1:  # Very low threshold to catch more results
                 scores[entry_id] = total_score
                 if question_score > 0.7:
                     match_types[entry_id] = 'fuzzy'
@@ -368,7 +403,14 @@ class InMemoryIndex:
                     match_types[entry_id] = 'partial'
         
         # Sort by score and create results
-        sorted_entries = sorted(scores.items(), key=lambda x: x[1], reverse=True)[:limit]
+        # Return more results if scores are close
+        sorted_entries = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+        
+        # If we have results but low scores, include more
+        if sorted_entries and sorted_entries[0][1] < 0.5:
+            sorted_entries = sorted_entries[:min(limit * 2, len(sorted_entries))]
+        else:
+            sorted_entries = sorted_entries[:limit]
         
         results = []
         elapsed_ms = (time.time() - start_time) * 1000
@@ -401,13 +443,23 @@ class InMemoryIndex:
             return 0.0
         
         text_lower = text.lower()
+        text_words = set(text_lower.split())
         matched = 0
+        partial_matched = 0
         
         for keyword in query_keywords:
-            if keyword in text_lower:
+            keyword_lower = keyword.lower()
+            if keyword_lower in text_lower:
                 matched += 1
+            else:
+                # Check for partial matches
+                for word in text_words:
+                    if keyword_lower in word or word in keyword_lower:
+                        partial_matched += 0.5
+                        break
         
-        return matched / len(query_keywords)
+        total_score = (matched + partial_matched) / len(query_keywords)
+        return min(total_score, 1.0)
 
 
 class EnhancedRetriever:
