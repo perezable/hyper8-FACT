@@ -261,6 +261,14 @@ if KNOWLEDGE_API_AVAILABLE:
 if VAPI_WEBHOOK_AVAILABLE:
     app.include_router(vapi_router)
     logger.info("VAPI webhook endpoints loaded")
+    
+    # Also include simple webhook for testing
+    try:
+        from api.vapi_webhook_simple import router as vapi_simple_router
+        app.include_router(vapi_simple_router)
+        logger.info("VAPI simple webhook endpoints loaded")
+    except ImportError:
+        logger.warning("VAPI simple webhook module not available")
 
 # Include the training API router
 try:
