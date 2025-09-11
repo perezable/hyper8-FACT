@@ -9,16 +9,35 @@ import json
 import requests
 from typing import Dict, Any
 
+# Try to load from .env file
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 # VAPI API Configuration
-VAPI_API_KEY = os.getenv("VAPI_API_KEY")
+VAPI_API_KEY = os.getenv("VAPI_API_KEY") or os.getenv("VAPI_KEY")
 VAPI_BASE_URL = "https://api.vapi.ai"
 WEBHOOK_URL = "https://hyper8-fact-fact-system.up.railway.app/vapi-enhanced/webhook"
 
 if not VAPI_API_KEY:
-    print("❌ Error: VAPI_API_KEY environment variable not set")
-    print("Get your API key from: https://dashboard.vapi.ai/api-keys")
-    print("Then run: export VAPI_API_KEY='your-key-here'")
-    exit(1)
+    print("❌ Error: VAPI_API_KEY not found")
+    print("\nPlease add to your .env file:")
+    print("VAPI_API_KEY=your-api-key-here")
+    print("\nOr set it directly:")
+    print("export VAPI_API_KEY='your-key-here'")
+    print("\nGet your API key from: https://dashboard.vapi.ai/api-keys")
+    
+    # Check if user wants to enter it now
+    response = input("\nWould you like to enter your API key now? (y/n): ")
+    if response.lower() == 'y':
+        VAPI_API_KEY = input("Enter your VAPI API key: ").strip()
+        if not VAPI_API_KEY:
+            print("No key entered. Exiting.")
+            exit(1)
+    else:
+        exit(1)
 
 headers = {
     "Authorization": f"Bearer {VAPI_API_KEY}",
@@ -81,7 +100,7 @@ TRANSFER TRIGGERS:
 Be conversational, empathetic, and solution-focused. Use specific numbers and examples."""
         },
         "voice": {
-            "provider": "elevenlabs",
+            "provider": "11labs",
             "voiceId": "EXAVITQu4vr4xnSDxMaL",  # Sarah voice
             "model": "eleven_turbo_v2",
             "stability": 0.65,
@@ -101,7 +120,8 @@ Be conversational, empathetic, and solution-focused. Use specific numbers and ex
         "functions": [
             {
                 "name": "searchKnowledge",
-                "description": "Search contractor licensing knowledge base",
+                "description": "Search contractor licensing knowledge base for accurate information",
+                "serverUrl": WEBHOOK_URL,
                 "parameters": {
                     "type": "object",
                     "required": ["query"],
@@ -115,6 +135,7 @@ Be conversational, empathetic, and solution-focused. Use specific numbers and ex
             {
                 "name": "detectPersona",
                 "description": "Detect caller persona for tailored responses",
+                "serverUrl": WEBHOOK_URL,
                 "parameters": {
                     "type": "object",
                     "required": ["text"],
@@ -126,6 +147,7 @@ Be conversational, empathetic, and solution-focused. Use specific numbers and ex
             {
                 "name": "calculateTrust",
                 "description": "Calculate current trust score",
+                "serverUrl": WEBHOOK_URL,
                 "parameters": {
                     "type": "object",
                     "required": ["events"],
@@ -146,6 +168,7 @@ Be conversational, empathetic, and solution-focused. Use specific numbers and ex
             {
                 "name": "handleObjection",
                 "description": "Get objection handling response",
+                "serverUrl": WEBHOOK_URL,
                 "parameters": {
                     "type": "object",
                     "required": ["type"],
@@ -157,6 +180,7 @@ Be conversational, empathetic, and solution-focused. Use specific numbers and ex
             {
                 "name": "bookAppointment",
                 "description": "Schedule consultation appointment",
+                "serverUrl": WEBHOOK_URL,
                 "parameters": {
                     "type": "object",
                     "required": ["name", "email", "phone"],
@@ -248,7 +272,7 @@ KEY SUCCESS METRICS:
 Be authoritative, strategic, and consultative. You're the expert who makes complex things simple."""
         },
         "voice": {
-            "provider": "elevenlabs",
+            "provider": "11labs",
             "voiceId": "pNInz6obpgDQGcFmaJgB",  # Adam voice
             "model": "eleven_turbo_v2",
             "stability": 0.75,
@@ -265,17 +289,11 @@ Be authoritative, strategic, and consultative. You're the expert who makes compl
         "endCallFunctionEnabled": True,
         "endCallMessage": "Thank you for your time today. I'm confident we can help you achieve extraordinary results with your contractor licensing goals. You'll receive our detailed proposal within 24 hours.",
         "endCallPhrases": ["goodbye", "bye", "talk to you later"],
-        "transferList": [
-            {
-                "assistantId": sales_agent_id,
-                "message": "Let me transfer you back to our sales team to finalize the details.",
-                "description": "Transfer back to sales for basic questions"
-            }
-        ],
         "functions": [
             {
                 "name": "searchKnowledge",
                 "description": "Search advanced licensing knowledge",
+                "serverUrl": WEBHOOK_URL,
                 "parameters": {
                     "type": "object",
                     "required": ["query"],
@@ -289,6 +307,7 @@ Be authoritative, strategic, and consultative. You're the expert who makes compl
             {
                 "name": "calculateROI",
                 "description": "Calculate specific ROI for customer",
+                "serverUrl": WEBHOOK_URL,
                 "parameters": {
                     "type": "object",
                     "required": ["currentIncome"],
@@ -303,6 +322,7 @@ Be authoritative, strategic, and consultative. You're the expert who makes compl
             {
                 "name": "qualifierNetworkAnalysis",
                 "description": "Analyze qualifier network opportunity",
+                "serverUrl": WEBHOOK_URL,
                 "parameters": {
                     "type": "object",
                     "required": ["state", "licenseType"],
@@ -316,6 +336,7 @@ Be authoritative, strategic, and consultative. You're the expert who makes compl
             {
                 "name": "scheduleConsultation",
                 "description": "Book expert consultation",
+                "serverUrl": WEBHOOK_URL,
                 "parameters": {
                     "type": "object",
                     "required": ["name", "email", "phone", "consultationType"],
@@ -349,10 +370,11 @@ Be authoritative, strategic, and consultative. You're the expert who makes compl
         return None
 
 
-def update_sales_agent_transfer(sales_agent_id: str, expert_agent_id: str):
-    """Update the sales agent to include transfer to expert."""
+def update_agents_transfers(sales_agent_id: str, expert_agent_id: str):
+    """Update both agents to include mutual transfers."""
     
-    update_config = {
+    # Update sales agent to transfer to expert
+    sales_update = {
         "transferList": [
             {
                 "assistantId": expert_agent_id,
@@ -362,18 +384,41 @@ def update_sales_agent_transfer(sales_agent_id: str, expert_agent_id: str):
         ]
     }
     
-    response = requests.patch(
+    # Update expert agent to transfer back to sales
+    expert_update = {
+        "transferList": [
+            {
+                "assistantId": sales_agent_id,
+                "message": "Let me transfer you back to our sales team to finalize the details.",
+                "description": "Transfer back to sales for basic questions"
+            }
+        ]
+    }
+    
+    # Update sales agent
+    response1 = requests.patch(
         f"{VAPI_BASE_URL}/assistant/{sales_agent_id}",
         headers=headers,
-        json=update_config
+        json=sales_update
     )
     
-    if response.status_code == 200:
-        print(f"✅ Updated Sales Agent with transfer to Expert")
+    # Update expert agent
+    response2 = requests.patch(
+        f"{VAPI_BASE_URL}/assistant/{expert_agent_id}",
+        headers=headers,
+        json=expert_update
+    )
+    
+    if response1.status_code == 200 and response2.status_code == 200:
+        print(f"✅ Updated both agents with mutual transfers")
         return True
     else:
-        print(f"❌ Failed to update Sales Agent: {response.status_code}")
-        print(response.text)
+        if response1.status_code != 200:
+            print(f"❌ Failed to update Sales Agent: {response1.status_code}")
+            print(response1.text)
+        if response2.status_code != 200:
+            print(f"❌ Failed to update Expert Agent: {response2.status_code}")
+            print(response2.text)
         return False
 
 
@@ -396,9 +441,9 @@ def main():
         print("❌ Setup failed. Please check the error and try again.")
         return
     
-    # Step 3: Update Sales Agent with Transfer
-    print("\n3️⃣ Linking agents for transfers...")
-    if update_sales_agent_transfer(sales_agent['id'], expert_agent['id']):
+    # Step 3: Update both agents with transfers
+    print("\n3️⃣ Linking agents for mutual transfers...")
+    if update_agents_transfers(sales_agent['id'], expert_agent['id']):
         print("\n✅ Setup Complete!")
         print("=" * 50)
         print("\n📞 Your VAPI Agents are ready:")

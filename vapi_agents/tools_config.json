@@ -1,0 +1,33 @@
+{
+  "tool_ids": [
+    "511c7e72-ba2c-47cf-a0d9-fdbf3e91da09",
+    "a3acffe3-fe06-4c86-9def-c10547a12890",
+    "59b97055-5d15-4bcb-938f-a7c6273ee8f9",
+    "8110025e-9fa6-44b3-b27c-1d419f8699dd",
+    "26cf5647-28eb-4f66-b06f-7407a76f3779",
+    "bd82fb63-448b-41b6-b98c-478123428776",
+    "7a557d63-8bf5-4faf-950c-33c04747ab75",
+    "1435bf69-717a-4cf4-9757-5042a5d2da30"
+  ],
+  "sales_agent": {
+    "id": "edc2ad98-c1a0-4461-b963-64800fca1832",
+    "tools": [
+      "511c7e72-ba2c-47cf-a0d9-fdbf3e91da09",
+      "a3acffe3-fe06-4c86-9def-c10547a12890",
+      "59b97055-5d15-4bcb-938f-a7c6273ee8f9",
+      "8110025e-9fa6-44b3-b27c-1d419f8699dd",
+      "26cf5647-28eb-4f66-b06f-7407a76f3779"
+    ]
+  },
+  "expert_agent": {
+    "id": "91b07fe0-4149-43fc-9cb3-fc4a24622e4f",
+    "tools": [
+      "511c7e72-ba2c-47cf-a0d9-fdbf3e91da09",
+      "bd82fb63-448b-41b6-b98c-478123428776",
+      "7a557d63-8bf5-4faf-950c-33c04747ab75",
+      "1435bf69-717a-4cf4-9757-5042a5d2da30"
+    ]
+  },
+  "webhook_url": "https://hyper8-fact-fact-system.up.railway.app/vapi-enhanced/webhook",
+  "updated_at": "1757555166.079862"
+}

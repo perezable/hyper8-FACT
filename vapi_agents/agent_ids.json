@@ -1,0 +1,17 @@
+{
+  "sales_agent_id": "edc2ad98-c1a0-4461-b963-64800fca1832",
+  "expert_agent_id": "91b07fe0-4149-43fc-9cb3-fc4a24622e4f",
+  "created_at": "2025-01-11",
+  "webhook_url": "https://hyper8-fact-fact-system.up.railway.app/vapi-enhanced/webhook",
+  "functions_configured": [
+    "searchKnowledge",
+    "detectPersona",
+    "calculateTrust",
+    "handleObjection",
+    "bookAppointment",
+    "calculateROI",
+    "qualifierNetworkAnalysis",
+    "scheduleConsultation"
+  ],
+  "notes": "Agents created with searchKnowledge webhook integration. Transfer configuration needs to be done manually in VAPI dashboard."
+}
