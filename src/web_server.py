@@ -285,6 +285,14 @@ if VAPI_WEBHOOK_AVAILABLE:
         logger.info("VAPI debug webhook loaded")
     except ImportError:
         logger.warning("VAPI debug webhook module not available")
+    
+    # Include fixed webhook for new VAPI structure
+    try:
+        from api.vapi_webhook_fix import router as vapi_fixed_router
+        app.include_router(vapi_fixed_router)
+        logger.info("VAPI fixed webhook loaded")
+    except ImportError:
+        logger.warning("VAPI fixed webhook module not available")
 
 # Include the training API router
 try:
