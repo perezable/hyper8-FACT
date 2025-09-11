@@ -5,7 +5,7 @@ Integrates the conversation scoring system to provide dynamic,
 journey-based responses for the CLP Sales and Expert agents.
 """
 
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List, Union
 from fastapi import APIRouter, Request, Header, Depends
 from pydantic import BaseModel, Field
 import structlog
@@ -13,7 +13,7 @@ from datetime import datetime
 
 from .vapi_webhook import (
     VAPIFunctionCall, VAPIMessage, VAPICall, 
-    VAPIWebhookRequest, VAPIWebhookResponse,
+    VAPIWebhookRequest as OldVAPIWebhookRequest, VAPIWebhookResponse,
     verify_vapi_request, search_knowledge_base
 )
 from .vapi_conversation_scoring import (
@@ -23,6 +23,34 @@ from .vapi_conversation_scoring import (
 logger = structlog.get_logger(__name__)
 
 router = APIRouter(prefix="/vapi-enhanced", tags=["vapi-enhanced"])
+
+
+# New VAPI structures for tool-calls
+class VAPIToolCallFunction(BaseModel):
+    """VAPI tool call function structure."""
+    name: str = Field(..., description="Function name")
+    arguments: Dict[str, Any] = Field(..., description="Function arguments")
+
+
+class VAPIToolCall(BaseModel):
+    """VAPI tool call structure."""
+    id: str = Field(..., description="Tool call ID")
+    type: str = Field(..., description="Tool type")
+    function: VAPIToolCallFunction = Field(..., description="Function details")
+
+
+class VAPIMessageNew(BaseModel):
+    """VAPI message structure for tool-calls."""
+    type: str = Field(..., description="Message type")
+    toolCalls: Optional[List[VAPIToolCall]] = Field(None, description="Tool calls array")
+    functionCall: Optional[VAPIFunctionCall] = Field(None, description="Function call (old format)")
+    timestamp: Optional[int] = Field(None, description="Timestamp")
+
+
+class VAPIWebhookRequest(BaseModel):
+    """VAPI webhook request structure that handles both formats."""
+    message: VAPIMessageNew = Field(..., description="Message details")
+    call: Optional[VAPICall] = Field(None, description="Call information")
 
 
 async def detect_persona_enhanced(text: str, call_id: str) -> Dict[str, Any]:
@@ -228,109 +256,157 @@ async def calculate_roi_enhanced(call_id: str, current_income: float,
     }
 
 
-@router.post("/webhook", response_model=VAPIWebhookResponse, dependencies=[Depends(verify_vapi_request)])
+async def process_function_call(function_name: str, parameters: Dict[str, Any], call_id: str) -> Dict[str, Any]:
+    """
+    Process a function call and return the result.
+    Shared logic for both old and new VAPI formats.
+    """
+    if function_name == "searchKnowledge":
+        # Standard knowledge search with context awareness
+        result = await search_knowledge_base(
+            query=parameters.get("query", ""),
+            state=parameters.get("state"),
+            category=parameters.get("category"),
+            limit=parameters.get("limit", 3)
+        )
+        
+        # Track value mention if discussing benefits
+        if any(word in parameters.get("query", "").lower() 
+              for word in ["benefit", "value", "roi", "income", "earn"]):
+            metrics = conversation_scorer.get_or_create_conversation(call_id)
+            metrics.value_mentions += 1
+        
+        return result
+    
+    elif function_name == "detectPersona":
+        return await detect_persona_enhanced(
+            text=parameters.get("text", ""),
+            call_id=call_id
+        )
+    
+    elif function_name == "calculateTrust":
+        return await calculate_trust_enhanced(
+            call_id=call_id,
+            events=parameters.get("events", [])
+        )
+    
+    elif function_name == "handleObjection":
+        return await handle_objection_enhanced(
+            call_id=call_id,
+            objection_type=parameters.get("type", "not_sure")
+        )
+    
+    elif function_name == "calculateROI":
+        return await calculate_roi_enhanced(
+            call_id=call_id,
+            current_income=parameters.get("currentIncome", 65000),
+            project_size=parameters.get("projectSize", 15000),
+            monthly_projects=parameters.get("monthlyProjects", 2),
+            qualifier_network=parameters.get("qualifierNetwork", False)
+        )
+    
+    elif function_name == "bookAppointment":
+        # Book appointment with scoring context
+        metrics = conversation_scorer.get_or_create_conversation(call_id)
+        
+        return {
+            "success": True,
+            "message": f"Perfect! I've scheduled your consultation, {parameters.get('name', 'there')}. You'll receive confirmation shortly.",
+            "confirmation_number": f"CLP-{datetime.now().strftime('%Y%m%d%H%M')}",
+            "trust_score": metrics.trust_score,
+            "persona": metrics.persona_type.value if metrics.persona_type else "unknown",
+            "urgency": parameters.get("urgency", "medium"),
+            "next_steps": "Check your email for preparation materials and a calendar invite."
+        }
+    
+    elif function_name == "qualifierNetworkAnalysis":
+        # Analyze qualifier network opportunity
+        metrics = conversation_scorer.get_or_create_conversation(call_id)
+        metrics.qualifier_interest = True
+        
+        state = parameters.get("state", "GA")
+        license_type = parameters.get("licenseType", "general")
+        experience = parameters.get("experience", 4)
+        
+        monthly_income = 3000 if experience < 5 else 4500 if experience < 10 else 6000
+        annual_income = monthly_income * 12
+        
+        return {
+            "eligible": experience >= 2,
+            "state": state,
+            "license_type": license_type,
+            "experience_years": experience,
+            "estimated_monthly_income": monthly_income,
+            "estimated_annual_income": annual_income,
+            "demand_level": "high" if state in ["CA", "TX", "FL", "GA"] else "moderate",
+            "message": f"With {experience} years experience in {state}, you could earn ${monthly_income:,}/month as a qualifier. That's ${annual_income:,} annually in passive income just for lending your license to help other contractors!",
+            "trust_score": metrics.trust_score
+        }
+    
+    elif function_name == "scheduleConsultation":
+        # Schedule expert consultation
+        metrics = conversation_scorer.get_or_create_conversation(call_id)
+        
+        return {
+            "success": True,
+            "consultation_type": parameters.get("consultationType", "licensing"),
+            "message": f"Expert consultation scheduled for {parameters.get('name', 'you')}.",
+            "confirmation": f"EXP-{datetime.now().strftime('%Y%m%d%H%M')}",
+            "investment_range": parameters.get("investmentRange", "5k-10k"),
+            "trust_score": metrics.trust_score,
+            "stage": metrics.stage.value
+        }
+    
+    else:
+        return {
+            "error": f"Unknown function: {function_name}"
+        }
+
+
+@router.post("/webhook", dependencies=[Depends(verify_vapi_request)])
 async def enhanced_vapi_webhook(request: VAPIWebhookRequest):
     """
     Enhanced VAPI webhook with conversation scoring and journey progression.
+    Handles both old (function-call) and new (tool-calls) formats.
     """
     try:
-        call_id = request.call.id
-        logger.info(f"Enhanced VAPI webhook called", 
-                   function=request.message.functionCall.name if request.message.functionCall else None,
-                   call_id=call_id)
+        # Get call_id (use default if not provided in new format)
+        call_id = request.call.id if request.call else "default-call-id"
         
-        # Handle function calls
-        if request.message.type == "function-call" and request.message.functionCall:
+        # Handle new tool-calls format
+        if request.message.type == "tool-calls" and request.message.toolCalls:
+            logger.info(f"Processing tool-calls", count=len(request.message.toolCalls))
+            
+            # Process all tool calls and return results array
+            results = []
+            for tool_call in request.message.toolCalls:
+                function_name = tool_call.function.name
+                parameters = tool_call.function.arguments
+                logger.info(f"Processing tool: {function_name}")
+                
+                # Process the function call (reuse existing logic)
+                result = await process_function_call(function_name, parameters, call_id)
+                
+                results.append({
+                    "toolCallId": tool_call.id,
+                    "result": result
+                })
+            
+            # Return results in the format VAPI expects for tool-calls
+            return {"results": results}
+        
+        # Handle old function-call format
+        elif request.message.type == "function-call" and request.message.functionCall:
             function_name = request.message.functionCall.name
             parameters = request.message.functionCall.parameters
             
-            if function_name == "searchKnowledge":
-                # Standard knowledge search with context awareness
-                result = await search_knowledge_base(
-                    query=parameters.get("query", ""),
-                    state=parameters.get("state"),
-                    category=parameters.get("category"),
-                    limit=parameters.get("limit", 3)
-                )
-                
-                # Track value mention if discussing benefits
-                if any(word in parameters.get("query", "").lower() 
-                      for word in ["benefit", "value", "roi", "income", "earn"]):
-                    metrics = conversation_scorer.get_or_create_conversation(call_id)
-                    metrics.value_mentions += 1
-                
-                return VAPIWebhookResponse(
-                    result=result,
-                    metadata={"call_id": call_id, "function": "searchKnowledge"}
-                )
+            # Process the function call using shared logic
+            result = await process_function_call(function_name, parameters, call_id)
             
-            elif function_name == "detectPersona":
-                result = await detect_persona_enhanced(
-                    text=parameters.get("text", ""),
-                    call_id=call_id
-                )
-                return VAPIWebhookResponse(
-                    result=result,
-                    metadata={"call_id": call_id, "function": "detectPersona"}
-                )
-            
-            elif function_name == "calculateTrust":
-                result = await calculate_trust_enhanced(
-                    call_id=call_id,
-                    events=parameters.get("events", [])
-                )
-                return VAPIWebhookResponse(
-                    result=result,
-                    metadata={"call_id": call_id, "function": "calculateTrust"}
-                )
-            
-            elif function_name == "handleObjection":
-                result = await handle_objection_enhanced(
-                    call_id=call_id,
-                    objection_type=parameters.get("type", "not_sure")
-                )
-                return VAPIWebhookResponse(
-                    result=result,
-                    metadata={"call_id": call_id, "function": "handleObjection"}
-                )
-            
-            elif function_name == "calculateROI":
-                result = await calculate_roi_enhanced(
-                    call_id=call_id,
-                    current_income=parameters.get("currentIncome", 65000),
-                    project_size=parameters.get("projectSize", 50000),
-                    monthly_projects=parameters.get("monthlyProjects", 2)
-                )
-                return VAPIWebhookResponse(
-                    result=result,
-                    metadata={"call_id": call_id, "function": "calculateROI"}
-                )
-            
-            elif function_name == "qualifierNetworkAnalysis":
-                # Mark qualifier interest
-                metrics = conversation_scorer.get_or_create_conversation(call_id)
-                metrics.qualifier_interest = True
-                conversation_scorer.process_trust_event(
-                    call_id, "positive", "Shows qualifier network interest", 7.5
-                )
-                
-                result = {
-                    "state": parameters.get("state", "GA"),
-                    "license_type": parameters.get("licenseType", "general"),
-                    "monthly_income": "$3,000 - $6,000",
-                    "annual_income": "$36,000 - $72,000",
-                    "example": "One of our contractors in Georgia earns $72,000 annually just from being a qualifier",
-                    "roi": "3,673% return on investment",
-                    "effort": "Minimal - just lending your license to vetted contractors",
-                    "benefit": "Help other contractors while earning passive income",
-                    "trust_score": metrics.trust_score,
-                    "transfer_recommended": metrics.transfer_recommended
-                }
-                
-                return VAPIWebhookResponse(
-                    result=result,
-                    metadata={"call_id": call_id, "function": "qualifierNetworkAnalysis"}
-                )
+            return VAPIWebhookResponse(
+                result=result,
+                metadata={"call_id": call_id, "function": function_name}
+            )
             
             # Handle other functions...
             
