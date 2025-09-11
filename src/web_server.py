@@ -269,6 +269,14 @@ if VAPI_WEBHOOK_AVAILABLE:
         logger.info("VAPI simple webhook endpoints loaded")
     except ImportError:
         logger.warning("VAPI simple webhook module not available")
+    
+    # Include enhanced webhook with scoring
+    try:
+        from api.vapi_enhanced_webhook import router as vapi_enhanced_router
+        app.include_router(vapi_enhanced_router)
+        logger.info("VAPI enhanced webhook with scoring loaded")
+    except ImportError:
+        logger.warning("VAPI enhanced webhook module not available")
 
 # Include the training API router
 try:

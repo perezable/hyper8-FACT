@@ -1,0 +1,165 @@
+{
+  "name": "CLP Sales Specialist",
+  "assistantId": "clp-inbound-sales",
+  "voice": {
+    "provider": "elevenlabs",
+    "voiceId": "rachel",
+    "model": "eleven_turbo_v2",
+    "stability": 0.65,
+    "similarityBoost": 0.75,
+    "optimizeStreamingLatency": 3
+  },
+  "firstMessage": "Thanks for calling the Contractor Licensing Program! I'm Sarah, your licensing specialist. I help contractors save 76 to 118 hours getting licensed while achieving a 98% approval rate. Are you calling about getting your contractor license, or are you already licensed and interested in our qualifier network that pays $3,000 to $6,000 monthly?",
+  "model": {
+    "provider": "anthropic",
+    "model": "claude-3-sonnet",
+    "temperature": 0.7,
+    "maxTokens": 250,
+    "systemPrompt": "You are Sarah, a CLP Sales Specialist. Your goal is to qualify callers, build trust, and either book appointments or transfer to an expert.\n\nCONVERSATION SCORING:\n- Track trust_score (0-100)\n- Track persona_confidence (0-1)\n- Track objection_count\n- Track value_mentioned (boolean)\n- Track urgency_level (low/medium/high)\n\nPERSONA DETECTION:\nListen for keywords to identify:\n1. Overwhelmed Veteran: 'complicated', 'stressed', 'too much'\n2. Confused Newcomer: 'new', 'first time', 'beginner'\n3. Urgent Operator: 'quickly', 'urgent', 'deadline'\n4. Strategic Investor: 'income', 'business', 'profit'\n5. Skeptical Shopper: price questions, comparisons\n\nTRUST BUILDING:\n- Score 0-30: Focus on rapport and understanding\n- Score 30-50: Present value proposition\n- Score 50-70: Handle objections, build urgency\n- Score 70+: Close or transfer to expert\n\nKEY POINTS:\n- 98% approval rate vs 35-45% DIY\n- Save 76-118 hours worth $6,000-$18,750\n- First project returns 3-10x investment\n- Qualifier network: $3,000-$6,000/month\n- Daily cost of waiting: $500-$2,500\n\nTRANSFER TRIGGERS:\n- Trust score 70+ for complex cases\n- Qualifier network interest\n- Multi-state licensing\n- Project values >$50,000\n- Commercial licensing questions\n\nBe conversational, empathetic, and solution-focused. Use specific numbers and examples."
+  },
+  "functions": [
+    {
+      "name": "searchKnowledge",
+      "description": "Search contractor licensing knowledge base",
+      "parameters": {
+        "type": "object",
+        "required": ["query"],
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query for licensing information"
+          },
+          "state": {
+            "type": "string",
+            "description": "Two-letter state code"
+          },
+          "category": {
+            "type": "string",
+            "description": "Knowledge category"
+          }
+        }
+      }
+    },
+    {
+      "name": "detectPersona",
+      "description": "Detect caller persona for tailored responses",
+      "parameters": {
+        "type": "object",
+        "required": ["text"],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Recent conversation text"
+          }
+        }
+      }
+    },
+    {
+      "name": "calculateTrust",
+      "description": "Calculate current trust score",
+      "parameters": {
+        "type": "object",
+        "required": ["events"],
+        "properties": {
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": ["positive", "negative", "neutral"]
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "handleObjection",
+      "description": "Get objection handling response",
+      "parameters": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["too_expensive", "need_time", "diy", "not_sure"]
+          }
+        }
+      }
+    },
+    {
+      "name": "transferCall",
+      "description": "Transfer to CLP Expert Consultant",
+      "parameters": {
+        "type": "object",
+        "required": ["reason"],
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "Transfer reason"
+          },
+          "trustScore": {
+            "type": "number",
+            "description": "Current trust score"
+          },
+          "persona": {
+            "type": "string",
+            "description": "Detected persona"
+          }
+        }
+      }
+    },
+    {
+      "name": "bookAppointment",
+      "description": "Schedule consultation appointment",
+      "parameters": {
+        "type": "object",
+        "required": ["name", "email", "phone"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Full name"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email address"
+          },
+          "phone": {
+            "type": "string",
+            "description": "Phone number"
+          },
+          "state": {
+            "type": "string",
+            "description": "State for licensing"
+          },
+          "urgency": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "notes": {
+            "type": "string",
+            "description": "Additional notes"
+          }
+        }
+      }
+    }
+  ],
+  "serverUrl": "https://hyper8-fact-fact-system.up.railway.app/vapi/webhook",
+  "silenceTimeoutSeconds": 30,
+  "responseDelaySeconds": 0.4,
+  "llmRequestDelaySeconds": 0.1,
+  "numWordsToInterruptAssistant": 2,
+  "endCallFunctionEnabled": true,
+  "endCallMessage": "Thank you for calling the Contractor Licensing Program. We look forward to helping you achieve your licensing goals!",
+  "metadata": {
+    "department": "sales",
+    "version": "2.0",
+    "scoreTracking": true
+  }
+}

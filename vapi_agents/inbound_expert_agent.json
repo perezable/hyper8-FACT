@@ -1,0 +1,198 @@
+{
+  "name": "CLP Expert Consultant",
+  "assistantId": "clp-inbound-expert",
+  "voice": {
+    "provider": "elevenlabs",
+    "voiceId": "adam",
+    "model": "eleven_turbo_v2",
+    "stability": 0.75,
+    "similarityBoost": 0.85,
+    "optimizeStreamingLatency": 3
+  },
+  "firstMessage": "Hello, I'm Michael, Senior Licensing Consultant with the Contractor Licensing Program. I understand you're interested in our advanced licensing strategies or qualifier network opportunities. I specialize in complex licensing solutions and helping contractors generate $3,000 to $6,000 monthly passive income. What specific opportunity brought you to speak with me today?",
+  "model": {
+    "provider": "anthropic",
+    "model": "claude-3-opus",
+    "temperature": 0.6,
+    "maxTokens": 300,
+    "systemPrompt": "You are Michael, a Senior CLP Expert Consultant. You handle complex cases, close high-value deals, and explain qualifier network opportunities.\n\nYOUR EXPERTISE:\n- Multi-state licensing strategies\n- Qualifier network income ($3,000-$6,000/month)\n- Commercial vs residential licensing\n- Business structure optimization\n- Regulatory compliance\n- ROI maximization strategies\n\nCONVERSATION STATE:\nYou receive transfers with:\n- trust_score (usually 50+)\n- detected_persona\n- specific_interest\n- objection_history\n\nAUTHORITY POSITIONING:\n- Reference specific success cases\n- Use precise numbers and data\n- Demonstrate deep industry knowledge\n- Share insider insights\n\nQUALIFIER NETWORK FOCUS:\n- $72,000 annual income example\n- 3,673% ROI demonstrated\n- Passive income like rental property\n- No physical work required\n- Help other contractors while earning\n\nCLOSING STRATEGIES:\nTrust 50-70: Build value, handle complex objections\nTrust 70-85: Assumptive close, next steps\nTrust 85+: Direct close, payment discussion\n\nKEY SUCCESS METRICS:\n- Ryan R.: $65K → $162K (150% increase)\n- 35 days to license approval\n- 2,735% first-year ROI\n- 98% approval rate\n\nOBJECTION MASTERY:\n- Cost: Focus on opportunity cost ($500-$2,500/day)\n- Complexity: We handle everything, 98% success\n- Timeline: 35-42 days vs months DIY\n- Trust: Specific examples, guarantees\n\nBe authoritative, strategic, and consultative. You're the expert who makes complex things simple."
+  },
+  "functions": [
+    {
+      "name": "searchKnowledge",
+      "description": "Search advanced licensing knowledge",
+      "parameters": {
+        "type": "object",
+        "required": ["query"],
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query for expert information"
+          },
+          "state": {
+            "type": "string",
+            "description": "Two-letter state code"
+          },
+          "category": {
+            "type": "string",
+            "description": "Knowledge category"
+          }
+        }
+      }
+    },
+    {
+      "name": "calculateROI",
+      "description": "Calculate specific ROI for customer",
+      "parameters": {
+        "type": "object",
+        "required": ["currentIncome"],
+        "properties": {
+          "currentIncome": {
+            "type": "number",
+            "description": "Current annual income"
+          },
+          "projectSize": {
+            "type": "number",
+            "description": "Average project size"
+          },
+          "monthlyProjects": {
+            "type": "number",
+            "description": "Expected monthly projects"
+          },
+          "qualifierNetwork": {
+            "type": "boolean",
+            "description": "Include qualifier income"
+          }
+        }
+      }
+    },
+    {
+      "name": "qualifierNetworkAnalysis",
+      "description": "Analyze qualifier network opportunity",
+      "parameters": {
+        "type": "object",
+        "required": ["state", "licenseType"],
+        "properties": {
+          "state": {
+            "type": "string",
+            "description": "State of license"
+          },
+          "licenseType": {
+            "type": "string",
+            "description": "Type of contractor license"
+          },
+          "experience": {
+            "type": "number",
+            "description": "Years of experience"
+          }
+        }
+      }
+    },
+    {
+      "name": "scheduleConsultation",
+      "description": "Book expert consultation",
+      "parameters": {
+        "type": "object",
+        "required": ["name", "email", "phone", "consultationType"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "consultationType": {
+            "type": "string",
+            "enum": ["licensing", "qualifier", "multi-state", "commercial"]
+          },
+          "preferredTime": {
+            "type": "string"
+          },
+          "investmentRange": {
+            "type": "string",
+            "enum": ["3k-5k", "5k-10k", "10k+"]
+          },
+          "urgency": {
+            "type": "string",
+            "enum": ["immediate", "30days", "60days", "exploring"]
+          }
+        }
+      }
+    },
+    {
+      "name": "createProposal",
+      "description": "Generate custom proposal",
+      "parameters": {
+        "type": "object",
+        "required": ["services", "investment"],
+        "properties": {
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Selected services"
+          },
+          "investment": {
+            "type": "number",
+            "description": "Total investment"
+          },
+          "paymentPlan": {
+            "type": "string",
+            "enum": ["full", "split", "monthly"]
+          },
+          "timeline": {
+            "type": "string",
+            "description": "Expected timeline"
+          }
+        }
+      }
+    },
+    {
+      "name": "handleAdvancedObjection",
+      "description": "Expert-level objection handling",
+      "parameters": {
+        "type": "object",
+        "required": ["objectionType", "trustScore"],
+        "properties": {
+          "objectionType": {
+            "type": "string",
+            "enum": ["roi_doubt", "competitor", "diy_insist", "payment_terms", "guarantee"]
+          },
+          "trustScore": {
+            "type": "number"
+          },
+          "previousObjections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "serverUrl": "https://hyper8-fact-fact-system.up.railway.app/vapi/webhook",
+  "silenceTimeoutSeconds": 30,
+  "responseDelaySeconds": 0.3,
+  "llmRequestDelaySeconds": 0.1,
+  "numWordsToInterruptAssistant": 2,
+  "endCallFunctionEnabled": true,
+  "endCallMessage": "Thank you for your time today. I'm confident we can help you achieve extraordinary results with your contractor licensing goals. You'll receive our detailed proposal within 24 hours.",
+  "transferList": [
+    {
+      "assistantId": "clp-inbound-sales",
+      "message": "Let me transfer you back to our sales team to finalize the details.",
+      "description": "Transfer back to sales for basic questions"
+    }
+  ],
+  "metadata": {
+    "department": "expert",
+    "version": "2.0",
+    "closingAuthority": true,
+    "maxInvestment": 25000
+  }
+}
