@@ -105,7 +105,7 @@ class FinalRetryError(FACTError):
     pass
 
 
-def classify_error(error: Exception) -> str:
+def classify_error(error: Exception) -> tuple[str, str]:
     """
     Classify an error into a category for handling strategies.
     
@@ -113,7 +113,7 @@ def classify_error(error: Exception) -> str:
         error: Exception to classify
         
     Returns:
-        String category of the error
+        Tuple of (error_type_name, category)
     """
     error_type = type(error)
     
@@ -137,26 +137,28 @@ def classify_error(error: Exception) -> str:
     }
     
     category = error_categories.get(error_type, "unknown")
+    error_type_name = error_type.__name__
     
     logger.debug("Error classified", 
-                error_type=error_type.__name__, 
+                error_type=error_type_name, 
                 category=category,
                 message=str(error))
     
-    return category
+    return error_type_name, category
 
 
-def create_user_friendly_message(error: Exception) -> str:
+def create_user_friendly_message(error_category: str, error_message: str) -> str:
     """
-    Create a user-friendly error message from an exception.
+    Create a user-friendly error message from an error category.
     
     Args:
-        error: Exception to convert
+        error_category: Error category
+        error_message: Original error message
         
     Returns:
         User-friendly error message
     """
-    category = classify_error(error)
+    category = error_category
     
     # Default user-friendly messages by category
     friendly_messages = {
@@ -172,11 +174,8 @@ def create_user_friendly_message(error: Exception) -> str:
         "unknown": "An unexpected error occurred. Please try again later.",
     }
     
-    # Use specific message if available, otherwise use category default
-    if hasattr(error, 'message'):
-        return error.message
-    
-    return friendly_messages.get(category, str(error))
+    # Use category default message
+    return friendly_messages.get(category, error_message)
 
 
 def log_error_with_context(error: Exception, context: Optional[Dict[str, Any]] = None) -> None:
@@ -190,7 +189,7 @@ def log_error_with_context(error: Exception, context: Optional[Dict[str, Any]] =
     error_context = {
         "error_type": type(error).__name__,
         "error_message": str(error),
-        "error_category": classify_error(error),
+        "error_category": classify_error(error)[1],
     }
     
     # Add specific error context if available

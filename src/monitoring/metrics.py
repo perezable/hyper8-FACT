@@ -265,6 +265,56 @@ class MetricsCollector:
                 }
             }
     
+    def record_query(self, 
+                     query_id: str,
+                     execution_time_ms: float,
+                     cache_hit: bool = False,
+                     tokens_used: int = 0) -> None:
+        """
+        Record a query execution metric.
+        
+        Args:
+            query_id: Unique query identifier
+            execution_time_ms: Execution time in milliseconds
+            cache_hit: Whether the query was served from cache
+            tokens_used: Number of tokens used
+        """
+        # Record as a tool execution with special tool name
+        self.record_tool_execution(
+            tool_name="query_processor",
+            success=True,
+            execution_time=execution_time_ms,
+            metadata={
+                "query_id": query_id,
+                "cache_hit": cache_hit,
+                "tokens_used": tokens_used
+            }
+        )
+    
+    def record_error(self,
+                    error_type: str,
+                    error_category: str,
+                    context: Optional[Dict[str, Any]] = None) -> None:
+        """
+        Record an error metric.
+        
+        Args:
+            error_type: Type of error
+            error_category: Category of error
+            context: Additional error context
+        """
+        # Record as a failed tool execution
+        self.record_tool_execution(
+            tool_name="error_handler",
+            success=False,
+            execution_time=0,
+            error_type=error_type,
+            metadata={
+                "error_category": error_category,
+                "context": context or {}
+            }
+        )
+    
     def get_user_metrics(self, user_id: str, time_window_minutes: int = 60) -> Dict[str, Any]:
         """
         Get metrics for a specific user.

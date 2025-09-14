@@ -191,7 +191,8 @@ async def lifespan(app: FastAPI):
     
     try:
         config = get_config()
-        _driver = await get_fact_driver(config)
+        _driver = get_fact_driver(config)  # Not async, just get the driver
+        await _driver.initialize()  # Initialize it asynchronously
         set_driver(_driver)  # Store in shared state
         logger.info("FACT system initialized successfully")
         
@@ -461,7 +462,8 @@ async def initialize_system():
             return {"status": "already_initialized", "message": "System is already initialized"}
         
         config = get_config()
-        _driver = await get_driver(config)
+        _driver = get_fact_driver(config)
+        await _driver.initialize()
         
         return {
             "status": "success",
