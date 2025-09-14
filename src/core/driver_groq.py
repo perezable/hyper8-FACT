@@ -8,7 +8,6 @@ import json
 import os
 import time
 import uuid
-import hashlib
 from typing import Dict, List, Any, Optional
 import structlog
 
@@ -149,7 +148,7 @@ class FACTDriver:
                     try:
                         client = create_groq_client(self.groq_api_key)
                         test_response = client.messages.create(
-                            model="openai/gpt-oss-120b",
+                            model="mixtral-8x7b-32768",
                             messages=[{"role": "user", "content": "Test"}],
                             max_tokens=10
                         )
@@ -223,7 +222,7 @@ class FACTDriver:
                 client = create_groq_client(self.groq_api_key)
                 
                 response = client.messages.create(
-                    model="openai/gpt-oss-120b",  # Using GPT-OSS-120B as requested
+                    model="mixtral-8x7b-32768",  # Using Mixtral for best performance
                     system=self.config.system_prompt,
                     messages=messages,
                     max_tokens=2048,
@@ -264,7 +263,7 @@ class FACTDriver:
                     })
                     
                     response = client.messages.create(
-                        model="openai/gpt-oss-120b",
+                        model="mixtral-8x7b-32768",
                         system=self.config.system_prompt,
                         messages=messages,
                         max_tokens=2048,

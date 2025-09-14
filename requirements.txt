@@ -1,6 +1,7 @@
 # FACT System Dependencies
 # Core dependencies
 anthropic>=0.25.6  # Latest version to fix proxy issues
+groq>=0.4.0  # Groq API for fast inference
 aiohttp==3.9.5
 python-dotenv==1.0.1
 pydantic==2.8.2
