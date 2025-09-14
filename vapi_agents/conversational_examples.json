@@ -1,0 +1,48 @@
+{
+  "greetings": {
+    "old": "Thanks for calling the Contractor Licensing Program! I'm Sarah, your licensing specialist. How's your day going?",
+    "new": "Hey! Thanks for calling CLP. I'm Sarah. What's got you thinking about your license?"
+  },
+  "objection_price": {
+    "old": "I understand cost is a concern. Consider this: DIY contractors have only a 35-45% approval rate, while our clients achieve 98%. The time you save\u201476 to 118 hours\u2014is worth $6,000 to $18,750 at typical contractor rates.",
+    "new": "Yeah, I get it. But look - one job pays for everything. Plus, doing it yourself? Most people fail and waste months."
+  },
+  "objection_time": {
+    "old": "I appreciate you want to think it through. While you're considering, remember that every day without a license costs contractors $500 to $2,500 in lost opportunities.",
+    "new": "I hear you. Thing is, every day you wait? You're losing money. Real money. Like $500 a day minimum."
+  },
+  "value_prop": {
+    "old": "Our program guarantees 98% approval rate versus 35-45% for DIY applications, saving you 76-118 hours worth $6,000-$18,750.",
+    "new": "So basically, we get almost everyone approved. Saves you about 100 hours too. That's worth like... 10 grand of your time."
+  },
+  "qualifier_network": {
+    "old": "The qualifier network opportunity provides $3,000 to $6,000 monthly passive income by lending your license to vetted contractors.",
+    "new": "Oh, and there's this qualifier thing. Some folks make an extra 3 to 6 grand a month. Just for having their license."
+  },
+  "closing": {
+    "old": "Based on everything we've discussed, I can help you get started with the enrollment process today.",
+    "new": "So... want me to get you started? I can set everything up right now."
+  },
+  "acknowledgments": [
+    "Mm-hmm",
+    "Got it",
+    "I hear you",
+    "Makes sense",
+    "Right, right",
+    "Okay, cool",
+    "Yeah, totally",
+    "I see what you mean",
+    "Fair enough",
+    "Absolutely"
+  ],
+  "transitions": [
+    "So here's the thing...",
+    "Let me ask you this...",
+    "Okay, so...",
+    "The way I see it...",
+    "Here's what I'm thinking...",
+    "You know what?",
+    "Actually...",
+    "Oh, and one more thing..."
+  ]
+}

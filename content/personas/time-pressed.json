@@ -1,0 +1,326 @@
+{
+  "persona": "Time-Pressed",
+  "description": "Busy customers needing fast, efficient service with minimal time investment",
+  "content": [
+    {
+      "id": "tp001",
+      "type": "fast_track",
+      "title": "24-Hour Express Formation",
+      "content": "Need it NOW? Express service files your LLC within 24 hours in 15 states, 48 hours in 35 states. Rush fee: $99.",
+      "tags": ["express", "24_hour", "rush"],
+      "value_prop": "Immediate processing"
+    },
+    {
+      "id": "tp002",
+      "type": "expedited_processing",
+      "title": "Same-Day Filing Available",
+      "content": "Delaware, Wyoming, Nevada offer same-day processing. Submit by 2 PM EST, filed same day. Documents available next morning.",
+      "tags": ["same_day", "processing", "immediate"],
+      "value_prop": "Same-day completion"
+    },
+    {
+      "id": "tp003",
+      "type": "timeline_guarantees",
+      "title": "Processing Time Guarantees",
+      "content": "Standard: 5-15 days or $50 credit. Express: 24-48 hours or full rush fee refund. Lightning: Same day or free service.",
+      "tags": ["guarantees", "timeline", "credits"],
+      "value_prop": "Time guarantees"
+    },
+    {
+      "id": "tp004",
+      "type": "priority_services",
+      "title": "VIP Priority Lane Service",
+      "content": "Jump ahead of regular queue. Priority phone support, dedicated processor, expedited state review. $149 upgrade fee.",
+      "tags": ["vip", "priority", "dedicated"],
+      "value_prop": "Skip the line"
+    },
+    {
+      "id": "tp005",
+      "type": "bottleneck_solutions",
+      "title": "Common Bottleneck Solutions",
+      "content": "Name unavailable? We pre-check and suggest alternatives. Missing info? Smart forms auto-fill from public records. Instant solutions.",
+      "tags": ["bottlenecks", "solutions", "automation"],
+      "value_prop": "Problem prevention"
+    },
+    {
+      "id": "tp006",
+      "type": "mobile_optimization",
+      "title": "Mobile-First 5-Minute Setup",
+      "content": "Complete LLC formation on your phone in 5 minutes. Voice-to-text enabled, auto-complete addresses, one-touch signatures.",
+      "tags": ["mobile", "5_minutes", "quick"],
+      "value_prop": "Ultra-fast mobile"
+    },
+    {
+      "id": "tp007",
+      "type": "pre_approval",
+      "title": "Pre-Approval Process",
+      "content": "Get pre-approved before paying. Name check, state verification, document review in 2 minutes. Green light = guaranteed filing.",
+      "tags": ["pre_approval", "verification", "guarantee"],
+      "value_prop": "Instant approval"
+    },
+    {
+      "id": "tp008",
+      "type": "instant_documents",
+      "title": "Instant Document Generation",
+      "content": "Operating Agreement, Banking Resolution, EIN application generated instantly after state approval. No waiting for mail delivery.",
+      "tags": ["instant", "documents", "immediate"],
+      "value_prop": "Immediate documents"
+    },
+    {
+      "id": "tp009",
+      "type": "automated_follow_up",
+      "title": "Automated Progress Updates",
+      "content": "SMS and email updates every step: Submitted → Under Review → Approved → Documents Ready → Banking Info Sent. No checking needed.",
+      "tags": ["automated", "updates", "progress"],
+      "value_prop": "Hands-off tracking"
+    },
+    {
+      "id": "tp010",
+      "type": "weekend_processing",
+      "title": "Weekend Processing Available",
+      "content": "Don't wait for Monday. Weekend processing available for 12 states. Saturday submissions processed Sunday. $75 weekend fee.",
+      "tags": ["weekend", "processing", "availability"],
+      "value_prop": "Weekend availability"
+    },
+    {
+      "id": "tp011",
+      "type": "bulk_processing",
+      "title": "Multiple LLC Bulk Processing",
+      "content": "Need several LLCs? Bulk process up to 10 simultaneously. Shared info auto-populates. 50% faster than individual filings.",
+      "tags": ["bulk", "multiple", "simultaneous"],
+      "value_prop": "Batch efficiency"
+    },
+    {
+      "id": "tp012",
+      "type": "calendar_integration",
+      "title": "Calendar Integration Scheduling",
+      "content": "Sync with Google/Outlook calendars. Schedule formation for optimal timing. Automatic reminders for deadlines and renewals.",
+      "tags": ["calendar", "integration", "scheduling"],
+      "value_prop": "Schedule optimization"
+    },
+    {
+      "id": "tp013",
+      "type": "voice_processing",
+      "title": "Voice-to-Form Technology",
+      "content": "Too busy to type? Call our voice line, speak your information, AI converts to form data. 3-minute voice setup available.",
+      "tags": ["voice", "ai", "conversion"],
+      "value_prop": "Voice convenience"
+    },
+    {
+      "id": "tp014",
+      "type": "template_library",
+      "title": "Industry Template Library",
+      "content": "Pre-built templates for 47 industries. Select your industry, forms auto-populate with relevant info. 80% faster setup.",
+      "tags": ["templates", "industry", "pre_built"],
+      "value_prop": "Template efficiency"
+    },
+    {
+      "id": "tp015",
+      "type": "smart_recommendations",
+      "title": "AI Smart Recommendations",
+      "content": "AI analyzes your inputs and recommends optimal state, structure, and options in 15 seconds. Skip research phase entirely.",
+      "tags": ["ai", "recommendations", "optimization"],
+      "value_prop": "Intelligent automation"
+    },
+    {
+      "id": "tp016",
+      "type": "parallel_processing",
+      "title": "Parallel Document Processing",
+      "content": "While state processes your filing, we simultaneously prepare EIN, operating agreement, and banking forms. Zero wait time.",
+      "tags": ["parallel", "simultaneous", "efficient"],
+      "value_prop": "Parallel efficiency"
+    },
+    {
+      "id": "tp017",
+      "type": "emergency_service",
+      "title": "Emergency Formation Service",
+      "content": "True emergency? Court deadline? Contract signature needed today? Emergency service can file within 4 hours. $299 fee.",
+      "tags": ["emergency", "4_hours", "urgent"],
+      "value_prop": "Crisis response"
+    },
+    {
+      "id": "tp018",
+      "type": "digital_delivery",
+      "title": "100% Digital Document Delivery",
+      "content": "All documents delivered via secure portal within minutes of state approval. No postal delays, instant access from anywhere.",
+      "tags": ["digital", "instant", "portal"],
+      "value_prop": "Immediate access"
+    },
+    {
+      "id": "tp019",
+      "type": "one_click_banking",
+      "title": "One-Click Business Banking Setup",
+      "content": "LLC approved? One click connects you with partner banks for instant business account applications. Skip branch visits.",
+      "tags": ["banking", "one_click", "instant"],
+      "value_prop": "Banking automation"
+    },
+    {
+      "id": "tp020",
+      "type": "time_tracking",
+      "title": "Process Time Tracking",
+      "content": "Real-time countdown shows exactly how much time remains at each step. No uncertainty, complete transparency.",
+      "tags": ["tracking", "countdown", "transparency"],
+      "value_prop": "Time visibility"
+    },
+    {
+      "id": "tp021",
+      "type": "micro_tasks",
+      "title": "Break Work Into Micro-Tasks",
+      "content": "Can't spare 10 minutes? Break setup into 2-minute micro-tasks. Complete at your pace, progress auto-saves.",
+      "tags": ["micro_tasks", "flexible", "progress"],
+      "value_prop": "Flexible pacing"
+    },
+    {
+      "id": "tp022",
+      "type": "assistant_integration",
+      "title": "Virtual Assistant Integration",
+      "content": "Working with VA? Grant secure access for them to complete formation on your behalf. You review and approve final step.",
+      "tags": ["assistant", "delegation", "access"],
+      "value_prop": "Delegation capability"
+    },
+    {
+      "id": "tp023",
+      "type": "deadline_alerts",
+      "title": "Critical Deadline Alert System",
+      "content": "Facing business deadline? Our system prioritizes urgent formations and provides real-time status for time-sensitive situations.",
+      "tags": ["deadlines", "alerts", "priority"],
+      "value_prop": "Deadline management"
+    },
+    {
+      "id": "tp024",
+      "type": "quick_corrections",
+      "title": "Instant Correction Processing",
+      "content": "State requests changes? Corrections processed within 2 hours during business days. Automated correction detection and fixes.",
+      "tags": ["corrections", "instant", "automated"],
+      "value_prop": "Fast fixes"
+    },
+    {
+      "id": "tp025",
+      "type": "speed_metrics",
+      "title": "Speed Performance Metrics",
+      "content": "Average completion times: Delaware 3.2 days, Wyoming 4.1 days, Nevada 2.8 days. Faster than 97% of competitors.",
+      "tags": ["metrics", "performance", "speed"],
+      "value_prop": "Proven speed"
+    },
+    {
+      "id": "tp026",
+      "type": "express_review",
+      "title": "Express Document Review",
+      "content": "Need documents reviewed quickly? Express review service provides feedback within 30 minutes. Legal expert available.",
+      "tags": ["review", "express", "expert"],
+      "value_prop": "Fast expert review"
+    },
+    {
+      "id": "tp027",
+      "type": "time_slots",
+      "title": "Reserved Time Slot System",
+      "content": "Reserve specific filing time slots. Guaranteed processing during your chosen window. No delays, predictable timing.",
+      "tags": ["time_slots", "reserved", "predictable"],
+      "value_prop": "Scheduled processing"
+    },
+    {
+      "id": "tp028",
+      "type": "shortcuts",
+      "title": "Power User Shortcuts",
+      "content": "Keyboard shortcuts, quick-fill options, template copying. Advanced features for users who form multiple LLCs regularly.",
+      "tags": ["shortcuts", "power_user", "advanced"],
+      "value_prop": "Expert efficiency"
+    },
+    {
+      "id": "tp029",
+      "type": "overnight_processing",
+      "title": "Overnight Processing Guarantee",
+      "content": "Submit before 5 PM, guaranteed processing overnight. Wake up to approved LLC in qualifying states. $129 overnight fee.",
+      "tags": ["overnight", "guarantee", "morning"],
+      "value_prop": "Sleep and complete"
+    },
+    {
+      "id": "tp030",
+      "type": "multitasking",
+      "title": "Multitasking-Friendly Interface",
+      "content": "Designed for busy people. Auto-save every 30 seconds, pick up where you left off, works across all devices seamlessly.",
+      "tags": ["multitasking", "auto_save", "seamless"],
+      "value_prop": "Busy-friendly design"
+    },
+    {
+      "id": "tp031",
+      "type": "status_dashboard",
+      "title": "Executive Status Dashboard",
+      "content": "One-glance dashboard shows status of all your business entities. Perfect for busy executives managing multiple ventures.",
+      "tags": ["dashboard", "executive", "multiple"],
+      "value_prop": "Executive overview"
+    },
+    {
+      "id": "tp032",
+      "type": "holiday_processing",
+      "title": "Holiday Processing Available",
+      "content": "Need formation during holidays? Limited holiday processing available for urgent situations. Extra fee applies but service continues.",
+      "tags": ["holiday", "processing", "availability"],
+      "value_prop": "Holiday availability"
+    },
+    {
+      "id": "tp033",
+      "type": "batch_notifications",
+      "title": "Batch Notification System",
+      "content": "Manage notification frequency. Get updates hourly, daily, or only at major milestones. Control your information flow.",
+      "tags": ["notifications", "batch", "control"],
+      "value_prop": "Communication control"
+    },
+    {
+      "id": "tp034",
+      "type": "rapid_changes",
+      "title": "Rapid Change Processing",
+      "content": "Need to modify info after submission? Rapid change processing handles modifications within 1 hour if state hasn't processed yet.",
+      "tags": ["changes", "rapid", "modifications"],
+      "value_prop": "Quick changes"
+    },
+    {
+      "id": "tp035",
+      "type": "time_zones",
+      "title": "Multi-Time Zone Support",
+      "content": "Operating across time zones? Our system adjusts deadlines and processing windows to your local time automatically.",
+      "tags": ["time_zones", "automatic", "adjustment"],
+      "value_prop": "Time zone intelligence"
+    },
+    {
+      "id": "tp036",
+      "type": "instant_support",
+      "title": "Instant Support Access",
+      "content": "Urgent question? Click for instant callback, chat, or screen share. Average response time: 47 seconds during business hours.",
+      "tags": ["instant", "support", "callback"],
+      "value_prop": "Immediate help"
+    },
+    {
+      "id": "tp037",
+      "type": "productivity_tools",
+      "title": "Productivity Tool Integration",
+      "content": "Integrates with Slack, Microsoft Teams, Asana, Trello. Get formation updates in your existing workflow tools.",
+      "tags": ["productivity", "integration", "workflow"],
+      "value_prop": "Workflow integration"
+    },
+    {
+      "id": "tp038",
+      "type": "decision_automation",
+      "title": "Automated Decision Making",
+      "content": "Can't decide between options? Set preferences once, system auto-selects best choices for future formations. Learning algorithm.",
+      "tags": ["automation", "decisions", "learning"],
+      "value_prop": "Decision automation"
+    },
+    {
+      "id": "tp039",
+      "type": "efficiency_analytics",
+      "title": "Personal Efficiency Analytics",
+      "content": "Track your formation efficiency over time. See where time is saved, identify bottlenecks in your process. Optimize workflows.",
+      "tags": ["analytics", "efficiency", "optimization"],
+      "value_prop": "Process optimization"
+    },
+    {
+      "id": "tp040",
+      "type": "time_investment",
+      "title": "Total Time Investment Tracking",
+      "content": "Complete formation in under 10 minutes total time investment. Pre-fill, auto-complete, and smart defaults minimize your effort.",
+      "tags": ["time_investment", "10_minutes", "minimal"],
+      "value_prop": "Minimal time required"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "status": "FAILED",
+  "error": "Could not connect to database",
+  "validation_results": {
+    "timestamp": "2025-09-11 16:28:03.444520",
+    "total_tests": 0,
+    "passed_tests": 0,
+    "failed_tests": 0,
+    "test_results": {},
+    "content_analysis": {},
+    "search_performance": {},
+    "data_quality": {},
+    "recommendations": []
+  }
+}

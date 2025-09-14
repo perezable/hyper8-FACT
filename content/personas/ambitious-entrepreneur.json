@@ -1,0 +1,326 @@
+{
+  "persona": "Ambitious Entrepreneur",
+  "description": "Growth-focused customers planning multiple entities and scaling operations",
+  "content": [
+    {
+      "id": "ae001",
+      "type": "multi_state_strategy",
+      "title": "Multi-State Expansion Strategy",
+      "content": "Scale across states strategically: Delaware holding company + operational LLCs in target markets. Minimize taxes, maximize protection.",
+      "tags": ["multi_state", "expansion", "strategy"],
+      "value_prop": "Strategic scaling"
+    },
+    {
+      "id": "ae002",
+      "type": "qualifier_network",
+      "title": "Qualifier Network Access",
+      "content": "Access our network of 200+ qualified individuals for multi-state formations. Expand without residency requirements in any state.",
+      "tags": ["qualifier", "network", "expansion"],
+      "value_prop": "Nationwide expansion capability"
+    },
+    {
+      "id": "ae003",
+      "type": "growth_market_analysis",
+      "title": "Growth Market Analysis Reports",
+      "content": "Quarterly reports identifying high-growth markets, regulatory changes, and expansion opportunities. Strategic intelligence included.",
+      "tags": ["market_analysis", "growth", "intelligence"],
+      "value_prop": "Market intelligence"
+    },
+    {
+      "id": "ae004",
+      "type": "commercial_opportunities",
+      "title": "Commercial Real Estate LLC Structures",
+      "content": "Specialized structures for real estate portfolios: Property-specific LLCs, management companies, holding structures. Asset protection maximized.",
+      "tags": ["real_estate", "commercial", "structures"],
+      "value_prop": "Real estate expertise"
+    },
+    {
+      "id": "ae005",
+      "type": "scaling_tactics",
+      "title": "Franchise-Ready LLC Structures",
+      "content": "Design LLC structures ready for franchising: Master LLC, area development agreements, franchise-compliant operating agreements.",
+      "tags": ["franchise", "scaling", "structures"],
+      "value_prop": "Franchise preparation"
+    },
+    {
+      "id": "ae006",
+      "type": "series_llc",
+      "title": "Series LLC for Multiple Ventures",
+      "content": "One Series LLC = unlimited business ventures. Each series isolated liability. Available in Texas, Delaware, Nevada, others.",
+      "tags": ["series_llc", "multiple", "ventures"],
+      "value_prop": "Unlimited ventures structure"
+    },
+    {
+      "id": "ae007",
+      "type": "holding_company",
+      "title": "Holding Company Structures",
+      "content": "Delaware holding company owns operating LLCs in other states. Centralized control, tax efficiency, investor-ready structure.",
+      "tags": ["holding_company", "control", "efficiency"],
+      "value_prop": "Centralized control"
+    },
+    {
+      "id": "ae008",
+      "type": "investor_ready",
+      "title": "Investor-Ready Documentation",
+      "content": "Professional-grade operating agreements, detailed ownership structures, investment-ready packages. VC/PE approved formats.",
+      "tags": ["investor_ready", "documentation", "professional"],
+      "value_prop": "Investment preparation"
+    },
+    {
+      "id": "ae009",
+      "type": "tax_optimization",
+      "title": "Multi-Entity Tax Optimization",
+      "content": "Optimize tax across multiple entities: Income shifting, expense allocation, state tax minimization. CPA network coordination.",
+      "tags": ["tax_optimization", "multi_entity", "cpa"],
+      "value_prop": "Tax efficiency"
+    },
+    {
+      "id": "ae010",
+      "type": "exit_strategy",
+      "title": "Exit Strategy Structuring",
+      "content": "Structure for future sale or IPO. Clean cap tables, proper documentation, audit-ready records. Investment banker approved.",
+      "tags": ["exit_strategy", "sale", "ipo"],
+      "value_prop": "Exit preparation"
+    },
+    {
+      "id": "ae011",
+      "type": "international_expansion",
+      "title": "International Expansion Support",
+      "content": "US LLC structures for global operations. Foreign qualification, treaty benefits, international tax planning coordination.",
+      "tags": ["international", "global", "treaties"],
+      "value_prop": "Global expansion"
+    },
+    {
+      "id": "ae012",
+      "type": "venture_capital",
+      "title": "Venture Capital Compatible Structures",
+      "content": "Delaware LLCs structured for VC investment: Preferred units, liquidation preferences, anti-dilution provisions. Term sheet ready.",
+      "tags": ["venture_capital", "preferred", "term_sheet"],
+      "value_prop": "VC compatibility"
+    },
+    {
+      "id": "ae013",
+      "type": "intellectual_property",
+      "title": "IP Holding LLC Strategies",
+      "content": "Separate IP holding LLCs license to operating companies. Tax benefits, asset protection, valuation optimization.",
+      "tags": ["ip", "licensing", "valuation"],
+      "value_prop": "IP monetization"
+    },
+    {
+      "id": "ae014",
+      "type": "management_structure",
+      "title": "Professional Management Structures",
+      "content": "Manager-managed LLCs with professional management agreements. Board structures, voting rights, operational control separation.",
+      "tags": ["management", "professional", "control"],
+      "value_prop": "Professional governance"
+    },
+    {
+      "id": "ae015",
+      "type": "portfolio_management",
+      "title": "Business Portfolio Dashboard",
+      "content": "Manage multiple LLCs from single dashboard. Compliance tracking, renewal management, document storage across all entities.",
+      "tags": ["portfolio", "dashboard", "management"],
+      "value_prop": "Centralized management"
+    },
+    {
+      "id": "ae016",
+      "type": "acquisition_structure",
+      "title": "Acquisition Vehicle Structures",
+      "content": "LLCs structured for acquiring other businesses: Due diligence protection, liability isolation, financing compatibility.",
+      "tags": ["acquisition", "due_diligence", "financing"],
+      "value_prop": "Acquisition readiness"
+    },
+    {
+      "id": "ae017",
+      "type": "family_office",
+      "title": "Family Office LLC Structures",
+      "content": "Multi-generational wealth structures: Family LLCs, dynasty trusts, gift and estate tax optimization. Wealth preservation focus.",
+      "tags": ["family_office", "wealth", "estate"],
+      "value_prop": "Wealth preservation"
+    },
+    {
+      "id": "ae018",
+      "type": "joint_ventures",
+      "title": "Joint Venture LLC Frameworks",
+      "content": "Structure joint ventures with other companies: Profit sharing, management rights, exit provisions. Partnership protection.",
+      "tags": ["joint_venture", "partnership", "profit_sharing"],
+      "value_prop": "Partnership structures"
+    },
+    {
+      "id": "ae019",
+      "type": "regulatory_compliance",
+      "title": "Regulatory Compliance Across States",
+      "content": "Manage compliance for LLCs in multiple states. Automated filing, fee tracking, deadline management. Multi-state expertise.",
+      "tags": ["compliance", "multi_state", "automated"],
+      "value_prop": "Compliance automation"
+    },
+    {
+      "id": "ae020",
+      "type": "growth_financing",
+      "title": "Growth Financing Structures",
+      "content": "LLC structures optimized for growth capital: Revenue-based financing, mezzanine debt, growth equity compatibility.",
+      "tags": ["growth_financing", "capital", "debt"],
+      "value_prop": "Financing flexibility"
+    },
+    {
+      "id": "ae021",
+      "type": "market_entry",
+      "title": "New Market Entry Strategies",
+      "content": "State-specific market entry: Local LLC formation, regulatory requirements, tax implications analysis. Market penetration support.",
+      "tags": ["market_entry", "local", "penetration"],
+      "value_prop": "Market penetration"
+    },
+    {
+      "id": "ae022",
+      "type": "competitive_advantage",
+      "title": "Competitive Advantage Structures",
+      "content": "LLCs designed for competitive advantage: Trade secret protection, non-compete enforcement, market positioning.",
+      "tags": ["competitive", "trade_secrets", "positioning"],
+      "value_prop": "Competitive protection"
+    },
+    {
+      "id": "ae023",
+      "type": "technology_licensing",
+      "title": "Technology Licensing Structures",
+      "content": "Tech companies: IP licensing LLCs, royalty optimization, R&D cost allocation. Technology commercialization focus.",
+      "tags": ["technology", "licensing", "royalties"],
+      "value_prop": "Tech monetization"
+    },
+    {
+      "id": "ae024",
+      "type": "employee_incentives",
+      "title": "Employee Equity Incentive Plans",
+      "content": "LLC equity compensation: Profits interests, phantom equity, performance units. Team retention and motivation.",
+      "tags": ["employee", "equity", "retention"],
+      "value_prop": "Team incentives"
+    },
+    {
+      "id": "ae025",
+      "type": "asset_protection",
+      "title": "Advanced Asset Protection Planning",
+      "content": "Sophisticated asset protection: Domestic asset protection trusts, offshore coordination, creditor protection strategies.",
+      "tags": ["asset_protection", "trusts", "creditor"],
+      "value_prop": "Wealth protection"
+    },
+    {
+      "id": "ae026",
+      "type": "succession_planning",
+      "title": "Business Succession Planning",
+      "content": "Plan leadership transitions: Buy-sell agreements, valuation methods, successor training. Continuity assurance.",
+      "tags": ["succession", "buy_sell", "continuity"],
+      "value_prop": "Continuity planning"
+    },
+    {
+      "id": "ae027",
+      "type": "industry_expertise",
+      "title": "Industry-Specific Expertise",
+      "content": "Specialized knowledge in 50+ industries: Healthcare, fintech, real estate, energy, manufacturing. Regulatory expertise.",
+      "tags": ["industry", "specialized", "regulatory"],
+      "value_prop": "Industry specialization"
+    },
+    {
+      "id": "ae028",
+      "type": "banking_relationships",
+      "title": "Institutional Banking Relationships",
+      "content": "Connections to institutional banks for multi-entity banking. Credit facilities, cash management, treasury services.",
+      "tags": ["banking", "institutional", "treasury"],
+      "value_prop": "Banking access"
+    },
+    {
+      "id": "ae029",
+      "type": "legal_network",
+      "title": "National Legal Network Access",
+      "content": "Network of attorneys in all 50 states. Specialized expertise available: M&A, securities, tax, employment law.",
+      "tags": ["legal_network", "attorneys", "specialized"],
+      "value_prop": "Legal expertise"
+    },
+    {
+      "id": "ae030",
+      "type": "due_diligence",
+      "title": "Due Diligence Support",
+      "content": "Professional due diligence packages: Clean documentation, compliance verification, investor-ready materials.",
+      "tags": ["due_diligence", "documentation", "verification"],
+      "value_prop": "Due diligence ready"
+    },
+    {
+      "id": "ae031",
+      "type": "strategic_planning",
+      "title": "Strategic Business Planning",
+      "content": "Long-term strategic planning: 5-year growth projections, market analysis, competitive positioning. Strategic advisory.",
+      "tags": ["strategic", "planning", "advisory"],
+      "value_prop": "Strategic guidance"
+    },
+    {
+      "id": "ae032",
+      "type": "capital_efficiency",
+      "title": "Capital Efficiency Optimization",
+      "content": "Optimize capital deployment across entities: Working capital, growth investments, tax efficiency. Financial optimization.",
+      "tags": ["capital", "efficiency", "deployment"],
+      "value_prop": "Capital optimization"
+    },
+    {
+      "id": "ae033",
+      "type": "risk_management",
+      "title": "Enterprise Risk Management",
+      "content": "Comprehensive risk assessment: Liability exposure, insurance optimization, business continuity. Risk mitigation focus.",
+      "tags": ["risk", "assessment", "mitigation"],
+      "value_prop": "Risk mitigation"
+    },
+    {
+      "id": "ae034",
+      "type": "performance_metrics",
+      "title": "Performance Metrics Tracking",
+      "content": "Track performance across all entities: Revenue, profitability, compliance scores. Consolidated reporting dashboard.",
+      "tags": ["metrics", "tracking", "reporting"],
+      "value_prop": "Performance visibility"
+    },
+    {
+      "id": "ae035",
+      "type": "market_timing",
+      "title": "Market Timing Strategies",
+      "content": "Time entity formations with market conditions: Tax law changes, state incentives, regulatory windows. Timing optimization.",
+      "tags": ["timing", "market", "optimization"],
+      "value_prop": "Timing advantage"
+    },
+    {
+      "id": "ae036",
+      "type": "innovation_protection",
+      "title": "Innovation Protection Strategies",
+      "content": "Protect innovations through entity structures: Trade secrets, patent holding, licensing strategies. Innovation monetization.",
+      "tags": ["innovation", "protection", "monetization"],
+      "value_prop": "Innovation value"
+    },
+    {
+      "id": "ae037",
+      "type": "global_markets",
+      "title": "Global Market Access",
+      "content": "US LLCs for global market entry: Trade financing, export structures, international partnerships. Global reach.",
+      "tags": ["global", "export", "partnerships"],
+      "value_prop": "Global access"
+    },
+    {
+      "id": "ae038",
+      "type": "scalability_design",
+      "title": "Scalability-First Design",
+      "content": "Structures designed to scale: Flexible ownership, growth-ready governance, expansion-friendly terms. Scale preparation.",
+      "tags": ["scalability", "flexible", "growth"],
+      "value_prop": "Scale readiness"
+    },
+    {
+      "id": "ae039",
+      "type": "network_effects",
+      "title": "Business Network Effects",
+      "content": "Connect with other entrepreneurs in our network. Joint ventures, partnerships, deal flow. Network leverage.",
+      "tags": ["network", "partnerships", "leverage"],
+      "value_prop": "Network access"
+    },
+    {
+      "id": "ae040",
+      "type": "legacy_building",
+      "title": "Legacy Building Structures",
+      "content": "Build lasting business legacies: Perpetual entities, succession planning, wealth transfer. Generational thinking.",
+      "tags": ["legacy", "perpetual", "generational"],
+      "value_prop": "Legacy creation"
+    }
+  ]
+}

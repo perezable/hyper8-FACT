@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "generation_timestamp": "2025-09-14T01:23:46.580777",
+    "total_entries": 0,
+    "high_quality_entries": 0,
+    "quality_threshold": 7.0,
+    "average_quality_score": 0,
+    "deployment_ready": true,
+    "version": "1.0.0_QUALITY_SCORED",
+    "persona_coverage": {
+      "overwhelmed_veteran": 0,
+      "price_conscious": 0,
+      "skeptical_researcher": 0,
+      "time_pressed": 0,
+      "ambitious_entrepreneur": 0,
+      "balance_score": 0.0
+    },
+    "grade_distribution": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "D": 0,
+      "F": 0
+    },
+    "targeting_gaps": {
+      "failed_questions_addressed": 0,
+      "overwhelmed_veteran_priority": true,
+      "cost_content_enhanced": true
+    }
+  },
+  "entries": []
+}

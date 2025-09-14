@@ -1,0 +1,65 @@
+{
+  "deployment_summary": {
+    "timestamp": "2025-09-11T16:27:55.666455",
+    "duration_seconds": 6.514152,
+    "status": "SUCCESS",
+    "entries_before": 4,
+    "entries_after": 4,
+    "specialty_entries_added": 28,
+    "errors": []
+  },
+  "search_validation": {
+    "search_results": {
+      "HVAC license California": {
+        "error": "HTTP 500"
+      },
+      "EPA 608 certification": {
+        "error": "HTTP 500"
+      },
+      "electrical contractor Texas": {
+        "result_count": 3,
+        "first_result": {
+          "id": 1076,
+          "question": "I need help with texas",
+          "answer": "Texas does not require state-level general contractor licensing. Must check municipal requirements for specific cities/counties. No age, experience, or educational requirements at state level. State licensing required for specific trades: Plumbing (Responsible Master Plumber), HVAC (Class A/B with insurance requirements), Electrical (2+ years journeyman before master). Municipal bonds may be required (example: San Antonio demolition $5,000 annual bond). This information is time-sensitive.",
+          "category": "state_licensing_requirements",
+          "tags": null,
+          "state": "TX",
+          "priority": "normal",
+          "difficulty": "basic",
+          "personas": null,
+          "source": null
+        }
+      },
+      "IBEW apprenticeship": {
+        "error": "HTTP 500"
+      },
+      "plumbing license Florida": {
+        "error": "HTTP 500"
+      },
+      "backflow prevention": {
+        "error": "HTTP 500"
+      },
+      "roofing contractor California": {
+        "error": "HTTP 500"
+      },
+      "OSHA fall protection roofing": {
+        "error": "HTTP 500"
+      },
+      "flooring contractor license": {
+        "error": "HTTP 500"
+      },
+      "TCNA certification": {
+        "error": "HTTP 500"
+      }
+    },
+    "successful_searches": 1,
+    "total_queries": 10,
+    "success_rate": 0.1
+  },
+  "recommendations": [
+    "\u2705 Good specialty coverage achieved",
+    "\u26a0\ufe0f Search needs improvement (10.0% success rate)",
+    "\u2705 No deployment errors"
+  ]
+}

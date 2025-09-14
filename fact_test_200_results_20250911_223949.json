@@ -1,0 +1,4254 @@
+{
+  "test_metadata": {
+    "timestamp": "20250911_223949",
+    "total_questions": 200,
+    "endpoint": "https://hyper8-fact-fact-system.up.railway.app/vapi-debug/webhook"
+  },
+  "summary": {
+    "success_rate": 1.0,
+    "average_score": 72.1,
+    "median_score": 70.0,
+    "average_latency_ms": 193.9278256893158
+  },
+  "persona_performance": {
+    "price_conscious": {
+      "total": 40,
+      "success_rate": 1.0,
+      "average_score": 68.5,
+      "average_latency_ms": 184.9629044532776
+    },
+    "overwhelmed_veteran": {
+      "total": 40,
+      "success_rate": 1.0,
+      "average_score": 69.5,
+      "average_latency_ms": 172.0552682876587
+    },
+    "skeptical_researcher": {
+      "total": 40,
+      "success_rate": 1.0,
+      "average_score": 89,
+      "average_latency_ms": 175.35681128501892
+    },
+    "time_pressed": {
+      "total": 40,
+      "success_rate": 1.0,
+      "average_score": 65.625,
+      "average_latency_ms": 246.046644449234
+    },
+    "ambitious_entrepreneur": {
+      "total": 40,
+      "success_rate": 1.0,
+      "average_score": 67.875,
+      "average_latency_ms": 191.21749997138977
+    }
+  },
+  "grade_distribution": {
+    "A (90-100)": 32,
+    "B (80-89)": 8,
+    "C (70-79)": 92,
+    "D (60-69)": 68,
+    "F (0-59)": 0
+  },
+  "all_results": [
+    {
+      "question_id": "pc_1",
+      "question": "How much does a Georgia contractor license cost all-in?",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 65,
+      "latency_ms": 482.56993293762207,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_2",
+      "question": "What's the cheapest state to get licensed in?",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 182.9240322113037,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_3",
+      "question": "Are there payment plans available for the $4,995 fee?",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 65,
+      "latency_ms": 225.2051830291748,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_4",
+      "question": "Is the investment worth it compared to DIY?",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 65,
+      "latency_ms": 216.85099601745605,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_5",
+      "question": "What's the ROI on your licensing program?",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 177.75201797485352,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_6",
+      "question": "Can I get a discount if I refer others?",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 127.1820068359375,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_7",
+      "question": "How much can I save doing it myself?",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 128.76296043395996,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_8",
+      "question": "What hidden fees should I expect?",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 180.11999130249023,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_9",
+      "question": "Do you offer any guarantees on the investment?",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 164.03508186340332,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_10",
+      "question": "What's included in the $4,995 price?",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 70,
+      "latency_ms": 168.73598098754883,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_11",
+      "question": "How much does a Florida license cost?",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 70,
+      "latency_ms": 193.13311576843262,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_12",
+      "question": "Compare your price to competitors",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 70,
+      "latency_ms": 120.92089653015137,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_13",
+      "question": "Is there a money-back guarantee?",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 123.83389472961426,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_14",
+      "question": "What's the cost breakdown by state?",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 65,
+      "latency_ms": 267.28296279907227,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_15",
+      "question": "Do prices vary by license type?",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 65,
+      "latency_ms": 209.35511589050293,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_16",
+      "question": "Are there additional exam fees?",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 166.51391983032227,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_17",
+      "question": "What about renewal costs?",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 65,
+      "latency_ms": 200.0880241394043,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_18",
+      "question": "How much for multiple state licenses?",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 135.7901096343994,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_19",
+      "question": "Is financing available?",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 170.2880859375,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_20",
+      "question": "What's the average cost nationwide?",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 70,
+      "latency_ms": 165.01808166503906,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_21",
+      "question": "New York contractor license cost?",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 70,
+      "latency_ms": 169.76690292358398,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_22",
+      "question": "Illinois licensing fees breakdown",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 169.5401668548584,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_23",
+      "question": "Pennsylvania license total cost",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 70,
+      "latency_ms": 162.22882270812988,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_24",
+      "question": "Ohio contractor fees all-in",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 169.55089569091797,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_25",
+      "question": "Michigan licensing investment",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 118.18313598632812,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_26",
+      "question": "North Carolina license pricing",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 166.62287712097168,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_27",
+      "question": "Virginia contractor costs",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 65,
+      "latency_ms": 225.79717636108398,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_28",
+      "question": "Arizona licensing fees",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 186.73992156982422,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_29",
+      "question": "Colorado contractor license cost",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 65,
+      "latency_ms": 202.7587890625,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_30",
+      "question": "Washington state license pricing",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 194.2460536956787,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_31",
+      "question": "Texas contractor license fees",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 65,
+      "latency_ms": 223.58131408691406,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_32",
+      "question": "California licensing total cost",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 70,
+      "latency_ms": 119.8127269744873,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_33",
+      "question": "Nevada contractor license price",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 70,
+      "latency_ms": 193.06015968322754,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_34",
+      "question": "Oregon licensing fees",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 65,
+      "latency_ms": 204.5738697052002,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_35",
+      "question": "Utah contractor costs",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 65,
+      "latency_ms": 231.94193840026855,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_36",
+      "question": "Tennessee license pricing",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 146.5320587158203,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_37",
+      "question": "Kentucky contractor fees",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 120.75185775756836,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_38",
+      "question": "Indiana licensing costs",
+      "persona": "price_conscious",
+      "category": "cost",
+      "success": true,
+      "score": 70,
+      "latency_ms": 187.23607063293457,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_39",
+      "question": "Missouri contractor pricing",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 65,
+      "latency_ms": 204.57792282104492,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "pc_40",
+      "question": "Alabama license fees total",
+      "persona": "price_conscious",
+      "category": "general",
+      "success": true,
+      "score": 70,
+      "latency_ms": 194.65112686157227,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_1",
+      "question": "I don't even know where to start - help?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 193.67289543151855,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_2",
+      "question": "How long is this whole process?",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "success": true,
+      "score": 70,
+      "latency_ms": 133.99100303649902,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_3",
+      "question": "Do I need to study for tests?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 184.57508087158203,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_4",
+      "question": "What documents do I need?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 192.01111793518066,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_5",
+      "question": "Can you walk me through step-by-step?",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "success": true,
+      "score": 65,
+      "latency_ms": 203.60898971557617,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_6",
+      "question": "Is this really complicated?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 140.8100128173828,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_7",
+      "question": "I'm confused about the requirements",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 189.70894813537598,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_8",
+      "question": "How do I know which license I need?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 181.69498443603516,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_9",
+      "question": "What if I fail the test?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 187.43515014648438,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_10",
+      "question": "Do you provide study materials?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 129.7590732574463,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_11",
+      "question": "Is there someone to help me?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 65,
+      "latency_ms": 249.85790252685547,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_12",
+      "question": "How many forms are there?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 143.1748867034912,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_13",
+      "question": "What's the first step I should take?",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "success": true,
+      "score": 70,
+      "latency_ms": 122.26200103759766,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_14",
+      "question": "Can you simplify this for me?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 186.4330768585205,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_15",
+      "question": "I'm overwhelmed by all the options",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 196.63381576538086,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_16",
+      "question": "Do I need a lawyer?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 119.31896209716797,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_17",
+      "question": "What about insurance requirements?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 177.22511291503906,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_18",
+      "question": "How do I prove my experience?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 188.079833984375,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_19",
+      "question": "What if I have a criminal record?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 195.69706916809082,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_20",
+      "question": "Can you handle everything for me?",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 116.47605895996094,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_21",
+      "question": "Georgia requirements seem complex",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 65,
+      "latency_ms": 241.27888679504395,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_22",
+      "question": "Florida process is confusing",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "success": true,
+      "score": 70,
+      "latency_ms": 117.39587783813477,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_23",
+      "question": "New York licensing overwhelming",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 147.28784561157227,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_24",
+      "question": "California requirements help",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 194.43774223327637,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_25",
+      "question": "Texas process seems difficult",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "success": true,
+      "score": 70,
+      "latency_ms": 194.46086883544922,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_26",
+      "question": "Illinois licensing confusion",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 178.15089225769043,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_27",
+      "question": "Pennsylvania requirements unclear",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 150.18439292907715,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_28",
+      "question": "Ohio process questions",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "success": true,
+      "score": 70,
+      "latency_ms": 132.97319412231445,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_29",
+      "question": "Michigan licensing help needed",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 122.40004539489746,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_30",
+      "question": "North Carolina confusing rules",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 178.09796333312988,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_31",
+      "question": "Virginia requirements assistance",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 193.99714469909668,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_32",
+      "question": "Arizona process overwhelming",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "success": true,
+      "score": 70,
+      "latency_ms": 192.7359104156494,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_33",
+      "question": "Colorado licensing complexity",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 120.07498741149902,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_34",
+      "question": "Washington requirements help",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 189.2378330230713,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_35",
+      "question": "Oregon process confusion",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "success": true,
+      "score": 65,
+      "latency_ms": 205.21092414855957,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_36",
+      "question": "Nevada licensing assistance",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 181.66589736938477,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_37",
+      "question": "Utah requirements unclear",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 188.61794471740723,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_38",
+      "question": "Tennessee process help",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "success": true,
+      "score": 70,
+      "latency_ms": 140.31219482421875,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_39",
+      "question": "Kentucky licensing confusion",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 188.16089630126953,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ov_40",
+      "question": "Indiana requirements assistance",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "success": true,
+      "score": 70,
+      "latency_ms": 193.10331344604492,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_1",
+      "question": "What's your actual success rate with data?",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "success": true,
+      "score": 90,
+      "latency_ms": 126.42312049865723,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_2",
+      "question": "Can you prove the 98% approval claim?",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "success": true,
+      "score": 90,
+      "latency_ms": 172.83010482788086,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_3",
+      "question": "Show me competitor comparisons",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 188.18402290344238,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_4",
+      "question": "What independent reviews say about you?",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 198.84490966796875,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_5",
+      "question": "How many clients have you helped?",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 174.5438575744629,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_6",
+      "question": "What's your BBB rating?",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 113.6178970336914,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_7",
+      "question": "Any lawsuits against your company?",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 181.00881576538086,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_8",
+      "question": "Show me real testimonials",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 170.84479331970215,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_9",
+      "question": "What certifications do you have?",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 174.84307289123535,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_10",
+      "question": "How long have you been in business?",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 189.4521713256836,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_11",
+      "question": "What's your refund rate?",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 85,
+      "latency_ms": 222.23377227783203,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_12",
+      "question": "Prove your ROI calculations",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "success": true,
+      "score": 90,
+      "latency_ms": 122.07293510437012,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_13",
+      "question": "Show me case studies",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 85,
+      "latency_ms": 235.2302074432373,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_14",
+      "question": "What failures have you had?",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 85,
+      "latency_ms": 211.11083030700684,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_15",
+      "question": "How do you verify success?",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 167.41085052490234,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_16",
+      "question": "What data backs your claims?",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "success": true,
+      "score": 90,
+      "latency_ms": 136.88898086547852,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_17",
+      "question": "Third-party validation sources?",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 112.34807968139648,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_18",
+      "question": "Industry recognition or awards?",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 123.03423881530762,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_19",
+      "question": "Government endorsements?",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 171.64325714111328,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_20",
+      "question": "Statistical evidence please",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 85,
+      "latency_ms": 210.25896072387695,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_21",
+      "question": "Georgia success rate data",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "success": true,
+      "score": 85,
+      "latency_ms": 220.98088264465332,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_22",
+      "question": "Florida approval statistics",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 181.87212944030762,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_23",
+      "question": "California success metrics",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 166.29576683044434,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_24",
+      "question": "Texas approval percentages",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 161.78107261657715,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_25",
+      "question": "New York success data",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "success": true,
+      "score": 90,
+      "latency_ms": 180.7420253753662,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_26",
+      "question": "Illinois approval rates",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 172.11604118347168,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_27",
+      "question": "Pennsylvania statistics",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 196.57492637634277,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_28",
+      "question": "Ohio success metrics",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 85,
+      "latency_ms": 227.41198539733887,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_29",
+      "question": "Michigan approval data",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "success": true,
+      "score": 90,
+      "latency_ms": 115.5238151550293,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_30",
+      "question": "North Carolina statistics",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 193.4530735015869,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_31",
+      "question": "Virginia success rates",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 181.23793601989746,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_32",
+      "question": "Arizona approval data",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "success": true,
+      "score": 90,
+      "latency_ms": 187.44778633117676,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_33",
+      "question": "Colorado success metrics",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 191.8189525604248,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_34",
+      "question": "Washington statistics",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 85,
+      "latency_ms": 226.7470359802246,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_35",
+      "question": "Oregon approval rates",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 122.41792678833008,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_36",
+      "question": "Nevada success data",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "success": true,
+      "score": 90,
+      "latency_ms": 197.21317291259766,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_37",
+      "question": "Utah approval metrics",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 178.73907089233398,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_38",
+      "question": "Tennessee statistics",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 85,
+      "latency_ms": 208.02617073059082,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_39",
+      "question": "Kentucky success rates",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "success": true,
+      "score": 90,
+      "latency_ms": 188.5838508605957,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "sr_40",
+      "question": "Indiana approval data",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "success": true,
+      "score": 90,
+      "latency_ms": 112.46395111083984,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_1",
+      "question": "What's the fastest path to licensing?",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 70,
+      "latency_ms": 130.6900978088379,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_2",
+      "question": "Can I expedite the process?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 70,
+      "latency_ms": 183.69102478027344,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_3",
+      "question": "How quickly can I start bidding?",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 217.22030639648438,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_4",
+      "question": "Rush processing available?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 204.38122749328613,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_5",
+      "question": "Minimum timeline to license?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 305.3622245788574,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_6",
+      "question": "Can you fast-track my application?",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 227.15020179748535,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_7",
+      "question": "Emergency licensing options?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 277.31800079345703,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_8",
+      "question": "How fast with your help vs alone?",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 288.88702392578125,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_9",
+      "question": "Same-day processing possible?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 232.71775245666504,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_10",
+      "question": "Weekend or evening services?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 70,
+      "latency_ms": 146.64983749389648,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_11",
+      "question": "Can I start before approval?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 303.372859954834,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_12",
+      "question": "Temporary license while waiting?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 220.39508819580078,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_13",
+      "question": "Priority processing cost?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 275.57992935180664,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_14",
+      "question": "Fastest state to get licensed?",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 287.05310821533203,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_15",
+      "question": "Skip any requirements legally?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 222.8381633758545,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_16",
+      "question": "Accelerated exam scheduling?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 250.06914138793945,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_17",
+      "question": "How to avoid delays?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 299.56912994384766,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_18",
+      "question": "Common bottlenecks to avoid?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 331.35509490966797,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_19",
+      "question": "24-hour turnaround possible?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 234.91907119750977,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_20",
+      "question": "Can you guarantee timeline?",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 255.82218170166016,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_21",
+      "question": "Georgia fast-track options",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 325.0432014465332,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_22",
+      "question": "Florida expedited licensing",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 70,
+      "latency_ms": 189.79811668395996,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_23",
+      "question": "California rush processing",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 223.2358455657959,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_24",
+      "question": "Texas quick approval",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 317.89398193359375,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_25",
+      "question": "New York fast licensing",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 221.43006324768066,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_26",
+      "question": "Illinois expedited process",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 70,
+      "latency_ms": 158.1101417541504,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_27",
+      "question": "Pennsylvania quick path",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 286.0410213470459,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_28",
+      "question": "Ohio fast-track licensing",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 229.50387001037598,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_29",
+      "question": "Michigan rush approval",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 311.9931221008301,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_30",
+      "question": "North Carolina quick process",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 205.85298538208008,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_31",
+      "question": "Virginia expedited licensing",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 271.19994163513184,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_32",
+      "question": "Arizona fast approval",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 221.4980125427246,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_33",
+      "question": "Colorado quick licensing",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 225.69513320922852,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_34",
+      "question": "Washington rush process",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 233.17289352416992,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_35",
+      "question": "Oregon expedited path",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 233.2479953765869,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_36",
+      "question": "Nevada fast licensing",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 277.9662609100342,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_37",
+      "question": "Utah quick approval",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 229.65002059936523,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_38",
+      "question": "Tennessee rush process",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 241.1489486694336,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_39",
+      "question": "Kentucky fast-track",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "success": true,
+      "score": 65,
+      "latency_ms": 328.42206954956055,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "tp_40",
+      "question": "Indiana expedited licensing",
+      "persona": "time_pressed",
+      "category": "expedite",
+      "success": true,
+      "score": 65,
+      "latency_ms": 215.92068672180176,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_1",
+      "question": "How do I expand to multiple states?",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "success": true,
+      "score": 65,
+      "latency_ms": 201.11894607543945,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_2",
+      "question": "What about the qualifier network income?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 253.03101539611816,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_3",
+      "question": "Best states for commercial contracts?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 229.0208339691162,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_4",
+      "question": "How to scale my contracting business?",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "success": true,
+      "score": 70,
+      "latency_ms": 183.61902236938477,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_5",
+      "question": "Passive income opportunities?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 182.2531223297119,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_6",
+      "question": "Can I license others under me?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 204.67615127563477,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_7",
+      "question": "Multi-state licensing strategy?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 270.2019214630127,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_8",
+      "question": "Government contract requirements?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 225.76093673706055,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_9",
+      "question": "How to become a qualifier?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 249.15409088134766,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_10",
+      "question": "Income potential with license?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 234.8320484161377,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_11",
+      "question": "Best markets for growth?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 251.40690803527832,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_12",
+      "question": "How to dominate my market?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 181.68401718139648,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_13",
+      "question": "Licensing for business expansion?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 263.0620002746582,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_14",
+      "question": "Interstate reciprocity agreements?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 172.73902893066406,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_15",
+      "question": "Corporate licensing options?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 149.68299865722656,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_16",
+      "question": "How to build a contractor empire?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 134.6268653869629,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_17",
+      "question": "Franchise opportunities with license?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 226.35316848754883,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_18",
+      "question": "International expansion possibilities?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 239.86196517944336,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_19",
+      "question": "Private equity requirements?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 222.40591049194336,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_20",
+      "question": "Exit strategy considerations?",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 120.94688415527344,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_21",
+      "question": "Georgia business opportunities",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 186.98883056640625,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_22",
+      "question": "Florida commercial markets",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 168.52307319641113,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_23",
+      "question": "California growth potential",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 123.30985069274902,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_24",
+      "question": "Texas expansion options",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 184.99398231506348,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_25",
+      "question": "New York business scaling",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 175.68421363830566,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_26",
+      "question": "Illinois commercial opportunities",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 181.8530559539795,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_27",
+      "question": "Pennsylvania growth markets",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 123.70896339416504,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_28",
+      "question": "Ohio business expansion",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 206.04991912841797,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_29",
+      "question": "Michigan commercial potential",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 165.6041145324707,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_30",
+      "question": "North Carolina growth options",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 220.6869125366211,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_31",
+      "question": "Virginia business opportunities",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 184.74316596984863,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_32",
+      "question": "Arizona expansion potential",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 188.10582160949707,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_33",
+      "question": "Colorado commercial markets",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 128.8597583770752,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_34",
+      "question": "Washington growth scaling",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 284.9280834197998,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_35",
+      "question": "Oregon business opportunities",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 65,
+      "latency_ms": 218.56427192687988,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_36",
+      "question": "Nevada expansion options",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 168.00618171691895,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_37",
+      "question": "Utah commercial potential",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 123.2900619506836,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_38",
+      "question": "Tennessee growth markets",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 127.69794464111328,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_39",
+      "question": "Kentucky business scaling",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 133.9578628540039,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "question_id": "ae_40",
+      "question": "Indiana expansion opportunities",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "success": true,
+      "score": 70,
+      "latency_ms": 156.7060947418213,
+      "response": {
+        "result": {
+          "answer": "Debug webhook received request successfully",
+          "debug_info": {
+            "request_keys": [
+              "message"
+            ],
+            "message_type": "tool-calls"
+          }
+        }
+      },
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "timestamp": "2025-09-11T16:40:32.773384",
+  "status": "initiated",
+  "components": {
+    "knowledge_entries": {
+      "status": "success",
+      "total_entries": 34,
+      "files_deployed": 2
+    },
+    "roi_calculator": {
+      "status": "success",
+      "test_scenarios": 3,
+      "results": [
+        {
+          "scenario": 1,
+          "current_income": 45000,
+          "projected_income": 213480.0,
+          "roi_percentage": 3744.0,
+          "payback_days": 10,
+          "case_study": "Jennifer in Tampa"
+        },
+        {
+          "scenario": 2,
+          "current_income": 85000,
+          "projected_income": 540951.0,
+          "roi_percentage": 10132.244444444445,
+          "payback_days": 4,
+          "case_study": "Sarah from Georgia"
+        },
+        {
+          "scenario": 3,
+          "current_income": 65000,
+          "projected_income": 632880.0,
+          "roi_percentage": 12619.555555555557,
+          "payback_days": 3,
+          "case_study": "Sarah from Georgia"
+        }
+      ]
+    },
+    "vapi_integration": {
+      "status": "success",
+      "local_test": "passed",
+      "railway_test": "skipped",
+      "sample_result": {
+        "current_income": "$65,000",
+        "projected_income": "$268,280",
+        "annual_increase": "$203,280",
+        "monthly_increase": "$16,940",
+        "roi_percentage": "4,517%",
+        "payback_days": "9 days",
+        "break_even_date": "September 20, 2025",
+        "qualifier_income": "$60,480 annually",
+        "geographic_premium": "Standard market",
+        "case_study": "Sarah increased her income from $65,000 to over $143,000 after getting licensed. The investment paid for itself in just 18 days!",
+        "investment": "$4,500",
+        "opportunity_cost_6_months": "$101,640",
+        "opportunity_cost_1_year": "$203,280",
+        "summary": "Based on your residential contracting at $65,000 in GA, you'll likely earn $268,280 once licensed - a $203,280 increase! Your $4,500 investment pays back in just 9 days with a 4,517% ROI. Sarah from Georgia: Sarah increased her income from $65,000 to over $143,000 after getting licensed. The investment paid for itself in just 18 days!"
+      }
+    }
+  },
+  "tests": {
+    "income_tier_analysis": {
+      "status": "passed",
+      "tiers_tested": 5,
+      "results": {
+        "30000": {
+          "current_income": 30000,
+          "projected_income": 180480.0,
+          "income_increase": 150480.0,
+          "roi_percentage": 3344.0,
+          "payback_days": 11,
+          "monthly_increase": 12540.0
+        },
+        "50000": {
+          "current_income": 50000,
+          "projected_income": 224480.0,
+          "income_increase": 174480.0,
+          "roi_percentage": 3877.3333333333335,
+          "payback_days": 10,
+          "monthly_increase": 14540.0
+        },
+        "75000": {
+          "current_income": 75000,
+          "projected_income": 279480.0,
+          "income_increase": 204480.0,
+          "roi_percentage": 4544.0,
+          "payback_days": 9,
+          "monthly_increase": 17040.0
+        },
+        "100000": {
+          "current_income": 100000,
+          "projected_income": 334480.0,
+          "income_increase": 234480.0,
+          "roi_percentage": 5210.666666666667,
+          "payback_days": 8,
+          "monthly_increase": 19540.0
+        },
+        "150000": {
+          "current_income": 150000,
+          "projected_income": 444480.0,
+          "income_increase": 294480.0,
+          "roi_percentage": 6544.0,
+          "payback_days": 6,
+          "monthly_increase": 24540.0
+        }
+      }
+    },
+    "geographic_arbitrage": {
+      "status": "passed",
+      "scenarios_tested": 3,
+      "results": [
+        {
+          "from": "rural",
+          "to": "urban",
+          "gain": 82740.0,
+          "percentage": 42.04054672018698
+        },
+        {
+          "from": "small_town",
+          "to": "major_metro",
+          "gain": 114712.0,
+          "percentage": 52.702864126289874
+        },
+        {
+          "from": "suburban",
+          "to": "boom_market",
+          "gain": 206960.0,
+          "percentage": 87.8885680312553
+        }
+      ]
+    },
+    "opportunity_cost": {
+      "status": "passed",
+      "delay_costs": {
+        "6_months": 96240.0,
+        "1_year": 192480.0
+      }
+    }
+  },
+  "errors": []
+}

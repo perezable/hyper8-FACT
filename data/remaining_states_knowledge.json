@@ -1,0 +1,811 @@
+{
+  "metadata": {
+    "created_date": "2025-09-12",
+    "total_entries": 125,
+    "states_covered": 25,
+    "note": "Remaining 25 states to complete 50 state coverage",
+    "categories": ["basic_requirements", "cost_breakdown", "timeline_fast_track", "process_steps", "special_considerations"]
+  },
+  "knowledge_base": [
+    {
+      "id": 1151,
+      "question": "What are the basic contractor license requirements in North Dakota?",
+      "answer": "North Dakota has no state-wide general contractor licensing requirement. Some cities like Fargo and Bismarck require business licenses for contractors. Specific trades are regulated at state level and public works contractors need prequalification for state projects.",
+      "category": "state_requirements",
+      "state": "ND",
+      "tags": "north_dakota,basic_requirements,no_state_licensing,municipal,trades,public_works",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1152,
+      "question": "What are the costs for getting a contractor license in North Dakota?",
+      "answer": "North Dakota contractor costs consist primarily of municipal business license fees ranging from $50-250 annually. Trade-specific licenses range from $150-500 and public works prequalification costs $200-400. Total costs typically range from $200-900 depending on scope and specialization.",
+      "category": "costs",
+      "state": "ND",
+      "tags": "north_dakota,costs,business_license,trade_licenses,public_works,low_costs",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1153,
+      "question": "What is the timeline for getting a contractor license in North Dakota?",
+      "answer": "North Dakota contractor setup timelines are efficient with municipal business licenses processing in 1-2 weeks. Trade licenses take 2-4 weeks with examinations and public works prequalification takes 3-5 weeks. Plan for 1-5 weeks total depending on requirements and seasonal considerations.",
+      "category": "timeline",
+      "state": "ND",
+      "tags": "north_dakota,timeline,efficient_processing,municipal,trade_licenses,seasonal_considerations",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1154,
+      "question": "What are the step-by-step process requirements for North Dakota contractor licensing?",
+      "answer": "North Dakota contractor setup: 1) Identify municipal requirements for work locations, 2) Obtain local business licenses as needed, 3) Obtain required trade licenses, 4) Consider public works prequalification, 5) Secure insurance coverage, 6) Register with North Dakota State Tax Department, 7) Obtain project permits.",
+      "category": "state_requirements",
+      "state": "ND",
+      "tags": "north_dakota,process_steps,municipal,trade_licenses,public_works,insurance,permits",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1155,
+      "question": "What special considerations apply to North Dakota contractor licensing?",
+      "answer": "North Dakota has extreme weather conditions with very short construction seasons and oil industry boom creating opportunities but workforce challenges. Agricultural construction is significant market with wind energy projects requiring specific expertise and remote locations creating logistics challenges.",
+      "category": "state_requirements",
+      "state": "ND",
+      "tags": "north_dakota,special_considerations,extreme_weather,oil_industry,agricultural,wind_energy,remote_locations",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1156,
+      "question": "What are the basic contractor license requirements in Ohio?",
+      "answer": "Ohio has no state-wide general contractor licensing requirement. Major cities like Columbus, Cleveland, and Cincinnati require business licenses for contractors. Specific trades are regulated at state level and home improvement contractors can register voluntarily for consumer confidence.",
+      "category": "state_requirements",
+      "state": "OH",
+      "tags": "ohio,basic_requirements,no_state_licensing,major_cities,trades,home_improvement",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1157,
+      "question": "What are the costs for getting a contractor license in Ohio?",
+      "answer": "Ohio contractor costs include municipal business license fees ranging from $50-400 annually. Trade-specific licenses range from $100-600 and voluntary home improvement registration costs $300. Total costs typically range from $200-1,200 depending on location and specialization.",
+      "category": "costs",
+      "state": "OH",
+      "tags": "ohio,costs,business_license,trade_licenses,home_improvement,municipal_variance",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1158,
+      "question": "What is the timeline for getting a contractor license in Ohio?",
+      "answer": "Ohio contractor setup timelines are generally efficient with municipal business licenses processing in 1-3 weeks. Trade licenses take 2-4 weeks with examinations and home improvement registration processes in 2-3 weeks. Plan for 1-4 weeks total for most contractor setups.",
+      "category": "timeline",
+      "state": "OH",
+      "tags": "ohio,timeline,efficient_processing,municipal,trade_licenses,home_improvement",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1159,
+      "question": "What are the step-by-step process requirements for Ohio contractor licensing?",
+      "answer": "Ohio contractor setup: 1) Determine municipal requirements for work locations, 2) Obtain local business licenses, 3) Consider voluntary home improvement registration ($300), 4) Obtain required trade licenses, 5) Secure insurance coverage, 6) Register with Ohio Department of Commerce, 7) Obtain project permits.",
+      "category": "state_requirements",
+      "state": "OH",
+      "tags": "ohio,process_steps,municipal,home_improvement,trade_licenses,insurance,permits",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1160,
+      "question": "What special considerations apply to Ohio contractor licensing?",
+      "answer": "Ohio has diverse economic regions from industrial to agricultural creating varied opportunities. Manufacturing base provides industrial construction opportunities and Great Lakes access affects environmental regulations for coastal areas. No sales tax on construction services creates pricing advantages over neighboring states.",
+      "category": "state_requirements",
+      "state": "OH",
+      "tags": "ohio,special_considerations,diverse_economy,manufacturing,great_lakes,no_sales_tax",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1161,
+      "question": "What are the basic contractor license requirements in Oklahoma?",
+      "answer": "Oklahoma requires contractor licensing for commercial projects over $50,000. General contractor license requires 2 years experience plus passing business and law exam. Must be 18+ years old, have Oklahoma business registration, and carry liability insurance. Residential contractors need separate registration for homes.",
+      "category": "state_requirements",
+      "state": "OK",
+      "tags": "oklahoma,basic_requirements,experience,exam,business_registration,residential",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1162,
+      "question": "What are the costs for getting a contractor license in Oklahoma?",
+      "answer": "Oklahoma contractor license costs include $160 application fee, $40 examination fee, and $15,000 surety bond for general contractors. Residential license requires $10,000 bond. Total initial costs range from $300-500 plus bond premiums with $80 annual renewal.",
+      "category": "costs",
+      "state": "OK",
+      "tags": "oklahoma,costs,application_fee,exam_fee,surety_bond,residential_bond,annual_renewal",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1163,
+      "question": "What is the timeline for getting a contractor license in Oklahoma?",
+      "answer": "Oklahoma contractor license process takes 3-4 weeks from application to approval. Exam scheduling available monthly with 2-3 week wait times and background check takes 2 weeks. Plan for 4-5 weeks total including preparation time and documentation gathering.",
+      "category": "timeline",
+      "state": "OK",
+      "tags": "oklahoma,timeline,processing_time,exam_scheduling,background_check,preparation",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1164,
+      "question": "What are the step-by-step process requirements for Oklahoma contractor licensing?",
+      "answer": "Oklahoma contractor licensing: 1) Meet experience requirements (2 years), 2) Obtain Oklahoma business registration, 3) Complete application with $160 fee, 4) Schedule and pass business/law exam ($40), 5) Apply for residential license if applicable, 6) Obtain required surety bonds, 7) Provide insurance certificates, 8) Complete background check, 9) Receive license approval.",
+      "category": "state_requirements",
+      "state": "OK",
+      "tags": "oklahoma,process_steps,business_registration,exam,residential,surety_bonds,insurance",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1165,
+      "question": "What special considerations apply to Oklahoma contractor licensing?",
+      "answer": "Oklahoma experiences frequent severe weather including tornadoes creating significant storm restoration opportunities. Oil and gas industry provides specialized construction opportunities but requires safety certifications. Agricultural construction is significant market and Native American tribal lands may have different permitting requirements.",
+      "category": "state_requirements",
+      "state": "OK",
+      "tags": "oklahoma,special_considerations,severe_weather,oil_gas_industry,agricultural,tribal_lands",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1166,
+      "question": "What are the basic contractor license requirements in Oregon?",
+      "answer": "Oregon requires contractor licensing for projects over $1,000. General contractor license requires 2 years experience plus passing business and law exam. Must be 18+ years old, have Oregon business registration, and carry liability insurance. Background check and continuing education required for renewal.",
+      "category": "state_requirements",
+      "state": "OR",
+      "tags": "oregon,basic_requirements,experience,exam,business_registration,continuing_education",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1167,
+      "question": "What are the costs for getting a contractor license in Oregon?",
+      "answer": "Oregon contractor license costs include $250 application fee, $75 examination fee, and $15,000 surety bond for general contractors. Total initial costs range from $400-700 plus bond premiums with $120 biennial renewal and mandatory continuing education requirements.",
+      "category": "costs",
+      "state": "OR",
+      "tags": "oregon,costs,application_fee,exam_fee,surety_bond,biennial_renewal,continuing_education",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1168,
+      "question": "What is the timeline for getting a contractor license in Oregon?",
+      "answer": "Oregon contractor license process takes 4-6 weeks from application to approval. Exam scheduling available monthly with 3-4 week wait times and background check takes 2-3 weeks. Plan for 6-8 weeks total including preparation time and continuing education completion.",
+      "category": "timeline",
+      "state": "OR",
+      "tags": "oregon,timeline,processing_time,exam_scheduling,background_check,continuing_education",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1169,
+      "question": "What are the step-by-step process requirements for Oregon contractor licensing?",
+      "answer": "Oregon contractor licensing: 1) Meet experience requirements (2 years), 2) Obtain Oregon business registration, 3) Complete application with $250 fee, 4) Schedule and pass business/law exam ($75), 5) Complete continuing education requirements, 6) Obtain $15,000 surety bond, 7) Provide insurance certificates, 8) Complete background check, 9) Receive license approval.",
+      "category": "state_requirements",
+      "state": "OR",
+      "tags": "oregon,process_steps,business_registration,exam,continuing_education,surety_bond,insurance",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1170,
+      "question": "What special considerations apply to Oregon contractor licensing?",
+      "answer": "Oregon has diverse climate from coast to mountains requiring different construction techniques. Environmental regulations are among the nation's strictest especially for forest and waterway projects. No sales tax creates pricing advantages and strong green building incentives encourage sustainable construction practices.",
+      "category": "state_requirements",
+      "state": "OR",
+      "tags": "oregon,special_considerations,diverse_climate,environmental_strict,no_sales_tax,green_building",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1171,
+      "question": "What are the basic contractor license requirements in Pennsylvania?",
+      "answer": "Pennsylvania requires contractor licensing for projects over $5,000. General contractor license requires 3 years experience plus passing business and law exam. Must be 18+ years old, have Pennsylvania business registration, and carry liability insurance. Home improvement contractors need separate registration.",
+      "category": "state_requirements",
+      "state": "PA",
+      "tags": "pennsylvania,basic_requirements,experience,exam,business_registration,home_improvement",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1172,
+      "question": "What are the costs for getting a contractor license in Pennsylvania?",
+      "answer": "Pennsylvania contractor license costs include $250 application fee, $100 examination fee, and $20,000 surety bond for general contractors. Home improvement registration requires additional $30,000 bond. Total initial costs range from $500-800 plus bond premiums with $150 biennial renewal.",
+      "category": "costs",
+      "state": "PA",
+      "tags": "pennsylvania,costs,application_fee,exam_fee,surety_bond,home_improvement_bond,biennial_renewal",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1173,
+      "question": "What is the timeline for getting a contractor license in Pennsylvania?",
+      "answer": "Pennsylvania contractor license process takes 6-8 weeks from application to approval. Exam scheduling available monthly with 4-5 week wait times due to high demand and background check takes 3-4 weeks. Plan for 8-10 weeks total including preparation time.",
+      "category": "timeline",
+      "state": "PA",
+      "tags": "pennsylvania,timeline,processing_time,exam_scheduling,high_demand,background_check",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1174,
+      "question": "What are the step-by-step process requirements for Pennsylvania contractor licensing?",
+      "answer": "Pennsylvania contractor licensing: 1) Meet experience requirements (3 years), 2) Obtain Pennsylvania business registration, 3) Complete application with $250 fee, 4) Schedule and pass business/law exam ($100), 5) Complete home improvement registration if applicable, 6) Obtain required surety bonds, 7) Provide insurance certificates, 8) Complete background check, 9) Receive license approval.",
+      "category": "state_requirements",
+      "state": "PA",
+      "tags": "pennsylvania,process_steps,business_registration,exam,home_improvement,surety_bonds,insurance",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1175,
+      "question": "What special considerations apply to Pennsylvania contractor licensing?",
+      "answer": "Pennsylvania has diverse geography from mountains to urban centers with Philadelphia and Pittsburgh creating strong markets but intense competition. Historic preservation requirements are extensive and proximity to major northeastern markets creates opportunities. Prevailing wage laws apply to many public projects.",
+      "category": "state_requirements",
+      "state": "PA",
+      "tags": "pennsylvania,special_considerations,diverse_geography,major_cities,historic_preservation,prevailing_wage",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1176,
+      "question": "What are the basic contractor license requirements in Rhode Island?",
+      "answer": "Rhode Island requires contractor licensing for projects over $1,000. General contractor license requires 3 years experience plus passing business and law exam. Must be 18+ years old, have Rhode Island business registration, and carry liability insurance. Home improvement contractors need separate registration.",
+      "category": "state_requirements",
+      "state": "RI",
+      "tags": "rhode_island,basic_requirements,experience,exam,business_registration,home_improvement",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1177,
+      "question": "What are the costs for getting a contractor license in Rhode Island?",
+      "answer": "Rhode Island contractor license costs include $200 application fee, $100 examination fee, and $30,000 surety bond for general contractors. Home improvement registration requires additional $25,000 bond. Total initial costs range from $400-700 plus bond premiums with $125 biennial renewal.",
+      "category": "costs",
+      "state": "RI",
+      "tags": "rhode_island,costs,application_fee,exam_fee,surety_bond,home_improvement_bond,biennial_renewal",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1178,
+      "question": "What is the timeline for getting a contractor license in Rhode Island?",
+      "answer": "Rhode Island contractor license process takes 4-6 weeks from application to approval. Exam scheduling available monthly with 3-4 week wait times and background check takes 2-3 weeks. Plan for 6-8 weeks total including preparation time and documentation gathering.",
+      "category": "timeline",
+      "state": "RI",
+      "tags": "rhode_island,timeline,processing_time,exam_scheduling,background_check,preparation",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1179,
+      "question": "What are the step-by-step process requirements for Rhode Island contractor licensing?",
+      "answer": "Rhode Island contractor licensing: 1) Meet experience requirements (3 years), 2) Obtain Rhode Island business registration, 3) Complete application with $200 fee, 4) Schedule and pass business/law exam ($100), 5) Complete home improvement registration if applicable, 6) Obtain required surety bonds, 7) Provide insurance certificates, 8) Complete background check, 9) Receive license approval.",
+      "category": "state_requirements",
+      "state": "RI",
+      "tags": "rhode_island,process_steps,business_registration,exam,home_improvement,surety_bonds,insurance",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1180,
+      "question": "What special considerations apply to Rhode Island contractor licensing?",
+      "answer": "Rhode Island's small size limits market expansion but creates efficient regulation. Coastal location requires hurricane-resistant construction and flood zone compliance. Historic Newport mansions and colonial architecture require specialized preservation skills. Proximity to Boston and New York creates competitive pressure but also opportunities.",
+      "category": "state_requirements",
+      "state": "RI",
+      "tags": "rhode_island,special_considerations,small_size,coastal_construction,historic_preservation,regional_competition",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1181,
+      "question": "What are the basic contractor license requirements in South Carolina?",
+      "answer": "South Carolina requires contractor licensing for projects over $5,000. General contractor license requires 2 years experience plus passing business and law exam. Must be 18+ years old, have South Carolina business registration, and carry liability insurance. Specialty contractors need separate licenses.",
+      "category": "state_requirements",
+      "state": "SC",
+      "tags": "south_carolina,basic_requirements,experience,exam,business_registration,specialty_licenses",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1182,
+      "question": "What are the costs for getting a contractor license in South Carolina?",
+      "answer": "South Carolina contractor license costs include $75 application fee, $50 examination fee, and surety bond requirements from $7,500-25,000 based on classification. Total initial costs range from $200-400 plus bond premiums with $50 annual renewal and no continuing education required.",
+      "category": "costs",
+      "state": "SC",
+      "tags": "south_carolina,costs,application_fee,exam_fee,surety_bond,annual_renewal,no_continuing_education",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1183,
+      "question": "What is the timeline for getting a contractor license in South Carolina?",
+      "answer": "South Carolina contractor license process takes 3-4 weeks from application to approval. Exam scheduling available monthly with 2-3 week wait times and background check takes 2 weeks. Plan for 4-5 weeks total including preparation time and seasonal considerations.",
+      "category": "timeline",
+      "state": "SC",
+      "tags": "south_carolina,timeline,processing_time,exam_scheduling,background_check,seasonal_considerations",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1184,
+      "question": "What are the step-by-step process requirements for South Carolina contractor licensing?",
+      "answer": "South Carolina contractor licensing: 1) Meet experience requirements (2 years), 2) Obtain South Carolina business registration, 3) Complete application with $75 fee, 4) Schedule and pass business/law exam ($50), 5) Apply for specialty licenses if applicable, 6) Obtain required surety bonds, 7) Provide insurance certificates, 8) Complete background check, 9) Receive license approval.",
+      "category": "state_requirements",
+      "state": "SC",
+      "tags": "south_carolina,process_steps,business_registration,exam,specialty_licenses,surety_bonds,insurance",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1185,
+      "question": "What special considerations apply to South Carolina contractor licensing?",
+      "answer": "South Carolina's coastal areas are hurricane-prone requiring storm-resistant construction and higher insurance coverage. Charleston's historic district has strict preservation requirements and rapid population growth creates opportunities but workforce challenges. Tourism industry creates seasonal demand fluctuations.",
+      "category": "state_requirements",
+      "state": "SC",
+      "tags": "south_carolina,special_considerations,coastal_hurricanes,historic_charleston,population_growth,tourism",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1186,
+      "question": "What are the basic contractor license requirements in South Dakota?",
+      "answer": "South Dakota has no state-wide general contractor licensing requirement. Some cities like Sioux Falls and Rapid City require business licenses for contractors. Specific trades are regulated at state level and public works contractors need prequalification for state projects.",
+      "category": "state_requirements",
+      "state": "SD",
+      "tags": "south_dakota,basic_requirements,no_state_licensing,municipal,trades,public_works",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1187,
+      "question": "What are the costs for getting a contractor license in South Dakota?",
+      "answer": "South Dakota contractor costs consist of municipal business license fees ranging from $50-200 annually. Trade-specific licenses range from $100-400 and public works prequalification costs $150-300. Total costs typically range from $150-700 depending on scope and location.",
+      "category": "costs",
+      "state": "SD",
+      "tags": "south_dakota,costs,business_license,trade_licenses,public_works,low_costs",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1188,
+      "question": "What is the timeline for getting a contractor license in South Dakota?",
+      "answer": "South Dakota contractor setup timelines are efficient with municipal business licenses processing in 1-2 weeks. Trade licenses take 2-4 weeks with examinations and public works prequalification takes 3-4 weeks. Plan for 1-4 weeks total for most contractor setups.",
+      "category": "timeline",
+      "state": "SD",
+      "tags": "south_dakota,timeline,efficient_processing,municipal,trade_licenses,public_works",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1189,
+      "question": "What are the step-by-step process requirements for South Dakota contractor licensing?",
+      "answer": "South Dakota contractor setup: 1) Determine municipal requirements for work locations, 2) Obtain local business licenses, 3) Obtain required trade licenses, 4) Consider public works prequalification, 5) Secure insurance coverage, 6) Register with South Dakota Department of Revenue, 7) Obtain project permits.",
+      "category": "state_requirements",
+      "state": "SD",
+      "tags": "south_dakota,process_steps,municipal,trade_licenses,public_works,insurance,permits",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1190,
+      "question": "What special considerations apply to South Dakota contractor licensing?",
+      "answer": "South Dakota has harsh weather conditions affecting construction seasons and agricultural construction is significant market. Tourism industry around Mount Rushmore and Black Hills creates seasonal opportunities. Wind energy projects require specialized expertise and no state income tax attracts contractors from other states.",
+      "category": "state_requirements",
+      "state": "SD",
+      "tags": "south_dakota,special_considerations,harsh_weather,agricultural,tourism,wind_energy,no_income_tax",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1191,
+      "question": "What are the basic contractor license requirements in Tennessee?",
+      "answer": "Tennessee requires contractor licensing for projects over $3,000. General contractor license requires 4 years experience plus passing business and law exam. Must be 18+ years old, have Tennessee business registration, and carry liability insurance. Specialty contractors need separate licenses for specific trades.",
+      "category": "state_requirements",
+      "state": "TN",
+      "tags": "tennessee,basic_requirements,experience,exam,business_registration,specialty_licenses",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1192,
+      "question": "What are the costs for getting a contractor license in Tennessee?",
+      "answer": "Tennessee contractor license costs include $200 application fee, $50 examination fee, and $10,000 surety bond for general contractors. Specialty licenses require various bond amounts. Total initial costs range from $350-500 plus bond premiums with $100 annual renewal.",
+      "category": "costs",
+      "state": "TN",
+      "tags": "tennessee,costs,application_fee,exam_fee,surety_bond,specialty_bonds,annual_renewal",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1193,
+      "question": "What is the timeline for getting a contractor license in Tennessee?",
+      "answer": "Tennessee contractor license process takes 4-5 weeks from application to approval. Exam scheduling available monthly with 3-4 week wait times and background check takes 2-3 weeks. Plan for 5-6 weeks total including preparation time and documentation gathering.",
+      "category": "timeline",
+      "state": "TN",
+      "tags": "tennessee,timeline,processing_time,exam_scheduling,background_check,preparation",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1194,
+      "question": "What are the step-by-step process requirements for Tennessee contractor licensing?",
+      "answer": "Tennessee contractor licensing: 1) Meet experience requirements (4 years), 2) Obtain Tennessee business registration, 3) Complete application with $200 fee, 4) Schedule and pass business/law exam ($50), 5) Apply for specialty licenses if applicable, 6) Obtain required surety bonds, 7) Provide insurance certificates, 8) Complete background check, 9) Receive license approval.",
+      "category": "state_requirements",
+      "state": "TN",
+      "tags": "tennessee,process_steps,business_registration,exam,specialty_licenses,surety_bonds,insurance",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1195,
+      "question": "What special considerations apply to Tennessee contractor licensing?",
+      "answer": "Tennessee has diverse geography from mountains to plains affecting construction methods. Nashville and Memphis metros offer strong growth opportunities and no state income tax attracts contractors. Music industry creates specialized venue construction opportunities while tornado activity creates storm restoration demands.",
+      "category": "state_requirements",
+      "state": "TN",
+      "tags": "tennessee,special_considerations,diverse_geography,major_metros,no_income_tax,music_industry,tornadoes",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1196,
+      "question": "What are the basic contractor license requirements in Utah?",
+      "answer": "Utah requires contractor licensing for projects over $3,000. General contractor license requires 4 years experience plus passing trade and business law exams. Must be 18+ years old, have Utah business registration, and carry liability insurance. Background check and financial statement required.",
+      "category": "state_requirements",
+      "state": "UT",
+      "tags": "utah,basic_requirements,experience,exams,business_registration,financial_statement",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1197,
+      "question": "What are the costs for getting a contractor license in Utah?",
+      "answer": "Utah contractor license costs include $185 application fee, $50 per exam (trade + business law), and surety bond requirements from $6,000-40,000 based on classification. Total initial costs range from $350-600 plus bond premiums with $155 biennial renewal.",
+      "category": "costs",
+      "state": "UT",
+      "tags": "utah,costs,application_fee,exam_fee,surety_bond,biennial_renewal,classification_based",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1198,
+      "question": "What is the timeline for getting a contractor license in Utah?",
+      "answer": "Utah contractor license process takes 4-6 weeks from application to approval. Exam scheduling available monthly with 3-4 week wait times and background check takes 2-3 weeks. Plan for 6-8 weeks total including preparation time and financial review.",
+      "category": "timeline",
+      "state": "UT",
+      "tags": "utah,timeline,processing_time,exam_scheduling,background_check,financial_review",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1199,
+      "question": "What are the step-by-step process requirements for Utah contractor licensing?",
+      "answer": "Utah contractor licensing: 1) Meet experience requirements (4 years), 2) Obtain Utah business registration, 3) Complete application with $185 fee, 4) Submit financial statement, 5) Schedule and pass trade exam ($50), 6) Pass business law exam ($50), 7) Complete background check, 8) Obtain required surety bond, 9) Provide insurance certificates, 10) Receive license approval.",
+      "category": "state_requirements",
+      "state": "UT",
+      "tags": "utah,process_steps,business_registration,financial_statement,exams,surety_bond,insurance",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1200,
+      "question": "What special considerations apply to Utah contractor licensing?",
+      "answer": "Utah has diverse terrain from deserts to mountains requiring different construction techniques. Rapid population growth creates high demand but competitive markets. Seismic requirements apply in some areas and water conservation is critical in arid regions. Strong tech industry creates opportunities for commercial construction.",
+      "category": "state_requirements",
+      "state": "UT",
+      "tags": "utah,special_considerations,diverse_terrain,population_growth,seismic,water_conservation,tech_industry",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1201,
+      "question": "What are the basic contractor license requirements in Vermont?",
+      "answer": "Vermont has no state-wide general contractor licensing requirement. Some municipalities require business licenses and home improvement contractors must register for projects over $500. Specific trades are regulated at state level with professional engineer stamps required for structural work.",
+      "category": "state_requirements",
+      "state": "VT",
+      "tags": "vermont,basic_requirements,no_state_licensing,municipal,home_improvement,trades,engineer_stamp",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1202,
+      "question": "What are the costs for getting a contractor license in Vermont?",
+      "answer": "Vermont contractor costs include municipal business license fees ranging from $25-150 annually and home improvement contractor registration costs $200. Trade-specific licenses range from $100-400 with competitive insurance requirements, totaling $150-700 depending on scope.",
+      "category": "costs",
+      "state": "VT",
+      "tags": "vermont,costs,business_license,home_improvement,trade_licenses,competitive_insurance,low_costs",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1203,
+      "question": "What is the timeline for getting a contractor license in Vermont?",
+      "answer": "Vermont contractor setup timelines are efficient with municipal business licenses processing in 1-2 weeks. Home improvement registration takes 2-3 weeks and trade licenses require 2-4 weeks with examinations. Plan for 1-4 weeks total for most contractor setups.",
+      "category": "timeline",
+      "state": "VT",
+      "tags": "vermont,timeline,efficient_processing,municipal,home_improvement,trade_licenses",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1204,
+      "question": "What are the step-by-step process requirements for Vermont contractor licensing?",
+      "answer": "Vermont contractor setup: 1) Determine municipal requirements, 2) Obtain local business licenses, 3) Register as home improvement contractor if applicable ($200), 4) Obtain required trade licenses, 5) Secure insurance coverage, 6) Register with Vermont Department of Taxes, 7) Obtain project permits.",
+      "category": "state_requirements",
+      "state": "VT",
+      "tags": "vermont,process_steps,municipal,home_improvement,trade_licenses,insurance,permits",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1205,
+      "question": "What special considerations apply to Vermont contractor licensing?",
+      "answer": "Vermont has harsh winter conditions with very short construction seasons and environmental regulations are strict for forest and waterway projects. Vacation home market creates seasonal demand fluctuations. Small population limits market size but reduces competition. Green building incentives encourage sustainable practices.",
+      "category": "state_requirements",
+      "state": "VT",
+      "tags": "vermont,special_considerations,harsh_winters,environmental_strict,vacation_homes,small_population,green_building",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1206,
+      "question": "What are the basic contractor license requirements in Virginia?",
+      "answer": "Virginia requires contractor licensing for projects over $1,000. General contractor license requires 3 years experience plus passing business and law exam. Must be 18+ years old, have Virginia business registration, and carry liability insurance. Background check and financial statement required.",
+      "category": "state_requirements",
+      "state": "VA",
+      "tags": "virginia,basic_requirements,experience,exam,business_registration,financial_statement",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1207,
+      "question": "What are the costs for getting a contractor license in Virginia?",
+      "answer": "Virginia contractor license costs include $390 application fee, $50 examination fee, and $50,000 surety bond for general contractors. Total initial costs range from $600-900 plus bond premiums with $290 biennial renewal and mandatory continuing education requirements.",
+      "category": "costs",
+      "state": "VA",
+      "tags": "virginia,costs,application_fee,exam_fee,surety_bond,biennial_renewal,continuing_education",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1208,
+      "question": "What is the timeline for getting a contractor license in Virginia?",
+      "answer": "Virginia contractor license process takes 6-8 weeks from application to approval. Exam scheduling available monthly with 4-5 week wait times due to high demand and background check takes 3-4 weeks. Plan for 8-10 weeks total including preparation and continuing education completion.",
+      "category": "timeline",
+      "state": "VA",
+      "tags": "virginia,timeline,processing_time,exam_scheduling,high_demand,continuing_education",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1209,
+      "question": "What are the step-by-step process requirements for Virginia contractor licensing?",
+      "answer": "Virginia contractor licensing: 1) Meet experience requirements (3 years), 2) Obtain Virginia business registration, 3) Complete application with $390 fee, 4) Submit financial statement and references, 5) Schedule and pass business/law exam ($50), 6) Complete continuing education requirements, 7) Obtain $50,000 surety bond, 8) Provide insurance certificates, 9) Complete background check, 10) Receive license approval.",
+      "category": "state_requirements",
+      "state": "VA",
+      "tags": "virginia,process_steps,business_registration,financial_statement,exam,continuing_education,surety_bond",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1210,
+      "question": "What special considerations apply to Virginia contractor licensing?",
+      "answer": "Virginia's proximity to Washington DC creates federal contracting opportunities requiring security clearances. Historic areas like Colonial Williamsburg have strict preservation requirements and rapid population growth in Northern Virginia creates opportunities but intense competition. Military bases create specialized construction demands.",
+      "category": "state_requirements",
+      "state": "VA",
+      "tags": "virginia,special_considerations,federal_contracting,historic_preservation,population_growth,military_bases",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1211,
+      "question": "What are the basic contractor license requirements in Washington?",
+      "answer": "Washington requires contractor licensing for projects over $1,000. General contractor license requires 4 years experience plus passing business and law exam. Must be 18+ years old, have Washington business registration, and carry liability insurance. Background check and continuing education required.",
+      "category": "state_requirements",
+      "state": "WA",
+      "tags": "washington,basic_requirements,experience,exam,business_registration,continuing_education",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1212,
+      "question": "What are the costs for getting a contractor license in Washington?",
+      "answer": "Washington contractor license costs include $75 application fee, $50 examination fee, and $12,000 surety bond for general contractors. Total initial costs range from $200-400 plus bond premiums with $50 annual renewal and mandatory continuing education requirements.",
+      "category": "costs",
+      "state": "WA",
+      "tags": "washington,costs,application_fee,exam_fee,surety_bond,annual_renewal,continuing_education",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1213,
+      "question": "What is the timeline for getting a contractor license in Washington?",
+      "answer": "Washington contractor license process takes 4-6 weeks from application to approval. Exam scheduling available monthly with 3-4 week wait times and background check takes 2-3 weeks. Plan for 6-8 weeks total including preparation time and continuing education completion.",
+      "category": "timeline",
+      "state": "WA",
+      "tags": "washington,timeline,processing_time,exam_scheduling,background_check,continuing_education",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1214,
+      "question": "What are the step-by-step process requirements for Washington contractor licensing?",
+      "answer": "Washington contractor licensing: 1) Meet experience requirements (4 years), 2) Obtain Washington business registration, 3) Complete application with $75 fee, 4) Schedule and pass business/law exam ($50), 5) Complete continuing education requirements, 6) Obtain $12,000 surety bond, 7) Provide insurance certificates, 8) Complete background check, 9) Receive license approval.",
+      "category": "state_requirements",
+      "state": "WA",
+      "tags": "washington,process_steps,business_registration,exam,continuing_education,surety_bond,insurance",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1215,
+      "question": "What special considerations apply to Washington contractor licensing?",
+      "answer": "Washington has diverse climate from coast to mountains with strict environmental regulations especially for forest and waterway projects. Seattle's tech boom creates commercial construction opportunities and strong green building incentives encourage sustainable practices. No state income tax attracts contractors but high cost of living affects pricing.",
+      "category": "state_requirements",
+      "state": "WA",
+      "tags": "washington,special_considerations,diverse_climate,environmental_strict,tech_boom,green_building,no_income_tax",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1216,
+      "question": "What are the basic contractor license requirements in West Virginia?",
+      "answer": "West Virginia requires contractor licensing for projects over $2,500. General contractor license requires 2 years experience plus passing business and law exam. Must be 18+ years old, have West Virginia business registration, and carry liability insurance. Background check and financial capacity statement required.",
+      "category": "state_requirements",
+      "state": "WV",
+      "tags": "west_virginia,basic_requirements,experience,exam,business_registration,financial_capacity",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1217,
+      "question": "What are the costs for getting a contractor license in West Virginia?",
+      "answer": "West Virginia contractor license costs include $150 application fee, $50 examination fee, and $10,000 surety bond for general contractors. Total initial costs range from $300-500 plus bond premiums with $75 annual renewal and no continuing education required.",
+      "category": "costs",
+      "state": "WV",
+      "tags": "west_virginia,costs,application_fee,exam_fee,surety_bond,annual_renewal,no_continuing_education",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1218,
+      "question": "What is the timeline for getting a contractor license in West Virginia?",
+      "answer": "West Virginia contractor license process takes 3-4 weeks from application to approval. Exam scheduling available monthly with 2-3 week wait times and background check takes 2 weeks. Plan for 4-5 weeks total including preparation time and documentation gathering.",
+      "category": "timeline",
+      "state": "WV",
+      "tags": "west_virginia,timeline,processing_time,exam_scheduling,background_check,preparation",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1219,
+      "question": "What are the step-by-step process requirements for West Virginia contractor licensing?",
+      "answer": "West Virginia contractor licensing: 1) Meet experience requirements (2 years), 2) Obtain West Virginia business registration, 3) Complete application with $150 fee, 4) Submit financial capacity statement, 5) Schedule and pass business/law exam ($50), 6) Obtain $10,000 surety bond, 7) Provide insurance certificates, 8) Complete background check, 9) Receive license approval.",
+      "category": "state_requirements",
+      "state": "WV",
+      "tags": "west_virginia,process_steps,business_registration,financial_capacity,exam,surety_bond,insurance",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1220,
+      "question": "What special considerations apply to West Virginia contractor licensing?",
+      "answer": "West Virginia's mountainous terrain creates challenging construction conditions and coal industry decline creates opportunities in environmental remediation and site redevelopment. Limited population affects market size but reduces competition. Energy sector including natural gas creates specialized industrial opportunities.",
+      "category": "state_requirements",
+      "state": "WV",
+      "tags": "west_virginia,special_considerations,mountainous_terrain,coal_decline,environmental_remediation,energy_sector",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1221,
+      "question": "What are the basic contractor license requirements in Wisconsin?",
+      "answer": "Wisconsin has no state-wide general contractor licensing requirement. Milwaukee and Madison require business licenses for contractors. Specific trades are regulated at state level and dwelling contractor registration is available but not required for residential work. Public works requires separate qualification.",
+      "category": "state_requirements",
+      "state": "WI",
+      "tags": "wisconsin,basic_requirements,no_state_licensing,milwaukee,madison,trades,dwelling_contractor",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1222,
+      "question": "What are the costs for getting a contractor license in Wisconsin?",
+      "answer": "Wisconsin contractor costs include municipal business license fees ranging from $50-300 annually. Trade-specific licenses range from $100-500 and dwelling contractor registration costs $200. Total costs typically range from $200-1,000 depending on location and specialization.",
+      "category": "costs",
+      "state": "WI",
+      "tags": "wisconsin,costs,business_license,trade_licenses,dwelling_contractor,municipal_variance",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1223,
+      "question": "What is the timeline for getting a contractor license in Wisconsin?",
+      "answer": "Wisconsin contractor setup timelines are efficient with municipal business licenses processing in 1-3 weeks. Trade licenses take 2-4 weeks with examinations and dwelling contractor registration takes 2-3 weeks. Plan for 1-4 weeks total for most contractor setups.",
+      "category": "timeline",
+      "state": "WI",
+      "tags": "wisconsin,timeline,efficient_processing,municipal,trade_licenses,dwelling_contractor",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1224,
+      "question": "What are the step-by-step process requirements for Wisconsin contractor licensing?",
+      "answer": "Wisconsin contractor setup: 1) Determine municipal requirements for work locations, 2) Obtain local business licenses, 3) Consider dwelling contractor registration ($200), 4) Obtain required trade licenses, 5) Secure insurance coverage, 6) Register with Wisconsin Department of Revenue, 7) Obtain project permits.",
+      "category": "state_requirements",
+      "state": "WI",
+      "tags": "wisconsin,process_steps,municipal,dwelling_contractor,trade_licenses,insurance,permits",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1225,
+      "question": "What special considerations apply to Wisconsin contractor licensing?",
+      "answer": "Wisconsin has harsh winter conditions affecting construction seasons and Great Lakes access creates opportunities for marine construction. Manufacturing base provides industrial construction opportunities and dairy industry creates specialized agricultural facility needs. Environmental regulations are strict for waterway projects.",
+      "category": "state_requirements",
+      "state": "WI",
+      "tags": "wisconsin,special_considerations,harsh_winters,great_lakes,manufacturing,dairy_industry,environmental",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 1226,
+      "question": "What are the basic contractor license requirements in Wyoming?",
+      "answer": "Wyoming has no state-wide general contractor licensing requirement. Some cities like Cheyenne and Casper require business licenses for contractors. Specific trades are regulated at state level and public works contractors need prequalification for state projects. Professional engineer stamps required for structural work.",
+      "category": "state_requirements",
+      "state": "WY",
+      "tags": "wyoming,basic_requirements,no_state_licensing,municipal,trades,public_works,engineer_stamp",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1227,
+      "question": "What are the costs for getting a contractor license in Wyoming?",
+      "answer": "Wyoming contractor costs consist of municipal business license fees ranging from $50-200 annually. Trade-specific licenses range from $100-400 and public works prequalification costs $150-300. Total costs typically range from $150-600 depending on scope with no state income tax reducing overall business costs.",
+      "category": "costs",
+      "state": "WY",
+      "tags": "wyoming,costs,business_license,trade_licenses,public_works,no_income_tax,low_costs",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1228,
+      "question": "What is the timeline for getting a contractor license in Wyoming?",
+      "answer": "Wyoming contractor setup timelines are efficient with municipal business licenses processing in 1-2 weeks. Trade licenses take 2-4 weeks with examinations and public works prequalification takes 3-4 weeks. Plan for 1-4 weeks total for most contractor business establishment.",
+      "category": "timeline",
+      "state": "WY",
+      "tags": "wyoming,timeline,efficient_processing,municipal,trade_licenses,public_works",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1229,
+      "question": "What are the step-by-step process requirements for Wyoming contractor licensing?",
+      "answer": "Wyoming contractor setup: 1) Determine municipal requirements for work locations, 2) Obtain local business licenses, 3) Obtain required trade licenses, 4) Consider public works prequalification, 5) Secure insurance coverage, 6) Register with Wyoming Department of Revenue, 7) Obtain project permits with emphasis on local compliance.",
+      "category": "state_requirements",
+      "state": "WY",
+      "tags": "wyoming,process_steps,municipal,trade_licenses,public_works,insurance,permits",
+      "priority": "high",
+      "difficulty": "basic"
+    },
+    {
+      "id": 1230,
+      "question": "What special considerations apply to Wyoming contractor licensing?",
+      "answer": "Wyoming has harsh weather conditions with short construction seasons and oil and gas industry creates specialized opportunities requiring safety certifications. Agricultural construction is significant market and wind energy projects require specific expertise. No state income tax and low population create unique business advantages but limited market size.",
+      "category": "state_requirements",
+      "state": "WY",
+      "tags": "wyoming,special_considerations,harsh_weather,oil_gas_industry,agricultural,wind_energy,no_income_tax",
+      "priority": "high",
+      "difficulty": "intermediate"
+    }
+  ]
+}

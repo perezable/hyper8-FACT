@@ -1,0 +1,221 @@
+{
+  "metadata": {
+    "test_date": "2025-09-14T13:43:21.237034",
+    "knowledge_base_entries": 1347,
+    "total_questions": 25
+  },
+  "summary": {
+    "avg_score": 0.0,
+    "success_rate": 100.0,
+    "grade": "F"
+  },
+  "persona_scores": {
+    "price_conscious": 0.0,
+    "overwhelmed_veteran": 0.0,
+    "skeptical_researcher": 0.0,
+    "time_pressed": 0.0,
+    "ambitious_entrepreneur": 0.0
+  },
+  "results": [
+    {
+      "question": "What's the cheapest state to get a contractor license?",
+      "answer": "",
+      "latency": 396.62694931030273,
+      "status": "success",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "How much does a Florida contractor license cost?",
+      "answer": "",
+      "latency": 249.88222122192383,
+      "status": "success",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "Are there payment plans available?",
+      "answer": "",
+      "latency": 546.550989151001,
+      "status": "success",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What financing options does CLP offer?",
+      "answer": "",
+      "latency": 411.9091033935547,
+      "status": "success",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What's the ROI on getting licensed?",
+      "answer": "",
+      "latency": 248.25191497802734,
+      "status": "success",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "I don't know where to start - can you help?",
+      "answer": "",
+      "latency": 265.200138092041,
+      "status": "success",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What documents do I need?",
+      "answer": "",
+      "latency": 223.0830192565918,
+      "status": "success",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Can you walk me through the process step by step?",
+      "answer": "",
+      "latency": 193.32599639892578,
+      "status": "success",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What if I fail the exam?",
+      "answer": "",
+      "latency": 244.215726852417,
+      "status": "success",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Is there a checklist I can follow?",
+      "answer": "",
+      "latency": 244.1239356994629,
+      "status": "success",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What's your success rate?",
+      "answer": "",
+      "latency": 194.87309455871582,
+      "status": "success",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "How many contractors have you helped?",
+      "answer": "",
+      "latency": 199.03302192687988,
+      "status": "success",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What states accept NASCLA?",
+      "answer": "",
+      "latency": 237.99490928649902,
+      "status": "success",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What are the exact requirements for California?",
+      "answer": "",
+      "latency": 229.07590866088867,
+      "status": "success",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What's the penalty for unlicensed work?",
+      "answer": "",
+      "latency": 225.77786445617676,
+      "status": "success",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What's the fastest way to get licensed?",
+      "answer": "",
+      "latency": 280.9441089630127,
+      "status": "success",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Can I expedite the process?",
+      "answer": "",
+      "latency": 247.54667282104492,
+      "status": "success",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Which state is quickest?",
+      "answer": "",
+      "latency": 222.78404235839844,
+      "status": "success",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How fast with reciprocity?",
+      "answer": "",
+      "latency": 261.2481117248535,
+      "status": "success",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What about emergency licensing?",
+      "answer": "",
+      "latency": 251.86395645141602,
+      "status": "success",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How do I get licensed in multiple states?",
+      "answer": "",
+      "latency": 252.59685516357422,
+      "status": "success",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "What's the best license for growth?",
+      "answer": "",
+      "latency": 203.38726043701172,
+      "status": "success",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Can I qualify other companies?",
+      "answer": "",
+      "latency": 286.09275817871094,
+      "status": "success",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "How do I maximize income?",
+      "answer": "",
+      "latency": 266.30473136901855,
+      "status": "success",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "What about government contracts?",
+      "answer": "",
+      "latency": 241.2240505218506,
+      "status": "success",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    }
+  ]
+}

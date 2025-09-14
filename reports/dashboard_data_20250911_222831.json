@@ -1,0 +1,78 @@
+{
+  "timestamp": "2025-09-11T22:28:31.636287",
+  "summary_metrics": {
+    "pass_rate": 0.785,
+    "avg_score": 0.742,
+    "total_responses": 200,
+    "grade_distribution": {
+      "A+": 22,
+      "A": 35,
+      "B+": 41,
+      "B": 38,
+      "C+": 28,
+      "C": 18,
+      "D": 12,
+      "F": 6
+    }
+  },
+  "alerts": [
+    {
+      "level": "critical",
+      "title": "Missing state-specific regulations for smaller sta...",
+      "category": "knowledge_gap",
+      "impact_score": 0.84
+    },
+    {
+      "level": "high",
+      "title": "Poor semantic matching for complex regulatory quer...",
+      "category": "semantic_failure",
+      "impact_score": 0.73
+    },
+    {
+      "level": "high",
+      "title": "Response time degradation for regulation category ...",
+      "category": "performance_issue",
+      "impact_score": 0.67
+    }
+  ],
+  "kpis": {
+    "overall_pass_rate": 0.785,
+    "avg_response_time": 238.4,
+    "category_coverage": 6,
+    "state_coverage": 6,
+    "critical_issues": 2,
+    "improvement_opportunities": 12
+  },
+  "trends": {
+    "top_performing_categories": [
+      "licensing",
+      "renewals",
+      "continuing_education"
+    ],
+    "underperforming_categories": [
+      "regulations",
+      "compliance",
+      "exams"
+    ],
+    "high_coverage_states": [
+      "CA",
+      "TX",
+      "FL",
+      "NY"
+    ],
+    "low_coverage_states": [
+      "WA",
+      "CO",
+      "AZ"
+    ]
+  },
+  "charts_data": {
+    "has_charts": false,
+    "chart_descriptions": {
+      "score_distribution": "Normal distribution centered around 0.74",
+      "category_heatmap": "Licensing and renewals performing best",
+      "response_time_distribution": "Most responses 150-300ms, regulation queries slower",
+      "state_analysis": "Major states well covered, smaller states need attention"
+    }
+  }
+}

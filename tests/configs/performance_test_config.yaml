@@ -1,0 +1,71 @@
+# Performance Testing Configuration for FACT System
+# High-load testing configuration for performance analysis
+
+# Environment settings
+environment: performance
+database_url: sqlite:///data/fact_system.db
+api_base_url: http://localhost:8000
+vapi_webhook_url: http://localhost:8000/vapi/webhook
+
+# High-performance test execution settings
+max_concurrent_tests: 25
+request_timeout: 15
+max_retries: 2
+retry_delay: 0.5
+requests_per_second: 25.0  # High throughput for stress testing
+
+# Query methods to test
+query_methods:
+  - database
+  - vapi
+  - api
+
+# Large test dataset for performance testing
+test_question_count: 500
+questions_per_batch: 100
+
+# Strict performance thresholds
+max_response_time_ms: 1500.0  # Strict latency requirement
+min_accuracy_threshold: 0.8
+max_error_rate: 0.05
+
+# Output settings
+output_dir: test_results/performance
+detailed_logging: true
+export_raw_data: true
+
+# Question generation settings - focus on common scenarios
+question_categories:
+  - state_licensing_requirements  # 40% - most common
+  - exam_preparation_testing      # 20%
+  - financial_planning_roi        # 15%
+  - business_formation_operations # 10%
+  - insurance_bonding            # 10%
+  - troubleshooting_problem_resolution # 5%
+
+difficulty_distribution:
+  easy: 0.5    # Focus on common, easy questions
+  medium: 0.4
+  hard: 0.1
+
+# Performance testing specific settings
+enable_debug_logging: false
+save_failed_queries: true
+generate_detailed_reports: true
+monitor_resource_usage: true
+
+# Performance monitoring
+collect_memory_usage: true
+collect_cpu_usage: true
+generate_performance_charts: true
+
+# Load testing patterns
+load_pattern: constant  # constant, ramp_up, spike, burst
+ramp_up_duration: 60    # seconds to reach max load
+spike_multiplier: 2.0   # multiplier for spike tests
+burst_frequency: 30     # seconds between bursts
+
+# Resource limits
+max_memory_usage_mb: 1000
+max_cpu_usage_percent: 80
+warn_on_resource_exhaustion: true

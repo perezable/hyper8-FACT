@@ -1,0 +1,1877 @@
+{
+  "metadata": {
+    "test_date": "2025-09-14T13:27:48.328154",
+    "knowledge_base_entries": 1347,
+    "total_questions": 200,
+    "railway_url": "https://hyper8-fact-fact-system.up.railway.app"
+  },
+  "summary": {
+    "total_questions": 200,
+    "successful_queries": 0,
+    "failed_queries": 200,
+    "success_rate": 0.0,
+    "avg_score": 0,
+    "median_score": 0.0,
+    "avg_latency": 0,
+    "median_latency": 0
+  },
+  "persona_stats": {
+    "price_conscious": {
+      "total_questions": 40,
+      "successful": 0,
+      "failed": 40,
+      "avg_score": 0,
+      "median_score": 0.0,
+      "min_score": 0,
+      "max_score": 0,
+      "avg_latency": 0,
+      "success_rate": 0.0
+    },
+    "overwhelmed_veteran": {
+      "total_questions": 40,
+      "successful": 0,
+      "failed": 40,
+      "avg_score": 0,
+      "median_score": 0.0,
+      "min_score": 0,
+      "max_score": 0,
+      "avg_latency": 0,
+      "success_rate": 0.0
+    },
+    "skeptical_researcher": {
+      "total_questions": 40,
+      "successful": 0,
+      "failed": 40,
+      "avg_score": 0,
+      "median_score": 0.0,
+      "min_score": 0,
+      "max_score": 0,
+      "avg_latency": 0,
+      "success_rate": 0.0
+    },
+    "time_pressed": {
+      "total_questions": 40,
+      "successful": 0,
+      "failed": 40,
+      "avg_score": 0,
+      "median_score": 0.0,
+      "min_score": 0,
+      "max_score": 0,
+      "avg_latency": 0,
+      "success_rate": 0.0
+    },
+    "ambitious_entrepreneur": {
+      "total_questions": 40,
+      "successful": 0,
+      "failed": 40,
+      "avg_score": 0,
+      "median_score": 0.0,
+      "min_score": 0,
+      "max_score": 0,
+      "avg_latency": 0,
+      "success_rate": 0.0
+    }
+  },
+  "all_results": [
+    {
+      "question": "What's the cheapest state to get a contractor license?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 355.2742004394531,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "How much does a Florida contractor license cost total?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 308.1510066986084,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "Are there payment plans available for licensing fees?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 327.53491401672363,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What financing options does CLP offer?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 335.73102951049805,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "How much is the California contractor bond?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 355.4401397705078,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What's the cost difference between LLC and sole proprietor licensing?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 54.89087104797363,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "Can I get a discount for multiple state licenses?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 52.606821060180664,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What are the hidden fees in contractor licensing?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 54.19182777404785,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "How much does license renewal cost?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 36.76795959472656,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What's the ROI on getting licensed?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 54.86798286437988,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "Are there any states with no licensing fees?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 54.61907386779785,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "How much do exam retakes cost?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 50.29296875,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What's the average cost across all states?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.41404342651367,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "Can I deduct licensing costs on taxes?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.156789779663086,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "How much does workers comp insurance cost?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 35.85100173950195,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What's the cheapest bond option?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 53.67088317871094,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "Do veterans get discounts?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 48.866987228393555,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What payment methods are accepted?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.46005821228027,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "How much does the NASCLA exam cost?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 43.46895217895508,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What's included in the $1,400 CLP fee?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 36.59987449645996,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "Are state fees marked up?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 56.236982345581055,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "Can I pay monthly instead of upfront?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.57294464111328,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What's the total cost for Texas licensing?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 45.17698287963867,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "How much for registered agent service?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 43.60318183898926,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What are continuing education costs?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 35.66789627075195,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "Is there a money-back guarantee?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 53.84707450866699,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "How much to add a second classification?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 58.423757553100586,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What's the cost for reciprocity applications?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 46.636104583740234,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "Do prices include everything?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 46.09203338623047,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "How much is rush processing?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 36.91697120666504,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What credit score is needed for financing?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 55.228233337402344,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "Are there setup fees for payment plans?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 51.86104774475098,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "How much does bad credit increase costs?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.78597640991211,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What's the penalty for late renewal?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.33894157409668,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "Can I get a refund if I fail?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 36.57341003417969,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "How much do background checks cost?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 52.85501480102539,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What's the fee for qualifier placement?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 54.91924285888672,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "Are travel expenses covered?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 51.846981048583984,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "How much for priority support?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 51.49269104003906,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "What's the average monthly payment with financing?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 38.78593444824219,
+      "status": "error",
+      "score": 0,
+      "persona": "price_conscious"
+    },
+    {
+      "question": "I don't know where to start - can you help?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 50.24003982543945,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What documents do I need?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 47.477006912231445,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Can you walk me through the process step by step?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 41.525840759277344,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Is this really complicated?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 42.23895072937012,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What if I fail the exam?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 33.386945724487305,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "How do I know which license I need?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.28708076477051,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Can someone help me with paperwork?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 47.255754470825195,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "I'm confused about requirements - help?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 47.07813262939453,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Do I need a lawyer?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 47.93405532836914,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What's the first step?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 39.07012939453125,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "How long will this take?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 53.04288864135742,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Can I do this myself?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 53.95388603210449,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What if I make a mistake?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 52.024126052856445,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Who can I call for help?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 53.769826889038086,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Is there a checklist I can follow?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 35.910844802856445,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What's the easiest state to get licensed?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.475669860839844,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Can you simplify the process for me?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 48.9499568939209,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Do I need experience?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.394845962524414,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What if I don't have all documents?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 48.696041107177734,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Can military experience count?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 36.49091720581055,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "How do I prove my experience?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 52.57582664489746,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What's a qualifying agent?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.3319034576416,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Do I need insurance first?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.20113563537598,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Can I work while waiting?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 43.975114822387695,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What if I have bad credit?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 36.956071853637695,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Do I need a business entity?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 48.65908622741699,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What's the difference between licenses?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 47.31297492980957,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "How do I prepare for the exam?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 42.099952697753906,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What if English isn't my first language?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 42.76394844055176,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Can family help with application?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 32.835960388183594,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What support is available?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.94988441467285,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "How many people fail first time?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 46.92697525024414,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What's the hardest part?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 46.60987854003906,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Can I change license type later?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 45.96996307373047,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Do I need a computer?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 39.39199447631836,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What if I have a criminal record?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 55.25994300842285,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "How do I find study materials?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 48.974037170410156,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Can I take breaks during exam?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 47.84989356994629,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What happens after I pass?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 46.83399200439453,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "Is there ongoing help after licensing?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 35.23612022399902,
+      "status": "error",
+      "score": 0,
+      "persona": "overwhelmed_veteran"
+    },
+    {
+      "question": "What's your success rate?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 53.12514305114746,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "How many contractors have you helped?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.926042556762695,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What states accept NASCLA?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 45.340776443481445,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What are the exact requirements for California?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.49892044067383,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "How long have you been in business?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 35.27188301086426,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What's your BBB rating?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 54.780006408691406,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "Can I see testimonials?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 48.37822914123535,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What's the first-time pass rate?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 45.111894607543945,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "How do you compare to competitors?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 43.90287399291992,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What are the legal requirements?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 33.75411033630371,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "Is this legitimate?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 53.933143615722656,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What happens if you make an error?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 50.1708984375,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "Do you have insurance?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 45.61424255371094,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What's your refund policy?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.835805892944336,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "Can I verify your credentials?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 42.04702377319336,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What states have reciprocity?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 56.752920150756836,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What's the penalty for unlicensed work?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 54.85796928405762,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "How current is your information?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.8153018951416,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What percentage need retakes?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.718027114868164,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "Do you guarantee approval?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 36.035776138305664,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What's your average processing time?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 52.510976791381836,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "How many states do you cover?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 56.89692497253418,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What's not included in your service?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.68083381652832,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "Can I see a sample application?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.49820518493652,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What are common rejection reasons?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 37.149906158447266,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "How do you protect my information?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 50.926923751831055,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What's your physical address?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 50.69422721862793,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "Can I speak to previous clients?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 50.00185966491699,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What professional associations are you in?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.50523376464844,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "How do you stay updated on laws?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 40.90595245361328,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What's your error rate?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 52.19697952270508,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "Do you have E&O insurance?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 45.81594467163086,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What training do your staff have?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 51.71608924865723,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "Can I see your business license?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 43.9610481262207,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "How many applications get rejected?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 34.526824951171875,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What's the average time to license?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 47.64199256896973,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "Do you work with all boards?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 50.06217956542969,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What if requirements change?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 42.26517677307129,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "Can you provide references?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 42.04702377319336,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What's your complaint history?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 34.950971603393555,
+      "status": "error",
+      "score": 0,
+      "persona": "skeptical_researcher"
+    },
+    {
+      "question": "What's the fastest way to get licensed?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.8957633972168,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Can I expedite the process?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 47.71709442138672,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How quickly can I start working?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 45.479774475097656,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What's the shortest timeline?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 45.3948974609375,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Can I fast-track my application?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 35.63070297241211,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Which state is quickest?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 50.865888595581055,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How fast with reciprocity?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 54.36301231384277,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Can I work before license arrives?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 45.07279396057129,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What about emergency licensing?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.80481147766113,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How quick is renewal?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 41.3661003112793,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Can I get same-day approval?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 47.92022705078125,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What's rush processing time?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 48.81620407104492,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How fast can I schedule exam?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 42.54889488220215,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What if I need license tomorrow?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 40.7559871673584,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Can you expedite paperwork?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 40.67707061767578,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What's priority processing?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 50.7509708404541,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How long for temp license?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 52.5209903717041,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Fastest state for veterans?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.59118843078613,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Can I start bidding immediately?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 43.39718818664551,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What's electronic filing time?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 33.52999687194824,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How quick is online exam?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 56.989192962646484,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Can I skip waiting periods?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 56.79917335510254,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What about provisional licenses?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 42.75393486022949,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How fast is qualifier placement?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 43.653011322021484,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Can multiple states be done together?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 39.26706314086914,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What's weekend processing like?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 46.89311981201172,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How quick for second license?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 50.657033920288086,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Can I pay for faster service?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 43.65396499633789,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What's holiday processing time?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 43.601036071777344,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How fast is reciprocity?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 36.0713005065918,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Can exam be waived?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 51.00297927856445,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What's digital license time?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 46.97871208190918,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How quick with perfect paperwork?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 46.50592803955078,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Can board meetings be expedited?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 46.521902084350586,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What about emergency projects?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 38.25116157531738,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How fast for simple renewal?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.85785484313965,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "Can I get temporary approval?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 48.66218566894531,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What's the fastest you've done?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.651031494140625,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How quick for LLC formation?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.52919960021973,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "What if I have a deadline?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 40.20404815673828,
+      "status": "error",
+      "score": 0,
+      "persona": "time_pressed"
+    },
+    {
+      "question": "How do I get licensed in multiple states?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 51.19514465332031,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "What's the best license for growth?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 48.175811767578125,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Can I qualify other companies?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 45.85123062133789,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "How do I maximize income?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 45.35865783691406,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "What about nationwide licensing?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 42.25301742553711,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Best states for contractors?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.848079681396484,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "How to build a contractor empire?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.14593696594238,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "What licenses command highest fees?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 45.28689384460449,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Can I get all specialty licenses?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.41714286804199,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "What about government contracts?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 35.21895408630371,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "How to become a GC?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 51.89990997314453,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Best license for commercial work?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 51.12791061401367,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Can I broker licenses?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 50.811052322387695,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "What's qualifier income potential?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 50.522804260253906,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "How to expand quickly?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.2701530456543,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Best reciprocity strategy?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 51.23114585876465,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Can I franchise with license?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 48.03133010864258,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "What about international work?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.2202091217041,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "How to get federal contracts?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.020891189575195,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Best license combinations?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 40.45367240905762,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Can I sell my license?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 52.69765853881836,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "What about license leasing?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 55.66525459289551,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "How to get on state boards?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 45.37200927734375,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Best markets for contractors?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 43.50590705871582,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Can I mentor others?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 37.94527053833008,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "What's the most valuable license?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.97706413269043,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "How to become preferred contractor?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 51.95307731628418,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Best insurance for growth?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 51.51510238647461,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Can I get investor funding?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 50.254106521606445,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "What about contractor associations?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 36.37886047363281,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "How to get union contracts?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.95298385620117,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Best CRM for contractors?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.63005065917969,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Can I automate licensing?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.352054595947266,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "What about contractor coaching?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 48.630714416503906,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "How to build contractor network?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 35.9041690826416,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Best exit strategy?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 56.491851806640625,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Can I go public?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 49.53503608703613,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "What about acquisition targets?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.69609260559082,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "How to value contractor business?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 44.05975341796875,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    },
+    {
+      "question": "Best growth markets 2024?",
+      "answer": "",
+      "error": "HTTP 422",
+      "latency": 37.9178524017334,
+      "status": "error",
+      "score": 0,
+      "persona": "ambitious_entrepreneur"
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "persona": "Overwhelmed Veteran",
+  "description": "Complex situation customers needing guidance and step-by-step support",
+  "content": [
+    {
+      "id": "ov001",
+      "type": "getting_started",
+      "title": "Where to Start: Your First Step Guide",
+      "content": "Feeling overwhelmed? Start here: 1) Choose your state (we recommend Delaware for most), 2) Pick your business name, 3) We handle everything else. Simple.",
+      "tags": ["getting_started", "simple", "guidance"],
+      "value_prop": "Clear starting point"
+    },
+    {
+      "id": "ov002",
+      "type": "step_by_step",
+      "title": "Complete LLC Formation Checklist",
+      "content": "✓ Choose state ✓ Name availability ✓ Select package ✓ Provide info ✓ We file ✓ You receive docs ✓ Open bank account ✓ Start business. Done.",
+      "tags": ["checklist", "complete", "process"],
+      "value_prop": "Clear roadmap"
+    },
+    {
+      "id": "ov003",
+      "type": "document_list",
+      "title": "All Documents You'll Receive",
+      "content": "1) Certificate of Formation 2) Operating Agreement 3) EIN Letter 4) Registered Agent Agreement 5) Banking Resolution 6) Compliance Calendar",
+      "tags": ["documents", "list", "comprehensive"],
+      "value_prop": "Know what to expect"
+    },
+    {
+      "id": "ov004",
+      "type": "support_options",
+      "title": "Multiple Support Channels Available",
+      "content": "Stuck? Get help via: Phone (business hours), Email (24h response), Live Chat, Video calls, or screen sharing. We're here.",
+      "tags": ["support", "channels", "help"],
+      "value_prop": "Always available help"
+    },
+    {
+      "id": "ov005",
+      "type": "simplified_explanation",
+      "title": "LLC in Plain English",
+      "content": "Think of LLC like a shield around your business. It protects your personal stuff from business problems. That's it. Simple protection.",
+      "tags": ["simplified", "plain_english", "concept"],
+      "value_prop": "Easy understanding"
+    },
+    {
+      "id": "ov006",
+      "type": "state_selection_help",
+      "title": "State Selection Made Simple",
+      "content": "Can't decide on state? 90% of our clients choose: Delaware (best protection), Wyoming (cheapest), or their home state (simplest). We'll recommend.",
+      "tags": ["state_selection", "recommendations", "guidance"],
+      "value_prop": "Expert recommendations"
+    },
+    {
+      "id": "ov007",
+      "type": "name_help",
+      "title": "Business Name Selection Help",
+      "content": "Struggling with names? We check availability, suggest alternatives, and help you secure matching domains. Name stress eliminated.",
+      "tags": ["naming", "help", "domains"],
+      "value_prop": "Naming made easy"
+    },
+    {
+      "id": "ov008",
+      "type": "hand_holding",
+      "title": "White Glove Hand-Holding Service",
+      "content": "Need extra help? Dedicated specialist walks you through every step personally. Available for complex situations.",
+      "tags": ["white_glove", "personal", "dedicated"],
+      "value_prop": "Personal guidance"
+    },
+    {
+      "id": "ov009",
+      "type": "common_mistakes",
+      "title": "We Prevent Common LLC Mistakes",
+      "content": "95% of DIY filers make these mistakes: Wrong registered agent, missing EIN, bad operating agreement. We prevent all of them.",
+      "tags": ["mistakes", "prevention", "expert"],
+      "value_prop": "Mistake prevention"
+    },
+    {
+      "id": "ov010",
+      "type": "timeline_clarity",
+      "title": "Clear Timeline Expectations",
+      "content": "Your LLC timeline: File today → State processes (5-15 days) → Documents arrive → Bank account opens. We update you at each step.",
+      "tags": ["timeline", "expectations", "updates"],
+      "value_prop": "Clear timing"
+    },
+    {
+      "id": "ov011",
+      "type": "decision_framework",
+      "title": "Simple Decision Framework",
+      "content": "Only 3 decisions needed: 1) State (we recommend), 2) Name (we help), 3) Package level (we advise). Everything else is automatic.",
+      "tags": ["decisions", "framework", "minimal"],
+      "value_prop": "Minimal decisions required"
+    },
+    {
+      "id": "ov012",
+      "type": "complexity_handling",
+      "title": "We Handle Complex Situations",
+      "content": "Multiple owners? Foreign residents? Existing business? Complex taxes? We've handled it all. Your situation isn't too complicated.",
+      "tags": ["complex", "situations", "experience"],
+      "value_prop": "Complexity expertise"
+    },
+    {
+      "id": "ov013",
+      "type": "educational_resources",
+      "title": "Free Educational Library",
+      "content": "Access 50+ guides: LLC basics, state comparisons, tax implications, banking setup. Learn at your own pace.",
+      "tags": ["education", "library", "self_paced"],
+      "value_prop": "Self-paced learning"
+    },
+    {
+      "id": "ov014",
+      "type": "consultation_process",
+      "title": "Free Strategy Consultation Process",
+      "content": "15-minute call covers: Your goals → Best state → Package recommendation → Next steps. No pressure, pure guidance.",
+      "tags": ["consultation", "strategy", "guidance"],
+      "value_prop": "Strategic planning"
+    },
+    {
+      "id": "ov015",
+      "type": "progress_tracking",
+      "title": "Real-Time Progress Tracking",
+      "content": "Dashboard shows exactly where your LLC stands: Submitted → Under Review → Approved → Documents Sent → Complete.",
+      "tags": ["progress", "tracking", "dashboard"],
+      "value_prop": "Transparent progress"
+    },
+    {
+      "id": "ov016",
+      "type": "question_anticipation",
+      "title": "We Answer Questions Before You Ask",
+      "content": "FAQ covers 200+ common questions. If yours isn't there, our team responds within 2 hours during business days.",
+      "tags": ["faq", "proactive", "responsive"],
+      "value_prop": "Proactive answers"
+    },
+    {
+      "id": "ov017",
+      "type": "overwhelm_solution",
+      "title": "Overwhelmed? We Simplify Everything",
+      "content": "Feeling lost? Book a 'LLC Simplification Call' - we break down your specific situation into manageable steps.",
+      "tags": ["overwhelm", "simplification", "breakdown"],
+      "value_prop": "Overwhelm relief"
+    },
+    {
+      "id": "ov018",
+      "type": "beginner_friendly",
+      "title": "Beginner-Friendly Approach",
+      "content": "Never formed an LLC? 60% of our clients haven't either. Our process is designed for first-timers. You're not alone.",
+      "tags": ["beginner", "first_time", "designed"],
+      "value_prop": "First-timer friendly"
+    },
+    {
+      "id": "ov019",
+      "type": "priority_support",
+      "title": "Priority Support for Complex Cases",
+      "content": "Multiple entities? International aspects? Get moved to front of support queue. Complex cases get priority attention.",
+      "tags": ["priority", "complex", "attention"],
+      "value_prop": "Priority handling"
+    },
+    {
+      "id": "ov020",
+      "type": "stress_elimination",
+      "title": "Stress-Free Formation Process",
+      "content": "We handle government paperwork, legal compliance, and bureaucratic hurdles. You focus on your business vision.",
+      "tags": ["stress_free", "paperwork", "compliance"],
+      "value_prop": "Stress elimination"
+    },
+    {
+      "id": "ov021",
+      "type": "mistake_insurance",
+      "title": "Mistake Insurance Coverage",
+      "content": "If we make any errors in your formation, we fix them free and cover any costs. Your peace of mind guaranteed.",
+      "tags": ["insurance", "errors", "coverage"],
+      "value_prop": "Error protection"
+    },
+    {
+      "id": "ov022",
+      "type": "guided_tour",
+      "title": "Virtual Office Tour Available",
+      "content": "Screen-share walkthrough of entire process before you start. See exactly what happens step-by-step.",
+      "tags": ["virtual_tour", "screen_share", "preview"],
+      "value_prop": "Process preview"
+    },
+    {
+      "id": "ov023",
+      "type": "information_organization",
+      "title": "We Organize All Your Information",
+      "content": "Collect documents once, use forever. We store your info securely for future business needs and expansions.",
+      "tags": ["organization", "storage", "future_use"],
+      "value_prop": "Information management"
+    },
+    {
+      "id": "ov024",
+      "type": "follow_up_care",
+      "title": "30-Day Follow-Up Care Program",
+      "content": "After formation: Week 1 check-in, Week 2 banking help, Week 4 compliance reminder. We stay with you.",
+      "tags": ["follow_up", "care", "ongoing"],
+      "value_prop": "Continued support"
+    },
+    {
+      "id": "ov025",
+      "type": "knowledge_transfer",
+      "title": "Knowledge Transfer Sessions",
+      "content": "Optional 30-minute session explaining your LLC documents, ongoing requirements, and best practices. Education included.",
+      "tags": ["knowledge", "transfer", "education"],
+      "value_prop": "Educational support"
+    },
+    {
+      "id": "ov026",
+      "type": "resource_compilation",
+      "title": "Personalized Resource Compilation",
+      "content": "Based on your business type and state, we compile specific resources, forms, and guides relevant to you.",
+      "tags": ["personalized", "resources", "relevant"],
+      "value_prop": "Customized resources"
+    },
+    {
+      "id": "ov027",
+      "type": "decision_assistance",
+      "title": "Decision Assistance Framework",
+      "content": "Can't decide between options? Our decision tree walks you through pros/cons for your specific situation.",
+      "tags": ["decision", "assistance", "framework"],
+      "value_prop": "Decision support"
+    },
+    {
+      "id": "ov028",
+      "type": "complexity_assessment",
+      "title": "Free Complexity Assessment",
+      "content": "Not sure if your situation is complex? Free 10-minute assessment determines complexity level and best approach.",
+      "tags": ["assessment", "complexity", "evaluation"],
+      "value_prop": "Situation evaluation"
+    },
+    {
+      "id": "ov029",
+      "type": "step_breakdown",
+      "title": "Each Step Broken Down Simply",
+      "content": "Every process step explained in 1-2 sentences max. No legal jargon, no confusion. Crystal clear instructions.",
+      "tags": ["breakdown", "simple", "clear"],
+      "value_prop": "Clear instructions"
+    },
+    {
+      "id": "ov030",
+      "type": "backup_plans",
+      "title": "Backup Plans for Every Scenario",
+      "content": "Name unavailable? State delays filing? Bank rejects application? We have backup plans for every common issue.",
+      "tags": ["backup", "contingency", "prepared"],
+      "value_prop": "Contingency planning"
+    },
+    {
+      "id": "ov031",
+      "type": "visual_guides",
+      "title": "Visual Step-by-Step Guides",
+      "content": "Prefer visual learning? Access flowcharts, diagrams, and video walkthroughs for every part of the process.",
+      "tags": ["visual", "diagrams", "video"],
+      "value_prop": "Visual learning"
+    },
+    {
+      "id": "ov032",
+      "type": "confidence_building",
+      "title": "Confidence Building Program",
+      "content": "Nervous about business formation? Our confidence building program walks you through success stories and outcomes.",
+      "tags": ["confidence", "building", "success"],
+      "value_prop": "Confidence boost"
+    },
+    {
+      "id": "ov033",
+      "type": "safety_net",
+      "title": "Complete Safety Net Coverage",
+      "content": "Multiple review stages ensure nothing gets missed. Every document double-checked before submission.",
+      "tags": ["safety_net", "review", "double_check"],
+      "value_prop": "Quality assurance"
+    },
+    {
+      "id": "ov034",
+      "type": "learning_path",
+      "title": "Structured Learning Path",
+      "content": "Module 1: LLC Basics → Module 2: State Selection → Module 3: Documentation → Module 4: Maintenance. Learn progressively.",
+      "tags": ["learning", "structured", "progressive"],
+      "value_prop": "Structured education"
+    },
+    {
+      "id": "ov035",
+      "type": "milestone_celebration",
+      "title": "Milestone Celebration System",
+      "content": "Each completed step gets recognized. Formation complete? We send congratulations package and next steps guide.",
+      "tags": ["milestones", "celebration", "recognition"],
+      "value_prop": "Progress recognition"
+    },
+    {
+      "id": "ov036",
+      "type": "expert_matching",
+      "title": "Expert Matching Service",
+      "content": "Complex situation? Get matched with specialist who's handled similar cases. Relevant expertise guaranteed.",
+      "tags": ["expert", "matching", "specialist"],
+      "value_prop": "Specialized expertise"
+    },
+    {
+      "id": "ov037",
+      "type": "communication_preferences",
+      "title": "Flexible Communication Preferences",
+      "content": "Prefer email? Phone? Text? Chat? We adapt to your communication style and availability schedule.",
+      "tags": ["communication", "flexible", "preferences"],
+      "value_prop": "Communication flexibility"
+    },
+    {
+      "id": "ov038",
+      "type": "information_packets",
+      "title": "Pre-organized Information Packets",
+      "content": "Based on your business type, receive pre-organized packet of relevant forms, guides, and requirements.",
+      "tags": ["packets", "organized", "relevant"],
+      "value_prop": "Organized resources"
+    },
+    {
+      "id": "ov039",
+      "type": "stress_indicators",
+      "title": "Stress Reduction Indicators",
+      "content": "We monitor for stress indicators and proactively offer additional support before you feel overwhelmed.",
+      "tags": ["stress", "indicators", "proactive"],
+      "value_prop": "Proactive support"
+    },
+    {
+      "id": "ov040",
+      "type": "success_framework",
+      "title": "Guaranteed Success Framework",
+      "content": "Follow our framework: Assessment → Planning → Execution → Review → Launch. 99.8% success rate using this method.",
+      "tags": ["framework", "success", "proven"],
+      "value_prop": "Proven methodology"
+    }
+  ]
+}

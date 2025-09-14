@@ -1,0 +1,326 @@
+{
+  "persona": "Price-Conscious Penny",
+  "description": "Budget-focused customers seeking maximum value and cost transparency",
+  "content": [
+    {
+      "id": "pp001",
+      "type": "cost_comparison",
+      "title": "State-by-State Cost Breakdown",
+      "content": "Delaware LLC: $90 state fee + $249 service = $339 total vs Nevada LLC: $425 state fee + $249 service = $674 total. Save $335 with Delaware.",
+      "tags": ["cost", "comparison", "delaware", "nevada"],
+      "value_prop": "Clear savings calculation"
+    },
+    {
+      "id": "pp002",
+      "type": "payment_plan",
+      "title": "3-Month Payment Plan Available",
+      "content": "Split your $249 service fee into 3 payments of $83/month. No interest, no credit check required. Start your LLC today for just $83 down.",
+      "tags": ["payment", "plan", "financing"],
+      "value_prop": "Affordable monthly payments"
+    },
+    {
+      "id": "pp003",
+      "type": "roi_calculation",
+      "title": "LLC Tax Savings Calculator",
+      "content": "Self-employed earning $50k/year can save $3,825 annually in self-employment taxes with LLC + S-Corp election. ROI in 3 weeks.",
+      "tags": ["roi", "tax_savings", "calculator"],
+      "value_prop": "Immediate tax benefits"
+    },
+    {
+      "id": "pp004",
+      "type": "guarantee",
+      "title": "100% Money-Back Guarantee",
+      "content": "If your LLC isn't approved by the state within 30 days, we refund 100% of your service fees. No questions asked.",
+      "tags": ["guarantee", "refund", "risk_free"],
+      "value_prop": "Zero risk guarantee"
+    },
+    {
+      "id": "pp005",
+      "type": "discount",
+      "title": "Multi-State LLC Discount",
+      "content": "Form LLCs in 2+ states and save 25% on each additional state. Perfect for expanding businesses.",
+      "tags": ["discount", "multi_state", "bulk"],
+      "value_prop": "Volume discount savings"
+    },
+    {
+      "id": "pp006",
+      "type": "hidden_fees",
+      "title": "No Hidden Fees Promise",
+      "content": "Our $249 includes everything: state filing, registered agent for 1 year, operating agreement, EIN. No surprises.",
+      "tags": ["transparency", "no_hidden_fees", "all_inclusive"],
+      "value_prop": "Complete transparency"
+    },
+    {
+      "id": "pp007",
+      "type": "cost_vs_attorney",
+      "title": "Save 85% vs Attorney Fees",
+      "content": "Attorneys charge $1,500-$3,000 for LLC formation. Our service delivers the same result for $249 - saving you $1,251+.",
+      "tags": ["attorney_comparison", "savings", "professional"],
+      "value_prop": "Professional service, fraction of cost"
+    },
+    {
+      "id": "pp008",
+      "type": "free_features",
+      "title": "Free Features Worth $300+",
+      "content": "Includes: EIN ($275 attorney value), Operating Agreement ($200 value), Registered Agent year 1 ($119 value).",
+      "tags": ["free_features", "value_added", "inclusions"],
+      "value_prop": "Massive included value"
+    },
+    {
+      "id": "pp009",
+      "type": "price_match",
+      "title": "Price Match Guarantee",
+      "content": "Find a lower price for comparable service? We'll match it plus give you an extra 10% off.",
+      "tags": ["price_match", "competitive", "guarantee"],
+      "value_prop": "Best price guaranteed"
+    },
+    {
+      "id": "pp010",
+      "type": "annual_savings",
+      "title": "Annual Business Expense Savings",
+      "content": "LLC structure can deduct home office ($1,500), business meals (50%), equipment (100%). Average savings: $4,200/year.",
+      "tags": ["annual_savings", "deductions", "tax_benefits"],
+      "value_prop": "Ongoing yearly savings"
+    },
+    {
+      "id": "pp011",
+      "type": "cheapest_states",
+      "title": "Top 5 Most Affordable States",
+      "content": "1. Delaware ($90) 2. Wyoming ($100) 3. Nevada ($425) 4. Texas ($300) 5. Florida ($125). Plus our $249 service fee.",
+      "tags": ["cheapest", "state_fees", "ranking"],
+      "value_prop": "Lowest cost options identified"
+    },
+    {
+      "id": "pp012",
+      "type": "renewal_costs",
+      "title": "Transparent Annual Renewal Costs",
+      "content": "Delaware: $300/year, Wyoming: $50/year, Nevada: $350/year. We provide 5-year cost projections upfront.",
+      "tags": ["renewal", "annual_costs", "long_term"],
+      "value_prop": "Full cost transparency"
+    },
+    {
+      "id": "pp013",
+      "type": "diy_comparison",
+      "title": "DIY vs Professional Service",
+      "content": "DIY: 8-12 hours research + $90 state fee + mistakes risk. Our service: 10 minutes + $249 + guaranteed success.",
+      "tags": ["diy", "time_value", "professional"],
+      "value_prop": "Time and error savings"
+    },
+    {
+      "id": "pp014",
+      "type": "payment_methods",
+      "title": "Flexible Payment Options",
+      "content": "Accept credit cards, debit cards, bank transfers, PayPal, and even cryptocurrency. Pay however works best for you.",
+      "tags": ["payment_methods", "flexibility", "convenience"],
+      "value_prop": "Payment convenience"
+    },
+    {
+      "id": "pp015",
+      "type": "early_bird",
+      "title": "Early Bird 15% Discount",
+      "content": "File before the 15th of any month and save 15%. Reduces service fee from $249 to $212.",
+      "tags": ["early_bird", "monthly_discount", "timing"],
+      "value_prop": "Timing-based savings"
+    },
+    {
+      "id": "pp016",
+      "type": "referral_program",
+      "title": "$50 Referral Rewards",
+      "content": "Refer friends and earn $50 credit for each successful LLC formation. They save $50 too. Win-win.",
+      "tags": ["referral", "rewards", "mutual_savings"],
+      "value_prop": "Earning opportunity"
+    },
+    {
+      "id": "pp017",
+      "type": "bulk_discount",
+      "title": "Multiple LLC Bulk Pricing",
+      "content": "2 LLCs: 10% off each, 3 LLCs: 15% off each, 4+ LLCs: 20% off each. Perfect for multiple ventures.",
+      "tags": ["bulk", "multiple_llc", "portfolio"],
+      "value_prop": "Volume discounts"
+    },
+    {
+      "id": "pp018",
+      "type": "competitor_pricing",
+      "title": "Competitor Price Comparison",
+      "content": "LegalZoom: $349+, Incfile: $299+, Nolo: $379+. We deliver same service for $249 with better support.",
+      "tags": ["competitor", "comparison", "value"],
+      "value_prop": "Best value proposition"
+    },
+    {
+      "id": "pp019",
+      "type": "student_discount",
+      "title": "Student & Military Discount",
+      "content": "Students and military personnel get 20% off service fees. Just $199 with valid ID verification.",
+      "tags": ["student", "military", "discount"],
+      "value_prop": "Special group pricing"
+    },
+    {
+      "id": "pp020",
+      "type": "seasonal_promotion",
+      "title": "Tax Season Special Pricing",
+      "content": "January-April: Extra $25 off LLC formation. Get ready for next year's tax benefits early.",
+      "tags": ["seasonal", "tax_season", "promotion"],
+      "value_prop": "Seasonal savings"
+    },
+    {
+      "id": "pp021",
+      "type": "cost_calculator",
+      "title": "Interactive Cost Calculator",
+      "content": "Enter your state and business type for exact cost breakdown. Includes all fees, taxes, and ongoing expenses.",
+      "tags": ["calculator", "interactive", "personalized"],
+      "value_prop": "Personalized cost analysis"
+    },
+    {
+      "id": "pp022",
+      "type": "financing_options",
+      "title": "Business Credit Building",
+      "content": "LLC formation helps establish business credit. Access to business loans at better rates than personal credit.",
+      "tags": ["financing", "business_credit", "loans"],
+      "value_prop": "Credit building opportunity"
+    },
+    {
+      "id": "pp023",
+      "type": "tax_deduction",
+      "title": "LLC Formation is Tax Deductible",
+      "content": "Your $249 LLC formation fee is 100% tax deductible as a business startup expense. Effective cost: ~$175.",
+      "tags": ["tax_deductible", "startup_expense", "effective_cost"],
+      "value_prop": "Tax deductible expense"
+    },
+    {
+      "id": "pp024",
+      "type": "free_consultation",
+      "title": "Free Cost-Benefit Analysis Call",
+      "content": "15-minute call with tax expert to calculate your specific LLC savings potential. No obligation.",
+      "tags": ["consultation", "expert_advice", "personalized"],
+      "value_prop": "Expert guidance included"
+    },
+    {
+      "id": "pp025",
+      "type": "low_income_program",
+      "title": "Low Income Assistance Program",
+      "content": "Household income under $40k? Qualify for our assistance program - just $149 total cost.",
+      "tags": ["assistance", "low_income", "accessibility"],
+      "value_prop": "Affordable access for all"
+    },
+    {
+      "id": "pp026",
+      "type": "package_comparison",
+      "title": "Service Package Breakdown",
+      "content": "Basic ($149): Filing only. Standard ($249): Filing + EIN + Agreement. Premium ($349): Everything + Banking + Compliance.",
+      "tags": ["packages", "tiers", "options"],
+      "value_prop": "Flexible service levels"
+    },
+    {
+      "id": "pp027",
+      "type": "rush_fee",
+      "title": "Rush Processing Available",
+      "content": "Need it faster? $99 rush fee gets your LLC filed within 24-48 hours in most states.",
+      "tags": ["rush", "expedited", "urgent"],
+      "value_prop": "Speed option available"
+    },
+    {
+      "id": "pp028",
+      "type": "ongoing_costs",
+      "title": "5-Year Total Cost Projection",
+      "content": "Delaware LLC total 5-year cost: $1,839 (formation + renewals). Wyoming: $1,049. Full breakdown provided.",
+      "tags": ["long_term", "projection", "planning"],
+      "value_prop": "Long-term cost planning"
+    },
+    {
+      "id": "pp029",
+      "type": "value_calculator",
+      "title": "Asset Protection Value Calculator",
+      "content": "Potential lawsuit without LLC: Lose everything. With LLC: Personal assets protected. Value: Priceless.",
+      "tags": ["asset_protection", "value", "security"],
+      "value_prop": "Invaluable protection"
+    },
+    {
+      "id": "pp030",
+      "type": "group_discount",
+      "title": "Group Formation Discounts",
+      "content": "Business partners forming together? Each person saves $25. Groups of 5+: $50 off each LLC.",
+      "tags": ["group", "partners", "collective"],
+      "value_prop": "Group savings"
+    },
+    {
+      "id": "pp031",
+      "type": "loyalty_program",
+      "title": "Repeat Customer Rewards",
+      "content": "Previous customers get 25% off additional LLC formations. Your loyalty is rewarded.",
+      "tags": ["loyalty", "repeat", "customer_reward"],
+      "value_prop": "Customer loyalty benefits"
+    },
+    {
+      "id": "pp032",
+      "type": "business_banking",
+      "title": "Free Business Banking Setup",
+      "content": "We help you open business bank accounts at no extra cost. Normally $200 attorney fee.",
+      "tags": ["banking", "free_service", "value_add"],
+      "value_prop": "Additional free service"
+    },
+    {
+      "id": "pp033",
+      "type": "cost_per_benefit",
+      "title": "Cost Per Benefit Analysis",
+      "content": "$249 ÷ 8 major benefits = $31 per benefit. Asset protection alone worth 10x the cost.",
+      "tags": ["cost_per_benefit", "analysis", "value"],
+      "value_prop": "Benefit cost breakdown"
+    },
+    {
+      "id": "pp034",
+      "type": "entrepreneur_discount",
+      "title": "First-Time Entrepreneur Discount",
+      "content": "Starting your first business? Get 15% off your first LLC formation. Use code FIRSTBIZ.",
+      "tags": ["first_time", "entrepreneur", "support"],
+      "value_prop": "New entrepreneur support"
+    },
+    {
+      "id": "pp035",
+      "type": "family_plan",
+      "title": "Family Business Plan",
+      "content": "Family members forming LLCs together? 20% family discount for 2+ family member formations.",
+      "tags": ["family", "plan", "relatives"],
+      "value_prop": "Family business support"
+    },
+    {
+      "id": "pp036",
+      "type": "charity_discount",
+      "title": "Nonprofit & Charity Discount",
+      "content": "Forming for charitable purposes? 30% discount on LLC formation. Supporting good causes.",
+      "tags": ["nonprofit", "charity", "social_good"],
+      "value_prop": "Social impact pricing"
+    },
+    {
+      "id": "pp037",
+      "type": "economic_impact",
+      "title": "Economic Impact Savings",
+      "content": "LLCs create jobs and economic growth. Your $249 investment supports local economies and job creation.",
+      "tags": ["economic_impact", "job_creation", "growth"],
+      "value_prop": "Economic contribution"
+    },
+    {
+      "id": "pp038",
+      "type": "warranty_costs",
+      "title": "Lifetime Filing Warranty",
+      "content": "If state rejects filing due to our error, we refile free forever. $500 value warranty included.",
+      "tags": ["warranty", "guarantee", "protection"],
+      "value_prop": "Lifetime protection"
+    },
+    {
+      "id": "pp039",
+      "type": "comparison_tool",
+      "title": "Side-by-Side Cost Comparison",
+      "content": "Compare all 50 states side-by-side: formation costs, annual fees, tax rates, and total 5-year expenses.",
+      "tags": ["comparison", "all_states", "comprehensive"],
+      "value_prop": "Complete comparison tool"
+    },
+    {
+      "id": "pp040",
+      "type": "budget_planner",
+      "title": "Business Budget Planner Included",
+      "content": "Free business budget planning tool helps you manage LLC costs and project future savings.",
+      "tags": ["budget", "planner", "financial_tool"],
+      "value_prop": "Financial planning included"
+    }
+  ]
+}

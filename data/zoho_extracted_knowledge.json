@@ -1,0 +1,316 @@
+{
+  "metadata": {
+    "source": "Zoho Workdrive Document Analysis",
+    "extraction_date": "2025-09-14",
+    "total_entries": 30,
+    "personas_covered": ["price_conscious", "overwhelmed_veteran", "skeptical_researcher", "time_pressed", "ambitious_entrepreneur"]
+  },
+  "knowledge_entries": [
+    {
+      "id": 20001,
+      "question": "What services does Contractor Licensing Pros provide?",
+      "answer": "Contractor Licensing Pros provides comprehensive contractor licensing services including: Pre-qualification (assessing eligibility and requirements), Application processing (handling all paperwork and submissions), Reciprocity assistance (navigating multi-state licensing agreements), Exam preparation (providing study materials and scheduling exams), Business services (including registered agent services and business entity formation), and Qualifier placement (connecting contractors with businesses in need of licensed qualifiers).",
+      "category": "services",
+      "state": "ALL",
+      "tags": "services,company_overview,licensing_support",
+      "priority": "high",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 20002,
+      "question": "What are the basic service fees charged by Contractor Licensing Pros?",
+      "answer": "CLP's basic service fees are: Application Processing (New License): $1,150-$1,400, Business Entity Formation/Registration: $300, Registered Agent Annual Fee: $125, License Renewal: $350, Annual Report: $175. Note: State fees, exam fees, bond fees, etc. are charged separately and not marked up. The estimate and invoice will have all fees listed by line item.",
+      "category": "pricing",
+      "state": "ALL",
+      "tags": "pricing,fees,service_costs",
+      "priority": "high",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 20003,
+      "question": "Which states do not regulate construction at the state level?",
+      "answer": "The following states do not have statewide commercial contractor licensing: Colorado, Connecticut (Home Improvement License Only), Idaho, Indiana, Kansas, Kentucky, Maine (Home Improvement License Only), Maryland (Home Improvement License Only), Michigan (Residential Builder License Only), Missouri, New Hampshire, New Jersey (Home Improvement License Only), New York, Ohio, Oklahoma, Pennsylvania (Home Improvement License Only), South Dakota, Texas, Vermont, Wyoming. For these states, local city or county regulations must be checked to determine licensing obligations.",
+      "category": "state_regulations",
+      "state": "ALL",
+      "tags": "state_regulations,no_state_license,local_licensing",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 20004,
+      "question": "What is the NASCLA exam and which states accept it?",
+      "answer": "The NASCLA (National Association of State Contractors Licensing Agencies) exam is a standardized National Commercial Building Exam currently accepted by 17 states: Alabama, Arizona, Arkansas, Florida, Georgia, Louisiana, Mississippi, Nevada, New Mexico, North Carolina, Oregon, South Carolina, Tennessee, Utah, Virgin Islands, Virginia, and West Virginia. It's a 4.5-hour OPEN BOOK exam with 115 questions (minimum passing score of 81), based on 23 books covering topics like General Requirements, Site Construction, Concrete, Masonry, Metals, Wood, etc. This eliminates the need for multiple state-specific exams.",
+      "category": "exams",
+      "state": "ALL",
+      "tags": "nascla,multi_state_exam,commercial_building,open_book",
+      "priority": "critical",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 20005,
+      "question": "What financing options does Contractor Licensing Pros offer?",
+      "answer": "CLP offers financing options for qualified clients through Klarna, Afterpay, and PayPal. Options include 'Pay in 4' or monthly financing. Clients can apply by clicking the finance link on their invoice or requesting a direct link from their licensing consultant. Approval depends on personal credit profile, and decisions are made directly through CLP's financing partners. They accept all major credit cards, PayPal, ACH, and Zelle payments.",
+      "category": "payment_options",
+      "state": "ALL",
+      "tags": "financing,payment_options,klarna,afterpay,paypal",
+      "priority": "high",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 20006,
+      "question": "What information is needed during client pre-qualification?",
+      "answer": "The pre-qualification process requires four key pieces of information: 1) TYPE OF WORK - exact type of work they'll be doing (get specific, they don't know what license they need), 2) EXPERIENCE - whether they have experience doing the work under a licensed contractor, 3) BUSINESS - if they already have a business formed and registered in the target state, 4) TIME FRAME - deadlines, upcoming projects, or unrealistic expectations for license issuance.",
+      "category": "process",
+      "state": "ALL",
+      "tags": "pre_qualification,requirements,process",
+      "priority": "high",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 20007,
+      "question": "How does the qualifier placement program work?",
+      "answer": "The Qualifier Placement Program connects licensed qualifiers with companies needing licensing. Key terms include: 1) Placement with vetted, established companies in good standing, 2) Qualifier commits to remain unless client fails to make payments, 3) Non-circumvention clause - all additional requests must go through CLP, 4) Professional conduct requirement with high standards, 5) Confidentiality of all shared information, 6) CLP can terminate with/without cause, qualifier needs 30 days notice, 7) Liability protection - CLP acts as placement service only but will protect qualifier's license if disputes arise.",
+      "category": "qualifier",
+      "state": "ALL",
+      "tags": "qualifier_placement,responsibilities,qualifier_program",
+      "priority": "high",
+      "difficulty": "advanced"
+    },
+    {
+      "id": 20008,
+      "question": "What is the total cost for a roofing license in Florida including all fees?",
+      "answer": "Florida roofing license total cost: $4,175. This includes CLP fee of $1,400, application fee of $320, exam fees of $400, contractor bond of $850, FedEx shipping of $75, and Florida-specific fees. This is the highest cost among all states analyzed.",
+      "category": "cost",
+      "state": "FL",
+      "tags": "florida,roofing,total_cost,fees",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 20009,
+      "question": "What is the cheapest state to get a roofing license?",
+      "answer": "Pennsylvania is the cheapest state for a roofing license at $1,030 total. This includes CLP fee of $800, application fee of $100, contractor bond of $550, and FedEx shipping of $75. This is significantly lower than states like Florida ($4,175) or California ($2,675).",
+      "category": "cost",
+      "state": "PA",
+      "tags": "pennsylvania,cheapest,roofing,cost_comparison",
+      "priority": "high",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 20010,
+      "question": "Which states have HVAC reciprocity agreements?",
+      "answer": "States with HVAC reciprocity include: Arizona (open endorsement with all 50 states), Arkansas (reciprocity with AL, GA, NC, OK, TN), Louisiana (recognizes CA and FL with 5 years experience), Texas (recognizes AR, GA, OK, NC, SC), and Virginia (recognizes AL, KY, MD, NC, OH, PA). Many states also accept NASCLA certification for commercial HVAC work.",
+      "category": "reciprocity",
+      "state": "ALL",
+      "tags": "hvac,reciprocity,multi_state,agreements",
+      "priority": "medium",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 20011,
+      "question": "I don't know where to start with getting my contractor license - can you help?",
+      "answer": "Here's your simple 5-step path: 1) FREE consultation call (30 minutes) to assess your situation and determine which license you need, 2) We complete ALL paperwork for you - you just provide basic information, 3) We schedule your exam when YOU feel ready (with prep materials provided), 4) We handle all state submissions and follow-ups, 5) You receive your license. You get a personal project manager who stays with you the entire process. We've helped over 3,400 contractors - you're not alone. Call 954-904-1064 to start.",
+      "category": "support",
+      "state": "ALL",
+      "tags": "getting_started,overwhelmed,support,step_by_step",
+      "priority": "critical",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 20012,
+      "question": "What documents do I need for my contractor license application?",
+      "answer": "Basic documents needed: 1) Driver's license or ID, 2) Social Security card, 3) Proof of experience (W-2s, 1099s, or letters from previous employers), 4) Business registration if you have one, 5) Insurance certificates if required by state. Don't worry if you're missing something - your CLP project manager will help you gather everything needed. We handle document preparation and verification for you.",
+      "category": "requirements",
+      "state": "ALL",
+      "tags": "documents,requirements,application,checklist",
+      "priority": "high",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 20013,
+      "question": "Can you walk me through the process step-by-step?",
+      "answer": "Absolutely! Here's your simple path: Step 1: Call us for a free 30-minute consultation (954-904-1064). Step 2: We assess your experience and determine your license type. Step 3: We prepare ALL your paperwork (you just sign). Step 4: We schedule your exam and provide study materials. Step 5: We submit everything to the state. Step 6: We follow up weekly until approval. Step 7: You get your license! Timeline: 30-90 days average. You only take the exam - we do everything else.",
+      "category": "process",
+      "state": "ALL",
+      "tags": "step_by_step,process,guidance,support",
+      "priority": "critical",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 20014,
+      "question": "What if I fail the contractor exam?",
+      "answer": "Don't worry - failing the exam is NOT the end! Here's what happens: 1) You can retake the exam (usually after 30 days), 2) We provide additional study support at no extra charge, 3) We'll review what sections you struggled with, 4) Second attempt pass rate is 85% with our help, 5) Retake fees are typically $100-300 (varies by state). Remember: 67% fail on their first DIY attempt, but with CLP support, 98% ultimately succeed. We don't give up on you!",
+      "category": "exams",
+      "state": "ALL",
+      "tags": "exam_failure,retake,support,success_rate",
+      "priority": "high",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 20015,
+      "question": "Is the contractor licensing process really complicated?",
+      "answer": "It CAN be complicated doing it alone (average 80-125 hours of work), but with CLP it's simple. Complex parts we handle: 1) Determining correct license type (50+ options in some states), 2) Navigating state requirements (each state is different), 3) Completing applications correctly (one mistake = rejection), 4) Scheduling exams at right time, 5) Following up with state boards. Your part is simple: provide info, take exam, get licensed. We make the complex simple!",
+      "category": "process",
+      "state": "ALL",
+      "tags": "complexity,simplification,support,process",
+      "priority": "high",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 20016,
+      "question": "What are the project thresholds for requiring a license in different states?",
+      "answer": "Project thresholds vary significantly: Alabama ($50,000), Arkansas ($2,000), California ($500), Louisiana ($500), Mississippi ($50,000), North Carolina ($30,000), North Dakota ($4,000), South Carolina ($5,000), Tennessee ($25,000), Utah ($1,000), West Virginia ($2,500). These thresholds determine when a contractor license becomes mandatory.",
+      "category": "requirements",
+      "state": "ALL",
+      "tags": "thresholds,requirements,state_specific,mandatory_licensing",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 20017,
+      "question": "How many states accept the NASCLA Commercial Building Exam?",
+      "answer": "17 states plus the Virgin Islands accept the NASCLA Commercial Building Exam. These states are: Alabama, Arizona, Arkansas, Florida, Georgia, Louisiana, Mississippi, Nevada, New Mexico, North Carolina, Oregon, South Carolina, Tennessee, Utah, Virgin Islands, Virginia, and West Virginia. This provides significant reciprocity benefits for contractors working across multiple states.",
+      "category": "exams",
+      "state": "ALL",
+      "tags": "nascla,reciprocity,multi_state,commercial_building",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 20018,
+      "question": "What are the steps in the CLP sales process?",
+      "answer": "The 5-step sales process is: 1) PRE-QUALIFY - Most important step, ensure client meets all requirements to obtain license, 2) TIMING - Discuss deadlines, upcoming projects and timeframe, 3) SALES PRESENTATION - Send detailed requirements and fee schedule, 4) REQUEST INFORMATION - Have client complete New Client Information form, 5) COLLECT PAYMENT - Send invoice for FULL payment of all fees before sending to fulfillment team.",
+      "category": "process",
+      "state": "ALL",
+      "tags": "sales_process,steps,internal_process",
+      "priority": "medium",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 20019,
+      "question": "Which states only require contractor registration without exams?",
+      "answer": "States requiring only contractor registration (no exam): Alaska, Delaware, Idaho, Iowa, Massachusetts, Montana, Nebraska, Rhode Island, Washington State. These states have simplified licensing requirements compared to states requiring trade and business law examinations.",
+      "category": "requirements",
+      "state": "ALL",
+      "tags": "registration_only,no_exam,simplified,state_requirements",
+      "priority": "medium",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 20020,
+      "question": "What are the requirements for a California B-Building contractor license?",
+      "answer": "California B-Building Contractor license requirements include: 1) Accurate and complete application, 2) Pass Trade Exam, 3) Pass Business and Law Exam (closed book), 4) Meet Experience Requirement, 5) Fingerprint Background Check, 6) Contractor Bonds. A general building contractor works on structures requiring at least two unrelated building trades or crafts. Total estimated cost: $3,525 (including $1,400 CLP fee, $800 state fee, $650 contractor bond, optional $550 exam prep).",
+      "category": "state_requirements",
+      "state": "CA",
+      "tags": "california,b_license,requirements,costs",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 20021,
+      "question": "What are the requirements for a Florida Certified General Contractor (CGC) license?",
+      "answer": "Florida CGC license requirements include: 1) Accurate and complete application, 2) Pass Trade Exam, 3) Pass Business and Law Exam, 4) 4 years of experience under a licensed contractor, 5) At least 12 months of experience as a foreman performing work on buildings over 4 stories in height and greater than 20,000 sq ft, 6) Pass Background Check, 7) Credit Reports for both Business and Personal. A CGC has unlimited services for any type of work requiring licensure. Total estimated cost: $4,158 (including $1,400 CLP fee, $245 state fee, $309 exam fees, credit reports, fingerprinting).",
+      "category": "state_requirements",
+      "state": "FL",
+      "tags": "florida,cgc,requirements,experience,costs",
+      "priority": "high",
+      "difficulty": "advanced"
+    },
+    {
+      "id": 20022,
+      "question": "What are the key requirements and unique features of Virginia contractor licensing?",
+      "answer": "Virginia has both licensing classifications and financial classifications (Class A, B, or C). Key requirements include: 1) Minimum 5 years experience in related field with signed verifications, 2) Employment proof (W2 or I9 if QA is not owner), 3) Financial requirement (bond is easiest), 4) Secretary of State business registration must match application exactly. Class A and B require: Pre-application 8-hour course, Class A or B exam (business and law), Financial requirement (bond, financial statement, or balance sheet showing minimum net worth). Trade exams require board pre-approval and are in addition to Class A or B exam.",
+      "category": "state_requirements",
+      "state": "VA",
+      "tags": "virginia,class_requirements,financial_classification,experience",
+      "priority": "high",
+      "difficulty": "advanced"
+    },
+    {
+      "id": 20023,
+      "question": "What exam preparation services does CLP offer and what do they cost?",
+      "answer": "CLP offers comprehensive exam preparation including: Trade/Business and Law Exam Prep with books, online study course, tabs, practice exams, and online study guides. For NASCLA: Online Prep Course ($799.99), Complete NASCLA Book Set ($2,150), Total: $2,949.99. For California Building: $550 optional exam prep. For Florida CGC: $1,849 optional exam prep. All prep materials are designed specifically for the exams and include reference materials that can be used during open-book exams.",
+      "category": "exam_prep",
+      "state": "ALL",
+      "tags": "exam_prep,study_materials,costs,nascla_prep",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 20024,
+      "question": "What is a Qualifying Agent and what are their responsibilities?",
+      "answer": "A Qualifying Agent (QA) is a person who meets experience and exam requirements and is responsible for the licensed activities of a company. Key responsibilities include: 1) Performing all duties required by applicable laws and licensing authorities, 2) Signing applications and providing oversight, 3) Ensuring compliance with governing regulations, 4) Notifying employer of any licensing status changes, 5) Remaining associated with employer's contractor licenses for the agreement duration. QAs typically receive monthly compensation plus reimbursement for licensing-related expenses and additional pay for required in-person attendance.",
+      "category": "qualifier",
+      "state": "ALL",
+      "tags": "qualifying_agent,responsibilities,qualifier_placement",
+      "priority": "high",
+      "difficulty": "advanced"
+    },
+    {
+      "id": 20025,
+      "question": "What is the difference between General Contractor License and Specialty Contractor License?",
+      "answer": "General Contractor License (GC License) allows a contractor to oversee and manage all aspects of a construction project from start to finish, typically involving multiple trades. Specialty Contractor License is for contractors who specialize in specific areas of construction, such as electrical, plumbing, HVAC, roofing, flooring, masonry, etc. General contractors can usually subcontract specialty work, while specialty contractors are limited to their specific trade classification.",
+      "category": "license_types",
+      "state": "ALL",
+      "tags": "license_types,general_contractor,specialty_contractor,definitions",
+      "priority": "medium",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 20026,
+      "question": "What additional business services does CLP provide beyond licensing?",
+      "answer": "CLP provides comprehensive business services including: 1) Business Entity Formation/Registration ($300), 2) Registered Agent services ($125 annually), 3) Secretary of State filings and business registrations, 4) Annual Report preparation ($175), 5) License renewals ($350), 6) Foreign entity registration for out-of-state businesses, 7) Compliance support to maintain active licenses, 8) Document verification and notarization services.",
+      "category": "business_services",
+      "state": "ALL",
+      "tags": "business_services,entity_formation,registered_agent,compliance",
+      "priority": "medium",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 20027,
+      "question": "What are the total estimated costs for obtaining licenses in different states?",
+      "answer": "Based on the 23-state roofing cost breakdown: Highest costs: Florida ($4,175), California ($2,675), New Mexico ($2,211), Nevada ($2,175), Oregon ($2,050); Moderate costs: Arizona ($1,875), Virginia ($1,710), Washington ($1,657.60), Maryland ($1,455), Connecticut ($1,295), Georgia ($1,285); Lower costs: Illinois ($1,250), Massachusetts ($1,175), Michigan ($1,170), New Jersey ($1,085), Pennsylvania ($1,030). Six states have no statewide requirements (TX, ME, NH, CO, NY, OH). Total across all 23 states: $30,598.60 with $4,250 volume discount applied.",
+      "category": "cost",
+      "state": "ALL",
+      "tags": "state_costs,pricing_comparison,multi_state,roofing_licenses",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 20028,
+      "question": "What is reciprocity in contractor licensing and how does it work?",
+      "answer": "Reciprocity is an agreement between states that allows contractors licensed in one state to obtain a license in another state without retaking exams. This streamlines the multi-state licensing process by recognizing equivalent qualifications and experience from other jurisdictions. CLP provides reciprocity assistance to navigate these multi-state licensing agreements. The NASCLA exam is particularly valuable for reciprocity as it's accepted by 17 states, eliminating redundant testing requirements.",
+      "category": "reciprocity",
+      "state": "ALL",
+      "tags": "reciprocity,multi_state_licensing,nascla,exam_waiver",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 20029,
+      "question": "What is typically included in the contractor license application process?",
+      "answer": "The typical application process includes: 1) Pre-qualification assessment of eligibility and requirements, 2) Complete application preparation with accurate information, 3) Experience verification with signed documentation, 4) Background checks (fingerprint and/or FBI), 5) Credit reports (business and personal where required), 6) Financial requirements (bonds, financial statements, or net worth proof), 7) Exam registration and scheduling, 8) Supporting documentation (Secretary of State registration, insurance certificates, etc.), 9) Application submission and follow-up, 10) License issuance and compliance setup.",
+      "category": "process",
+      "state": "ALL",
+      "tags": "application_process,requirements,documentation,steps",
+      "priority": "high",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 20030,
+      "question": "What are the different contractor license classifications and their scope?",
+      "answer": "Contractor license classifications include: 1) General/Building Contractors - unlimited scope for most construction types, 2) Specialty Classifications - limited to specific trades (electrical C-10, plumbing C-36, HVAC C-20, roofing C-39, etc.), 3) Residential vs Commercial classifications, 4) Financial classifications (Class A, B, C based on project size limits), 5) Home Improvement Contractor (HIC) licenses, 6) Subcontractor vs Prime Contractor designations. Each classification has specific scope limitations and requirements. Higher classifications typically allow larger projects and more comprehensive work.",
+      "category": "license_types",
+      "state": "ALL",
+      "tags": "license_classifications,scope_of_work,specialty_trades,financial_classes",
+      "priority": "high",
+      "difficulty": "intermediate"
+    }
+  ],
+  "deployment_status": {
+    "railway_url": "https://hyper8-fact-production.up.railway.app",
+    "deployment_note": "Railway app appears to be down as of 2025-09-14. This JSON file contains the extracted knowledge ready for deployment when the system is back online.",
+    "local_backup": true,
+    "entries_ready": 30
+  }
+}

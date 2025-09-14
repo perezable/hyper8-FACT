@@ -1,0 +1,66 @@
+# Railway Production Testing Configuration for FACT System
+# Use this configuration for testing against Railway deployment
+
+# Environment settings
+environment: railway
+# DATABASE_URL will be loaded from environment variable
+api_base_url: https://hyper8-fact-production.up.railway.app
+vapi_webhook_url: https://hyper8-fact-production.up.railway.app/vapi/webhook
+
+# Conservative test execution settings for production
+max_concurrent_tests: 5
+request_timeout: 45
+max_retries: 5
+retry_delay: 2.0
+requests_per_second: 3.0  # Conservative rate limit for production
+
+# Query methods to test
+query_methods:
+  - database
+  - vapi
+  - api
+
+# Smaller test dataset for production testing
+test_question_count: 100
+questions_per_batch: 20
+
+# Production performance thresholds
+max_response_time_ms: 5000.0  # Higher tolerance for production
+min_accuracy_threshold: 0.75
+max_error_rate: 0.1
+
+# Output settings
+output_dir: test_results/railway
+detailed_logging: true
+export_raw_data: true
+
+# Question generation settings
+question_categories:
+  - state_licensing_requirements
+  - exam_preparation_testing
+  - qualifier_network_programs
+  - business_formation_operations
+  - insurance_bonding
+  - financial_planning_roi
+  - success_stories_case_studies
+  - troubleshooting_problem_resolution
+
+difficulty_distribution:
+  easy: 0.4    # More easy questions for production stability
+  medium: 0.4
+  hard: 0.2
+
+# Production-specific settings
+enable_debug_logging: false
+save_failed_queries: true
+generate_detailed_reports: true
+monitor_resource_usage: true
+
+# Rate limiting and circuit breaker settings
+circuit_breaker_enabled: true
+circuit_breaker_failure_threshold: 5
+circuit_breaker_timeout: 60
+
+# Authentication settings (if needed)
+# api_key: ${API_KEY}
+# vapi_secret: ${VAPI_SECRET}

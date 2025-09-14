@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "analysis_timestamp": "2025-09-11T22:25:05.434837",
+    "total_responses_analyzed": 200,
+    "detector_version": "1.0.0"
+  },
+  "executive_summary": {
+    "total_weakness_patterns": 8,
+    "total_knowledge_gaps": 12,
+    "total_persona_gaps": 3,
+    "total_state_gaps": 6,
+    "critical_issues": 2,
+    "high_priority_issues": 5
+  },
+  "top_priorities": [
+    {
+      "type": "knowledge_gap",
+      "description": "Missing state-specific regulations for smaller states",
+      "impact_score": 0.84,
+      "priority": "critical",
+      "frequency": 24,
+      "fixes": [
+        "Add comprehensive state regulation database",
+        "Partner with state insurance departments"
+      ]
+    },
+    {
+      "type": "semantic_failure",
+      "description": "Poor semantic matching for complex regulatory queries",
+      "impact_score": 0.73,
+      "priority": "high",
+      "frequency": 18,
+      "fixes": [
+        "Upgrade embedding models",
+        "Implement re-ranking algorithms"
+      ]
+    },
+    {
+      "type": "performance_issue",
+      "description": "Response time degradation for regulation category queries",
+      "impact_score": 0.67,
+      "priority": "high",
+      "frequency": 15,
+      "fixes": [
+        "Optimize database indexing",
+        "Implement caching for regulation queries"
+      ]
+    },
+    {
+      "type": "category_confusion",
+      "description": "Category classification failures between compliance and regulations",
+      "impact_score": 0.58,
+      "priority": "medium",
+      "frequency": 12,
+      "fixes": [
+        "Refine category taxonomy",
+        "Add category-specific training data"
+      ]
+    },
+    {
+      "type": "state_specificity_failure",
+      "description": "Generic responses overriding state-specific information",
+      "impact_score": 0.55,
+      "priority": "medium",
+      "frequency": 11,
+      "fixes": [
+        "Improve state-specific content ranking",
+        "Add state entity recognition"
+      ]
+    }
+  ],
+  "knowledge_gaps": [
+    {
+      "gap_id": "content_gap_regulations_WA",
+      "topic_area": "regulations",
+      "category": "regulations",
+      "state": "WA",
+      "missing_content_type": "specific_requirements",
+      "user_impact": 0.12,
+      "business_impact": "high",
+      "suggested_content": [
+        "Add comprehensive Washington state regulations",
+        "Include specific requirements and procedures"
+      ]
+    },
+    {
+      "gap_id": "quality_gap_continuing_education",
+      "topic_area": "continuing_education",
+      "category": "continuing_education",
+      "state": null,
+      "missing_content_type": "detailed_explanations",
+      "user_impact": 0.09,
+      "business_impact": "medium",
+      "suggested_content": [
+        "Improve CE content quality and detail",
+        "Add examples and practical guidance"
+      ]
+    }
+  ],
+  "recommendations": {
+    "immediate_actions": [
+      "Add missing state-specific regulations for WA, CO, AZ",
+      "Optimize regulation query response times",
+      "Implement better semantic matching for complex queries",
+      "Fix category confusion between compliance and regulations",
+      "Add state-specific content ranking system"
+    ],
+    "content_priorities": [
+      "Complete Washington state insurance regulations",
+      "Add continuing education detailed explanations",
+      "Include exam preparation materials",
+      "Expand ethics requirements documentation",
+      "Add license renewal step-by-step guides"
+    ],
+    "system_improvements": [
+      "Upgrade to better embedding models",
+      "Implement response caching for common queries",
+      "Add re-ranking algorithms for better relevance",
+      "Optimize database indexing for faster queries",
+      "Implement confidence calibration system"
+    ]
+  }
+}

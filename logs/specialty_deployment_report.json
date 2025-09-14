@@ -1,0 +1,35 @@
+{
+  "deployment_summary": {
+    "timestamp": "2025-09-11T16:23:24.279373",
+    "duration_seconds": 0.000623,
+    "status": "FAILED",
+    "entries_before": 0,
+    "entries_after": 0,
+    "specialty_entries_added": 0,
+    "errors": [
+      "PostgreSQL connection failed: All PostgreSQL connection attempts failed",
+      "Critical failure: Failed to setup PostgreSQL connection"
+    ]
+  },
+  "validation_results": {},
+  "specialty_coverage": {
+    "hvac_entries": 0,
+    "electrical_entries": 0,
+    "plumbing_entries": 0,
+    "roofing_entries": 0,
+    "flooring_entries": 0
+  },
+  "certification_coverage": {
+    "epa_608_entries": 0,
+    "nate_entries": 0,
+    "osha_entries": 0
+  },
+  "recommendations": [
+    "\u274c Limited specialty coverage - need more comprehensive entries",
+    "\ud83d\udccb Add more HVAC-specific entries for EPA 608, NATE certification",
+    "\ud83d\udccb Add more electrical entries for IBEW, OSHA, arc flash safety",
+    "\ud83d\udccb Add more plumbing entries for backflow prevention, medical gas",
+    "\ud83d\udccd Expand state coverage - target top 10 construction states",
+    "\ud83d\udd27 Address deployment errors for 100% success rate"
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "metadata": {
+    "test_date": "2025-09-14T13:45:36.058216",
+    "railway_url": "https://hyper8-fact-fact-system.up.railway.app",
+    "knowledge_base_entries": 1347,
+    "system_status": "degraded"
+  },
+  "summary": {
+    "total_questions": 25,
+    "successful_http": 25,
+    "with_answers": 25,
+    "avg_latency_ms": 237.9555892944336,
+    "response_patterns": {
+      "DEGRADED_MESSAGE": 25
+    }
+  },
+  "results": [
+    {
+      "persona": "price_conscious",
+      "question": "What's the cheapest state to get a contractor license?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871930273",
+        "timestamp": "2025-09-14T17:45:30.273875"
+      },
+      "status_code": 200,
+      "latency_ms": 307.0080280303955,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "price_conscious",
+      "question": "How much does a Florida contractor license cost?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871930581",
+        "timestamp": "2025-09-14T17:45:30.581248"
+      },
+      "status_code": 200,
+      "latency_ms": 334.58805084228516,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "price_conscious",
+      "question": "Are there payment plans available?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871930892",
+        "timestamp": "2025-09-14T17:45:30.892530"
+      },
+      "status_code": 200,
+      "latency_ms": 206.79306983947754,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "price_conscious",
+      "question": "What financing options does CLP offer?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871931098",
+        "timestamp": "2025-09-14T17:45:31.098912"
+      },
+      "status_code": 200,
+      "latency_ms": 202.84295082092285,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "price_conscious",
+      "question": "What's the ROI on getting licensed?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871931301",
+        "timestamp": "2025-09-14T17:45:31.301607"
+      },
+      "status_code": 200,
+      "latency_ms": 203.75299453735352,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "overwhelmed_veteran",
+      "question": "I don't know where to start - can you help?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871931546",
+        "timestamp": "2025-09-14T17:45:31.546986"
+      },
+      "status_code": 200,
+      "latency_ms": 253.40509414672852,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "overwhelmed_veteran",
+      "question": "What documents do I need?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871931772",
+        "timestamp": "2025-09-14T17:45:31.772466"
+      },
+      "status_code": 200,
+      "latency_ms": 208.35494995117188,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "overwhelmed_veteran",
+      "question": "Can you walk me through the process step by step?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871932007",
+        "timestamp": "2025-09-14T17:45:32.007901"
+      },
+      "status_code": 200,
+      "latency_ms": 247.41101264953613,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "overwhelmed_veteran",
+      "question": "What if I fail the exam?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871932244",
+        "timestamp": "2025-09-14T17:45:32.244208"
+      },
+      "status_code": 200,
+      "latency_ms": 237.77413368225098,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "overwhelmed_veteran",
+      "question": "Is there a checklist I can follow?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871932489",
+        "timestamp": "2025-09-14T17:45:32.489484"
+      },
+      "status_code": 200,
+      "latency_ms": 236.7269992828369,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "skeptical_researcher",
+      "question": "What's your success rate?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871932713",
+        "timestamp": "2025-09-14T17:45:32.713760"
+      },
+      "status_code": 200,
+      "latency_ms": 235.08214950561523,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "skeptical_researcher",
+      "question": "How many contractors have you helped?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871932935",
+        "timestamp": "2025-09-14T17:45:32.935137"
+      },
+      "status_code": 200,
+      "latency_ms": 195.31011581420898,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "skeptical_researcher",
+      "question": "What states accept NASCLA?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871933151",
+        "timestamp": "2025-09-14T17:45:33.151367"
+      },
+      "status_code": 200,
+      "latency_ms": 268.74327659606934,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "skeptical_researcher",
+      "question": "What are the exact requirements for California?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871933430",
+        "timestamp": "2025-09-14T17:45:33.430184"
+      },
+      "status_code": 200,
+      "latency_ms": 258.3761215209961,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "skeptical_researcher",
+      "question": "What's the penalty for unlicensed work?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871933682",
+        "timestamp": "2025-09-14T17:45:33.682668"
+      },
+      "status_code": 200,
+      "latency_ms": 225.4312038421631,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "time_pressed",
+      "question": "What's the fastest way to get licensed?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871933917",
+        "timestamp": "2025-09-14T17:45:33.917246"
+      },
+      "status_code": 200,
+      "latency_ms": 245.09286880493164,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "time_pressed",
+      "question": "Can I expedite the process?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871934153",
+        "timestamp": "2025-09-14T17:45:34.153514"
+      },
+      "status_code": 200,
+      "latency_ms": 244.5518970489502,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "time_pressed",
+      "question": "Which state is quickest?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871934400",
+        "timestamp": "2025-09-14T17:45:34.400357"
+      },
+      "status_code": 200,
+      "latency_ms": 245.79095840454102,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "time_pressed",
+      "question": "How fast with reciprocity?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871934620",
+        "timestamp": "2025-09-14T17:45:34.620555"
+      },
+      "status_code": 200,
+      "latency_ms": 204.90694046020508,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "time_pressed",
+      "question": "What about emergency licensing?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871934858",
+        "timestamp": "2025-09-14T17:45:34.858942"
+      },
+      "status_code": 200,
+      "latency_ms": 238.9051914215088,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "ambitious_entrepreneur",
+      "question": "How do I get licensed in multiple states?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871935095",
+        "timestamp": "2025-09-14T17:45:35.095060"
+      },
+      "status_code": 200,
+      "latency_ms": 228.29794883728027,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "ambitious_entrepreneur",
+      "question": "What's the best license for growth?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871935316",
+        "timestamp": "2025-09-14T17:45:35.316520"
+      },
+      "status_code": 200,
+      "latency_ms": 230.84592819213867,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "ambitious_entrepreneur",
+      "question": "Can I qualify other companies?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871935562",
+        "timestamp": "2025-09-14T17:45:35.562016"
+      },
+      "status_code": 200,
+      "latency_ms": 263.28301429748535,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "ambitious_entrepreneur",
+      "question": "How do I maximize income?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871935788",
+        "timestamp": "2025-09-14T17:45:35.788892"
+      },
+      "status_code": 200,
+      "latency_ms": 206.37273788452148,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    },
+    {
+      "persona": "ambitious_entrepreneur",
+      "question": "What about government contracts?",
+      "response": {
+        "response": "System is experiencing issues. Please try again later.",
+        "cached": false,
+        "query_id": "web_1757871936010",
+        "timestamp": "2025-09-14T17:45:36.010301"
+      },
+      "status_code": 200,
+      "latency_ms": 219.24209594726562,
+      "has_answer": true,
+      "response_text": "System is experiencing issues. Please try again later."
+    }
+  ]
+}

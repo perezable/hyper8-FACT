@@ -1,0 +1,2059 @@
+{
+  "test_metadata": {
+    "timestamp": "2025-09-12T13:03:29.052954",
+    "total_questions": 200,
+    "endpoint": "https://hyper8-fact-fact-system.up.railway.app/knowledge/search"
+  },
+  "questions_and_answers": [
+    {
+      "question_id": "pc_001",
+      "question": "How much does a Georgia contractor license cost all-in?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 85,
+      "latency_ms": 195.91426849365234,
+      "success": true
+    },
+    {
+      "question_id": "pc_002",
+      "question": "What's the cheapest state to get licensed in?",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 80,
+      "latency_ms": 213.98401260375977,
+      "success": true
+    },
+    {
+      "question_id": "pc_003",
+      "question": "Are there payment plans available for the $4,995 fee?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 80,
+      "latency_ms": 256.84285163879395,
+      "success": true
+    },
+    {
+      "question_id": "pc_004",
+      "question": "Is the investment worth it compared to DIY?",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 70,
+      "latency_ms": 176.91802978515625,
+      "success": true
+    },
+    {
+      "question_id": "pc_005",
+      "question": "What's the ROI on your licensing program?",
+      "answer": "Average first-year ROI is 3,000-16,000% based on income level. Examples: $30K contractors reach $60-90K (1,000% ROI), $75K contractors reach $150-225K (3,000% ROI). One commercial project typically returns 10-50x your investment. Qualifier network adds $3,000-6,000 monthly passive income. Break-even: 3-18 days from first licensed job. Tax savings alone often cover 30-40% of investment. We provide personalized ROI calculator with your specific market data.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 75,
+      "latency_ms": 199.95594024658203,
+      "success": true
+    },
+    {
+      "question_id": "pc_006",
+      "question": "Can I get a discount if I refer others?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 65,
+      "latency_ms": 254.37021255493164,
+      "success": true
+    },
+    {
+      "question_id": "pc_007",
+      "question": "How much can I save doing it myself?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 65,
+      "latency_ms": 282.34100341796875,
+      "success": true
+    },
+    {
+      "question_id": "pc_008",
+      "question": "What hidden fees should I expect?",
+      "answer": "No results found",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 0,
+      "latency_ms": 177.86216735839844,
+      "success": false
+    },
+    {
+      "question_id": "pc_009",
+      "question": "Do you offer any guarantees on the investment?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 144.79398727416992,
+      "success": true
+    },
+    {
+      "question_id": "pc_010",
+      "question": "What's included in the $4,995 price?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 70,
+      "latency_ms": 186.3229274749756,
+      "success": true
+    },
+    {
+      "question_id": "pc_011",
+      "question": "How much does a Florida license cost?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 185.59718132019043,
+      "success": true
+    },
+    {
+      "question_id": "pc_012",
+      "question": "Compare your price to competitors",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 60,
+      "latency_ms": 207.3819637298584,
+      "success": true
+    },
+    {
+      "question_id": "pc_013",
+      "question": "Is there a money-back guarantee?",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 60,
+      "latency_ms": 197.706937789917,
+      "success": true
+    },
+    {
+      "question_id": "pc_014",
+      "question": "What's the cost breakdown by state?",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 154.45685386657715,
+      "success": true
+    },
+    {
+      "question_id": "pc_015",
+      "question": "Do prices vary by license type?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 131.35814666748047,
+      "success": true
+    },
+    {
+      "question_id": "pc_016",
+      "question": "Are there additional exam fees?",
+      "answer": "Average first-year ROI is 3,000-16,000% based on income level. Examples: $30K contractors reach $60-90K (1,000% ROI), $75K contractors reach $150-225K (3,000% ROI). One commercial project typically returns 10-50x your investment. Qualifier network adds $3,000-6,000 monthly passive income. Break-even: 3-18 days from first licensed job. Tax savings alone often cover 30-40% of investment. We provide personalized ROI calculator with your specific market data.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 131.70289993286133,
+      "success": true
+    },
+    {
+      "question_id": "pc_017",
+      "question": "What about renewal costs?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 70,
+      "latency_ms": 144.80900764465332,
+      "success": true
+    },
+    {
+      "question_id": "pc_018",
+      "question": "How much for multiple state licenses?",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 75,
+      "latency_ms": 192.21186637878418,
+      "success": true
+    },
+    {
+      "question_id": "pc_019",
+      "question": "Is financing available?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 70,
+      "latency_ms": 204.47492599487305,
+      "success": true
+    },
+    {
+      "question_id": "pc_020",
+      "question": "What's the average cost nationwide?",
+      "answer": "Average first-year ROI is 3,000-16,000% based on income level. Examples: $30K contractors reach $60-90K (1,000% ROI), $75K contractors reach $150-225K (3,000% ROI). One commercial project typically returns 10-50x your investment. Qualifier network adds $3,000-6,000 monthly passive income. Break-even: 3-18 days from first licensed job. Tax savings alone often cover 30-40% of investment. We provide personalized ROI calculator with your specific market data.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 138.9942169189453,
+      "success": true
+    },
+    {
+      "question_id": "pc_021",
+      "question": "New York contractor license cost?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 221.3761806488037,
+      "success": true
+    },
+    {
+      "question_id": "pc_022",
+      "question": "Illinois licensing fees breakdown",
+      "answer": "IL licensing overview: Requirements include IL exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 192.25716590881348,
+      "success": true
+    },
+    {
+      "question_id": "pc_023",
+      "question": "Pennsylvania license total cost",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 80,
+      "latency_ms": 172.8053092956543,
+      "success": true
+    },
+    {
+      "question_id": "pc_024",
+      "question": "Ohio contractor fees all-in",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 150.19702911376953,
+      "success": true
+    },
+    {
+      "question_id": "pc_025",
+      "question": "Michigan licensing investment",
+      "answer": "MI licensing overview: Requirements include MI exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 70,
+      "latency_ms": 211.7288112640381,
+      "success": true
+    },
+    {
+      "question_id": "pc_026",
+      "question": "North Carolina license pricing",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 85,
+      "latency_ms": 179.0139675140381,
+      "success": true
+    },
+    {
+      "question_id": "pc_027",
+      "question": "Virginia contractor costs",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 80,
+      "latency_ms": 177.70695686340332,
+      "success": true
+    },
+    {
+      "question_id": "pc_028",
+      "question": "Arizona licensing fees",
+      "answer": "AZ licensing overview: Requirements include AZ exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 180.17292022705078,
+      "success": true
+    },
+    {
+      "question_id": "pc_029",
+      "question": "Colorado contractor license cost",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 85,
+      "latency_ms": 133.53395462036133,
+      "success": true
+    },
+    {
+      "question_id": "pc_030",
+      "question": "Washington state license pricing",
+      "answer": "Average first-year ROI is 3,000-16,000% based on income level. Examples: $30K contractors reach $60-90K (1,000% ROI), $75K contractors reach $150-225K (3,000% ROI). One commercial project typically returns 10-50x your investment. Qualifier network adds $3,000-6,000 monthly passive income. Break-even: 3-18 days from first licensed job. Tax savings alone often cover 30-40% of investment. We provide personalized ROI calculator with your specific market data.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 75,
+      "latency_ms": 144.5598602294922,
+      "success": true
+    },
+    {
+      "question_id": "pc_031",
+      "question": "Texas contractor license fees",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 80,
+      "latency_ms": 156.66890144348145,
+      "success": true
+    },
+    {
+      "question_id": "pc_032",
+      "question": "California licensing total cost",
+      "answer": "CA licensing overview: Requirements include CA exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 85,
+      "latency_ms": 192.48008728027344,
+      "success": true
+    },
+    {
+      "question_id": "pc_033",
+      "question": "Nevada contractor license price",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 80,
+      "latency_ms": 178.06315422058105,
+      "success": true
+    },
+    {
+      "question_id": "pc_034",
+      "question": "Oregon licensing fees",
+      "answer": "OR licensing overview: Requirements include OR exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 146.4250087738037,
+      "success": true
+    },
+    {
+      "question_id": "pc_035",
+      "question": "Utah contractor costs",
+      "answer": "UT licensing overview: Requirements include UT exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 138.3838653564453,
+      "success": true
+    },
+    {
+      "question_id": "pc_036",
+      "question": "Tennessee license pricing",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 75,
+      "latency_ms": 188.9359951019287,
+      "success": true
+    },
+    {
+      "question_id": "pc_037",
+      "question": "Kentucky contractor fees",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 185.76598167419434,
+      "success": true
+    },
+    {
+      "question_id": "pc_038",
+      "question": "Indiana licensing costs",
+      "answer": "IA licensing overview: Requirements include IA exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 80,
+      "latency_ms": 168.85614395141602,
+      "success": true
+    },
+    {
+      "question_id": "pc_039",
+      "question": "Missouri contractor pricing",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 75,
+      "latency_ms": 171.85616493225098,
+      "success": true
+    },
+    {
+      "question_id": "pc_040",
+      "question": "Alabama license fees total",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 200.00624656677246,
+      "success": true
+    },
+    {
+      "question_id": "ov_001",
+      "question": "I don't even know where to start - help?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 178.084135055542,
+      "success": true
+    },
+    {
+      "question_id": "ov_002",
+      "question": "How long is this whole process?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 60,
+      "latency_ms": 160.7058048248291,
+      "success": true
+    },
+    {
+      "question_id": "ov_003",
+      "question": "Do I need to study for tests?",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 70,
+      "latency_ms": 183.05015563964844,
+      "success": true
+    },
+    {
+      "question_id": "ov_004",
+      "question": "What documents do I need?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 70,
+      "latency_ms": 141.1111354827881,
+      "success": true
+    },
+    {
+      "question_id": "ov_005",
+      "question": "Can you walk me through step-by-step?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 75,
+      "latency_ms": 191.39409065246582,
+      "success": true
+    },
+    {
+      "question_id": "ov_006",
+      "question": "Is this really complicated?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 70,
+      "latency_ms": 170.6218719482422,
+      "success": true
+    },
+    {
+      "question_id": "ov_007",
+      "question": "I'm confused about the requirements",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 158.8582992553711,
+      "success": true
+    },
+    {
+      "question_id": "ov_008",
+      "question": "How do I know which license I need?",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 232.01584815979004,
+      "success": true
+    },
+    {
+      "question_id": "ov_009",
+      "question": "What if I fail the test?",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 182.65008926391602,
+      "success": true
+    },
+    {
+      "question_id": "ov_010",
+      "question": "Do you provide study materials?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 170.9761619567871,
+      "success": true
+    },
+    {
+      "question_id": "ov_011",
+      "question": "Is there someone to help me?",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 55,
+      "latency_ms": 200.69026947021484,
+      "success": true
+    },
+    {
+      "question_id": "ov_012",
+      "question": "How many forms are there?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 149.85299110412598,
+      "success": true
+    },
+    {
+      "question_id": "ov_013",
+      "question": "What's the first step I should take?",
+      "answer": "Average first-year ROI is 3,000-16,000% based on income level. Examples: $30K contractors reach $60-90K (1,000% ROI), $75K contractors reach $150-225K (3,000% ROI). One commercial project typically returns 10-50x your investment. Qualifier network adds $3,000-6,000 monthly passive income. Break-even: 3-18 days from first licensed job. Tax savings alone often cover 30-40% of investment. We provide personalized ROI calculator with your specific market data.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 155.4858684539795,
+      "success": true
+    },
+    {
+      "question_id": "ov_014",
+      "question": "Can you simplify this for me?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 139.8940086364746,
+      "success": true
+    },
+    {
+      "question_id": "ov_015",
+      "question": "I'm overwhelmed by all the options",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 75,
+      "latency_ms": 179.9459457397461,
+      "success": true
+    },
+    {
+      "question_id": "ov_016",
+      "question": "Do I need a lawyer?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 75,
+      "latency_ms": 189.30983543395996,
+      "success": true
+    },
+    {
+      "question_id": "ov_017",
+      "question": "What about insurance requirements?",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 75,
+      "latency_ms": 178.40003967285156,
+      "success": true
+    },
+    {
+      "question_id": "ov_018",
+      "question": "How do I prove my experience?",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 60,
+      "latency_ms": 172.60003089904785,
+      "success": true
+    },
+    {
+      "question_id": "ov_019",
+      "question": "What if I have a criminal record?",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 70,
+      "latency_ms": 187.2270107269287,
+      "success": true
+    },
+    {
+      "question_id": "ov_020",
+      "question": "Can you handle everything for me?",
+      "answer": "AL licensing overview: Requirements include AL exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 207.14282989501953,
+      "success": true
+    },
+    {
+      "question_id": "ov_021",
+      "question": "Georgia requirements seem complex",
+      "answer": "GA licensing overview: Requirements include GA exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 158.19120407104492,
+      "success": true
+    },
+    {
+      "question_id": "ov_022",
+      "question": "Florida process is confusing",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 172.9731559753418,
+      "success": true
+    },
+    {
+      "question_id": "ov_023",
+      "question": "New York licensing overwhelming",
+      "answer": "NY licensing overview: Requirements include NY exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 138.93413543701172,
+      "success": true
+    },
+    {
+      "question_id": "ov_024",
+      "question": "California requirements help",
+      "answer": "CA licensing overview: Requirements include CA exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 203.40299606323242,
+      "success": true
+    },
+    {
+      "question_id": "ov_025",
+      "question": "Texas process seems difficult",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 177.72793769836426,
+      "success": true
+    },
+    {
+      "question_id": "ov_026",
+      "question": "Illinois licensing confusion",
+      "answer": "IL licensing overview: Requirements include IL exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 183.74919891357422,
+      "success": true
+    },
+    {
+      "question_id": "ov_027",
+      "question": "Pennsylvania requirements unclear",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 75,
+      "latency_ms": 158.30206871032715,
+      "success": true
+    },
+    {
+      "question_id": "ov_028",
+      "question": "Ohio process questions",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 184.35287475585938,
+      "success": true
+    },
+    {
+      "question_id": "ov_029",
+      "question": "Michigan licensing help needed",
+      "answer": "Framing contractors earn $65,000-150,000+ annually. Licensing requires trade-specific exam, 2-4 years experience, specialized insurance. High-demand specialties: commercial framing ($85-150/hour), emergency services (2x rates), green/efficient systems (premium pricing). Qualifier opportunities: $500-1,500/month per qualifier relationship. Best states for framing: CA, TX, FL, NY (highest demand/rates). We provide framing-specific training and connect you with experienced mentors.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 174.2689609527588,
+      "success": true
+    },
+    {
+      "question_id": "ov_030",
+      "question": "North Carolina confusing rules",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 70,
+      "latency_ms": 192.41094589233398,
+      "success": true
+    },
+    {
+      "question_id": "ov_031",
+      "question": "Virginia requirements assistance",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 70,
+      "latency_ms": 215.65508842468262,
+      "success": true
+    },
+    {
+      "question_id": "ov_032",
+      "question": "Arizona process overwhelming",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 170.46213150024414,
+      "success": true
+    },
+    {
+      "question_id": "ov_033",
+      "question": "Colorado licensing complexity",
+      "answer": "CO licensing overview: Requirements include CO exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 136.54494285583496,
+      "success": true
+    },
+    {
+      "question_id": "ov_034",
+      "question": "Washington requirements help",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 75,
+      "latency_ms": 176.56397819519043,
+      "success": true
+    },
+    {
+      "question_id": "ov_035",
+      "question": "Oregon process confusion",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 174.9429702758789,
+      "success": true
+    },
+    {
+      "question_id": "ov_036",
+      "question": "Nevada licensing assistance",
+      "answer": "NV licensing overview: Requirements include NV exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 173.79093170166016,
+      "success": true
+    },
+    {
+      "question_id": "ov_037",
+      "question": "Utah requirements unclear",
+      "answer": "UT licensing overview: Requirements include UT exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 143.30291748046875,
+      "success": true
+    },
+    {
+      "question_id": "ov_038",
+      "question": "Tennessee process help",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 75,
+      "latency_ms": 174.13020133972168,
+      "success": true
+    },
+    {
+      "question_id": "ov_039",
+      "question": "Kentucky licensing confusion",
+      "answer": "KY licensing overview: Requirements include KY exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 143.23711395263672,
+      "success": true
+    },
+    {
+      "question_id": "ov_040",
+      "question": "Indiana requirements assistance",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 75,
+      "latency_ms": 188.16113471984863,
+      "success": true
+    },
+    {
+      "question_id": "sr_001",
+      "question": "What's your actual success rate with data?",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 85,
+      "latency_ms": 182.3890209197998,
+      "success": true
+    },
+    {
+      "question_id": "sr_002",
+      "question": "Can you prove the 98% approval claim?",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 70,
+      "latency_ms": 304.5980930328369,
+      "success": true
+    },
+    {
+      "question_id": "sr_003",
+      "question": "Show me competitor comparisons",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 65,
+      "latency_ms": 205.26504516601562,
+      "success": true
+    },
+    {
+      "question_id": "sr_004",
+      "question": "What independent reviews say about you?",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 80,
+      "latency_ms": 186.2032413482666,
+      "success": true
+    },
+    {
+      "question_id": "sr_005",
+      "question": "How many clients have you helped?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 60,
+      "latency_ms": 250.45084953308105,
+      "success": true
+    },
+    {
+      "question_id": "sr_006",
+      "question": "What's your BBB rating?",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 70,
+      "latency_ms": 139.60981369018555,
+      "success": true
+    },
+    {
+      "question_id": "sr_007",
+      "question": "Any lawsuits against your company?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 70,
+      "latency_ms": 140.90394973754883,
+      "success": true
+    },
+    {
+      "question_id": "sr_008",
+      "question": "Show me real testimonials",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 159.23810005187988,
+      "success": true
+    },
+    {
+      "question_id": "sr_009",
+      "question": "What certifications do you have?",
+      "answer": "No results found",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 0,
+      "latency_ms": 181.79583549499512,
+      "success": false
+    },
+    {
+      "question_id": "sr_010",
+      "question": "How long have you been in business?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 192.79909133911133,
+      "success": true
+    },
+    {
+      "question_id": "sr_011",
+      "question": "What's your refund rate?",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 138.90504837036133,
+      "success": true
+    },
+    {
+      "question_id": "sr_012",
+      "question": "Prove your ROI calculations",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 65,
+      "latency_ms": 202.40378379821777,
+      "success": true
+    },
+    {
+      "question_id": "sr_013",
+      "question": "Show me case studies",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 55,
+      "latency_ms": 227.4620532989502,
+      "success": true
+    },
+    {
+      "question_id": "sr_014",
+      "question": "What failures have you had?",
+      "answer": "No results found",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 0,
+      "latency_ms": 233.96897315979004,
+      "success": false
+    },
+    {
+      "question_id": "sr_015",
+      "question": "How do you verify success?",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 70,
+      "latency_ms": 135.53977012634277,
+      "success": true
+    },
+    {
+      "question_id": "sr_016",
+      "question": "What data backs your claims?",
+      "answer": "No results found",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 0,
+      "latency_ms": 130.23090362548828,
+      "success": false
+    },
+    {
+      "question_id": "sr_017",
+      "question": "Third-party validation sources?",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 173.77305030822754,
+      "success": true
+    },
+    {
+      "question_id": "sr_018",
+      "question": "Industry recognition or awards?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 65,
+      "latency_ms": 199.75900650024414,
+      "success": true
+    },
+    {
+      "question_id": "sr_019",
+      "question": "Government endorsements?",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 65,
+      "latency_ms": 201.1268138885498,
+      "success": true
+    },
+    {
+      "question_id": "sr_020",
+      "question": "Statistical evidence please",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 70,
+      "latency_ms": 160.0210666656494,
+      "success": true
+    },
+    {
+      "question_id": "sr_021",
+      "question": "Georgia success rate data",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 85,
+      "latency_ms": 137.6488208770752,
+      "success": true
+    },
+    {
+      "question_id": "sr_022",
+      "question": "Florida approval statistics",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 180.45806884765625,
+      "success": true
+    },
+    {
+      "question_id": "sr_023",
+      "question": "California success metrics",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 176.87702178955078,
+      "success": true
+    },
+    {
+      "question_id": "sr_024",
+      "question": "Texas approval percentages",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 174.95131492614746,
+      "success": true
+    },
+    {
+      "question_id": "sr_025",
+      "question": "New York success data",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 80,
+      "latency_ms": 184.4930648803711,
+      "success": true
+    },
+    {
+      "question_id": "sr_026",
+      "question": "Illinois approval rates",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 170.07899284362793,
+      "success": true
+    },
+    {
+      "question_id": "sr_027",
+      "question": "Pennsylvania statistics",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 191.91312789916992,
+      "success": true
+    },
+    {
+      "question_id": "sr_028",
+      "question": "Ohio success metrics",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 173.14600944519043,
+      "success": true
+    },
+    {
+      "question_id": "sr_029",
+      "question": "Michigan approval data",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 80,
+      "latency_ms": 173.45118522644043,
+      "success": true
+    },
+    {
+      "question_id": "sr_030",
+      "question": "North Carolina statistics",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 80,
+      "latency_ms": 137.85505294799805,
+      "success": true
+    },
+    {
+      "question_id": "sr_031",
+      "question": "Virginia success rates",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 169.8281764984131,
+      "success": true
+    },
+    {
+      "question_id": "sr_032",
+      "question": "Arizona approval data",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 80,
+      "latency_ms": 142.02284812927246,
+      "success": true
+    },
+    {
+      "question_id": "sr_033",
+      "question": "Colorado success metrics",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 184.1440200805664,
+      "success": true
+    },
+    {
+      "question_id": "sr_034",
+      "question": "Washington statistics",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 185.9729290008545,
+      "success": true
+    },
+    {
+      "question_id": "sr_035",
+      "question": "Oregon approval rates",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 70,
+      "latency_ms": 211.78030967712402,
+      "success": true
+    },
+    {
+      "question_id": "sr_036",
+      "question": "Nevada success data",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 75,
+      "latency_ms": 203.80496978759766,
+      "success": true
+    },
+    {
+      "question_id": "sr_037",
+      "question": "Utah approval metrics",
+      "answer": "UT licensing overview: Requirements include UT exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 172.31512069702148,
+      "success": true
+    },
+    {
+      "question_id": "sr_038",
+      "question": "Tennessee statistics",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 70,
+      "latency_ms": 181.75601959228516,
+      "success": true
+    },
+    {
+      "question_id": "sr_039",
+      "question": "Kentucky success rates",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 144.63186264038086,
+      "success": true
+    },
+    {
+      "question_id": "sr_040",
+      "question": "Indiana approval data",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 80,
+      "latency_ms": 178.7409782409668,
+      "success": true
+    },
+    {
+      "question_id": "tp_001",
+      "question": "What's the fastest path to licensing?",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 65,
+      "latency_ms": 339.9980068206787,
+      "success": true
+    },
+    {
+      "question_id": "tp_002",
+      "question": "Can I expedite the process?",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 70,
+      "latency_ms": 294.8276996612549,
+      "success": true
+    },
+    {
+      "question_id": "tp_003",
+      "question": "How quickly can I start bidding?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 70,
+      "latency_ms": 226.4688014984131,
+      "success": true
+    },
+    {
+      "question_id": "tp_004",
+      "question": "Rush processing available?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 75,
+      "latency_ms": 233.9479923248291,
+      "success": true
+    },
+    {
+      "question_id": "tp_005",
+      "question": "Minimum timeline to license?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 179.0618896484375,
+      "success": true
+    },
+    {
+      "question_id": "tp_006",
+      "question": "Can you fast-track my application?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 70,
+      "latency_ms": 348.62208366394043,
+      "success": true
+    },
+    {
+      "question_id": "tp_007",
+      "question": "Emergency licensing options?",
+      "answer": "Electrical contractors earn $65,000-150,000+ annually. Licensing requires trade-specific exam, 2-4 years experience, specialized insurance. High-demand specialties: commercial electrical ($85-150/hour), emergency services (2x rates), green/efficient systems (premium pricing). Qualifier opportunities: $500-1,500/month per qualifier relationship. Best states for electrical: CA, TX, FL, NY (highest demand/rates). We provide electrical-specific training and connect you with experienced mentors.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 207.26299285888672,
+      "success": true
+    },
+    {
+      "question_id": "tp_008",
+      "question": "How fast with your help vs alone?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 80,
+      "latency_ms": 199.62286949157715,
+      "success": true
+    },
+    {
+      "question_id": "tp_009",
+      "question": "Same-day processing possible?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 75,
+      "latency_ms": 370.3920841217041,
+      "success": true
+    },
+    {
+      "question_id": "tp_010",
+      "question": "Weekend or evening services?",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 60,
+      "latency_ms": 189.1031265258789,
+      "success": true
+    },
+    {
+      "question_id": "tp_011",
+      "question": "Can I start before approval?",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 60,
+      "latency_ms": 181.21600151062012,
+      "success": true
+    },
+    {
+      "question_id": "tp_012",
+      "question": "Temporary license while waiting?",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 167.1159267425537,
+      "success": true
+    },
+    {
+      "question_id": "tp_013",
+      "question": "Priority processing cost?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 248.3348846435547,
+      "success": true
+    },
+    {
+      "question_id": "tp_014",
+      "question": "Fastest state to get licensed?",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 196.37179374694824,
+      "success": true
+    },
+    {
+      "question_id": "tp_015",
+      "question": "Skip any requirements legally?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 181.63466453552246,
+      "success": true
+    },
+    {
+      "question_id": "tp_016",
+      "question": "Accelerated exam scheduling?",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 513.0119323730469,
+      "success": true
+    },
+    {
+      "question_id": "tp_017",
+      "question": "How to avoid delays?",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 421.39220237731934,
+      "success": true
+    },
+    {
+      "question_id": "tp_018",
+      "question": "Common bottlenecks to avoid?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 139.43123817443848,
+      "success": true
+    },
+    {
+      "question_id": "tp_019",
+      "question": "24-hour turnaround possible?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 139.4197940826416,
+      "success": true
+    },
+    {
+      "question_id": "tp_020",
+      "question": "Can you guarantee timeline?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 270.04098892211914,
+      "success": true
+    },
+    {
+      "question_id": "tp_021",
+      "question": "Georgia fast-track options",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 80,
+      "latency_ms": 143.49794387817383,
+      "success": true
+    },
+    {
+      "question_id": "tp_022",
+      "question": "Florida expedited licensing",
+      "answer": "FL licensing overview: Requirements include FL exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 80,
+      "latency_ms": 196.65002822875977,
+      "success": true
+    },
+    {
+      "question_id": "tp_023",
+      "question": "California rush processing",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 80,
+      "latency_ms": 192.57402420043945,
+      "success": true
+    },
+    {
+      "question_id": "tp_024",
+      "question": "Texas quick approval",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 55,
+      "latency_ms": 672.8289127349854,
+      "success": true
+    },
+    {
+      "question_id": "tp_025",
+      "question": "New York fast licensing",
+      "answer": "NY licensing overview: Requirements include NY exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 201.1580467224121,
+      "success": true
+    },
+    {
+      "question_id": "tp_026",
+      "question": "Illinois expedited process",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 70,
+      "latency_ms": 655.4040908813477,
+      "success": true
+    },
+    {
+      "question_id": "tp_027",
+      "question": "Pennsylvania quick path",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 70,
+      "latency_ms": 321.97022438049316,
+      "success": true
+    },
+    {
+      "question_id": "tp_028",
+      "question": "Ohio fast-track licensing",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 70,
+      "latency_ms": 827.5208473205566,
+      "success": true
+    },
+    {
+      "question_id": "tp_029",
+      "question": "Michigan rush approval",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 248.3348846435547,
+      "success": true
+    },
+    {
+      "question_id": "tp_030",
+      "question": "North Carolina quick process",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 838.3979797363281,
+      "success": true
+    },
+    {
+      "question_id": "tp_031",
+      "question": "Virginia expedited licensing",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 288.53797912597656,
+      "success": true
+    },
+    {
+      "question_id": "tp_032",
+      "question": "Arizona fast approval",
+      "answer": "AZ licensing overview: Requirements include AZ exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 80,
+      "latency_ms": 196.45071029663086,
+      "success": true
+    },
+    {
+      "question_id": "tp_033",
+      "question": "Colorado quick licensing",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 174.1781234741211,
+      "success": true
+    },
+    {
+      "question_id": "tp_034",
+      "question": "Washington rush process",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 80,
+      "latency_ms": 181.0750961303711,
+      "success": true
+    },
+    {
+      "question_id": "tp_035",
+      "question": "Oregon expedited path",
+      "answer": "OR licensing overview: Requirements include OR exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 137.41302490234375,
+      "success": true
+    },
+    {
+      "question_id": "tp_036",
+      "question": "Nevada fast licensing",
+      "answer": "NV licensing overview: Requirements include NV exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 70,
+      "latency_ms": 835.1659774780273,
+      "success": true
+    },
+    {
+      "question_id": "tp_037",
+      "question": "Utah quick approval",
+      "answer": "UT licensing overview: Requirements include UT exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 70,
+      "latency_ms": 205.85298538208008,
+      "success": true
+    },
+    {
+      "question_id": "tp_038",
+      "question": "Tennessee rush process",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 80,
+      "latency_ms": 188.29894065856934,
+      "success": true
+    },
+    {
+      "question_id": "tp_039",
+      "question": "Kentucky fast-track",
+      "answer": "KY licensing overview: Requirements include KY exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 141.75796508789062,
+      "success": true
+    },
+    {
+      "question_id": "tp_040",
+      "question": "Indiana expedited licensing",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 80,
+      "latency_ms": 145.80464363098145,
+      "success": true
+    },
+    {
+      "question_id": "ae_001",
+      "question": "How do I expand to multiple states?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 55,
+      "latency_ms": 248.08192253112793,
+      "success": true
+    },
+    {
+      "question_id": "ae_002",
+      "question": "What about the qualifier network income?",
+      "answer": "Average first-year ROI is 3,000-16,000% based on income level. Examples: $30K contractors reach $60-90K (1,000% ROI), $75K contractors reach $150-225K (3,000% ROI). One commercial project typically returns 10-50x your investment. Qualifier network adds $3,000-6,000 monthly passive income. Break-even: 3-18 days from first licensed job. Tax savings alone often cover 30-40% of investment. We provide personalized ROI calculator with your specific market data.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 1125.8838176727295,
+      "success": true
+    },
+    {
+      "question_id": "ae_003",
+      "question": "Best states for commercial contracts?",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 75,
+      "latency_ms": 175.8568286895752,
+      "success": true
+    },
+    {
+      "question_id": "ae_004",
+      "question": "How to scale my contracting business?",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 75,
+      "latency_ms": 128.45730781555176,
+      "success": true
+    },
+    {
+      "question_id": "ae_005",
+      "question": "Passive income opportunities?",
+      "answer": "Pool contractors earn $65,000-150,000+ annually. Licensing requires trade-specific exam, 2-4 years experience, specialized insurance. High-demand specialties: commercial pool ($85-150/hour), emergency services (2x rates), green/efficient systems (premium pricing). Qualifier opportunities: $500-1,500/month per qualifier relationship. Best states for pool: CA, TX, FL, NY (highest demand/rates). We provide pool-specific training and connect you with experienced mentors.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 205.25312423706055,
+      "success": true
+    },
+    {
+      "question_id": "ae_006",
+      "question": "Can I license others under me?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 190.88196754455566,
+      "success": true
+    },
+    {
+      "question_id": "ae_007",
+      "question": "Multi-state licensing strategy?",
+      "answer": "MT licensing overview: Requirements include MT exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 423.2368469238281,
+      "success": true
+    },
+    {
+      "question_id": "ae_008",
+      "question": "Government contract requirements?",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 502.26688385009766,
+      "success": true
+    },
+    {
+      "question_id": "ae_009",
+      "question": "How to become a qualifier?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 195.74499130249023,
+      "success": true
+    },
+    {
+      "question_id": "ae_010",
+      "question": "Income potential with license?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 133.5151195526123,
+      "success": true
+    },
+    {
+      "question_id": "ae_011",
+      "question": "Best markets for growth?",
+      "answer": "No results found",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 0,
+      "latency_ms": 155.84301948547363,
+      "success": false
+    },
+    {
+      "question_id": "ae_012",
+      "question": "How to dominate my market?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 55,
+      "latency_ms": 208.82678031921387,
+      "success": true
+    },
+    {
+      "question_id": "ae_013",
+      "question": "Licensing for business expansion?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 162.9040241241455,
+      "success": true
+    },
+    {
+      "question_id": "ae_014",
+      "question": "Interstate reciprocity agreements?",
+      "answer": "ME licensing overview: Requirements include ME exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 55,
+      "latency_ms": 939.4190311431885,
+      "success": true
+    },
+    {
+      "question_id": "ae_015",
+      "question": "Corporate licensing options?",
+      "answer": "AL licensing overview: Requirements include AL exam (pass rate 68%), 2-4 years experience verification, $15,000-50,000 bond, general liability insurance. Costs: $2,000-8,500 total including application ($200-500), exam ($100-300), bond ($500-2,000/year), insurance ($1,500-4,000/year). Timeline: 30-60 days standard, 7-14 days expedited. We handle everything and guarantee approval. Reciprocity available with neighboring states. Special fast-track for veterans and union members.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 192.08693504333496,
+      "success": true
+    },
+    {
+      "question_id": "ae_016",
+      "question": "How to build a contractor empire?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 55,
+      "latency_ms": 522.3937034606934,
+      "success": true
+    },
+    {
+      "question_id": "ae_017",
+      "question": "Franchise opportunities with license?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 416.95404052734375,
+      "success": true
+    },
+    {
+      "question_id": "ae_018",
+      "question": "International expansion possibilities?",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 143.7399387359619,
+      "success": true
+    },
+    {
+      "question_id": "ae_019",
+      "question": "Private equity requirements?",
+      "answer": "Federal contracting requires: SAM.gov registration (free, 2-3 weeks), CAGE code assignment, NAICS code selection, possibly 8(a) or HUBZone certification for advantages. Key steps: Complete capability statement, understand FAR regulations, meet bonding requirements ($100K+), maintain required insurances. Average federal contract: $250K-2M. We guide you through entire process including CMMC cybersecurity compliance and GSA schedule applications. Federal work pays 15-30% above commercial rates.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 70,
+      "latency_ms": 164.63422775268555,
+      "success": true
+    },
+    {
+      "question_id": "ae_020",
+      "question": "Exit strategy considerations?",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 50,
+      "latency_ms": 633.9540481567383,
+      "success": true
+    },
+    {
+      "question_id": "ae_021",
+      "question": "Georgia business opportunities",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 174.76987838745117,
+      "success": true
+    },
+    {
+      "question_id": "ae_022",
+      "question": "Florida commercial markets",
+      "answer": "Average first-year ROI is 3,000-16,000% based on income level. Examples: $30K contractors reach $60-90K (1,000% ROI), $75K contractors reach $150-225K (3,000% ROI). One commercial project typically returns 10-50x your investment. Qualifier network adds $3,000-6,000 monthly passive income. Break-even: 3-18 days from first licensed job. Tax savings alone often cover 30-40% of investment. We provide personalized ROI calculator with your specific market data.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 75,
+      "latency_ms": 178.3597469329834,
+      "success": true
+    },
+    {
+      "question_id": "ae_023",
+      "question": "California growth potential",
+      "answer": "Electrical contractors earn $65,000-150,000+ annually. Licensing requires trade-specific exam, 2-4 years experience, specialized insurance. High-demand specialties: commercial electrical ($85-150/hour), emergency services (2x rates), green/efficient systems (premium pricing). Qualifier opportunities: $500-1,500/month per qualifier relationship. Best states for electrical: CA, TX, FL, NY (highest demand/rates). We provide electrical-specific training and connect you with experienced mentors.",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 70,
+      "latency_ms": 180.5551052093506,
+      "success": true
+    },
+    {
+      "question_id": "ae_024",
+      "question": "Texas expansion options",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 407.14001655578613,
+      "success": true
+    },
+    {
+      "question_id": "ae_025",
+      "question": "New York business scaling",
+      "answer": "Our 98% approval rate is independently verified: 3,427 successful contractors since 2019 (publicly verifiable licenses), third-party audit by Sterling Verification Services (report available), BBB A+ rating with 4.8/5 stars from 847 reviews, state licensing board confirmations in writing. Compare to 35-45% DIY success rate per NASCLA data. We guarantee approval or full refund - that's how confident we are. Request our verification packet with license numbers and client testimonials.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 135.76412200927734,
+      "success": true
+    },
+    {
+      "question_id": "ae_026",
+      "question": "Illinois commercial opportunities",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 280.1508903503418,
+      "success": true
+    },
+    {
+      "question_id": "ae_027",
+      "question": "Pennsylvania growth markets",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 65,
+      "latency_ms": 182.9218864440918,
+      "success": true
+    },
+    {
+      "question_id": "ae_028",
+      "question": "Ohio business expansion",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 132.51185417175293,
+      "success": true
+    },
+    {
+      "question_id": "ae_029",
+      "question": "Michigan commercial potential",
+      "answer": "Framing contractors earn $65,000-150,000+ annually. Licensing requires trade-specific exam, 2-4 years experience, specialized insurance. High-demand specialties: commercial framing ($85-150/hour), emergency services (2x rates), green/efficient systems (premium pricing). Qualifier opportunities: $500-1,500/month per qualifier relationship. Best states for framing: CA, TX, FL, NY (highest demand/rates). We provide framing-specific training and connect you with experienced mentors.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 75,
+      "latency_ms": 139.60504531860352,
+      "success": true
+    },
+    {
+      "question_id": "ae_030",
+      "question": "North Carolina growth options",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 65,
+      "latency_ms": 214.2651081085205,
+      "success": true
+    },
+    {
+      "question_id": "ae_031",
+      "question": "Virginia business opportunities",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 141.91889762878418,
+      "success": true
+    },
+    {
+      "question_id": "ae_032",
+      "question": "Arizona expansion potential",
+      "answer": "Solar contractors earn $65,000-150,000+ annually. Licensing requires trade-specific exam, 2-4 years experience, specialized insurance. High-demand specialties: commercial solar ($85-150/hour), emergency services (2x rates), green/efficient systems (premium pricing). Qualifier opportunities: $500-1,500/month per qualifier relationship. Best states for solar: CA, TX, FL, NY (highest demand/rates). We provide solar-specific training and connect you with experienced mentors.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 70,
+      "latency_ms": 197.08704948425293,
+      "success": true
+    },
+    {
+      "question_id": "ae_033",
+      "question": "Colorado commercial markets",
+      "answer": "Average first-year ROI is 3,000-16,000% based on income level. Examples: $30K contractors reach $60-90K (1,000% ROI), $75K contractors reach $150-225K (3,000% ROI). One commercial project typically returns 10-50x your investment. Qualifier network adds $3,000-6,000 monthly passive income. Break-even: 3-18 days from first licensed job. Tax savings alone often cover 30-40% of investment. We provide personalized ROI calculator with your specific market data.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 75,
+      "latency_ms": 194.47922706604004,
+      "success": true
+    },
+    {
+      "question_id": "ae_034",
+      "question": "Washington growth scaling",
+      "answer": "Pennsylvania is the cheapest at $600-2,550 total with HIC registration only $50, no exam required. For speed, Washington and North Carolina offer 7-14 day processing. Best overall value: North Carolina - low cost ($2,000-3,500), fast processing (7-14 days), and reciprocity with 12 other states. Our program works in all 50 states and handles expedited processing to get you licensed 75% faster than DIY approach.",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 65,
+      "latency_ms": 179.15797233581543,
+      "success": true
+    },
+    {
+      "question_id": "ae_035",
+      "question": "Oregon business opportunities",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 421.18215560913086,
+      "success": true
+    },
+    {
+      "question_id": "ae_036",
+      "question": "Nevada expansion options",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 191.572904586792,
+      "success": true
+    },
+    {
+      "question_id": "ae_037",
+      "question": "Utah commercial potential",
+      "answer": "HVAC contractors earn $65,000-150,000+ annually. Licensing requires trade-specific exam, 2-4 years experience, specialized insurance. High-demand specialties: commercial hvac ($85-150/hour), emergency services (2x rates), green/efficient systems (premium pricing). Qualifier opportunities: $500-1,500/month per qualifier relationship. Best states for hvac: CA, TX, FL, NY (highest demand/rates). We provide hvac-specific training and connect you with experienced mentors.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 75,
+      "latency_ms": 186.66791915893555,
+      "success": true
+    },
+    {
+      "question_id": "ae_038",
+      "question": "Tennessee growth markets",
+      "answer": "No results found",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 0,
+      "latency_ms": 173.54893684387207,
+      "success": false
+    },
+    {
+      "question_id": "ae_039",
+      "question": "Kentucky business scaling",
+      "answer": "We offer flexible payment options to fit any budget: 12-month plan at $416/month with 0% interest (most popular), 6-month accelerated at $832/month (0% interest), 3-month fast-track at $1,665/month. No credit check required for standard plans. All plans include immediate full access to training, support, and qualifier network. Alternative financing available through partners for those needing longer terms. Investment is 100% tax-deductible as business expense.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 181.2307834625244,
+      "success": true
+    },
+    {
+      "question_id": "ae_040",
+      "question": "Indiana expansion opportunities",
+      "answer": "With our fast-track system: Same-day reciprocity if you qualify, 48-hour expedited processing for $500 rush fee, 7-day guaranteed in fast states (PA, WA, NC), standard 14-32 days vs 127 days industry average. Emergency licensing available for disaster response contractors. We handle all paperwork, expediting, and follow-ups. Most clients are bidding on jobs within 2 weeks of starting our program. Time is money - each day unlicensed costs you $500-2,500 in opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 135.97798347473145,
+      "success": true
+    }
+  ],
+  "summary": {
+    "total_questions": 200,
+    "successful_queries": 194,
+    "success_rate": 0.97,
+    "average_score": 68.15,
+    "median_score": 70.0,
+    "min_score": 0,
+    "max_score": 85,
+    "average_latency_ms": 221.00589632987976,
+    "median_latency_ms": 182.09242820739746
+  },
+  "persona_performance": {
+    "price_conscious": {
+      "total_questions": 40,
+      "success_rate": 0.975,
+      "average_score": 73.125,
+      "average_latency_ms": 181.71982765197754
+    },
+    "overwhelmed_veteran": {
+      "total_questions": 40,
+      "success_rate": 1.0,
+      "average_score": 66.75,
+      "average_latency_ms": 174.2780327796936
+    },
+    "skeptical_researcher": {
+      "total_questions": 40,
+      "success_rate": 0.925,
+      "average_score": 67.875,
+      "average_latency_ms": 180.5578351020813
+    },
+    "time_pressed": {
+      "total_questions": 40,
+      "success_rate": 1.0,
+      "average_score": 71.75,
+      "average_latency_ms": 296.0037350654602
+    },
+    "ambitious_entrepreneur": {
+      "total_questions": 40,
+      "success_rate": 0.95,
+      "average_score": 61.25,
+      "average_latency_ms": 272.47005105018616
+    }
+  },
+  "grade_distribution": {
+    "A (90-100)": 0,
+    "B (80-89)": 27,
+    "C (70-79)": 96,
+    "D (60-69)": 63,
+    "F (0-59)": 14
+  }
+}

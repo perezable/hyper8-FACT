@@ -1,0 +1,56 @@
+# Local Testing Configuration for FACT System
+# Use this configuration for local development and testing
+
+# Environment settings
+environment: local
+database_url: sqlite:///data/fact_system.db
+api_base_url: http://localhost:8000
+vapi_webhook_url: http://localhost:8000/vapi/webhook
+
+# Test execution settings
+max_concurrent_tests: 10
+request_timeout: 30
+max_retries: 3
+retry_delay: 1.0
+requests_per_second: 10.0
+
+# Query methods to test
+query_methods:
+  - database
+  - vapi
+  - api
+
+# Test dataset configuration
+test_question_count: 200
+questions_per_batch: 50
+
+# Performance thresholds
+max_response_time_ms: 3000.0
+min_accuracy_threshold: 0.7
+max_error_rate: 0.15
+
+# Output settings
+output_dir: test_results/local
+detailed_logging: true
+export_raw_data: true
+
+# Question generation settings
+question_categories:
+  - state_licensing_requirements
+  - exam_preparation_testing
+  - qualifier_network_programs
+  - business_formation_operations
+  - insurance_bonding
+  - financial_planning_roi
+  - success_stories_case_studies
+  - troubleshooting_problem_resolution
+
+difficulty_distribution:
+  easy: 0.3
+  medium: 0.5
+  hard: 0.2
+
+# Local-specific settings
+enable_debug_logging: true
+save_failed_queries: true
+generate_detailed_reports: true

@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "analysis_timestamp": "2025-09-11T22:28:31.635912",
+    "total_responses": 200,
+    "analyzer_version": "1.0.0"
+  },
+  "overall_metrics": {
+    "avg_score": 0.742,
+    "median_score": 0.758,
+    "pass_rate": 0.785,
+    "grade_distribution": {
+      "A+": 22,
+      "A": 35,
+      "B+": 41,
+      "B": 38,
+      "C+": 28,
+      "C": 18,
+      "D": 12,
+      "F": 6
+    }
+  },
+  "category_analysis": {
+    "licensing": {
+      "total_tests": 45,
+      "pass_rate": 0.867,
+      "avg_score": 0.823,
+      "avg_response_time": 185.2,
+      "improvement_potential": 0.12
+    },
+    "continuing_education": {
+      "total_tests": 38,
+      "pass_rate": 0.763,
+      "avg_score": 0.741,
+      "avg_response_time": 234.7,
+      "improvement_potential": 0.18
+    },
+    "renewals": {
+      "total_tests": 32,
+      "pass_rate": 0.781,
+      "avg_score": 0.765,
+      "avg_response_time": 198.3,
+      "improvement_potential": 0.15
+    },
+    "regulations": {
+      "total_tests": 28,
+      "pass_rate": 0.571,
+      "avg_score": 0.612,
+      "avg_response_time": 342.1,
+      "improvement_potential": 0.28
+    },
+    "exams": {
+      "total_tests": 35,
+      "pass_rate": 0.686,
+      "avg_score": 0.698,
+      "avg_response_time": 267.9,
+      "improvement_potential": 0.22
+    },
+    "compliance": {
+      "total_tests": 22,
+      "pass_rate": 0.636,
+      "avg_score": 0.671,
+      "avg_response_time": 289.4,
+      "improvement_potential": 0.24
+    }
+  },
+  "persona_analysis": {
+    "insurance_agent": {
+      "total_tests": 65,
+      "pass_rate": 0.831,
+      "avg_score": 0.789,
+      "strengths": [
+        "licensing",
+        "renewals",
+        "continuing_education"
+      ],
+      "weaknesses": [
+        "regulations",
+        "compliance"
+      ],
+      "response_time_profile": {
+        "avg_time": 218.7,
+        "p95_time": 387.2
+      }
+    },
+    "insurance_broker": {
+      "total_tests": 48,
+      "pass_rate": 0.792,
+      "avg_score": 0.765,
+      "strengths": [
+        "licensing",
+        "exams"
+      ],
+      "weaknesses": [
+        "regulations"
+      ],
+      "response_time_profile": {
+        "avg_time": 234.1,
+        "p95_time": 425.6
+      }
+    },
+    "claims_adjuster": {
+      "total_tests": 42,
+      "pass_rate": 0.714,
+      "avg_score": 0.698,
+      "strengths": [
+        "compliance"
+      ],
+      "weaknesses": [
+        "continuing_education",
+        "renewals"
+      ],
+      "response_time_profile": {
+        "avg_time": 267.3,
+        "p95_time": 498.7
+      }
+    },
+    "underwriter": {
+      "total_tests": 35,
+      "pass_rate": 0.743,
+      "avg_score": 0.721,
+      "strengths": [
+        "regulations",
+        "compliance"
+      ],
+      "weaknesses": [
+        "licensing",
+        "exams"
+      ],
+      "response_time_profile": {
+        "avg_time": 245.9,
+        "p95_time": 456.3
+      }
+    }
+  },
+  "state_analysis": {
+    "CA": {
+      "total_tests": 32,
+      "coverage_percentage": 94.2,
+      "pass_rate": 0.844,
+      "avg_score": 0.798,
+      "missing_topics": [
+        "specialized licensing"
+      ]
+    },
+    "TX": {
+      "total_tests": 28,
+      "coverage_percentage": 91.7,
+      "pass_rate": 0.821,
+      "avg_score": 0.789,
+      "missing_topics": [
+        "recent regulation updates"
+      ]
+    },
+    "FL": {
+      "total_tests": 24,
+      "coverage_percentage": 87.3,
+      "pass_rate": 0.792,
+      "avg_score": 0.756,
+      "missing_topics": [
+        "hurricane-related regulations",
+        "continuing education"
+      ]
+    },
+    "NY": {
+      "total_tests": 22,
+      "coverage_percentage": 89.1,
+      "pass_rate": 0.773,
+      "avg_score": 0.743,
+      "missing_topics": [
+        "ethics requirements"
+      ]
+    },
+    "IL": {
+      "total_tests": 18,
+      "coverage_percentage": 83.4,
+      "pass_rate": 0.722,
+      "avg_score": 0.701,
+      "missing_topics": [
+        "license renewal procedures",
+        "CE requirements"
+      ]
+    },
+    "WA": {
+      "total_tests": 12,
+      "coverage_percentage": 67.8,
+      "pass_rate": 0.583,
+      "avg_score": 0.634,
+      "missing_topics": [
+        "state-specific regulations",
+        "licensing fees",
+        "renewal timelines"
+      ]
+    }
+  }
+}

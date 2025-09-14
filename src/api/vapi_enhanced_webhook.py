@@ -208,52 +208,7 @@ def _get_follow_up_question(metrics) -> str:
         return "When would you like to schedule your consultation?"
 
 
-async def calculate_roi_enhanced(call_id: str, current_income: float, 
-                                project_size: float = 50000, 
-                                monthly_projects: int = 2) -> Dict[str, Any]:
-    """Calculate ROI with journey context."""
-    
-    metrics = conversation_scorer.get_or_create_conversation(call_id)
-    
-    # Mark that ROI has been calculated
-    metrics.roi_calculated = True
-    metrics.value_mentions += 1
-    
-    # Process positive trust event
-    conversation_scorer.process_trust_event(
-        call_id, "positive", "Engaged with ROI calculation", 5.0
-    )
-    
-    # Calculate basic ROI
-    licensed_income = current_income * 2.5  # Average 150% increase
-    annual_increase = licensed_income - current_income
-    project_revenue = project_size * monthly_projects * 12
-    project_profit = project_revenue * 0.15  # 15% margin
-    
-    # Add qualifier income if interested
-    qualifier_income = 0
-    if metrics.qualifier_interest or metrics.persona_type == PersonaType.STRATEGIC_INVESTOR:
-        qualifier_income = 4500 * 12  # $4,500/month average
-    
-    total_additional_income = annual_increase + project_profit + qualifier_income
-    investment = 5000  # Average investment
-    roi_percentage = (total_additional_income / investment) * 100
-    payback_days = (investment / (total_additional_income / 365))
-    
-    return {
-        "current_income": current_income,
-        "projected_licensed_income": licensed_income,
-        "annual_increase": annual_increase,
-        "project_profit": project_profit,
-        "qualifier_income": qualifier_income,
-        "total_additional_income": total_additional_income,
-        "investment": investment,
-        "roi_percentage": roi_percentage,
-        "payback_days": payback_days,
-        "message": f"Based on your current income of ${current_income:,.0f}, you'll likely earn ${licensed_income:,.0f} once licensed - a ${annual_increase:,.0f} increase. Add ${project_profit:,.0f} from projects and ${qualifier_income:,.0f} from our qualifier network, totaling ${total_additional_income:,.0f} additional income. Your investment pays back in just {payback_days:.0f} days with a {roi_percentage:.0f}% ROI!",
-        "trust_score": metrics.trust_score,
-        "stage": metrics.stage.value
-    }
+# Old calculate_roi_enhanced function removed - now using enhanced_roi_calculator module
 
 
 async def process_function_call(function_name: str, parameters: Dict[str, Any], call_id: str) -> Dict[str, Any]:
@@ -297,12 +252,19 @@ async def process_function_call(function_name: str, parameters: Dict[str, Any], 
         )
     
     elif function_name == "calculateROI":
-        return await calculate_roi_enhanced(
+        # Import the enhanced ROI calculator
+        from .enhanced_roi_calculator import calculate_roi_enhanced_webhook
+        
+        return await calculate_roi_enhanced_webhook(
             call_id=call_id,
             current_income=parameters.get("currentIncome", 65000),
+            industry_type=parameters.get("industryType", "residential"),
+            geographic_market=parameters.get("geographicMarket", "suburban"),
+            experience_years=parameters.get("experienceYears", 4),
+            state=parameters.get("state", "GA"),
             project_size=parameters.get("projectSize", 15000),
             monthly_projects=parameters.get("monthlyProjects", 2),
-            qualifier_network=parameters.get("qualifierNetwork", False)
+            qualifier_network=parameters.get("qualifierNetwork", True)
         )
     
     elif function_name == "bookAppointment":

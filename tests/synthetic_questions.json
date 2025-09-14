@@ -1,0 +1,2056 @@
+{
+  "metadata": {
+    "dataset_name": "CLP Analysis Synthetic Questions",
+    "version": "1.0",
+    "created": "2025-09-12",
+    "total_questions": 200,
+    "personas": 5,
+    "questions_per_persona": 40,
+    "description": "Synthetic questions based on customer personas from CLP analysis for FACT training"
+  },
+  "personas": {
+    "price_conscious_penny": {
+      "name": "Price-Conscious Penny",
+      "description": "Budget-focused customers who prioritize cost-effectiveness and ROI",
+      "characteristics": ["cost-conscious", "value-seeking", "price-shopping", "ROI-focused"],
+      "questions": [
+        {
+          "id": "pcp_001",
+          "question": "How much does a Georgia contractor license cost all-in?",
+          "category": "pricing",
+          "difficulty": "easy",
+          "state": "GA",
+          "expected_elements": ["license fees", "exam costs", "insurance", "total cost breakdown"],
+          "intent": "cost_inquiry",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_002",
+          "question": "Are there payment plans available for licensing fees?",
+          "category": "financing",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["payment options", "installment plans", "financing"],
+          "intent": "payment_flexibility",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_003",
+          "question": "What's the cheapest state to get licensed in?",
+          "category": "cost_comparison",
+          "difficulty": "medium",
+          "state": "comparison",
+          "expected_elements": ["state comparison", "cost analysis", "lowest fees"],
+          "intent": "cost_optimization",
+          "urgency": "low"
+        },
+        {
+          "id": "pcp_004",
+          "question": "Can I write off licensing expenses on my taxes?",
+          "category": "tax_benefits",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["tax deductions", "business expenses", "IRS guidance"],
+          "intent": "cost_reduction",
+          "urgency": "low"
+        },
+        {
+          "id": "pcp_005",
+          "question": "What's the ROI on getting a contractor license?",
+          "category": "roi_analysis",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["return on investment", "income potential", "cost benefit"],
+          "intent": "investment_justification",
+          "urgency": "high"
+        },
+        {
+          "id": "pcp_006",
+          "question": "Do I really need insurance if I'm just starting out?",
+          "category": "cost_reduction",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["insurance requirements", "minimum coverage", "risk assessment"],
+          "intent": "cost_minimization",
+          "urgency": "high"
+        },
+        {
+          "id": "pcp_007",
+          "question": "Are there any discounts for military veterans?",
+          "category": "discounts",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["veteran discounts", "military benefits", "fee reductions"],
+          "intent": "cost_savings",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_008",
+          "question": "How much can I expect to make my first year licensed?",
+          "category": "income_potential",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["first year earnings", "income projections", "market rates"],
+          "intent": "revenue_forecast",
+          "urgency": "high"
+        },
+        {
+          "id": "pcp_009",
+          "question": "What if I fail the exam - do I have to pay again?",
+          "category": "exam_costs",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["retake fees", "exam policies", "additional costs"],
+          "intent": "risk_assessment",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_010",
+          "question": "Is there a cheaper alternative to getting licensed?",
+          "category": "alternatives",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["licensing alternatives", "cost comparison", "legal requirements"],
+          "intent": "cost_avoidance",
+          "urgency": "low"
+        },
+        {
+          "id": "pcp_011",
+          "question": "Can I work unlicensed until I save up for the license?",
+          "category": "legal_compliance",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["legal requirements", "penalties", "compliance"],
+          "intent": "cost_deferral",
+          "urgency": "high"
+        },
+        {
+          "id": "pcp_012",
+          "question": "What's the minimum bond amount I need in Florida?",
+          "category": "bonding_costs",
+          "difficulty": "medium",
+          "state": "FL",
+          "expected_elements": ["bond requirements", "minimum amounts", "Florida specific"],
+          "intent": "cost_minimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_013",
+          "question": "Do continuing education courses cost extra?",
+          "category": "ongoing_costs",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["CE requirements", "course costs", "renewal expenses"],
+          "intent": "total_cost_understanding",
+          "urgency": "low"
+        },
+        {
+          "id": "pcp_014",
+          "question": "Can I get a refund if I don't pass within 6 months?",
+          "category": "refund_policy",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["refund policies", "success guarantees", "money back"],
+          "intent": "risk_mitigation",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_015",
+          "question": "How much more money will I make with a license vs without?",
+          "category": "income_comparison",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["licensed vs unlicensed income", "wage comparison", "market data"],
+          "intent": "value_justification",
+          "urgency": "high"
+        },
+        {
+          "id": "pcp_016",
+          "question": "What's included in your service fee?",
+          "category": "service_breakdown",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["service inclusions", "fee breakdown", "value proposition"],
+          "intent": "value_assessment",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_017",
+          "question": "Are there any hidden fees I should know about?",
+          "category": "fee_transparency",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["all fees disclosed", "transparency", "no hidden costs"],
+          "intent": "cost_clarity",
+          "urgency": "high"
+        },
+        {
+          "id": "pcp_018",
+          "question": "Can I pay monthly instead of all at once?",
+          "category": "payment_options",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["monthly payments", "installment options", "payment flexibility"],
+          "intent": "cash_flow_management",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_019",
+          "question": "What's the typical payback period for licensing costs?",
+          "category": "payback_analysis",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["payback period", "break-even analysis", "time to ROI"],
+          "intent": "investment_timeline",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_020",
+          "question": "Do you offer any money-back guarantees?",
+          "category": "guarantees",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["satisfaction guarantee", "money back policy", "risk-free offer"],
+          "intent": "risk_reduction",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_021",
+          "question": "What's the cheapest way to meet the experience requirements?",
+          "category": "experience_costs",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["experience alternatives", "cost-effective options", "requirement fulfillment"],
+          "intent": "cost_optimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_022",
+          "question": "Can I bundle multiple state licenses for a discount?",
+          "category": "bulk_discounts",
+          "difficulty": "medium",
+          "state": "multiple",
+          "expected_elements": ["multi-state discounts", "bundle pricing", "bulk rates"],
+          "intent": "cost_savings",
+          "urgency": "low"
+        },
+        {
+          "id": "pcp_023",
+          "question": "What's the most cost-effective license type for beginners?",
+          "category": "license_selection",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["beginner licenses", "cost comparison", "entry-level options"],
+          "intent": "optimal_choice",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_024",
+          "question": "Do I need to hire a CPA for the financial statements?",
+          "category": "additional_costs",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["CPA requirements", "financial statement costs", "DIY options"],
+          "intent": "cost_control",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_025",
+          "question": "What's the annual cost to maintain a license?",
+          "category": "maintenance_costs",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["renewal fees", "annual costs", "maintenance expenses"],
+          "intent": "ongoing_cost_planning",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_026",
+          "question": "Can I start bidding jobs before I'm fully licensed?",
+          "category": "early_revenue",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["legal requirements", "bidding restrictions", "compliance issues"],
+          "intent": "revenue_acceleration",
+          "urgency": "high"
+        },
+        {
+          "id": "pcp_027",
+          "question": "What's the cost difference between residential and commercial licenses?",
+          "category": "license_comparison",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["license type costs", "residential vs commercial", "fee differences"],
+          "intent": "cost_comparison",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_028",
+          "question": "Are there early bird discounts if I sign up now?",
+          "category": "promotional_pricing",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["promotional offers", "early bird pricing", "limited time deals"],
+          "intent": "savings_opportunity",
+          "urgency": "high"
+        },
+        {
+          "id": "pcp_029",
+          "question": "What happens if I can't afford the insurance premiums?",
+          "category": "insurance_alternatives",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["insurance options", "affordable alternatives", "payment plans"],
+          "intent": "cost_management",
+          "urgency": "high"
+        },
+        {
+          "id": "pcp_030",
+          "question": "Can I use my current business credit to finance licensing?",
+          "category": "financing_options",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["business credit", "financing alternatives", "credit requirements"],
+          "intent": "financing_strategy",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_031",
+          "question": "What's the minimum I need to spend to get licensed?",
+          "category": "minimum_cost",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["absolute minimum costs", "bare bones pricing", "essential expenses"],
+          "intent": "budget_planning",
+          "urgency": "high"
+        },
+        {
+          "id": "pcp_032",
+          "question": "Do exam prep courses really improve pass rates enough to justify the cost?",
+          "category": "prep_course_value",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["prep course effectiveness", "pass rate improvement", "cost justification"],
+          "intent": "value_assessment",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_033",
+          "question": "Can I get licensed in a state with no experience requirements?",
+          "category": "requirement_avoidance",
+          "difficulty": "medium",
+          "state": "comparison",
+          "expected_elements": ["state requirements", "no experience states", "easier paths"],
+          "intent": "path_optimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_034",
+          "question": "What's the cost per job I need to break even?",
+          "category": "break_even_analysis",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["break-even calculation", "cost per job", "profitability analysis"],
+          "intent": "financial_planning",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_035",
+          "question": "Are there grants available for small business licensing?",
+          "category": "grants_funding",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["small business grants", "funding opportunities", "financial assistance"],
+          "intent": "cost_reduction",
+          "urgency": "low"
+        },
+        {
+          "id": "pcp_036",
+          "question": "Can I negotiate a lower price if I bring referrals?",
+          "category": "referral_discounts",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["referral programs", "discount opportunities", "price negotiation"],
+          "intent": "cost_reduction",
+          "urgency": "low"
+        },
+        {
+          "id": "pcp_037",
+          "question": "What's the true cost of NOT getting licensed?",
+          "category": "opportunity_cost",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["opportunity cost", "lost revenue", "competitive disadvantage"],
+          "intent": "decision_justification",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_038",
+          "question": "Do you have payment plans for people with bad credit?",
+          "category": "credit_flexible_financing",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["bad credit options", "flexible financing", "alternative payments"],
+          "intent": "financing_accessibility",
+          "urgency": "medium"
+        },
+        {
+          "id": "pcp_039",
+          "question": "Can I get a partial refund if I only use some of your services?",
+          "category": "partial_refunds",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["partial service refunds", "flexible policies", "pro-rated pricing"],
+          "intent": "cost_control",
+          "urgency": "low"
+        },
+        {
+          "id": "pcp_040",
+          "question": "What's the cheapest path to a $100K annual income?",
+          "category": "income_path_optimization",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["income targets", "career path", "cost-benefit optimization"],
+          "intent": "roi_maximization",
+          "urgency": "high"
+        }
+      ]
+    },
+    "overwhelmed_veteran": {
+      "name": "Overwhelmed Veteran",
+      "description": "Customers feeling confused by the complexity and needing step-by-step guidance",
+      "characteristics": ["confused", "need-guidance", "step-by-step", "simplification"],
+      "questions": [
+        {
+          "id": "ov_001",
+          "question": "I don't even know where to start - can you help?",
+          "category": "getting_started",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["step-by-step guidance", "initial steps", "beginner help"],
+          "intent": "guidance_request",
+          "urgency": "high"
+        },
+        {
+          "id": "ov_002",
+          "question": "How long is this whole licensing process?",
+          "category": "timeline",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["process timeline", "duration estimate", "milestone schedule"],
+          "intent": "timeline_understanding",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_003",
+          "question": "Do I need to study for these tests?",
+          "category": "exam_preparation",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["study requirements", "exam preparation", "success tips"],
+          "intent": "preparation_guidance",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_004",
+          "question": "What paperwork do I need to gather?",
+          "category": "documentation",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["required documents", "paperwork checklist", "preparation list"],
+          "intent": "documentation_clarity",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_005",
+          "question": "Can you walk me through each step?",
+          "category": "step_by_step",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["detailed process", "step-by-step guide", "sequential instructions"],
+          "intent": "process_understanding",
+          "urgency": "high"
+        },
+        {
+          "id": "ov_006",
+          "question": "What if I make a mistake on my application?",
+          "category": "error_concerns",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["error handling", "application corrections", "mistake recovery"],
+          "intent": "mistake_anxiety",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_007",
+          "question": "Is this really as complicated as it seems?",
+          "category": "complexity_reassurance",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["process simplification", "reassurance", "manageable steps"],
+          "intent": "complexity_concern",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_008",
+          "question": "Who can I call when I get stuck?",
+          "category": "support_access",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["support availability", "help resources", "contact information"],
+          "intent": "support_assurance",
+          "urgency": "high"
+        },
+        {
+          "id": "ov_009",
+          "question": "What happens after I submit my application?",
+          "category": "post_submission",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["next steps", "processing timeline", "follow-up actions"],
+          "intent": "process_continuation",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_010",
+          "question": "Can you help me understand all these terms and requirements?",
+          "category": "terminology_clarification",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["terminology explanation", "requirement clarification", "jargon translation"],
+          "intent": "understanding_request",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_011",
+          "question": "I'm 55 and not great with computers - is this doable?",
+          "category": "technology_concerns",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["technology assistance", "age-friendly process", "simplified approach"],
+          "intent": "technology_anxiety",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_012",
+          "question": "What's the difference between all these license types?",
+          "category": "license_education",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["license type explanation", "differences clarified", "selection guidance"],
+          "intent": "education_request",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_013",
+          "question": "How do I know if I'm doing this right?",
+          "category": "validation_seeking",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["progress validation", "correctness confirmation", "quality assurance"],
+          "intent": "reassurance_seeking",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_014",
+          "question": "Can someone review my application before I submit?",
+          "category": "application_review",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["review service", "quality check", "submission confidence"],
+          "intent": "review_request",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_015",
+          "question": "What are the most common mistakes people make?",
+          "category": "mistake_prevention",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["common errors", "mistake prevention", "best practices"],
+          "intent": "error_avoidance",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_016",
+          "question": "Do I need a lawyer for this?",
+          "category": "legal_assistance",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["legal requirements", "attorney necessity", "self-service capability"],
+          "intent": "complexity_assessment",
+          "urgency": "low"
+        },
+        {
+          "id": "ov_017",
+          "question": "How will I know when each step is complete?",
+          "category": "progress_tracking",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["completion indicators", "progress tracking", "milestone confirmation"],
+          "intent": "progress_clarity",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_018",
+          "question": "What if I don't understand something on the form?",
+          "category": "form_assistance",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["form help", "field explanations", "completion assistance"],
+          "intent": "form_confusion",
+          "urgency": "high"
+        },
+        {
+          "id": "ov_019",
+          "question": "Can you give me a simple checklist to follow?",
+          "category": "checklist_request",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["simple checklist", "task list", "organized steps"],
+          "intent": "organization_help",
+          "urgency": "high"
+        },
+        {
+          "id": "ov_020",
+          "question": "Is there a video that shows me how to do this?",
+          "category": "visual_learning",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["video tutorials", "visual guides", "demonstration content"],
+          "intent": "visual_learning_preference",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_021",
+          "question": "What order should I do things in?",
+          "category": "sequence_guidance",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["proper sequence", "order of operations", "workflow guidance"],
+          "intent": "sequence_clarity",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_022",
+          "question": "Can I do this at my own pace?",
+          "category": "pacing_flexibility",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["flexible timeline", "self-paced process", "no rush pressure"],
+          "intent": "pace_control",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_023",
+          "question": "What if I need to stop and come back later?",
+          "category": "process_interruption",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["save progress", "resume capability", "interrupted process"],
+          "intent": "flexibility_need",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_024",
+          "question": "How much hand-holding do you provide?",
+          "category": "support_level",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["support extent", "guidance level", "assistance availability"],
+          "intent": "support_assessment",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_025",
+          "question": "Can you help me gather all my documents?",
+          "category": "document_assistance",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["document collection", "preparation help", "organization assistance"],
+          "intent": "documentation_help",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_026",
+          "question": "What's the easiest way to get through this?",
+          "category": "ease_optimization",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["simplified approach", "easiest path", "minimal complexity"],
+          "intent": "simplification_request",
+          "urgency": "high"
+        },
+        {
+          "id": "ov_027",
+          "question": "Do you have someone who can explain everything to me?",
+          "category": "personal_explanation",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["personal consultation", "one-on-one explanation", "detailed walkthrough"],
+          "intent": "personal_attention",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_028",
+          "question": "I'm worried I'll mess something up - can you prevent that?",
+          "category": "error_prevention",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["error prevention", "quality assurance", "mistake protection"],
+          "intent": "anxiety_about_errors",
+          "urgency": "high"
+        },
+        {
+          "id": "ov_029",
+          "question": "Can you handle all the complicated parts for me?",
+          "category": "service_delegation",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["full service", "complexity handling", "delegation options"],
+          "intent": "complexity_avoidance",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_030",
+          "question": "What happens if the state asks me questions I can't answer?",
+          "category": "state_interaction_concerns",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["state communication", "support during questions", "interaction assistance"],
+          "intent": "interaction_anxiety",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_031",
+          "question": "Is there a simple version of this process?",
+          "category": "process_simplification",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["simplified process", "basic approach", "streamlined method"],
+          "intent": "simplification_seeking",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_032",
+          "question": "How do I know what information the state wants?",
+          "category": "requirement_understanding",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["state requirements", "information needs", "application details"],
+          "intent": "requirement_clarity",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_033",
+          "question": "Can you translate all this legal language for me?",
+          "category": "legal_translation",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["plain English", "legal interpretation", "simplified explanation"],
+          "intent": "language_simplification",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_034",
+          "question": "What if I get rejected - then what?",
+          "category": "rejection_handling",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["rejection response", "reapplication process", "improvement guidance"],
+          "intent": "failure_contingency",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_035",
+          "question": "Do I really need all this stuff or just some of it?",
+          "category": "requirement_necessity",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["requirement clarification", "essential vs optional", "necessity assessment"],
+          "intent": "requirement_validation",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_036",
+          "question": "Can you give me just the basics to get started?",
+          "category": "basic_start",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["basic requirements", "starting point", "minimal initial steps"],
+          "intent": "simple_beginning",
+          "urgency": "high"
+        },
+        {
+          "id": "ov_037",
+          "question": "Will you be there to help if I get confused later?",
+          "category": "ongoing_support",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["continuous support", "ongoing availability", "future assistance"],
+          "intent": "support_assurance",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_038",
+          "question": "What's the most confusing part that I should watch out for?",
+          "category": "confusion_warning",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["common confusion points", "difficulty warnings", "attention areas"],
+          "intent": "confusion_prevention",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_039",
+          "question": "Can I get a personal guide through this whole thing?",
+          "category": "personal_guidance",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["personal guide", "dedicated support", "individual assistance"],
+          "intent": "personalized_service",
+          "urgency": "medium"
+        },
+        {
+          "id": "ov_040",
+          "question": "How do I know I'm ready to submit everything?",
+          "category": "readiness_assessment",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["readiness indicators", "completion checklist", "submission criteria"],
+          "intent": "readiness_confirmation",
+          "urgency": "medium"
+        }
+      ]
+    },
+    "skeptical_researcher": {
+      "name": "Skeptical Researcher",
+      "description": "Data-driven customers who want proof, statistics, and detailed comparisons",
+      "characteristics": ["data-driven", "proof-seeking", "analytical", "comparison-focused"],
+      "questions": [
+        {
+          "id": "sr_001",
+          "question": "What's your actual success rate with real data?",
+          "category": "success_metrics",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["success statistics", "pass rates", "data validation"],
+          "intent": "performance_verification",
+          "urgency": "high"
+        },
+        {
+          "id": "sr_002",
+          "question": "Can you prove the 98% approval claim?",
+          "category": "claim_verification",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["statistical proof", "verification methods", "data sources"],
+          "intent": "claim_validation",
+          "urgency": "high"
+        },
+        {
+          "id": "sr_003",
+          "question": "Show me competitor comparisons with actual data",
+          "category": "competitive_analysis",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["competitor comparison", "performance metrics", "market analysis"],
+          "intent": "competitive_evaluation",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_004",
+          "question": "What's your track record by state?",
+          "category": "state_performance",
+          "difficulty": "medium",
+          "state": "comparison",
+          "expected_elements": ["state-specific data", "performance breakdown", "success rates"],
+          "intent": "geographic_analysis",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_005",
+          "question": "Do you have case studies or testimonials I can verify?",
+          "category": "proof_documentation",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["verifiable testimonials", "case studies", "reference contacts"],
+          "intent": "credibility_verification",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_006",
+          "question": "What percentage of your clients actually get licensed?",
+          "category": "client_success_rate",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["client success metrics", "licensing completion rates", "outcome statistics"],
+          "intent": "outcome_analysis",
+          "urgency": "high"
+        },
+        {
+          "id": "sr_007",
+          "question": "How do your prices compare to doing it myself?",
+          "category": "cost_benefit_analysis",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["DIY cost comparison", "value proposition", "service justification"],
+          "intent": "value_assessment",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_008",
+          "question": "What's the average time to license completion with your service?",
+          "category": "timeline_performance",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["average timeline", "completion statistics", "time benchmarks"],
+          "intent": "efficiency_measurement",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_009",
+          "question": "Can you provide references from recent clients?",
+          "category": "reference_verification",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["client references", "contact information", "recent testimonials"],
+          "intent": "credibility_check",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_010",
+          "question": "What's your methodology for ensuring compliance?",
+          "category": "methodology_inquiry",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["compliance methods", "quality assurance", "systematic approach"],
+          "intent": "process_understanding",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_011",
+          "question": "How many licenses have you processed in the last year?",
+          "category": "volume_statistics",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["processing volume", "annual statistics", "scale metrics"],
+          "intent": "experience_quantification",
+          "urgency": "low"
+        },
+        {
+          "id": "sr_012",
+          "question": "What's your error rate and how do you measure quality?",
+          "category": "quality_metrics",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["error rates", "quality measurements", "performance indicators"],
+          "intent": "quality_assessment",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_013",
+          "question": "Can you break down your success rate by license type?",
+          "category": "detailed_performance",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["license-specific success rates", "detailed breakdowns", "performance segmentation"],
+          "intent": "granular_analysis",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_014",
+          "question": "What data do you collect and how do you use it?",
+          "category": "data_practices",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["data collection", "usage policies", "analytics approach"],
+          "intent": "data_transparency",
+          "urgency": "low"
+        },
+        {
+          "id": "sr_015",
+          "question": "How do you benchmark against industry standards?",
+          "category": "industry_benchmarking",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["industry comparison", "standard benchmarks", "performance metrics"],
+          "intent": "industry_positioning",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_016",
+          "question": "What's your client retention rate?",
+          "category": "retention_metrics",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["retention statistics", "client loyalty", "repeat business"],
+          "intent": "service_satisfaction",
+          "urgency": "low"
+        },
+        {
+          "id": "sr_017",
+          "question": "Can you show me before/after income data for clients?",
+          "category": "income_impact_data",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["income improvement data", "ROI statistics", "earnings impact"],
+          "intent": "outcome_measurement",
+          "urgency": "high"
+        },
+        {
+          "id": "sr_018",
+          "question": "What's your response time for customer inquiries?",
+          "category": "service_metrics",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["response time statistics", "service level agreements", "support metrics"],
+          "intent": "service_quality",
+          "urgency": "low"
+        },
+        {
+          "id": "sr_019",
+          "question": "How do you handle applications that get rejected?",
+          "category": "rejection_handling",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["rejection statistics", "recovery processes", "success rates"],
+          "intent": "risk_assessment",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_020",
+          "question": "What certifications or accreditations do you have?",
+          "category": "credentials_verification",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["professional certifications", "accreditations", "credentials"],
+          "intent": "credibility_assessment",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_021",
+          "question": "Can you provide a detailed cost breakdown with comparisons?",
+          "category": "cost_analysis",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["detailed cost breakdown", "comparative analysis", "value justification"],
+          "intent": "financial_analysis",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_022",
+          "question": "What's the statistical significance of your success claims?",
+          "category": "statistical_validity",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["statistical analysis", "significance testing", "data validity"],
+          "intent": "scientific_validation",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_023",
+          "question": "How do you measure customer satisfaction?",
+          "category": "satisfaction_metrics",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["satisfaction surveys", "measurement methods", "customer feedback"],
+          "intent": "service_evaluation",
+          "urgency": "low"
+        },
+        {
+          "id": "sr_024",
+          "question": "What's your historical performance trend over the last 5 years?",
+          "category": "historical_analysis",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["historical data", "trend analysis", "performance evolution"],
+          "intent": "trend_assessment",
+          "urgency": "low"
+        },
+        {
+          "id": "sr_025",
+          "question": "Can you provide third-party validation of your claims?",
+          "category": "third_party_validation",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["independent verification", "third-party audits", "external validation"],
+          "intent": "objective_verification",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_026",
+          "question": "What's your market share in the licensing services industry?",
+          "category": "market_position",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["market share data", "competitive position", "industry standing"],
+          "intent": "market_assessment",
+          "urgency": "low"
+        },
+        {
+          "id": "sr_027",
+          "question": "How do you validate the accuracy of state requirements?",
+          "category": "accuracy_validation",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["validation methods", "accuracy checking", "requirement verification"],
+          "intent": "process_validation",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_028",
+          "question": "What's your average client ROI with documented proof?",
+          "category": "roi_documentation",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["ROI calculations", "documented results", "financial impact"],
+          "intent": "investment_validation",
+          "urgency": "high"
+        },
+        {
+          "id": "sr_029",
+          "question": "Can you show me your quality assurance process?",
+          "category": "qa_process",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["QA procedures", "quality controls", "process documentation"],
+          "intent": "quality_understanding",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_030",
+          "question": "What's your complaint resolution rate and average time?",
+          "category": "complaint_metrics",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["complaint statistics", "resolution rates", "response times"],
+          "intent": "service_reliability",
+          "urgency": "low"
+        },
+        {
+          "id": "sr_031",
+          "question": "How do you ensure data security and privacy?",
+          "category": "security_practices",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["security measures", "privacy policies", "data protection"],
+          "intent": "security_assessment",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_032",
+          "question": "What's your track record with complex or unusual cases?",
+          "category": "complex_case_performance",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["complex case success", "unusual situations", "specialized handling"],
+          "intent": "capability_assessment",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_033",
+          "question": "Can you provide independent audit results?",
+          "category": "audit_results",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["audit findings", "independent assessment", "compliance verification"],
+          "intent": "independent_validation",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_034",
+          "question": "What's your staffing model and expertise levels?",
+          "category": "staffing_analysis",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["staff qualifications", "expertise levels", "organizational structure"],
+          "intent": "capability_evaluation",
+          "urgency": "low"
+        },
+        {
+          "id": "sr_035",
+          "question": "How do you stay current with changing regulations?",
+          "category": "regulatory_compliance",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["regulation tracking", "update processes", "compliance maintenance"],
+          "intent": "compliance_assurance",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_036",
+          "question": "What's your customer lifetime value and retention strategy?",
+          "category": "business_metrics",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["customer metrics", "retention strategies", "business model"],
+          "intent": "business_understanding",
+          "urgency": "low"
+        },
+        {
+          "id": "sr_037",
+          "question": "Can you benchmark your service against DIY success rates?",
+          "category": "diy_comparison",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["DIY vs service comparison", "success rate differences", "value demonstration"],
+          "intent": "service_justification",
+          "urgency": "medium"
+        },
+        {
+          "id": "sr_038",
+          "question": "What's your contingency plan for regulatory changes?",
+          "category": "risk_management",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["contingency planning", "regulatory adaptation", "risk mitigation"],
+          "intent": "risk_assessment",
+          "urgency": "low"
+        },
+        {
+          "id": "sr_039",
+          "question": "How do you measure and improve your processes?",
+          "category": "process_improvement",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["process metrics", "improvement methods", "continuous improvement"],
+          "intent": "process_evaluation",
+          "urgency": "low"
+        },
+        {
+          "id": "sr_040",
+          "question": "What's your financial stability and business longevity?",
+          "category": "business_stability",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["financial health", "business history", "stability indicators"],
+          "intent": "stability_assessment",
+          "urgency": "medium"
+        }
+      ]
+    },
+    "time_pressed_pro": {
+      "name": "Time-Pressed Pro",
+      "description": "Busy professionals who prioritize speed, efficiency, and quick results",
+      "characteristics": ["time-sensitive", "efficiency-focused", "results-oriented", "urgency-driven"],
+      "questions": [
+        {
+          "id": "tpp_001",
+          "question": "What's the fastest path to licensing?",
+          "category": "speed_optimization",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["fastest process", "expedited options", "timeline optimization"],
+          "intent": "speed_maximization",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_002",
+          "question": "Can I expedite the process?",
+          "category": "expedite_options",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["expedited services", "rush processing", "faster alternatives"],
+          "intent": "process_acceleration",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_003",
+          "question": "How quickly can I start bidding jobs?",
+          "category": "time_to_revenue",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["revenue timeline", "bidding eligibility", "income start date"],
+          "intent": "revenue_acceleration",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_004",
+          "question": "What's the absolute minimum time needed?",
+          "category": "minimum_timeline",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["minimum duration", "fastest possible", "time optimization"],
+          "intent": "time_minimization",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_005",
+          "question": "Can you handle everything while I focus on business?",
+          "category": "full_service",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["complete service", "hands-off approach", "business continuity"],
+          "intent": "delegation_maximization",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_006",
+          "question": "Do you offer same-day or next-day processing?",
+          "category": "urgent_processing",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["same-day service", "urgent processing", "priority handling"],
+          "intent": "immediate_processing",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_007",
+          "question": "What can I do right now to get started faster?",
+          "category": "immediate_action",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["immediate steps", "preparation actions", "head start options"],
+          "intent": "instant_progress",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_008",
+          "question": "Which states process licenses the fastest?",
+          "category": "fast_states",
+          "difficulty": "medium",
+          "state": "comparison",
+          "expected_elements": ["processing speed by state", "fastest states", "timeline comparison"],
+          "intent": "optimal_state_selection",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_009",
+          "question": "Can I get multiple licenses simultaneously?",
+          "category": "parallel_processing",
+          "difficulty": "medium",
+          "state": "multiple",
+          "expected_elements": ["concurrent licensing", "parallel processing", "multiple applications"],
+          "intent": "efficiency_maximization",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_010",
+          "question": "What's your turnaround time guarantee?",
+          "category": "time_guarantee",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["time commitments", "delivery guarantees", "service level agreements"],
+          "intent": "timeline_assurance",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_011",
+          "question": "I need to be licensed by [specific date] - is that possible?",
+          "category": "deadline_feasibility",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["deadline assessment", "feasibility analysis", "timeline planning"],
+          "intent": "deadline_achievement",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_012",
+          "question": "Can you prioritize my application?",
+          "category": "priority_service",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["priority processing", "queue jumping", "urgent handling"],
+          "intent": "preferential_treatment",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_013",
+          "question": "What shortcuts are available for experienced contractors?",
+          "category": "experience_shortcuts",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["experience credits", "shortcuts", "accelerated paths"],
+          "intent": "experience_leverage",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_014",
+          "question": "How can I reduce processing delays?",
+          "category": "delay_prevention",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["delay avoidance", "smooth processing", "preparation tips"],
+          "intent": "delay_minimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_015",
+          "question": "What's the cost for rush processing?",
+          "category": "rush_pricing",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["rush fees", "expedited pricing", "priority costs"],
+          "intent": "speed_cost_assessment",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_016",
+          "question": "Can I work on getting licensed while running my current business?",
+          "category": "parallel_operations",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["concurrent activities", "business continuity", "minimal disruption"],
+          "intent": "operational_efficiency",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_017",
+          "question": "What's the fastest license type to get?",
+          "category": "quick_license_options",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["fastest license types", "quick options", "minimal requirements"],
+          "intent": "speed_optimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_018",
+          "question": "Do you have 24/7 support for urgent issues?",
+          "category": "urgent_support",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["24/7 availability", "urgent support", "immediate assistance"],
+          "intent": "continuous_support",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_019",
+          "question": "Can you notify me immediately when each step completes?",
+          "category": "real_time_updates",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["instant notifications", "real-time updates", "progress alerts"],
+          "intent": "immediate_awareness",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_020",
+          "question": "What's the earliest I can start making money?",
+          "category": "revenue_timeline",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["earliest revenue date", "income timeline", "earning potential"],
+          "intent": "income_acceleration",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_021",
+          "question": "Can I get a temporary license while waiting for permanent?",
+          "category": "temporary_licensing",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["temporary permits", "interim licensing", "bridge solutions"],
+          "intent": "immediate_operation",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_022",
+          "question": "What mobile apps or tools can speed up the process?",
+          "category": "efficiency_tools",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["mobile tools", "efficiency apps", "speed enhancers"],
+          "intent": "tool_optimization",
+          "urgency": "low"
+        },
+        {
+          "id": "tpp_023",
+          "question": "How do I avoid common delays?",
+          "category": "delay_avoidance",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["delay prevention", "common pitfalls", "smooth processing"],
+          "intent": "process_optimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_024",
+          "question": "Can you batch process multiple applications?",
+          "category": "batch_processing",
+          "difficulty": "medium",
+          "state": "multiple",
+          "expected_elements": ["batch processing", "bulk applications", "efficiency gains"],
+          "intent": "bulk_efficiency",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_025",
+          "question": "What preparation can I do in advance?",
+          "category": "advance_preparation",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["preparation steps", "advance work", "readiness optimization"],
+          "intent": "preparation_optimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_026",
+          "question": "Is there a fast-track program for professionals?",
+          "category": "professional_fast_track",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["professional programs", "fast-track options", "accelerated paths"],
+          "intent": "professional_advantage",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_027",
+          "question": "Can I submit everything digitally for faster processing?",
+          "category": "digital_submission",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["digital processes", "electronic submission", "paperless options"],
+          "intent": "digital_efficiency",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_028",
+          "question": "What's your fastest success story timeline?",
+          "category": "speed_benchmark",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["fastest completion", "record times", "speed benchmarks"],
+          "intent": "speed_validation",
+          "urgency": "low"
+        },
+        {
+          "id": "tpp_029",
+          "question": "Can I get licensed in multiple states with overlapping processes?",
+          "category": "multi_state_efficiency",
+          "difficulty": "hard",
+          "state": "multiple",
+          "expected_elements": ["multi-state coordination", "process overlap", "efficiency gains"],
+          "intent": "multi_state_optimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_030",
+          "question": "What's the minimum viable license to start working?",
+          "category": "minimum_viable_licensing",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["basic license options", "minimum requirements", "starter licenses"],
+          "intent": "quick_start_option",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_031",
+          "question": "Can you handle renewals automatically to save time?",
+          "category": "automated_renewals",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["automatic renewals", "renewal management", "time savings"],
+          "intent": "ongoing_efficiency",
+          "urgency": "low"
+        },
+        {
+          "id": "tpp_032",
+          "question": "What's the impact on processing time if I'm missing documents?",
+          "category": "documentation_impact",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["documentation delays", "missing document impact", "preparation importance"],
+          "intent": "delay_assessment",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_033",
+          "question": "Can I get pre-approved before submitting?",
+          "category": "pre_approval",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["pre-approval options", "preliminary review", "readiness confirmation"],
+          "intent": "approval_assurance",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_034",
+          "question": "What's your average vs promised delivery time?",
+          "category": "delivery_performance",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["delivery statistics", "performance metrics", "promise vs reality"],
+          "intent": "reliability_assessment",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_035",
+          "question": "Can I upgrade to faster service mid-process?",
+          "category": "service_upgrade",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["service upgrades", "mid-process changes", "acceleration options"],
+          "intent": "flexibility_optimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_036",
+          "question": "What business can I legally do while waiting for full license?",
+          "category": "interim_business",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["legal interim activities", "partial operations", "compliance boundaries"],
+          "intent": "interim_revenue",
+          "urgency": "high"
+        },
+        {
+          "id": "tpp_037",
+          "question": "How do I monitor progress in real-time?",
+          "category": "progress_monitoring",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["real-time tracking", "progress monitoring", "status updates"],
+          "intent": "progress_visibility",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_038",
+          "question": "Can you coordinate with my existing business schedule?",
+          "category": "schedule_coordination",
+          "difficulty": "easy",
+          "state": "general",
+          "expected_elements": ["schedule coordination", "business integration", "timing flexibility"],
+          "intent": "schedule_optimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_039",
+          "question": "What's the penalty for rushing vs waiting?",
+          "category": "rush_analysis",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["rush implications", "timing trade-offs", "decision analysis"],
+          "intent": "timing_optimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "tpp_040",
+          "question": "Can I get licensed faster by choosing a different business structure?",
+          "category": "structure_optimization",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["business structure impact", "licensing speed differences", "structural optimization"],
+          "intent": "structural_efficiency",
+          "urgency": "medium"
+        }
+      ]
+    },
+    "ambitious_entrepreneur": {
+      "name": "Ambitious Entrepreneur",
+      "description": "Growth-focused individuals looking to scale and maximize opportunities",
+      "characteristics": ["growth-oriented", "scaling-focused", "opportunity-seeking", "ambitious"],
+      "questions": [
+        {
+          "id": "ae_001",
+          "question": "How do I expand to multiple states efficiently?",
+          "category": "multi_state_expansion",
+          "difficulty": "hard",
+          "state": "multiple",
+          "expected_elements": ["expansion strategy", "multi-state coordination", "scaling approach"],
+          "intent": "geographic_expansion",
+          "urgency": "high"
+        },
+        {
+          "id": "ae_002",
+          "question": "What's the qualifier network income potential?",
+          "category": "qualifier_income",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["qualifier earning potential", "network income", "passive revenue"],
+          "intent": "passive_income_exploration",
+          "urgency": "high"
+        },
+        {
+          "id": "ae_003",
+          "question": "Which states offer the best commercial contract opportunities?",
+          "category": "commercial_opportunities",
+          "difficulty": "medium",
+          "state": "comparison",
+          "expected_elements": ["commercial market analysis", "state opportunities", "contract potential"],
+          "intent": "market_optimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_004",
+          "question": "Can I create a licensing business model?",
+          "category": "business_model",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["business model creation", "licensing business", "revenue streams"],
+          "intent": "business_model_innovation",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_005",
+          "question": "What's the fastest way to scale to 10 states?",
+          "category": "rapid_scaling",
+          "difficulty": "hard",
+          "state": "multiple",
+          "expected_elements": ["scaling strategy", "rapid expansion", "multi-state approach"],
+          "intent": "aggressive_growth",
+          "urgency": "high"
+        },
+        {
+          "id": "ae_006",
+          "question": "How do I build a network of qualified contractors?",
+          "category": "network_building",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["network development", "contractor recruitment", "team building"],
+          "intent": "network_expansion",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_007",
+          "question": "What are the highest revenue license types?",
+          "category": "high_revenue_licenses",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["revenue analysis", "profitable licenses", "income maximization"],
+          "intent": "revenue_optimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_008",
+          "question": "Can I license other people under my company?",
+          "category": "team_licensing",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["team licensing", "corporate structure", "employee licensing"],
+          "intent": "organizational_scaling",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_009",
+          "question": "What's the ROI on investing in premium licenses?",
+          "category": "premium_license_roi",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["premium ROI", "investment analysis", "high-tier benefits"],
+          "intent": "investment_optimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_010",
+          "question": "How do I position for government contracts?",
+          "category": "government_contracts",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["government contracting", "certification requirements", "positioning strategy"],
+          "intent": "government_market_entry",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_011",
+          "question": "What licensing creates the biggest competitive advantage?",
+          "category": "competitive_advantage",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["competitive positioning", "strategic licensing", "market differentiation"],
+          "intent": "strategic_positioning",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_012",
+          "question": "Can I build a franchise model around licensing?",
+          "category": "franchise_model",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["franchise development", "business model scaling", "licensing franchises"],
+          "intent": "franchise_exploration",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_013",
+          "question": "What's the income potential in the first 3 years?",
+          "category": "growth_projection",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["growth projections", "3-year outlook", "scaling timeline"],
+          "intent": "growth_planning",
+          "urgency": "high"
+        },
+        {
+          "id": "ae_014",
+          "question": "How do I identify emerging markets for expansion?",
+          "category": "market_identification",
+          "difficulty": "hard",
+          "state": "multiple",
+          "expected_elements": ["market analysis", "emerging opportunities", "expansion targeting"],
+          "intent": "market_intelligence",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_015",
+          "question": "What specialty licenses have the highest demand?",
+          "category": "specialty_demand",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["specialty market analysis", "demand assessment", "niche opportunities"],
+          "intent": "niche_identification",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_016",
+          "question": "Can I create joint ventures with other licensed contractors?",
+          "category": "joint_ventures",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["partnership opportunities", "joint venture structures", "collaboration benefits"],
+          "intent": "partnership_exploration",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_017",
+          "question": "What's the path to becoming a regional licensing leader?",
+          "category": "market_leadership",
+          "difficulty": "hard",
+          "state": "regional",
+          "expected_elements": ["leadership strategy", "market dominance", "regional expansion"],
+          "intent": "market_leadership",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_018",
+          "question": "How do I leverage technology for competitive advantage?",
+          "category": "technology_leverage",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["technology integration", "digital advantage", "innovation opportunities"],
+          "intent": "technology_differentiation",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_019",
+          "question": "What licensing opens doors to international opportunities?",
+          "category": "international_expansion",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["international opportunities", "global expansion", "cross-border licensing"],
+          "intent": "global_expansion",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_020",
+          "question": "Can I develop my own licensing training programs?",
+          "category": "training_programs",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["training development", "education business", "program creation"],
+          "intent": "education_business",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_021",
+          "question": "What's the acquisition potential in this industry?",
+          "category": "acquisition_opportunities",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["acquisition targets", "consolidation opportunities", "growth through acquisition"],
+          "intent": "acquisition_strategy",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_022",
+          "question": "How do I build a brand around my licensing expertise?",
+          "category": "brand_building",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["brand development", "thought leadership", "market positioning"],
+          "intent": "brand_development",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_023",
+          "question": "What investment is needed for a 50-state expansion?",
+          "category": "national_expansion",
+          "difficulty": "hard",
+          "state": "all_states",
+          "expected_elements": ["national expansion costs", "investment requirements", "50-state strategy"],
+          "intent": "national_scaling",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_024",
+          "question": "Can I monetize my licensing knowledge through consulting?",
+          "category": "consulting_monetization",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["consulting opportunities", "knowledge monetization", "service expansion"],
+          "intent": "knowledge_monetization",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_025",
+          "question": "What are the highest margin service additions?",
+          "category": "service_expansion",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["service additions", "margin optimization", "revenue diversification"],
+          "intent": "margin_optimization",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_026",
+          "question": "How do I build strategic partnerships for growth?",
+          "category": "strategic_partnerships",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["partnership strategy", "strategic alliances", "growth partnerships"],
+          "intent": "partnership_strategy",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_027",
+          "question": "What licensing creates recurring revenue opportunities?",
+          "category": "recurring_revenue",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["recurring revenue models", "subscription opportunities", "ongoing income"],
+          "intent": "revenue_stability",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_028",
+          "question": "Can I develop proprietary methods for licensing success?",
+          "category": "proprietary_methods",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["method development", "proprietary systems", "competitive differentiation"],
+          "intent": "innovation_development",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_029",
+          "question": "What's the path to licensing industry thought leadership?",
+          "category": "thought_leadership",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["thought leadership", "industry influence", "expert positioning"],
+          "intent": "industry_influence",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_030",
+          "question": "How do I identify and enter blue ocean markets?",
+          "category": "blue_ocean_strategy",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["blue ocean identification", "untapped markets", "strategic positioning"],
+          "intent": "market_innovation",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_031",
+          "question": "What licensing creates the strongest moats against competition?",
+          "category": "competitive_moats",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["competitive protection", "barrier creation", "moat development"],
+          "intent": "competitive_protection",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_032",
+          "question": "Can I develop licensing-as-a-service offerings?",
+          "category": "service_model_innovation",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["service model innovation", "SaaS approach", "recurring service"],
+          "intent": "business_model_innovation",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_033",
+          "question": "What's the venture capital interest in licensing businesses?",
+          "category": "vc_funding",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["VC interest", "funding opportunities", "investment potential"],
+          "intent": "funding_exploration",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_034",
+          "question": "How do I build a platform business around licensing?",
+          "category": "platform_business",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["platform development", "marketplace creation", "network effects"],
+          "intent": "platform_strategy",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_035",
+          "question": "What licensing enables the highest exit valuations?",
+          "category": "exit_strategy",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["exit valuation", "business value", "strategic positioning"],
+          "intent": "exit_planning",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_036",
+          "question": "Can I create vertical integration opportunities?",
+          "category": "vertical_integration",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["vertical integration", "value chain control", "market consolidation"],
+          "intent": "integration_strategy",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_037",
+          "question": "What's the potential for licensing automation and AI?",
+          "category": "automation_potential",
+          "difficulty": "medium",
+          "state": "general",
+          "expected_elements": ["automation opportunities", "AI integration", "technology leverage"],
+          "intent": "technology_advancement",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_038",
+          "question": "How do I build network effects in my licensing business?",
+          "category": "network_effects",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["network effects", "platform value", "viral growth"],
+          "intent": "network_strategy",
+          "urgency": "medium"
+        },
+        {
+          "id": "ae_039",
+          "question": "What are the opportunities in licensing data monetization?",
+          "category": "data_monetization",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["data opportunities", "monetization strategy", "information products"],
+          "intent": "data_strategy",
+          "urgency": "low"
+        },
+        {
+          "id": "ae_040",
+          "question": "Can I develop a licensing empire across multiple industries?",
+          "category": "multi_industry_expansion",
+          "difficulty": "hard",
+          "state": "general",
+          "expected_elements": ["multi-industry strategy", "empire building", "diversification"],
+          "intent": "empire_building",
+          "urgency": "low"
+        }
+      ]
+    }
+  },
+  "validation_notes": {
+    "persona_distribution": "Each persona has exactly 40 questions as requested",
+    "difficulty_levels": "Questions span easy (basic info), medium (detailed analysis), hard (complex scenarios)",
+    "state_coverage": "Questions cover general, state-specific, multi-state, and comparative scenarios",
+    "intent_mapping": "Each question maps to specific customer intents and urgency levels",
+    "element_expectations": "Expected response elements defined for training AI responses",
+    "category_diversity": "Questions span multiple categories relevant to each persona type"
+  }
+}

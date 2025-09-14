@@ -1,0 +1,2059 @@
+{
+  "test_metadata": {
+    "timestamp": "2025-09-12T13:40:30.216441",
+    "total_questions": 200,
+    "endpoint": "https://hyper8-fact-fact-system.up.railway.app/knowledge/search"
+  },
+  "questions_and_answers": [
+    {
+      "question_id": "pc_001",
+      "question": "How much does a Georgia contractor license cost all-in?",
+      "answer": "Georgia contractor license total cost: $600-2,200 all-in. State fees: Application $200, exam $110 each (2 exams), bond $10,000 ($100-500 annually). With FACT''s $4,995 program: All paperwork handled, exam prep included, guaranteed approval or money back. You save 12+ months of hassle and avoid $3,000+ in potential mistakes. Payment plans available: $416/month over 12 months.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 80,
+      "latency_ms": 774.6460437774658,
+      "success": true
+    },
+    {
+      "question_id": "pc_002",
+      "question": "What's the cheapest state to get licensed in?",
+      "answer": "Cost breakdown: Steps to get your contractor license: 1) Verify experience requirements (usually 4 years), 2) Submit application with fees, 3) Pass required exams, 4) Obtain bonds and insurance, 5) Complete background check, 6) Receive license. Timeline: 30-45 days. Cost: $2,500-3,500 total investment. Total investment typically ranges $300-800 depending on state requirements. Fees and costs are current as of 2025.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 70,
+      "latency_ms": 490.89884757995605,
+      "success": true
+    },
+    {
+      "question_id": "pc_003",
+      "question": "Are there payment plans available for the $4,995 fee?",
+      "answer": "#### Qualifications - Credit Score: 580-649 FICO or 590-659 VantageScore - Credit History: 2+ years established credit - Payment History: No more than 1 late payment in past 6 months - Income Verification: Required (tax returns or bank statements) - Employment: 2+ years same employer or industry #### Available Terms - Interest Rates: 6.9% - 12.9% APR - Payment Plans: 12-month standard or 6-month accelerated - Down Payment: $995 - $1,995 (20-40%) - Approval Rate: 78% - Processing Time: 1-3 business days - Documentation: Enhanced verification required #### Requirements - Income: Minimum $30,000 annually - Bank Account: 12+ months history, no NSF fees in 90 days - References: 2 professional references required - Insurance: Business liability insurance preferred",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 871.1543083190918,
+      "success": true
+    },
+    {
+      "question_id": "pc_004",
+      "question": "Is the investment worth it compared to DIY?",
+      "answer": "When customers ask about DIY licensing: ''Absolutely, many contractors try the DIY route. However, here''s what our data shows: DIY success rate is only 35-45% first-time approval with 60-70% exam pass rates. That means 55-65% face delays, reapplication fees, and lost opportunities. You''ll invest 80-125 hours of your time worth $6,000-$18,750. Our clients save 76-118 hours and achieve 98% approval rates. The question isn''t whether you CAN do it yourself, it''s whether your time is better spent building your business while we handle the paperwork.'' This information is time-sensitive.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 70,
+      "latency_ms": 429.6870231628418,
+      "success": true
+    },
+    {
+      "question_id": "pc_005",
+      "question": "What's the ROI on your licensing program?",
+      "answer": "Iowa contractor license ROI: Average residential project value $38,180, licensed contractors charge 15-25% premium over unlicensed. Annual income potential $65,000-185,000 depending on specialization. License investment $1835 typically recovers within 2-4 projects. Market advantages include bonding capacity, insurance eligibility, and legal work authorization. Break-even typically 3-6 months.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 65,
+      "latency_ms": 407.79685974121094,
+      "success": true
+    },
+    {
+      "question_id": "pc_006",
+      "question": "Can I get a discount if I refer others?",
+      "answer": "EPA RRP (Renovation, Repair, Painting) certification: Required for work on pre-1978 buildings, 8-hour training course, hands-on component, $300 certification fee, valid 5 years. Work practice requirements include containment, cleaning, waste disposal. Violations $37,500+ per occurrence. Online refresher available.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 60,
+      "latency_ms": 944.0100193023682,
+      "success": true
+    },
+    {
+      "question_id": "pc_007",
+      "question": "How much can I save doing it myself?",
+      "answer": "Cost breakdown: Professional services vs DIY cost comparison: Attorney consultation $250-$500/hour, accountant setup $500-$2,000, versus hidden DIY costs: reapplication fees $200-$500, delays worth $10K-$50K/month, error corrections, time investment 80-125 hours. Professional service cost of $1,250 service fee provides expert guidance, prevents costly mistakes, saves substantial time, achieves 98% first-time approval vs 35-45% DIY success. This information is time-sensitive. Total investment typically ranges $300-800 depending on state requirements.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 70,
+      "latency_ms": 422.49083518981934,
+      "success": true
+    },
+    {
+      "question_id": "pc_008",
+      "question": "What hidden fees should I expect?",
+      "answer": "#### What We DON''T Charge For: - Setup Fees: $0 - Monthly Subscriptions: $0 - Per-Lead Fees: $0 - Per-Contact Fees: $0 - Processing Fees: $0 - Success Fees: $0 - Renewal Fees: $0 - Upgrade Fees: $0 #### Transparent Financing Options: - Standard Plan: $416.25/month \u00d7 12 months (0% interest) - Extended Plan: $277.50/month \u00d7 18 months (2.9% APR) - Accelerated Plan: $832.50/month \u00d7 6 months (0% interest) - Full Payment: $4,995 one-time (5% early payment discount available)",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 419.9559688568115,
+      "success": true
+    },
+    {
+      "question_id": "pc_009",
+      "question": "Do you offer any guarantees on the investment?",
+      "answer": "Sarah: \"I totally get that - home improvements are a big investment, and you want to be smart about your budget. Here''s what I''d love to explore with you: we have some flexible payment options that might work better for your situation. We can do scheduled payments, and we work with a financing company that offers 0% interest for qualified customers. Sometimes what seems expensive upfront actually saves money in the long run - like fixing that water heater before it floods your basement. What if we looked at options that fit your budget better? I''d rather find a way to make it work than have you deal with a bigger problem later.\"",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 70,
+      "latency_ms": 451.02500915527344,
+      "success": true
+    },
+    {
+      "question_id": "pc_010",
+      "question": "What's included in the $4,995 price?",
+      "answer": "FACT $4,995 includes everything: Complete application preparation and submission, exam registration and prep materials, bond assistance and placement, insurance guidance, experience verification, legal document review, personal project manager, phone support, state communication, follow-up until licensed, renewal reminders first year, money-back guarantee. Compare to DIY average total cost $3,200 + 67% failure rate.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 70,
+      "latency_ms": 424.29494857788086,
+      "success": true
+    },
+    {
+      "question_id": "pc_011",
+      "question": "How much does a Florida license cost?",
+      "answer": "Florida contractor license total investment: Application fee $185, examination fee $220, surety bond $12,500 (annual premium ~$200-800), insurance ~$800-2,500 annually. Total first-year cost typically $1,655-2,655. Renewal costs $185 plus continuing education fees. Payment plans available through bonding companies.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 393.51487159729004,
+      "success": true
+    },
+    {
+      "question_id": "pc_012",
+      "question": "Compare your price to competitors",
+      "answer": "FACT $4,995 includes everything: Complete application preparation and submission, exam registration and prep materials, bond assistance and placement, insurance guidance, experience verification, legal document review, personal project manager, phone support, state communication, follow-up until licensed, renewal reminders first year, money-back guarantee. Compare to DIY average total cost $3,200 + 67% failure rate.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 65,
+      "latency_ms": 873.5816478729248,
+      "success": true
+    },
+    {
+      "question_id": "pc_013",
+      "question": "Is there a money-back guarantee?",
+      "answer": "If your LLC isn''t approved by the state within 30 days, we refund 100% of your service fees. No questions asked. Key value: Zero risk guarantee.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 65,
+      "latency_ms": 416.99886322021484,
+      "success": true
+    },
+    {
+      "question_id": "pc_014",
+      "question": "What's the cost breakdown by state?",
+      "answer": "Utah contractor license costs include $185 application fee, $50 per exam (trade + business law), and surety bond requirements from $6,000-40,000 based on classification. Total initial costs range from $350-600 plus bond premiums with $155 biennial renewal.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 70,
+      "latency_ms": 490.37694931030273,
+      "success": true
+    },
+    {
+      "question_id": "pc_015",
+      "question": "Do prices vary by license type?",
+      "answer": "Multi-state license management: Implement tracking system for renewal dates, assign dedicated compliance manager, use license management software, maintain separate insurance for each state, establish renewal calendar 90 days in advance. Consider professional license management services for 5+ states.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 60,
+      "latency_ms": 389.97912406921387,
+      "success": true
+    },
+    {
+      "question_id": "pc_016",
+      "question": "Are there additional exam fees?",
+      "answer": "Alabama contractor license costs include $300 application fee, $75 examination fee per exam (trade + business law), and $10,000 surety bond. Total initial costs range from $500-800 plus bond premiums. License renewal is $200 every 2 years with continuing education requirements.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 70,
+      "latency_ms": 417.0680046081543,
+      "success": true
+    },
+    {
+      "question_id": "pc_017",
+      "question": "What about renewal costs?",
+      "answer": "Licensing costs are 100% deductible as business expense. Tax savings: $1,004.40 (assuming 30% tax bracket), reducing net licensing cost to $2,340.60. Section 199A allows 20% deduction on qualified business income for pass-through entities, potentially saving up to $10,000 annually on $50,000 additional income. Continuing education expenses are above-the-line deduction up to $2,500 annually for mandatory CE starting 2025.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 65,
+      "latency_ms": 430.8898448944092,
+      "success": true
+    },
+    {
+      "question_id": "pc_018",
+      "question": "How much for multiple state licenses?",
+      "answer": "Multi-state license management: Implement tracking system for renewal dates, assign dedicated compliance manager, use license management software, maintain separate insurance for each state, establish renewal calendar 90 days in advance. Consider professional license management services for 5+ states.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 60,
+      "latency_ms": 420.98379135131836,
+      "success": true
+    },
+    {
+      "question_id": "pc_019",
+      "question": "Is financing available?",
+      "answer": "Contractor financing options: SBA loans (504 for real estate, 7a for working capital), equipment financing, business lines of credit, invoice factoring, merchant cash advances, equipment leasing. Interest rates 4-12% depending on credit and collateral. SBA loans offer best terms but longer approval process.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 60,
+      "latency_ms": 370.9428310394287,
+      "success": true
+    },
+    {
+      "question_id": "pc_020",
+      "question": "What's the average cost nationwide?",
+      "answer": "Maine contractor license total investment: Application fee $190, examination fee $170, surety bond $20,000 (annual premium ~$200-800), insurance ~$800-2,500 annually. Total first-year cost typically $2,360-3,360. Renewal costs $190 plus continuing education fees. Payment plans available through bonding companies.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 65,
+      "latency_ms": 641.7462825775146,
+      "success": true
+    },
+    {
+      "question_id": "pc_021",
+      "question": "New York contractor license cost?",
+      "answer": "New York has NO statewide general contractor license requirement. However, local licensing varies by municipality. NYC requires General Contractor Registration ($330 background fee + $100 license, valid 2 years) with 5 years experience. Home Improvement Contractors need exam (30 questions, $50 fee, 70% pass rate). Buffalo, Suffolk County have separate requirements. Most specialized trades (electrical, elevator, crane) require state licenses. Always check local municipality requirements.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 559.973955154419,
+      "success": true
+    },
+    {
+      "question_id": "pc_022",
+      "question": "Illinois licensing fees breakdown",
+      "answer": "Washington has among the simplest contractor licensing: No experience requirements, no education requirements, no examination for general contractors. $30,000 surety bond (increased July 2024), $250,000 minimum general liability insurance ($200K public liability + $50K property damage OR $250K combined). Registration fee $141.10 for 2 years. Must register with Secretary of State, obtain UBI number, get EIN. 3-4 week processing for mail applications. This information is time-sensitive.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 65,
+      "latency_ms": 583.9898586273193,
+      "success": true
+    },
+    {
+      "question_id": "pc_023",
+      "question": "Pennsylvania license total cost",
+      "answer": "Pennsylvania contractor license total investment: Application fee $192, exam fees $145, bond $249, insurance $165. Total cost typically $717-917. Payment plans available through approved providers. Rush processing available for additional $100-200 fee.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 85,
+      "latency_ms": 434.7970485687256,
+      "success": true
+    },
+    {
+      "question_id": "pc_024",
+      "question": "Ohio contractor fees all-in",
+      "answer": "Ohio contractor license total investment: Application fee $190, examination fee $170, surety bond $25,000 (annual premium ~$200-800), insurance ~$800-2,500 annually. Total first-year cost typically $2,860-3,860. Renewal costs $190 plus continuing education fees. Payment plans available through bonding companies.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 80,
+      "latency_ms": 395.8089351654053,
+      "success": true
+    },
+    {
+      "question_id": "pc_025",
+      "question": "Michigan licensing investment",
+      "answer": "Vermont contractor license total investment: Application fee $190, examination fee $170, surety bond $40,000 (annual premium ~$200-800), insurance ~$800-2,500 annually. Total first-year cost typically $4,360-5,360. Renewal costs $190 plus continuing education fees. Payment plans available through bonding companies.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 70,
+      "latency_ms": 465.57068824768066,
+      "success": true
+    },
+    {
+      "question_id": "pc_026",
+      "question": "North Carolina license pricing",
+      "answer": "North Carolina contractor license total investment: Application fee $239, exam fees $244, bond $337, insurance $255. Total cost typically $613-813. Payment plans available through approved providers. Rush processing available for additional $100-200 fee.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 80,
+      "latency_ms": 473.8290309906006,
+      "success": true
+    },
+    {
+      "question_id": "pc_027",
+      "question": "Virginia contractor costs",
+      "answer": "Virginia contractor license total investment: Application fee $200, examination fee $180, surety bond $50,000 (annual premium ~$200-800), insurance ~$800-2,500 annually. Total first-year cost typically $5,380-6,380. Renewal costs $200 plus continuing education fees. Payment plans available through bonding companies.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 80,
+      "latency_ms": 332.7968120574951,
+      "success": true
+    },
+    {
+      "question_id": "pc_028",
+      "question": "Arizona licensing fees",
+      "answer": "Arizona requires contractor licensing for projects over $1,000-5,000 depending on license type. General contractor license requires 2-4 years experience, trade exam, business law exam, and financial statement. Application fee typically $100-300, bond requirements $5,000-15,000. Processing time 4-8 weeks. Reciprocity available with neighboring states in some cases.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 409.4581604003906,
+      "success": true
+    },
+    {
+      "question_id": "pc_029",
+      "question": "Colorado contractor license cost",
+      "answer": "Colorado contractor license total investment: Application fee $108, exam fees $156, bond $319, insurance $359. Total cost typically $518-718. Payment plans available through approved providers. Rush processing available for additional $100-200 fee.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 85,
+      "latency_ms": 420.1488494873047,
+      "success": true
+    },
+    {
+      "question_id": "pc_030",
+      "question": "Washington state license pricing",
+      "answer": "Texas does not require state-level general contractor licensing. Must check municipal requirements for specific cities/counties. No age, experience, or educational requirements at state level. State licensing required for specific trades: Plumbing (Responsible Master Plumber), HVAC (Class A/B with insurance requirements), Electrical (2+ years journeyman before master). Municipal bonds may be required (example: San Antonio demolition $5,000 annual bond). This information is time-sensitive. Contact our licensing specialists for personalized guidance through the process.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 70,
+      "latency_ms": 423.91395568847656,
+      "success": true
+    },
+    {
+      "question_id": "pc_031",
+      "question": "Texas contractor license fees",
+      "answer": "Texas contractor license total investment: Application fee $200, examination fee $185, surety bond $50,000 (annual premium ~$200-800), insurance ~$800-2,500 annually. Total first-year cost typically $5,385-6,385. Renewal costs $200 plus continuing education fees. Payment plans available through bonding companies.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 85,
+      "latency_ms": 419.7101593017578,
+      "success": true
+    },
+    {
+      "question_id": "pc_032",
+      "question": "California licensing total cost",
+      "answer": "California contractor license total investment: Application fee $200, examination fee $300, surety bond $15,000 (annual premium ~$200-800), insurance ~$800-2,500 annually. Total first-year cost typically $2,000-3,000. Renewal costs $200 plus continuing education fees. Payment plans available through bonding companies.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 80,
+      "latency_ms": 422.2369194030762,
+      "success": true
+    },
+    {
+      "question_id": "pc_033",
+      "question": "Nevada contractor license price",
+      "answer": "Nevada contractor license timeline: Document preparation 1-2 weeks, application review 6 weeks, exam scheduling 1-2 weeks, results processing 1 week. Total timeline typically 12 weeks. Rush processing available reducing timeline by 2-4 weeks. Online applications processed faster than paper submissions.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 70,
+      "latency_ms": 424.0901470184326,
+      "success": true
+    },
+    {
+      "question_id": "pc_034",
+      "question": "Oregon licensing fees",
+      "answer": "Oregon requires contractor licensing for projects over $1,000-5,000 depending on license type. General contractor license requires 2-4 years experience, trade exam, business law exam, and financial statement. Application fee typically $100-300, bond requirements $5,000-15,000. Processing time 4-8 weeks. Reciprocity available with neighboring states in some cases.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 416.003942489624,
+      "success": true
+    },
+    {
+      "question_id": "pc_035",
+      "question": "Utah contractor costs",
+      "answer": "Utah contractor license total investment: Application fee $195, examination fee $175, surety bond $75,000 (annual premium ~$200-800), insurance ~$800-2,500 annually. Total first-year cost typically $7,870-8,870. Renewal costs $195 plus continuing education fees. Payment plans available through bonding companies.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 80,
+      "latency_ms": 317.2883987426758,
+      "success": true
+    },
+    {
+      "question_id": "pc_036",
+      "question": "Tennessee license pricing",
+      "answer": "Tennessee contractor license total investment: Application fee $199, exam fees $134, bond $589, insurance $245. Total cost typically $400-600. Payment plans available through approved providers. Rush processing available for additional $100-200 fee.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 75,
+      "latency_ms": 338.45019340515137,
+      "success": true
+    },
+    {
+      "question_id": "pc_037",
+      "question": "Kentucky contractor fees",
+      "answer": "Kentucky contractor costs include municipal business license fees ranging from $50-400 annually. Home improvement contractor registration costs $200. Trade-specific licenses range from $150-600. Public works prequalification has application fees. Total annual costs typically range from $300-1,200 depending on specialization and location.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 80,
+      "latency_ms": 417.18196868896484,
+      "success": true
+    },
+    {
+      "question_id": "pc_038",
+      "question": "Indiana licensing costs",
+      "answer": "Licensing costs are 100% deductible as business expense. Tax savings: $1,004.40 (assuming 30% tax bracket), reducing net licensing cost to $2,340.60. Section 199A allows 20% deduction on qualified business income for pass-through entities, potentially saving up to $10,000 annually on $50,000 additional income. Continuing education expenses are above-the-line deduction up to $2,500 annually for mandatory CE starting 2025.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 75,
+      "latency_ms": 428.1010627746582,
+      "success": true
+    },
+    {
+      "question_id": "pc_039",
+      "question": "Missouri contractor pricing",
+      "answer": "Missouri experiences severe weather including tornadoes creating storm restoration opportunities. Kansas City straddles two states requiring familiarity with both Missouri and Kansas regulations. Agricultural construction is significant market. Missouri River flooding affects foundation requirements in some areas. No sales tax on labor creates pricing advantages.",
+      "persona": "price_conscious",
+      "category": "general",
+      "score": 65,
+      "latency_ms": 457.751989364624,
+      "success": true
+    },
+    {
+      "question_id": "pc_040",
+      "question": "Alabama license fees total",
+      "answer": "Alabama contractor license total investment: Application fee $218, exam fees $260, bond $505, insurance $391. Total cost typically $726-926. Payment plans available through approved providers. Rush processing available for additional $100-200 fee.",
+      "persona": "price_conscious",
+      "category": "cost",
+      "score": 85,
+      "latency_ms": 379.0781497955322,
+      "success": true
+    },
+    {
+      "question_id": "ov_001",
+      "question": "I don't even know where to start - help?",
+      "answer": "Multi-state expansion strategy: Start with reciprocity states (get 1 license, qualify for 5-8 others). Best sequence: Tennessee NASCLA license \u2192 reciprocity in AL, AR, GA, LA, MS, NC, OH, SC, WV. Then add high-revenue states individually. FACT manages all simultaneous applications with volume pricing: 20% discount on 3+ states, 35% discount on 5+ states.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 453.71007919311523,
+      "success": true
+    },
+    {
+      "question_id": "ov_002",
+      "question": "How long is this whole process?",
+      "answer": "Texas contractor licensing timeline: Document preparation 1-2 weeks, application review 3-6 weeks, exam scheduling 1-2 weeks, results processing 1 week. Total typical timeline 6 weeks from start to license issuance. Rush processing available for additional fee, reducing timeline by 2-3 weeks. Online applications processed faster than paper submissions.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 55,
+      "latency_ms": 458.02783966064453,
+      "success": true
+    },
+    {
+      "question_id": "ov_003",
+      "question": "Do I need to study for tests?",
+      "answer": "Study option comparison: Rocket Cert package $1,678 (95% pass rate), Used books $400-$800 (lower success), Online only $299-$599 (medium success), Classroom prep $800-$1,500 (good success), Private tutoring $100-$150/hour (variable success). Investment in comprehensive materials pays for itself through higher first-time pass probability. Failed exam costs: time delay, retest fees, lost opportunities worth $10K-$50K. This information is time-sensitive.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 418.84613037109375,
+      "success": true
+    },
+    {
+      "question_id": "ov_004",
+      "question": "What documents do I need?",
+      "answer": "Comprehensive contractor insurance portfolio: General liability ($1-2M limits), professional liability (E&O), workers compensation (state required), commercial auto, tools/equipment coverage, cyber liability (increasingly important), umbrella policy for additional protection. Annual premiums typically 2-4% of revenue. Claims-free discounts available 10-25%.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 55,
+      "latency_ms": 403.2628536224365,
+      "success": true
+    },
+    {
+      "question_id": "ov_005",
+      "question": "Can you walk me through step-by-step?",
+      "answer": "Absolutely! Here''s your simple path: 1) Free consultation call (30 min) to assess your situation, 2) We complete all paperwork for you, 3) Schedule your exam when you''re ready, 4) We handle state submission and follow-up, 5) You get your license. You only do the exam - we handle everything else. Personal project manager assigned to guide you through each step.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 479.63500022888184,
+      "success": true
+    },
+    {
+      "question_id": "ov_006",
+      "question": "Is this really complicated?",
+      "answer": "Sarah: \"Oh, that''s such a good question! I know permits seem like a hassle, but they''re actually there to protect you. Think about it this way - when you go to sell your house, buyers want to see that electrical and plumbing work was done properly and inspected. Without permits, you could have trouble selling, or your insurance might not cover damage from unpermitted work. Plus, most cities have pretty hefty fines if they find unpermitted work. We handle all the permit stuff for you - you don''t have to deal with any of it. It''s just built into our process. Would you like me to explain exactly what permits your project needs and why?\"",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 55,
+      "latency_ms": 501.4309883117676,
+      "success": true
+    },
+    {
+      "question_id": "ov_007",
+      "question": "I'm confused about the requirements",
+      "answer": "Georgia contractor bond requirements: General contractors must obtain a $10,000 surety bond. The bond protects consumers from contractor default or failure to meet obligations. Bond costs typically 1-3% of bond amount annually ($100-300/year) based on credit score. Fees and costs are current as of 2025.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 427.9611110687256,
+      "success": true
+    },
+    {
+      "question_id": "ov_008",
+      "question": "How do I know which license I need?",
+      "answer": "Sarah: \"I totally understand that feeling! You know what though? Our clients often say the same thing initially. Here''s what they discover - while the materials might seem like the only cost, there''s actually hidden expenses they hadn''t considered. Like permits, inspections, specialized tools you''d need to buy, and honestly? The time factor. Most DIY projects take 3x longer than expected. Plus, if something goes wrong, insurance won''t cover it. We''ve had clients come to us after trying DIY and ending up spending more fixing mistakes than our original quote. What specific part were you thinking of tackling yourself?\"",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 60,
+      "latency_ms": 472.35608100891113,
+      "success": true
+    },
+    {
+      "question_id": "ov_009",
+      "question": "What if I fail the test?",
+      "answer": "FACT $4,995 includes everything: Complete application preparation and submission, exam registration and prep materials, bond assistance and placement, insurance guidance, experience verification, legal document review, personal project manager, phone support, state communication, follow-up until licensed, renewal reminders first year, money-back guarantee. Compare to DIY average total cost $3,200 + 67% failure rate.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 640.8708095550537,
+      "success": true
+    },
+    {
+      "question_id": "ov_010",
+      "question": "Do you provide study materials?",
+      "answer": "Rocket Cert study package costs $1,678.25 and includes online study course, physical books with tabs, practice exams, study guides, and exam software. Achieves 95% first-time pass rate vs 60-70% DIY success rate. Alternative options range from $299-$1,500 but with lower success rates. Investment pays for itself through higher pass probability. This information is time-sensitive.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 664.6709442138672,
+      "success": true
+    },
+    {
+      "question_id": "ov_011",
+      "question": "Is there someone to help me?",
+      "answer": "Cost breakdown: Steps to get your contractor license: 1) Verify experience requirements (usually 4 years), 2) Submit application with fees, 3) Pass required exams, 4) Obtain bonds and insurance, 5) Complete background check, 6) Receive license. Timeline: 30-45 days. Cost: $2,500-3,500 total investment. Total investment typically ranges $300-800 depending on state requirements. Fees and costs are current as of 2025.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 411.87572479248047,
+      "success": true
+    },
+    {
+      "question_id": "ov_012",
+      "question": "How many forms are there?",
+      "answer": "Georgia contractor exam requirements: Two exams required - Business & Law exam (110 questions, 4 hours) and Trade exam (110 questions, 4 hours). Both require 70% passing score. Exams cover business practices, law, safety, and trade-specific knowledge. Contact our licensing specialists for personalized guidance through the process.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 55,
+      "latency_ms": 428.7230968475342,
+      "success": true
+    },
+    {
+      "question_id": "ov_013",
+      "question": "What's the first step I should take?",
+      "answer": "Feeling overwhelmed? Start here: 1) Choose your state (we recommend Delaware for most), 2) Pick your business name, 3) We handle everything else. Simple. Key value: Clear starting point.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 412.5809669494629,
+      "success": true
+    },
+    {
+      "question_id": "ov_014",
+      "question": "Can you simplify this for me?",
+      "answer": "Sarah: \"I totally understand that feeling! You know what though? Our clients often say the same thing initially. Here''s what they discover - while the materials might seem like the only cost, there''s actually hidden expenses they hadn''t considered. Like permits, inspections, specialized tools you''d need to buy, and honestly? The time factor. Most DIY projects take 3x longer than expected. Plus, if something goes wrong, insurance won''t cover it. We''ve had clients come to us after trying DIY and ending up spending more fixing mistakes than our original quote. What specific part were you thinking of tackling yourself?\"",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 55,
+      "latency_ms": 419.3120002746582,
+      "success": true
+    },
+    {
+      "question_id": "ov_015",
+      "question": "I'm overwhelmed by all the options",
+      "answer": "Michael: \"Budget optimization is a key consideration. Let me present several financial analysis options: 0% financing for qualified applicants (24-month terms), scheduled payment plans with no interest, cost-benefit analysis showing long-term savings, and emergency prevention ROI calculations. For example, a $1,200 plumbing repair prevents average $4,800 in water damage costs. Energy efficiency improvements typically provide 8-15% annual savings. We can also phase the project to spread costs over time. What''s your comfortable monthly investment level? I can design a solution that fits your budget parameters while addressing the critical issues first.\"",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 418.50805282592773,
+      "success": true
+    },
+    {
+      "question_id": "ov_016",
+      "question": "Do I need a lawyer?",
+      "answer": "Sarah: \"Oh, that''s such a good question! I know permits seem like a hassle, but they''re actually there to protect you. Think about it this way - when you go to sell your house, buyers want to see that electrical and plumbing work was done properly and inspected. Without permits, you could have trouble selling, or your insurance might not cover damage from unpermitted work. Plus, most cities have pretty hefty fines if they find unpermitted work. We handle all the permit stuff for you - you don''t have to deal with any of it. It''s just built into our process. Would you like me to explain exactly what permits your project needs and why?\"",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 424.7450828552246,
+      "success": true
+    },
+    {
+      "question_id": "ov_017",
+      "question": "What about insurance requirements?",
+      "answer": "When customers say their state doesn''t require licensing: ''You''re right that some states like Texas don''t require state-level licensing, but here''s what most contractors miss: 1) Major municipalities still require licensing, 2) Insurance companies give better rates to licensed contractors, 3) Clients increasingly prefer licensed contractors for protection, 4) Bonding capacity is higher for licensed contractors, 5) Many commercial and government projects require licensing regardless of state law. Not required doesn''t mean not valuable - it often means competitive advantage.'' This information is time-sensitive.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 507.8248977661133,
+      "success": true
+    },
+    {
+      "question_id": "ov_018",
+      "question": "How do I prove my experience?",
+      "answer": "Contractor business credit improvement: Establish business credit accounts, maintain low credit utilization, pay bills on time, separate business and personal finances, work with suppliers who report to business credit bureaus, monitor credit reports quarterly. Good business credit enables better financing terms and bonding capacity.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 60,
+      "latency_ms": 350.16798973083496,
+      "success": true
+    },
+    {
+      "question_id": "ov_019",
+      "question": "What if I have a criminal record?",
+      "answer": "Contractor business acquisition checklist: Clean license history and compliance record, diversified customer base, strong financial performance (3+ years), experienced workforce willing to stay, good reputation and reviews, equipment and vehicle condition, outstanding contracts and warranty obligations. Focus on businesses with 15%+ profit margins.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 55,
+      "latency_ms": 401.34572982788086,
+      "success": true
+    },
+    {
+      "question_id": "ov_020",
+      "question": "Can you handle everything for me?",
+      "answer": "Absolutely! Here''s your simple path: 1) Free consultation call (30 min) to assess your situation, 2) We complete all paperwork for you, 3) Schedule your exam when you''re ready, 4) We handle state submission and follow-up, 5) You get your license. You only do the exam - we handle everything else. Personal project manager assigned to guide you through each step.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 75,
+      "latency_ms": 424.8781204223633,
+      "success": true
+    },
+    {
+      "question_id": "ov_021",
+      "question": "Georgia requirements seem complex",
+      "answer": "Georgia contractor bond requirements: General contractors must obtain a $10,000 surety bond. The bond protects consumers from contractor default or failure to meet obligations. Bond costs typically 1-3% of bond amount annually ($100-300/year) based on credit score.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 423.2962131500244,
+      "success": true
+    },
+    {
+      "question_id": "ov_022",
+      "question": "Florida process is confusing",
+      "answer": "Common Florida contractor licensing mistakes: Underestimating experience documentation requirements, failing to prepare adequately for trade exams (70% passing score required), not securing surety bond early in process, missing continuing education deadlines, choosing wrong license classification for intended work scope. These mistakes cause 60% of application delays. Professional guidance reduces error rate by 85% and speeds licensing process by 4-6 weeks.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 422.6408004760742,
+      "success": true
+    },
+    {
+      "question_id": "ov_023",
+      "question": "New York licensing overwhelming",
+      "answer": "New York has NO statewide general contractor license requirement. However, local licensing varies by municipality. NYC requires General Contractor Registration ($330 background fee + $100 license, valid 2 years) with 5 years experience. Home Improvement Contractors need exam (30 questions, $50 fee, 70% pass rate). Buffalo, Suffolk County have separate requirements. Most specialized trades (electrical, elevator, crane) require state licenses. Always check local municipality requirements.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 417.1459674835205,
+      "success": true
+    },
+    {
+      "question_id": "ov_024",
+      "question": "California requirements help",
+      "answer": "Multi-state contractor facing California operation shutdown (40% of business). Invested $10,535 in qualifier arrangement. Timeline: 42 days to full operation. Results: Protected $400,000+ annual revenue stream. ROI: 3,673% annually. Quote: ''We saved our California operation which is 40% of our business.'' Demonstrates qualifier arrangement value for complex multi-state operations. This information is time-sensitive.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 419.360876083374,
+      "success": true
+    },
+    {
+      "question_id": "ov_025",
+      "question": "Texas process seems difficult",
+      "answer": "Texas does not require state-level general contractor licensing. Must check municipal requirements for specific cities/counties. No age, experience, or educational requirements at state level. State licensing required for specific trades: Plumbing (Responsible Master Plumber), HVAC (Class A/B with insurance requirements), Electrical (2+ years journeyman before master). Municipal bonds may be required (example: San Antonio demolition $5,000 annual bond). This information is time-sensitive.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 60,
+      "latency_ms": 419.13914680480957,
+      "success": true
+    },
+    {
+      "question_id": "ov_026",
+      "question": "Illinois licensing confusion",
+      "answer": "Texas does not require state-level general contractor licensing. Must check municipal requirements for specific cities/counties. No age, experience, or educational requirements at state level. State licensing required for specific trades: Plumbing (Responsible Master Plumber), HVAC (Class A/B with insurance requirements), Electrical (2+ years journeyman before master). Municipal bonds may be required (example: San Antonio demolition $5,000 annual bond). This information is time-sensitive.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 424.3600368499756,
+      "success": true
+    },
+    {
+      "question_id": "ov_027",
+      "question": "Pennsylvania requirements unclear",
+      "answer": "Colorado implementing International Code Council (ICC) standardized contractor exam starting early 2025 for new and renewing Class A, B, and C license applicants. ICC Standardized Contractor Exam specific to classification required. Affects municipalities including Denver which currently has stringent 7 years experience for Class A commercial, 2 years for Class C residential. Preparation recommended as this represents significant change from current municipal-specific requirements. This information is time-sensitive.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 399.7230529785156,
+      "success": true
+    },
+    {
+      "question_id": "ov_028",
+      "question": "Ohio process questions",
+      "answer": "Ohio requires contractor licensing for projects over $1,000-5,000 depending on license type. General contractor license requires 2-4 years experience, trade exam, business law exam, and financial statement. Application fee typically $100-300, bond requirements $5,000-15,000. Processing time 4-8 weeks. Reciprocity available with neighboring states in some cases.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 311.04302406311035,
+      "success": true
+    },
+    {
+      "question_id": "ov_029",
+      "question": "Michigan licensing help needed",
+      "answer": "Expedited service available for urgent needs: Base cost $3,345 plus $500 expedite fee = $3,845 total. Timeline: 20-25 days vs standard 30-45 days. Saves 15-20 days processing time. Full payment required upfront. ROI benefit: Access to projects 2-3 weeks earlier. Best for contractors with immediate project deadlines or opportunities requiring fast licensing. This information is time-sensitive.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 378.37696075439453,
+      "success": true
+    },
+    {
+      "question_id": "ov_030",
+      "question": "North Carolina confusing rules",
+      "answer": "NASCLA exam used by multiple states including Georgia, North Carolina, Tennessee. Open book format with highlighting and indexing allowed. Passing score: 70%. Questions: typically 110 for business/law, 110 for trade. Time limit: usually 3.5-4 hours per section. NASCLA Contractors Guide required reference material. Success rate dramatically higher with professional study materials vs DIY approach. This information is time-sensitive.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 75,
+      "latency_ms": 405.4110050201416,
+      "success": true
+    },
+    {
+      "question_id": "ov_031",
+      "question": "Virginia requirements assistance",
+      "answer": "Colorado implementing International Code Council (ICC) standardized contractor exam starting early 2025 for new and renewing Class A, B, and C license applicants. ICC Standardized Contractor Exam specific to classification required. Affects municipalities including Denver which currently has stringent 7 years experience for Class A commercial, 2 years for Class C residential. Preparation recommended as this represents significant change from current municipal-specific requirements. This information is time-sensitive.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 390.2618885040283,
+      "success": true
+    },
+    {
+      "question_id": "ov_032",
+      "question": "Arizona process overwhelming",
+      "answer": "Arizona contractor license process typically takes 4-6 weeks from application to approval. Exam scheduling available year-round with 1-2 week wait times. Background check takes 2-3 weeks, and financial review adds 1 week. Plan for 6-8 weeks total including preparation time.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 417.28997230529785,
+      "success": true
+    },
+    {
+      "question_id": "ov_033",
+      "question": "Colorado licensing complexity",
+      "answer": "Colorado contractor licensing timelines vary by jurisdiction. Denver process takes 4-6 weeks including exam scheduling. Colorado Springs takes 2-3 weeks with no exam required. Smaller municipalities may process in 1-2 weeks. Plan for 2-8 weeks depending on location and complexity of application.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 70,
+      "latency_ms": 359.8787784576416,
+      "success": true
+    },
+    {
+      "question_id": "ov_034",
+      "question": "Washington requirements help",
+      "answer": "Washington has among the simplest contractor licensing: No experience requirements, no education requirements, no examination for general contractors. $30,000 surety bond (increased July 2024), $250,000 minimum general liability insurance ($200K public liability + $50K property damage OR $250K combined). Registration fee $141.10 for 2 years. Must register with Secretary of State, obtain UBI number, get EIN. 3-4 week processing for mail applications. This information is time-sensitive.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 75,
+      "latency_ms": 369.276762008667,
+      "success": true
+    },
+    {
+      "question_id": "ov_035",
+      "question": "Oregon process confusion",
+      "answer": "Oregon requires contractor licensing for projects over $1,000-5,000 depending on license type. General contractor license requires 2-4 years experience, trade exam, business law exam, and financial statement. Application fee typically $100-300, bond requirements $5,000-15,000. Processing time 4-8 weeks. Reciprocity available with neighboring states in some cases.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 351.43017768859863,
+      "success": true
+    },
+    {
+      "question_id": "ov_036",
+      "question": "Nevada licensing assistance",
+      "answer": "Nevada requires contractor licensing for projects over $1,000. General contractor (B-2) license requires 4 years experience plus passing trade and business law exams. Must be 18+ years old, have Nevada business registration, and carry liability insurance. Background check and financial statement required with net worth documentation.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 343.7919616699219,
+      "success": true
+    },
+    {
+      "question_id": "ov_037",
+      "question": "Utah requirements unclear",
+      "answer": "Utah requires contractor licensing for projects over $1,000-5,000 depending on license type. General contractor license requires 2-4 years experience, trade exam, business law exam, and financial statement. Application fee typically $100-300, bond requirements $5,000-15,000. Processing time 4-8 weeks. Reciprocity available with neighboring states in some cases.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 374.8936653137207,
+      "success": true
+    },
+    {
+      "question_id": "ov_038",
+      "question": "Tennessee process help",
+      "answer": "Common delay causes: Incomplete experience documentation, missing business registrations, incorrect financial statements, background check issues, bond/insurance problems. Solutions: Complete application checklists, professional document preparation, advance business entity formation, early background check submission, pre-arranged insurance/bonding. Professional services prevent 98% of delays through systematic preparation and state-specific expertise. This information is time-sensitive.",
+      "persona": "overwhelmed_veteran",
+      "category": "process",
+      "score": 55,
+      "latency_ms": 336.75575256347656,
+      "success": true
+    },
+    {
+      "question_id": "ov_039",
+      "question": "Kentucky licensing confusion",
+      "answer": "Kentucky requires contractor licensing for projects over $1,000-5,000 depending on license type. General contractor license requires 2-4 years experience, trade exam, business law exam, and financial statement. Application fee typically $100-300, bond requirements $5,000-15,000. Processing time 4-8 weeks. Reciprocity available with neighboring states in some cases.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 65,
+      "latency_ms": 331.32290840148926,
+      "success": true
+    },
+    {
+      "question_id": "ov_040",
+      "question": "Indiana requirements assistance",
+      "answer": "Colorado implementing International Code Council (ICC) standardized contractor exam starting early 2025 for new and renewing Class A, B, and C license applicants. ICC Standardized Contractor Exam specific to classification required. Affects municipalities including Denver which currently has stringent 7 years experience for Class A commercial, 2 years for Class C residential. Preparation recommended as this represents significant change from current municipal-specific requirements. This information is time-sensitive.",
+      "persona": "overwhelmed_veteran",
+      "category": "requirements",
+      "score": 60,
+      "latency_ms": 371.1130619049072,
+      "success": true
+    },
+    {
+      "question_id": "sr_001",
+      "question": "What's your actual success rate with data?",
+      "answer": "Michael: \"That''s a valid concern in today''s digital landscape. Let me address the security and credibility aspects: We''re a brick-and-mortar business (here''s our physical address), licensed with your state (license #12345), A+ BBB rating with 4.8/5 stars over 600+ reviews, bonded and insured with $2M coverage, and we use enterprise-grade SSL encryption for all data. Our online system simply streamlines scheduling and payments - the actual work is done by certified local technicians. We''ve successfully completed 3,400+ local projects. Would you prefer to verify our credentials first, or would you like to start with an in-person consultation where we can address all your concerns face-to-face?\"",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 85,
+      "latency_ms": 403.8872718811035,
+      "success": true
+    },
+    {
+      "question_id": "sr_002",
+      "question": "Can you prove the 98% approval claim?",
+      "answer": "DIY licensing time investment: 80-125 hours (40-60 research, 20-30 application prep, 15-25 state correspondence, 5-10 exam scheduling). Professional service time: 4-7 hours (1-2 consultation, 2-3 document completion, 1-2 review/signing, 0 exam scheduling). Time savings: 76-118 hours worth $5,700-$17,700 at $75-150/hour contractor value. ROI on time savings alone: 70-429% before considering approval rate improvements and error prevention. This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 75,
+      "latency_ms": 403.5840034484863,
+      "success": true
+    },
+    {
+      "question_id": "sr_003",
+      "question": "Show me competitor comparisons",
+      "answer": "Cost breakdown: Professional services vs DIY cost comparison: Attorney consultation $250-$500/hour, accountant setup $500-$2,000, versus hidden DIY costs: reapplication fees $200-$500, delays worth $10K-$50K/month, error corrections, time investment 80-125 hours. Professional service cost of $1,250 service fee provides expert guidance, prevents costly mistakes, saves substantial time, achieves 98% first-time approval vs 35-45% DIY success. This information is time-sensitive. Total investment typically ranges $300-800 depending on state requirements.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 65,
+      "latency_ms": 327.4497985839844,
+      "success": true
+    },
+    {
+      "question_id": "sr_004",
+      "question": "What independent reviews say about you?",
+      "answer": "When customers say licensing is too expensive, respond: ''I understand the investment seems significant upfront. Let me show you why this pays for itself immediately. With your experience, you''re likely losing $15,000-$75,000 monthly in projects you can''t bid on. One mid-size project at $85,000 with 15% margin nets $12,750 - that''s nearly 4x your investment return on the first job alone. The real cost is waiting another month without your license.'' This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 65,
+      "latency_ms": 436.86628341674805,
+      "success": true
+    },
+    {
+      "question_id": "sr_005",
+      "question": "How many clients have you helped?",
+      "answer": "When customers ask about DIY licensing: ''Absolutely, many contractors try the DIY route. However, here''s what our data shows: DIY success rate is only 35-45% first-time approval with 60-70% exam pass rates. That means 55-65% face delays, reapplication fees, and lost opportunities. You''ll invest 80-125 hours of your time worth $6,000-$18,750. Our clients save 76-118 hours and achieve 98% approval rates. The question isn''t whether you CAN do it yourself, it''s whether your time is better spent building your business while we handle the paperwork.'' This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 397.0761299133301,
+      "success": true
+    },
+    {
+      "question_id": "sr_006",
+      "question": "What's your BBB rating?",
+      "answer": "Building contractor brand: Develop professional logo and marketing materials, maintain consistent online presence (website, social media), collect and display customer testimonials, showcase quality work through before/after photos, maintain excellent BBB rating, participate in community events, offer warranties and guarantees, respond quickly to customer inquiries. Strong brand increases referrals 60-80%.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 65,
+      "latency_ms": 327.6538848876953,
+      "success": true
+    },
+    {
+      "question_id": "sr_007",
+      "question": "Any lawsuits against your company?",
+      "answer": "Sarah: \"That''s totally fair! We''re not the biggest company out there, but that''s actually by design. We focus on this local area rather than trying to be everywhere. Here''s what I can tell you: we''ve been serving your neighborhood for 8 years, we''ve completed over 3,400 projects right here locally, we have a 4.8-star rating on Google with over 600 reviews, and I bet you''ve seen our trucks around - they''re the blue ones with our logo. Want me to give you some local references? I can provide neighbors who''ve used us, or you can check out our Google reviews. A lot of our business comes from referrals from happy customers.\"",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 60,
+      "latency_ms": 365.97394943237305,
+      "success": true
+    },
+    {
+      "question_id": "sr_008",
+      "question": "Show me real testimonials",
+      "answer": "When customers say licensing is too expensive, respond: ''I understand the investment seems significant upfront. Let me show you why this pays for itself immediately. With your experience, you''re likely losing $15,000-$75,000 monthly in projects you can''t bid on. One mid-size project at $85,000 with 15% margin nets $12,750 - that''s nearly 4x your investment return on the first job alone. The real cost is waiting another month without your license.'' This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 367.8567409515381,
+      "success": true
+    },
+    {
+      "question_id": "sr_009",
+      "question": "What certifications do you have?",
+      "answer": "Oklahoma experiences frequent severe weather including tornadoes creating significant storm restoration opportunities. Oil and gas industry provides specialized construction opportunities but requires safety certifications. Agricultural construction is significant market and Native American tribal lands may have different permitting requirements.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 60,
+      "latency_ms": 456.4979076385498,
+      "success": true
+    },
+    {
+      "question_id": "sr_010",
+      "question": "How long have you been in business?",
+      "answer": "Maine contractor licensing timeline: Document preparation 1-2 weeks, application review 3-6 weeks, exam scheduling 1-2 weeks, results processing 1 week. Total typical timeline 8 weeks from start to license issuance. Rush processing available for additional fee, reducing timeline by 2-3 weeks. Online applications processed faster than paper submissions.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 55,
+      "latency_ms": 425.89688301086426,
+      "success": true
+    },
+    {
+      "question_id": "sr_011",
+      "question": "What's your refund rate?",
+      "answer": "- 30-Day Refunds: 3.2% of all purchases - 6-Month Guarantee Claims: 6% of active participants - 12-Month Guarantee Claims: 13% of extended participants - Average Processing Time: 5.8 business days - Customer Satisfaction: 4.8/5 stars post-refund",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 70,
+      "latency_ms": 332.211971282959,
+      "success": true
+    },
+    {
+      "question_id": "sr_012",
+      "question": "Prove your ROI calculations",
+      "answer": "- Monthly Target Qualifiers: 12-18 - Monthly Revenue Potential: $3,360-$7,560 - Annual Revenue Potential: $40,320-$90,720 - ROI on $4,995 investment: 807%-1,817% - Break-even: 0.7-1.5 months",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 65,
+      "latency_ms": 329.6539783477783,
+      "success": true
+    },
+    {
+      "question_id": "sr_013",
+      "question": "Show me case studies",
+      "answer": "Building contractor brand: Develop professional logo and marketing materials, maintain consistent online presence (website, social media), collect and display customer testimonials, showcase quality work through before/after photos, maintain excellent BBB rating, participate in community events, offer warranties and guarantees, respond quickly to customer inquiries. Strong brand increases referrals 60-80%.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 306.182861328125,
+      "success": true
+    },
+    {
+      "question_id": "sr_014",
+      "question": "What failures have you had?",
+      "answer": "Michael: \"I appreciate the DIY spirit - I''m a bit of a weekend warrior myself. However, let me share some data that might interest you. According to HomeAdvisor, 67% of DIY electrical projects require professional correction, costing an average of 40% more than hiring a pro initially. Here''s the breakdown: permit fees $150-300, tool rental/purchase $200-500, inspection failures average 2.3x increasing costs, insurance liability gaps, and most importantly - time value. If you value your time at even $25/hour, a 20-hour project costs $500 in labor opportunity. We guarantee our work, handle all permits, and typically complete in 1/3 the time. What''s your timeline looking like?\"",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 402.85396575927734,
+      "success": true
+    },
+    {
+      "question_id": "sr_015",
+      "question": "How do you verify success?",
+      "answer": "Federal contracting proposal process: Research opportunities on SAM.gov and FPDS, analyze solicitation requirements thoroughly, prepare capability statement highlighting relevant experience, develop competitive pricing strategy, submit proposals through required channels (often GSA systems). Proposal win rates average 15-25% for new contractors, 40-60% for experienced. Professional proposal writing increases success rate significantly.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 65,
+      "latency_ms": 388.75794410705566,
+      "success": true
+    },
+    {
+      "question_id": "sr_016",
+      "question": "What data backs your claims?",
+      "answer": "Data Center Construction represents a $20.3B by 2026 market opportunity with 15% annual growth. Focus areas include Hyperscale data centers, edge computing facilities, cooling systems. Requirements: Critical facility expertise, clean room construction experience. Limited competition due to specialized nature. Premium pricing typical 30-50% above standard construction. High barrier to entry creates sustainable competitive advantage.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 70,
+      "latency_ms": 365.1881217956543,
+      "success": true
+    },
+    {
+      "question_id": "sr_017",
+      "question": "Third-party validation sources?",
+      "answer": "Background: - Location: Phoenix, Arizona - Services: Emergency HVAC and plumbing repair - Experience: 8 years technician, 6 months business owner - Challenge: New business needing immediate cash flow 30-Day Sprint Strategy: - Program Start: July 1, 2023 - Investment: $4,995 (12-month financing) - Focus: 24/7 emergency service positioning - Goal: Generate $10,000+ revenue in first month - Advantage: Phoenix summer heat = HVAC emergencies Day-by-Day Progress (First 30 Days): #### Week 1: Foundation Setting - Days 1-3: Complete all training modules - Days 4-5: Set up emergency response systems - Days 6-7: Begin qualifier network outreach - First Call: Day 8 - AC repair emergency ($485) #### Week 2: System Activation - Emergency Calls: 12 qualified emergency service calls - Conversion Rate: 92% (emergency situations convert highly) - Average Service Call: $425 - Week Revenue: $4,675 - Network Building: 15 new qualifier relationships #### Week 3: Momentum Building - Daily Calls: 3-5 emergency calls per day - Service Expansion: Added water heater emergencies - Referral System: Customers referring neighbors - Week Revenue: $6,250 - Quality Score: 4.9/5 Google reviews #### Week 4: Market Penetration - Peak Performance: 8 calls on hottest day (118\u00b0F) - Premium Pricing: Emergency surcharge accepted - Market Position: #3 emergency HVAC response in zip code - Week Revenue: $7,890 - Network Size: 34 active qualifier sources 30-Day Results: - Total Revenue: $19,300 (387% ROI in 30 days) -",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 65,
+      "latency_ms": 388.28492164611816,
+      "success": true
+    },
+    {
+      "question_id": "sr_018",
+      "question": "Industry recognition or awards?",
+      "answer": "Background: - Experience: 6 years commercial plumbing, 1 year business owner - Location: Seattle, Washington - Specialty: Commercial and multi-family plumbing - Challenge: Transitioning from employee to business owner Business Launch Strategy: - Program Start: November 2022 - Investment: $4,995 (revenue-based financing) - Target Market: Property management companies - Service Focus: Preventive maintenance contracts Quarter 1 Results: - Property Manager Connections: 47 property management relationships - Service Contracts: 23 ongoing maintenance contracts - Emergency Calls: 134 qualified service calls - Monthly Recurring Revenue: $18,400 - Total Q1 Revenue: $87,300 Year 1 Business Building: - Contract Revenue: $220,800 annual recurring - Service Revenue: $445,600 additional service calls - Total Annual Revenue: $666,400 - Profit Margin: 31% (exceptional for year 1) - Market Position: Top 5 commercial plumber in Seattle Business Recognition: - Industry Awards: \"Rookie Business of the Year\" - Washington Plumbing Association - Customer Retention: 94% contract renewal rate - Growth Rate: 400% revenue growth in year 1 - Employee Growth: 1 to 6 licensed plumbers Jennifer''s Quote: \"The program didn''t just help me find customers - it helped me build a real business with predictable revenue and growth potential.\"",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 416.0008430480957,
+      "success": true
+    },
+    {
+      "question_id": "sr_019",
+      "question": "Government endorsements?",
+      "answer": "When customers cite slow business: ''A slow period is actually the perfect time to get licensed. Here''s why: 1) You have time to complete the process without rushing, 2) You''ll be positioned when business picks up, 3) Licensed contractors get the first and best projects in recovery, 4) Many competitors are cutting corners now - differentiate yourself, 5) Government and insurance work often requires licensing. Don''t let a temporary slowdown prevent permanent growth. The contractors who prepare during slow times dominate when business returns.'' This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 60,
+      "latency_ms": 328.671932220459,
+      "success": true
+    },
+    {
+      "question_id": "sr_020",
+      "question": "Statistical evidence please",
+      "answer": "With existing licenses and reciprocity: Same day to 1 week. New licenses: 30-90 days average, but you can start preparing bids immediately with a conditional approval letter. FACT provides bid-ready documentation within 48 hours of enrollment. 78% of our clients start bidding within 2 weeks while license processes.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 65,
+      "latency_ms": 353.33991050720215,
+      "success": true
+    },
+    {
+      "question_id": "sr_021",
+      "question": "Georgia success rate data",
+      "answer": "Georgia contractor bond requirements: General contractors must obtain a $10,000 surety bond. The bond protects consumers from contractor default or failure to meet obligations. Bond costs typically 1-3% of bond amount annually ($100-300/year) based on credit score.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 70,
+      "latency_ms": 358.1669330596924,
+      "success": true
+    },
+    {
+      "question_id": "sr_022",
+      "question": "Florida approval statistics",
+      "answer": "Florida contractor license total investment: Application fee $185, examination fee $220, surety bond $12,500 (annual premium ~$200-800), insurance ~$800-2,500 annually. Total first-year cost typically $1,655-2,655. Renewal costs $185 plus continuing education fees. Payment plans available through bonding companies.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 60,
+      "latency_ms": 381.68907165527344,
+      "success": true
+    },
+    {
+      "question_id": "sr_023",
+      "question": "California success metrics",
+      "answer": "Multi-state contractor facing California operation shutdown (40% of business). Invested $10,535 in qualifier arrangement. Timeline: 42 days to full operation. Results: Protected $400,000+ annual revenue stream. ROI: 3,673% annually. Quote: ''We saved our California operation which is 40% of our business.'' Demonstrates qualifier arrangement value for complex multi-state operations. This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 70,
+      "latency_ms": 328.1548023223877,
+      "success": true
+    },
+    {
+      "question_id": "sr_024",
+      "question": "Texas approval percentages",
+      "answer": "Texas does not require state-level general contractor licensing. Must check municipal requirements for specific cities/counties. No age, experience, or educational requirements at state level. State licensing required for specific trades: Plumbing (Responsible Master Plumber), HVAC (Class A/B with insurance requirements), Electrical (2+ years journeyman before master). Municipal bonds may be required (example: San Antonio demolition $5,000 annual bond). This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 60,
+      "latency_ms": 339.45775032043457,
+      "success": true
+    },
+    {
+      "question_id": "sr_025",
+      "question": "New York success data",
+      "answer": "New York has NO statewide general contractor license requirement. However, local licensing varies by municipality. NYC requires General Contractor Registration ($330 background fee + $100 license, valid 2 years) with 5 years experience. Home Improvement Contractors need exam (30 questions, $50 fee, 70% pass rate). Buffalo, Suffolk County have separate requirements. Most specialized trades (electrical, elevator, crane) require state licenses. Always check local municipality requirements.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 65,
+      "latency_ms": 506.87313079833984,
+      "success": true
+    },
+    {
+      "question_id": "sr_026",
+      "question": "Illinois approval rates",
+      "answer": "When customers ask about DIY licensing: ''Absolutely, many contractors try the DIY route. However, here''s what our data shows: DIY success rate is only 35-45% first-time approval with 60-70% exam pass rates. That means 55-65% face delays, reapplication fees, and lost opportunities. You''ll invest 80-125 hours of your time worth $6,000-$18,750. Our clients save 76-118 hours and achieve 98% approval rates. The question isn''t whether you CAN do it yourself, it''s whether your time is better spent building your business while we handle the paperwork.'' This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 391.6928768157959,
+      "success": true
+    },
+    {
+      "question_id": "sr_027",
+      "question": "Pennsylvania statistics",
+      "answer": "Pennsylvania contractor license total investment: Application fee $192, exam fees $145, bond $249, insurance $165. Total cost typically $717-917. Payment plans available through approved providers. Rush processing available for additional $100-200 fee.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 60,
+      "latency_ms": 307.13701248168945,
+      "success": true
+    },
+    {
+      "question_id": "sr_028",
+      "question": "Ohio success metrics",
+      "answer": "- Average Revenue: $15,000-45,000 in first 30 days - ROI: 300-900% return on investment in month 1 - Success Rate: 67% achieve break-even in first month - Lead Volume: 50-150 qualified leads in 30 days - Conversion Rate: 65-85% for fast-track winners",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 70,
+      "latency_ms": 362.52307891845703,
+      "success": true
+    },
+    {
+      "question_id": "sr_029",
+      "question": "Michigan approval data",
+      "answer": "When customers ask about DIY licensing: ''Absolutely, many contractors try the DIY route. However, here''s what our data shows: DIY success rate is only 35-45% first-time approval with 60-70% exam pass rates. That means 55-65% face delays, reapplication fees, and lost opportunities. You''ll invest 80-125 hours of your time worth $6,000-$18,750. Our clients save 76-118 hours and achieve 98% approval rates. The question isn''t whether you CAN do it yourself, it''s whether your time is better spent building your business while we handle the paperwork.'' This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 75,
+      "latency_ms": 370.7568645477295,
+      "success": true
+    },
+    {
+      "question_id": "sr_030",
+      "question": "North Carolina statistics",
+      "answer": "- Average Home Price: $350,000 - Typical Commission: $10,500 (3%) - Qualifier Commission: $175-$210 per referral - Monthly Target: 18-28 qualifiers - Monthly Revenue Potential: $3,150-$5,880 - Annual Revenue Potential: $37,800-$70,560 - ROI on $4,995 investment: 757%-1,413% - Break-even: 1.3-1.6 months",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 65,
+      "latency_ms": 380.206823348999,
+      "success": true
+    },
+    {
+      "question_id": "sr_031",
+      "question": "Virginia success rates",
+      "answer": "Rocket Cert study package costs $1,678.25 and includes online study course, physical books with tabs, practice exams, study guides, and exam software. Achieves 95% first-time pass rate vs 60-70% DIY success rate. Alternative options range from $299-$1,500 but with lower success rates. Investment pays for itself through higher pass probability. This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 335.02793312072754,
+      "success": true
+    },
+    {
+      "question_id": "sr_032",
+      "question": "Arizona approval data",
+      "answer": "Arizona contractor license process typically takes 4-6 weeks from application to approval. Exam scheduling available year-round with 1-2 week wait times. Background check takes 2-3 weeks, and financial review adds 1 week. Plan for 6-8 weeks total including preparation time.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 65,
+      "latency_ms": 354.27212715148926,
+      "success": true
+    },
+    {
+      "question_id": "sr_033",
+      "question": "Colorado success metrics",
+      "answer": "- Average Revenue: $15,000-45,000 in first 30 days - ROI: 300-900% return on investment in month 1 - Success Rate: 67% achieve break-even in first month - Lead Volume: 50-150 qualified leads in 30 days - Conversion Rate: 65-85% for fast-track winners",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 70,
+      "latency_ms": 314.07904624938965,
+      "success": true
+    },
+    {
+      "question_id": "sr_034",
+      "question": "Washington statistics",
+      "answer": "Washington has among the simplest contractor licensing: No experience requirements, no education requirements, no examination for general contractors. $30,000 surety bond (increased July 2024), $250,000 minimum general liability insurance ($200K public liability + $50K property damage OR $250K combined). Registration fee $141.10 for 2 years. Must register with Secretary of State, obtain UBI number, get EIN. 3-4 week processing for mail applications. This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 60,
+      "latency_ms": 333.18090438842773,
+      "success": true
+    },
+    {
+      "question_id": "sr_035",
+      "question": "Oregon approval rates",
+      "answer": "Oregon contractor license process takes 4-6 weeks from application to approval. Exam scheduling available monthly with 3-4 week wait times and background check takes 2-3 weeks. Plan for 6-8 weeks total including preparation time and continuing education completion.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 65,
+      "latency_ms": 323.4398365020752,
+      "success": true
+    },
+    {
+      "question_id": "sr_036",
+      "question": "Nevada success data",
+      "answer": "Background: - Experience: 12 years journeyman electrician, 3 years master electrician - Location: Las Vegas, Nevada - Specialty: Residential electrical and solar installation - Annual Revenue: $215,000 before program Market Opportunity: - Solar Boom: Nevada solar incentives driving demand - New Construction: Rapid Las Vegas growth - Smart Home: Increasing automation demand - Competition: Need to differentiate from large companies Program Execution: - Start Date: January 2023 - Investment: $4,995 (paid in full) - Strategy: Solar and smart home expertise - Network Focus: Real estate agent partnerships 6-Month Performance: - Solar Qualifiers: 89 qualified solar prospects - Electrical Qualifiers: 167 general electrical leads - Solar Installations: 34 systems installed - Electrical Projects: 98 projects completed - Combined Revenue: $387,600 (6-month total) Solar Business Transformation: - Solar Revenue: $289,000 annual - Electrical Revenue: $198,000 annual - Total Business: $487,000 (127% increase) - Certification: Tesla Powerwall certified installer - Market Recognition: Top 10 residential solar installer in Nevada Carlos''s Quote: \"The timing was perfect with the solar boom. The program helped me capture market share when everyone was looking for solar solutions.\"",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 70,
+      "latency_ms": 349.99895095825195,
+      "success": true
+    },
+    {
+      "question_id": "sr_037",
+      "question": "Utah approval metrics",
+      "answer": "Utah contractor license process takes 4-6 weeks from application to approval. Exam scheduling available monthly with 3-4 week wait times and background check takes 2-3 weeks. Plan for 6-8 weeks total including preparation time and financial review.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 65,
+      "latency_ms": 368.46089363098145,
+      "success": true
+    },
+    {
+      "question_id": "sr_038",
+      "question": "Tennessee statistics",
+      "answer": "NASCLA exam used by multiple states including Georgia, North Carolina, Tennessee. Open book format with highlighting and indexing allowed. Passing score: 70%. Questions: typically 110 for business/law, 110 for trade. Time limit: usually 3.5-4 hours per section. NASCLA Contractors Guide required reference material. Success rate dramatically higher with professional study materials vs DIY approach. This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 70,
+      "latency_ms": 366.0910129547119,
+      "success": true
+    },
+    {
+      "question_id": "sr_039",
+      "question": "Kentucky success rates",
+      "answer": "Rocket Cert study package costs $1,678.25 and includes online study course, physical books with tabs, practice exams, study guides, and exam software. Achieves 95% first-time pass rate vs 60-70% DIY success rate. Alternative options range from $299-$1,500 but with lower success rates. Investment pays for itself through higher pass probability. This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "statistics",
+      "score": 75,
+      "latency_ms": 369.08674240112305,
+      "success": true
+    },
+    {
+      "question_id": "sr_040",
+      "question": "Indiana approval data",
+      "answer": "When customers ask about DIY licensing: ''Absolutely, many contractors try the DIY route. However, here''s what our data shows: DIY success rate is only 35-45% first-time approval with 60-70% exam pass rates. That means 55-65% face delays, reapplication fees, and lost opportunities. You''ll invest 80-125 hours of your time worth $6,000-$18,750. Our clients save 76-118 hours and achieve 98% approval rates. The question isn''t whether you CAN do it yourself, it''s whether your time is better spent building your business while we handle the paperwork.'' This information is time-sensitive.",
+      "persona": "skeptical_researcher",
+      "category": "validation",
+      "score": 75,
+      "latency_ms": 294.41022872924805,
+      "success": true
+    },
+    {
+      "question_id": "tp_001",
+      "question": "What's the fastest path to licensing?",
+      "answer": "Indiana contractor licensing timelines are generally quick due to minimal state requirements. Municipal business licenses process in 1-2 weeks. Home improvement registration processes in 2-3 weeks. Trade licenses take 2-4 weeks depending on examination requirements. Plan for 1-4 weeks total for most contractor setups.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 65,
+      "latency_ms": 449.1889476776123,
+      "success": true
+    },
+    {
+      "question_id": "tp_002",
+      "question": "Can I expedite the process?",
+      "answer": "Federal contracting proposal process: Research opportunities on SAM.gov and FPDS, analyze solicitation requirements thoroughly, prepare capability statement highlighting relevant experience, develop competitive pricing strategy, submit proposals through required channels (often GSA systems). Proposal win rates average 15-25% for new contractors, 40-60% for experienced. Professional proposal writing increases success rate significantly.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 55,
+      "latency_ms": 420.6128120422363,
+      "success": true
+    },
+    {
+      "question_id": "tp_003",
+      "question": "How quickly can I start bidding?",
+      "answer": "With existing licenses and reciprocity: Same day to 1 week. New licenses: 30-90 days average, but you can start preparing bids immediately with a conditional approval letter. FACT provides bid-ready documentation within 48 hours of enrollment. 78% of our clients start bidding within 2 weeks while license processes.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 70,
+      "latency_ms": 331.20012283325195,
+      "success": true
+    },
+    {
+      "question_id": "tp_004",
+      "question": "Rush processing available?",
+      "answer": "Alabama contractor license total investment: Application fee $218, exam fees $260, bond $505, insurance $391. Total cost typically $726-926. Payment plans available through approved providers. Rush processing available for additional $100-200 fee.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 75,
+      "latency_ms": 373.9488124847412,
+      "success": true
+    },
+    {
+      "question_id": "tp_005",
+      "question": "Minimum timeline to license?",
+      "answer": "Iowa contractor setup timelines are generally quick. Municipal business licenses process in 1-2 weeks. Trade licenses take 2-4 weeks depending on examination requirements. Residential registration processes in 2-3 weeks if pursued. Plan for 1-4 weeks total for most contractor setups in Iowa.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 317.57307052612305,
+      "success": true
+    },
+    {
+      "question_id": "tp_006",
+      "question": "Can you fast-track my application?",
+      "answer": "Georgia fast-track: Rush application processing 10-14 days (vs 45-60 standard), priority exam scheduling within 3 days, expedited experience verification, direct state board contact. Additional $1,500 for fast-track service. Emergency temporary permits available for disaster work. Best ROI state for quick licensing due to NASCLA reciprocity potential.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 70,
+      "latency_ms": 499.5131492614746,
+      "success": true
+    },
+    {
+      "question_id": "tp_007",
+      "question": "Emergency licensing options?",
+      "answer": "Expedited service available for urgent needs: Base cost $3,345 plus $500 expedite fee = $3,845 total. Timeline: 20-25 days vs standard 30-45 days. Saves 15-20 days processing time. Full payment required upfront. ROI benefit: Access to projects 2-3 weeks earlier. Best for contractors with immediate project deadlines or opportunities requiring fast licensing. This information is time-sensitive.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 317.5368309020996,
+      "success": true
+    },
+    {
+      "question_id": "tp_008",
+      "question": "How fast with your help vs alone?",
+      "answer": "Cost breakdown: Professional services vs DIY cost comparison: Attorney consultation $250-$500/hour, accountant setup $500-$2,000, versus hidden DIY costs: reapplication fees $200-$500, delays worth $10K-$50K/month, error corrections, time investment 80-125 hours. Professional service cost of $1,250 service fee provides expert guidance, prevents costly mistakes, saves substantial time, achieves 98% first-time approval vs 35-45% DIY success. This information is time-sensitive. Total investment typically ranges $300-800 depending on state requirements.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 55,
+      "latency_ms": 394.64807510375977,
+      "success": true
+    },
+    {
+      "question_id": "tp_009",
+      "question": "Same-day processing possible?",
+      "answer": "Expedited service available for urgent needs: Base cost $3,345 plus $500 expedite fee = $3,845 total. Timeline: 20-25 days vs standard 30-45 days. Saves 15-20 days processing time. Full payment required upfront. ROI benefit: Access to projects 2-3 weeks earlier. Best for contractors with immediate project deadlines or opportunities requiring fast licensing. This information is time-sensitive.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 327.866792678833,
+      "success": true
+    },
+    {
+      "question_id": "tp_010",
+      "question": "Weekend or evening services?",
+      "answer": "Sarah: \"I completely get that! You''re being smart - trust should be earned, especially when you''re investing in your home. That''s exactly why we do things differently. We''re not just an online service - we''re a local company that happens to use technology to make things easier for you. Here''s what I mean: we''ll meet you in person, our technicians are all local and background-checked, we''ve been serving your community for over 8 years, and we have 247 local references you can call. Want to start with a simple in-home consultation? No pressure, just a chance to meet face-to-face and see if we''re a good fit.\"",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 55,
+      "latency_ms": 461.5519046783447,
+      "success": true
+    },
+    {
+      "question_id": "tp_011",
+      "question": "Can I start before approval?",
+      "answer": "With existing licenses and reciprocity: Same day to 1 week. New licenses: 30-90 days average, but you can start preparing bids immediately with a conditional approval letter. FACT provides bid-ready documentation within 48 hours of enrollment. 78% of our clients start bidding within 2 weeks while license processes.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 382.47013092041016,
+      "success": true
+    },
+    {
+      "question_id": "tp_012",
+      "question": "Temporary license while waiting?",
+      "answer": "Washington contractor license process takes 4-6 weeks from application to approval. Exam scheduling available monthly with 3-4 week wait times and background check takes 2-3 weeks. Plan for 6-8 weeks total including preparation time and continuing education completion.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 412.0678901672363,
+      "success": true
+    },
+    {
+      "question_id": "tp_013",
+      "question": "Priority processing cost?",
+      "answer": "Expedited service available for urgent needs: Base cost $3,345 plus $500 expedite fee = $3,845 total. Timeline: 20-25 days vs standard 30-45 days. Saves 15-20 days processing time. Full payment required upfront. ROI benefit: Access to projects 2-3 weeks earlier. Best for contractors with immediate project deadlines or opportunities requiring fast licensing. This information is time-sensitive.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 328.95898818969727,
+      "success": true
+    },
+    {
+      "question_id": "tp_014",
+      "question": "Fastest state to get licensed?",
+      "answer": "Cost breakdown: Steps to get your contractor license: 1) Verify experience requirements (usually 4 years), 2) Submit application with fees, 3) Pass required exams, 4) Obtain bonds and insurance, 5) Complete background check, 6) Receive license. Timeline: 30-45 days. Cost: $2,500-3,500 total investment. Total investment typically ranges $300-800 depending on state requirements. Fees and costs are current as of 2025.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 70,
+      "latency_ms": 382.4589252471924,
+      "success": true
+    },
+    {
+      "question_id": "tp_015",
+      "question": "Skip any requirements legally?",
+      "answer": "Colorado implementing International Code Council (ICC) standardized contractor exam starting early 2025 for new and renewing Class A, B, and C license applicants. ICC Standardized Contractor Exam specific to classification required. Affects municipalities including Denver which currently has stringent 7 years experience for Class A commercial, 2 years for Class C residential. Preparation recommended as this represents significant change from current municipal-specific requirements. This information is time-sensitive.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 60,
+      "latency_ms": 416.92185401916504,
+      "success": true
+    },
+    {
+      "question_id": "tp_016",
+      "question": "Accelerated exam scheduling?",
+      "answer": "NASCLA exam used by multiple states including Georgia, North Carolina, Tennessee. Open book format with highlighting and indexing allowed. Passing score: 70%. Questions: typically 110 for business/law, 110 for trade. Time limit: usually 3.5-4 hours per section. NASCLA Contractors Guide required reference material. Success rate dramatically higher with professional study materials vs DIY approach. This information is time-sensitive.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 60,
+      "latency_ms": 370.0432777404785,
+      "success": true
+    },
+    {
+      "question_id": "tp_017",
+      "question": "How to avoid delays?",
+      "answer": "Common delay causes: Incomplete experience documentation, missing business registrations, incorrect financial statements, background check issues, bond/insurance problems. Solutions: Complete application checklists, professional document preparation, advance business entity formation, early background check submission, pre-arranged insurance/bonding. Professional services prevent 98% of delays through systematic preparation and state-specific expertise. This information is time-sensitive.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 55,
+      "latency_ms": 372.9710578918457,
+      "success": true
+    },
+    {
+      "question_id": "tp_018",
+      "question": "Common bottlenecks to avoid?",
+      "answer": "Common contractor licensing pitfalls: 1) Not checking local requirements (NY, IL, OH, CO have municipal licensing), 2) Incomplete experience documentation (VA, AZ, MI require detailed verification), 3) Missing deadlines (NC 45-day activation, AZ 90-day background check expiration), 4) Wrong license class (VA Class A/B/C, AZ Commercial/Residential), 5) Insufficient insurance/bonds, 6) Not maintaining business entity registration. Always verify specific requirements for your work location and type.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 70,
+      "latency_ms": 371.0920810699463,
+      "success": true
+    },
+    {
+      "question_id": "tp_019",
+      "question": "24-hour turnaround possible?",
+      "answer": "With existing licenses and reciprocity: Same day to 1 week. New licenses: 30-90 days average, but you can start preparing bids immediately with a conditional approval letter. FACT provides bid-ready documentation within 48 hours of enrollment. 78% of our clients start bidding within 2 weeks while license processes.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 418.576717376709,
+      "success": true
+    },
+    {
+      "question_id": "tp_020",
+      "question": "Can you guarantee timeline?",
+      "answer": "With existing licenses and reciprocity: Same day to 1 week. New licenses: 30-90 days average, but you can start preparing bids immediately with a conditional approval letter. FACT provides bid-ready documentation within 48 hours of enrollment. 78% of our clients start bidding within 2 weeks while license processes.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 65,
+      "latency_ms": 360.1381778717041,
+      "success": true
+    },
+    {
+      "question_id": "tp_021",
+      "question": "Georgia fast-track options",
+      "answer": "Georgia fast-track: Rush application processing 10-14 days (vs 45-60 standard), priority exam scheduling within 3 days, expedited experience verification, direct state board contact. Additional $1,500 for fast-track service. Emergency temporary permits available for disaster work. Best ROI state for quick licensing due to NASCLA reciprocity potential.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 365.6919002532959,
+      "success": true
+    },
+    {
+      "question_id": "tp_022",
+      "question": "Florida expedited licensing",
+      "answer": "Expedited service available for urgent needs: Base cost $3,345 plus $500 expedite fee = $3,845 total. Timeline: 20-25 days vs standard 30-45 days. Saves 15-20 days processing time. Full payment required upfront. ROI benefit: Access to projects 2-3 weeks earlier. Best for contractors with immediate project deadlines or opportunities requiring fast licensing. This information is time-sensitive.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 361.06324195861816,
+      "success": true
+    },
+    {
+      "question_id": "tp_023",
+      "question": "California rush processing",
+      "answer": "California contractor licensing timeline: Document preparation 1-2 weeks, application review 3-6 weeks, exam scheduling 1-2 weeks, results processing 1 week. Total typical timeline 8 weeks from start to license issuance. Rush processing available for additional fee, reducing timeline by 2-3 weeks. Online applications processed faster than paper submissions.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 80,
+      "latency_ms": 380.1250457763672,
+      "success": true
+    },
+    {
+      "question_id": "tp_024",
+      "question": "Texas quick approval",
+      "answer": "Texas does not require state-level general contractor licensing. Must check municipal requirements for specific cities/counties. No age, experience, or educational requirements at state level. State licensing required for specific trades: Plumbing (Responsible Master Plumber), HVAC (Class A/B with insurance requirements), Electrical (2+ years journeyman before master). Municipal bonds may be required (example: San Antonio demolition $5,000 annual bond). This information is time-sensitive.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 60,
+      "latency_ms": 358.6111068725586,
+      "success": true
+    },
+    {
+      "question_id": "tp_025",
+      "question": "New York fast licensing",
+      "answer": "New York has NO statewide general contractor license requirement. However, local licensing varies by municipality. NYC requires General Contractor Registration ($330 background fee + $100 license, valid 2 years) with 5 years experience. Home Improvement Contractors need exam (30 questions, $50 fee, 70% pass rate). Buffalo, Suffolk County have separate requirements. Most specialized trades (electrical, elevator, crane) require state licenses. Always check local municipality requirements.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 65,
+      "latency_ms": 326.50279998779297,
+      "success": true
+    },
+    {
+      "question_id": "tp_026",
+      "question": "Illinois expedited process",
+      "answer": "Expedited service available for urgent needs: Base cost $3,345 plus $500 expedite fee = $3,845 total. Timeline: 20-25 days vs standard 30-45 days. Saves 15-20 days processing time. Full payment required upfront. ROI benefit: Access to projects 2-3 weeks earlier. Best for contractors with immediate project deadlines or opportunities requiring fast licensing. This information is time-sensitive.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 330.17706871032715,
+      "success": true
+    },
+    {
+      "question_id": "tp_027",
+      "question": "Pennsylvania quick path",
+      "answer": "With existing licenses and reciprocity: Same day to 1 week. New licenses: 30-90 days average, but you can start preparing bids immediately with a conditional approval letter. FACT provides bid-ready documentation within 48 hours of enrollment. 78% of our clients start bidding within 2 weeks while license processes.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 65,
+      "latency_ms": 366.52493476867676,
+      "success": true
+    },
+    {
+      "question_id": "tp_028",
+      "question": "Ohio fast-track licensing",
+      "answer": "Georgia fast-track: Rush application processing 10-14 days (vs 45-60 standard), priority exam scheduling within 3 days, expedited experience verification, direct state board contact. Additional $1,500 for fast-track service. Emergency temporary permits available for disaster work. Best ROI state for quick licensing due to NASCLA reciprocity potential.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 384.95588302612305,
+      "success": true
+    },
+    {
+      "question_id": "tp_029",
+      "question": "Michigan rush approval",
+      "answer": "Michigan contractor license total investment: Application fee $163, exam fees $168, bond $325, insurance $299. Total cost typically $784-984. Payment plans available through approved providers. Rush processing available for additional $100-200 fee.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 75,
+      "latency_ms": 370.8488941192627,
+      "success": true
+    },
+    {
+      "question_id": "tp_030",
+      "question": "North Carolina quick process",
+      "answer": "- Average Home Price: $350,000 - Typical Commission: $10,500 (3%) - Qualifier Commission: $175-$210 per referral - Monthly Target: 18-28 qualifiers - Monthly Revenue Potential: $3,150-$5,880 - Annual Revenue Potential: $37,800-$70,560 - ROI on $4,995 investment: 757%-1,413% - Break-even: 1.3-1.6 months",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 55,
+      "latency_ms": 368.5581684112549,
+      "success": true
+    },
+    {
+      "question_id": "tp_031",
+      "question": "Virginia expedited licensing",
+      "answer": "Expedited service available for urgent needs: Base cost $3,345 plus $500 expedite fee = $3,845 total. Timeline: 20-25 days vs standard 30-45 days. Saves 15-20 days processing time. Full payment required upfront. ROI benefit: Access to projects 2-3 weeks earlier. Best for contractors with immediate project deadlines or opportunities requiring fast licensing. This information is time-sensitive.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 441.12586975097656,
+      "success": true
+    },
+    {
+      "question_id": "tp_032",
+      "question": "Arizona fast approval",
+      "answer": "Arizona contractor license process typically takes 4-6 weeks from application to approval. Exam scheduling available year-round with 1-2 week wait times. Background check takes 2-3 weeks, and financial review adds 1 week. Plan for 6-8 weeks total including preparation time.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 307.326078414917,
+      "success": true
+    },
+    {
+      "question_id": "tp_033",
+      "question": "Colorado quick licensing",
+      "answer": "Colorado''s local licensing creates complexity for contractors working across multiple jurisdictions. High-altitude construction has unique material and weather considerations. Marijuana facility construction requires special permits and security clearances. Green building incentives available in many municipalities encourage LEED certification and sustainable practices.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 65,
+      "latency_ms": 376.7540454864502,
+      "success": true
+    },
+    {
+      "question_id": "tp_034",
+      "question": "Washington rush process",
+      "answer": "Washington has among the simplest contractor licensing: No experience requirements, no education requirements, no examination for general contractors. $30,000 surety bond (increased July 2024), $250,000 minimum general liability insurance ($200K public liability + $50K property damage OR $250K combined). Registration fee $141.10 for 2 years. Must register with Secretary of State, obtain UBI number, get EIN. 3-4 week processing for mail applications. This information is time-sensitive.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 75,
+      "latency_ms": 398.46181869506836,
+      "success": true
+    },
+    {
+      "question_id": "tp_035",
+      "question": "Oregon expedited path",
+      "answer": "Oregon contractor license total investment: Application fee $238, exam fees $242, bond $297, insurance $329. Total cost typically $631-831. Payment plans available through approved providers. Rush processing available for additional $100-200 fee.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 70,
+      "latency_ms": 338.7579917907715,
+      "success": true
+    },
+    {
+      "question_id": "tp_036",
+      "question": "Nevada fast licensing",
+      "answer": "Nevada contractor licensing timeline: Document preparation 1-2 weeks, application review 3-6 weeks, exam scheduling 1-2 weeks, results processing 1 week. Total typical timeline 12 weeks from start to license issuance. Rush processing available for additional fee, reducing timeline by 2-3 weeks. Online applications processed faster than paper submissions.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 80,
+      "latency_ms": 306.7209720611572,
+      "success": true
+    },
+    {
+      "question_id": "tp_037",
+      "question": "Utah quick approval",
+      "answer": "Utah contractor license process takes 4-6 weeks from application to approval. Exam scheduling available monthly with 3-4 week wait times and background check takes 2-3 weeks. Plan for 6-8 weeks total including preparation time and financial review.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 355.4081916809082,
+      "success": true
+    },
+    {
+      "question_id": "tp_038",
+      "question": "Tennessee rush process",
+      "answer": "Tennessee contractor license total investment: Application fee $199, exam fees $134, bond $589, insurance $245. Total cost typically $400-600. Payment plans available through approved providers. Rush processing available for additional $100-200 fee.",
+      "persona": "time_pressed",
+      "category": "process",
+      "score": 80,
+      "latency_ms": 357.2509288787842,
+      "success": true
+    },
+    {
+      "question_id": "tp_039",
+      "question": "Kentucky fast-track",
+      "answer": "Georgia fast-track: Rush application processing 10-14 days (vs 45-60 standard), priority exam scheduling within 3 days, expedited experience verification, direct state board contact. Additional $1,500 for fast-track service. Emergency temporary permits available for disaster work. Best ROI state for quick licensing due to NASCLA reciprocity potential.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 70,
+      "latency_ms": 430.90319633483887,
+      "success": true
+    },
+    {
+      "question_id": "tp_040",
+      "question": "Indiana expedited licensing",
+      "answer": "Expedited service available for urgent needs: Base cost $3,345 plus $500 expedite fee = $3,845 total. Timeline: 20-25 days vs standard 30-45 days. Saves 15-20 days processing time. Full payment required upfront. ROI benefit: Access to projects 2-3 weeks earlier. Best for contractors with immediate project deadlines or opportunities requiring fast licensing. This information is time-sensitive.",
+      "persona": "time_pressed",
+      "category": "timeline",
+      "score": 75,
+      "latency_ms": 322.2620487213135,
+      "success": true
+    },
+    {
+      "question_id": "ae_001",
+      "question": "How do I expand to multiple states?",
+      "answer": "Multi-state expansion strategy: Start with reciprocity states (get 1 license, qualify for 5-8 others). Best sequence: Tennessee NASCLA license \u2192 reciprocity in AL, AR, GA, LA, MS, NC, OH, SC, WV. Then add high-revenue states individually. FACT manages all simultaneous applications with volume pricing: 20% discount on 3+ states, 35% discount on 5+ states.",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 55,
+      "latency_ms": 417.28711128234863,
+      "success": true
+    },
+    {
+      "question_id": "ae_002",
+      "question": "What about the qualifier network income?",
+      "answer": "REAL SUCCESS: Mike Rodriguez, Electrical Contractor, Qualifier Network Specialist, Dallas TX. BACKGROUND: 12 years electrical experience, licensed in Texas, earning $78,500 annually from active work. QUALIFIER NETWORK JOURNEY: Month 1: Applied to qualifier network after learning about passive income opportunity. Month 2: First qualifier assignment - small electrical contractor needing license backing, $600/month. Month 3-6: Added 3 more contractors to network, total $2,800/month. Month 7-12: Premium tier qualification achieved, higher-value contractors, $4,200/month. Month 13-18: Multi-state expansion (added Oklahoma), $5,400/month. CURRENT STATUS (18 months): Active electrical work: $78,500 annually, Qualifier network income: $64,800 annually ($5,400/month), Total annual income: $143,300 (83% increase). TIME COMMITMENT: 4-6 hours monthly for qualifier network duties. HOURLY EQUIVALENT: $1,080-$1,350 per hour for qualifier work. PASSIVE INCOME IMPACT: \"The qualifier network income covers my mortgage, car payment, and insurance. It''s like having a second full-time salary for part-time hours. My active work income is now just for growth and savings.\"",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 80,
+      "latency_ms": 439.19897079467773,
+      "success": true
+    },
+    {
+      "question_id": "ae_003",
+      "question": "Best states for commercial contracts?",
+      "answer": "Experienced contractors entering commercial see explosive growth: $75K to $150K-$220K within 18 months. Commercial licensing unlocks: government contracts, corporate accounts, multi-year agreements. Monthly transformation: From $6,250 to $12,500-$18,333, gain of $6,250-$12,083. ROI period: 11-22 days! Success story: \"Mike had 8 years residential experience earning $78K. Commercial licensing changed everything. His first government contract was worth $125K profit over 6 months. Now he holds three corporate maintenance contracts worth $195K annually plus $5,400 monthly from qualifier network. Total transformation in 14 months.\" Commercial differentiators: project scale, repeat revenue, premium pricing, and growth potential.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 70,
+      "latency_ms": 367.28930473327637,
+      "success": true
+    },
+    {
+      "question_id": "ae_004",
+      "question": "How to scale my contracting business?",
+      "answer": "Scaling contractor business beyond $1M: Implement professional management systems, hire project managers and supervisors, develop standard operating procedures, invest in equipment and vehicles, establish credit lines for working capital, focus on higher-value commercial projects. Key milestone: transitioning from owner-operator to business owner role.",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 65,
+      "latency_ms": 444.3540573120117,
+      "success": true
+    },
+    {
+      "question_id": "ae_005",
+      "question": "Passive income opportunities?",
+      "answer": "For contractors earning $30K annually, getting licensed typically increases income to $75K-$85K within 18 months - that''s a 150-183% increase. Here''s the breakdown: Current monthly income: $2,500, Post-license monthly income: $6,250-$7,083, Monthly increase: $3,750-$4,583. With our average investment of $4,500, your payback period is just 32-38 days! Real example: \"Marcus from Atlanta went from $28K doing handyman work to $78K as a licensed contractor. His first licensed project paid him $8,500 - almost double his entire investment. He calls it the best decision he ever made.\" The qualifier network adds another $3,000-$4,500 monthly passive income, bringing total potential to $110K+ annually.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 75,
+      "latency_ms": 347.76878356933594,
+      "success": true
+    },
+    {
+      "question_id": "ae_006",
+      "question": "Can I license others under me?",
+      "answer": "Sarah: \"I totally understand that feeling! You know what though? Our clients often say the same thing initially. Here''s what they discover - while the materials might seem like the only cost, there''s actually hidden expenses they hadn''t considered. Like permits, inspections, specialized tools you''d need to buy, and honestly? The time factor. Most DIY projects take 3x longer than expected. Plus, if something goes wrong, insurance won''t cover it. We''ve had clients come to us after trying DIY and ending up spending more fixing mistakes than our original quote. What specific part were you thinking of tackling yourself?\"",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 369.74596977233887,
+      "success": true
+    },
+    {
+      "question_id": "ae_007",
+      "question": "Multi-state licensing strategy?",
+      "answer": "Texas does not require state-level general contractor licensing. Must check municipal requirements for specific cities/counties. No age, experience, or educational requirements at state level. State licensing required for specific trades: Plumbing (Responsible Master Plumber), HVAC (Class A/B with insurance requirements), Electrical (2+ years journeyman before master). Municipal bonds may be required (example: San Antonio demolition $5,000 annual bond). This information is time-sensitive.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 471.35376930236816,
+      "success": true
+    },
+    {
+      "question_id": "ae_008",
+      "question": "Government contract requirements?",
+      "answer": "Georgia contractor exam requirements: Two exams required - Business & Law exam (110 questions, 4 hours) and Trade exam (110 questions, 4 hours). Both require 70% passing score. Exams cover business practices, law, safety, and trade-specific knowledge. Contact our licensing specialists for personalized guidance through the process.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 421.4019775390625,
+      "success": true
+    },
+    {
+      "question_id": "ae_009",
+      "question": "How to become a qualifier?",
+      "answer": "Green Building Specialist specializes in Sustainable construction and retrofits. Requirements: LEED AP certification, general contractor license, energy auditor training. Market opportunity: $81B market, 15% annual growth with earning potential of $65,000-135,000 annually. Licensing process typically 3-6 months including specialized training. High demand specialty with limited competition.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 338.4580612182617,
+      "success": true
+    },
+    {
+      "question_id": "ae_010",
+      "question": "Income potential with license?",
+      "answer": "Handling contractor price objections: Emphasize value over cost (licensed, bonded, insured), provide detailed scope breakdown, offer payment plans, highlight warranty and guarantee terms, show portfolio of quality work, explain premium pricing protects client investment, offer phased project approach, demonstrate ROI of quality work. Convert 60-80% of price objections with proper value presentation.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 378.99327278137207,
+      "success": true
+    },
+    {
+      "question_id": "ae_011",
+      "question": "Best markets for growth?",
+      "answer": "Contractor growth financing options: SBA loans (7a up to $5M, 504 for real estate), equipment financing, lines of credit for working capital, invoice factoring for cash flow, revenue-based financing for rapid growth. Interest rates range 6-12% depending on creditworthiness. Equipment financing typically offers best rates (4-8%). Revenue-based financing fastest approval (1-2 weeks).",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 70,
+      "latency_ms": 354.3701171875,
+      "success": true
+    },
+    {
+      "question_id": "ae_012",
+      "question": "How to dominate my market?",
+      "answer": "Disaster recovery market multipliers: 2x-4x normal rates during recovery periods! Hurricane, flood, tornado, and fire recovery create massive demand spikes. Recovery example: \"After Hurricane Ian, licensed contractors in Florida saw 300% rate increases. Miguel''s emergency electrical work commanded $250/hour vs normal $85/hour. His September 2022 income: $47,500 in one month! His annual licensing investment paid back in 4 days of post-hurricane work.\" Recovery opportunities: Premium emergency rates, Extended work periods, Insurance-funded projects, Multi-state deployment, Specialized damage repair, FEMA contract opportunities.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 356.16397857666016,
+      "success": true
+    },
+    {
+      "question_id": "ae_013",
+      "question": "Licensing for business expansion?",
+      "answer": "5-year licensed contractor projection: Additional revenue $2M-$5M, net profit increase $300K-$750K, business value creation $500K-$2M. Licensing ROI over 5 years: 8,955%-22,388%. Strategic advantages: Licensed contractor credibility, lower insurance rates, higher bonding capacity, increased client trust. Scalability benefits: Multi-state expansion easier, ability to hire/supervise others, licensed businesses worth 2-3x more at sale.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 356.77385330200195,
+      "success": true
+    },
+    {
+      "question_id": "ae_014",
+      "question": "Interstate reciprocity agreements?",
+      "answer": "Contractor license reciprocity agreements: Western states (CA, NV, OR, WA) have limited reciprocity, Southeastern compact includes FL, GA, SC, AL for certain trades. Great Lakes region (MI, OH, IN) share some certifications. Generally, reciprocity applies to experience requirements, not exam exemptions. Research specific agreements before expansion planning.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 55,
+      "latency_ms": 501.9268989562988,
+      "success": true
+    },
+    {
+      "question_id": "ae_015",
+      "question": "Corporate licensing options?",
+      "answer": "Expedited service available for urgent needs: Base cost $3,345 plus $500 expedite fee = $3,845 total. Timeline: 20-25 days vs standard 30-45 days. Saves 15-20 days processing time. Full payment required upfront. ROI benefit: Access to projects 2-3 weeks earlier. Best for contractors with immediate project deadlines or opportunities requiring fast licensing. This information is time-sensitive.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 389.0039920806885,
+      "success": true
+    },
+    {
+      "question_id": "ae_016",
+      "question": "How to build a contractor empire?",
+      "answer": "Building contractor brand: Develop professional logo and marketing materials, maintain consistent online presence (website, social media), collect and display customer testimonials, showcase quality work through before/after photos, maintain excellent BBB rating, participate in community events, offer warranties and guarantees, respond quickly to customer inquiries. Strong brand increases referrals 60-80%.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 410.952091217041,
+      "success": true
+    },
+    {
+      "question_id": "ae_017",
+      "question": "Franchise opportunities with license?",
+      "answer": "Virginia: 30-day grace period after expiration, reinstatement fee required after 30 days. Utah: Late fees apply after November 30 expiration, re-examination required if lapsed more than 6 months. North Carolina: Annual renewal due November 30, storm damage extension allows 2024 CE completion Jan-Feb 2025. Georgia: $100 late penalty on $100 renewal fee, license revocation if not renewed within 6 months. This information is time-sensitive.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 441.7400360107422,
+      "success": true
+    },
+    {
+      "question_id": "ae_018",
+      "question": "International expansion possibilities?",
+      "answer": "Colorado implementing International Code Council (ICC) standardized contractor exam starting early 2025 for new and renewing Class A, B, and C license applicants. ICC Standardized Contractor Exam specific to classification required. Affects municipalities including Denver which currently has stringent 7 years experience for Class A commercial, 2 years for Class C residential. Preparation recommended as this represents significant change from current municipal-specific requirements. This information is time-sensitive.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 70,
+      "latency_ms": 394.5348262786865,
+      "success": true
+    },
+    {
+      "question_id": "ae_019",
+      "question": "Private equity requirements?",
+      "answer": "Georgia contractor exam requirements: Two exams required - Business & Law exam (110 questions, 4 hours) and Trade exam (110 questions, 4 hours). Both require 70% passing score. Exams cover business practices, law, safety, and trade-specific knowledge. Contact our licensing specialists for personalized guidance through the process.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 55,
+      "latency_ms": 413.03420066833496,
+      "success": true
+    },
+    {
+      "question_id": "ae_020",
+      "question": "Exit strategy considerations?",
+      "answer": "Colorado contractor licensing timelines vary by jurisdiction. Denver process takes 4-6 weeks including exam scheduling. Colorado Springs takes 2-3 weeks with no exam required. Smaller municipalities may process in 1-2 weeks. Plan for 2-8 weeks depending on location and complexity of application.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 404.27231788635254,
+      "success": true
+    },
+    {
+      "question_id": "ae_021",
+      "question": "Georgia business opportunities",
+      "answer": "Georgia contractor license application: Submit online or mail application with $200 fee, provide experience documentation (4 years required), pass both exams (Business & Law, Trade), obtain $10,000 bond, complete background check. Processing time: 30-45 days. Fees and costs are current as of 2025.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 336.99893951416016,
+      "success": true
+    },
+    {
+      "question_id": "ae_022",
+      "question": "Florida commercial markets",
+      "answer": "COMMERCIAL BREAKTHROUGH: Antonio Rodriguez, Restaurant Plumbing Specialist, Miami FL. STARTING POINT: $54,000 annual income, residential service plumbing, 8 years experience, tired of emergency calls and small jobs. COMMERCIAL STRATEGY: Got licensed with focus on commercial plumbing and restaurant expertise, Invested in specialized restaurant equipment training, Built relationships with restaurant equipment suppliers. BREAKTHROUGH PROJECT - Month 4: New restaurant chain opening 3 locations simultaneously, Full plumbing systems for commercial kitchens, grease traps, specialized equipment, Total project value: $125,000, Profit: $31,250 (25% margin). SPECIALIZATION RESULTS: Month 4-12: 8 restaurant projects completed, Average project value: $45,000, Average profit per project: $11,250, Total annual profit: $90,000. ONGOING COMMERCIAL INCOME: Original residential: $54,000, Restaurant specialization: $90,000, Maintenance contracts: $28,800 annually ($2,400/month), Qualifier network: $4,200 annually, Total annual: $177,000 (228% increase). MARKET POSITION: \"Restaurants need specialized plumbing knowledge. Once you prove you understand commercial kitchens, they pay premium prices and refer you to other restaurant owners.\"",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 70,
+      "latency_ms": 341.0921096801758,
+      "success": true
+    },
+    {
+      "question_id": "ae_023",
+      "question": "California growth potential",
+      "answer": "SPECIALTY SUCCESS: David Park, Solar Installation Specialist, California. BACKGROUND: $65,000 annual income as general electrician, looking for growth opportunity, interested in renewable energy trend. SPECIALTY LICENSING STRATEGY: Got licensed for electrical contractor with solar specialty certification, Invested additional $2,800 in solar-specific training, Total investment: $7,000 (licensing + specialty training). SOLAR MARKET BREAKTHROUGH: Month 1-3: Completed licensing and solar certification training. Month 4: First residential solar job, 8.5kW system, $12,000 profit. Month 5-6: Word-of-mouth referrals, 3 more systems, $34,000 total profit. Month 7-12: Established relationships with solar equipment suppliers, streamlined process. FIRST YEAR RESULTS: 28 residential solar installations, Average profit per installation: $8,500, Total solar profit: $238,000, Less business expenses: $53,000, Net solar income: $185,000. TOTAL INCOME TRANSFORMATION: Original electrical work: $65,000, Solar specialty income: $185,000, Total: $250,000 (285% increase), Qualifier network: $4,800 annually. MARKET INSIGHT: \"Solar is booming in California. Every installation I do generates 3-4 referrals. The specialty premium is incredible - I make more on one solar job than I used to make in a month.\"",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 75,
+      "latency_ms": 387.0241641998291,
+      "success": true
+    },
+    {
+      "question_id": "ae_024",
+      "question": "Texas expansion options",
+      "answer": "Background: - Experience: 15 years construction, 7 years business owner - Location: Austin, Texas - Specialty: Kitchen and bathroom remodeling - Annual Revenue: $450,000 before program Challenge: - Market Saturation: Intense competition in Austin - Lead Costs: Paying $300+ per lead with low conversion - Seasonal Gaps: 3-4 months of reduced activity Program Implementation: - Start Date: June 2022 - Investment: $4,995 (18-month financing) - Focus: High-end remodeling projects - Network Strategy: Referral relationship building 6-Month Results: - Qualified Leads: 156 premium leads - Project Conversions: 67 projects secured - Average Project Value: $15,800 - New Revenue: $1,058,600 - ROI: 21,095% return on investment 18-Month Transformation: - Annual Revenue: $1,240,000 (175% increase) - Backlog: 4-month project backlog maintained - Team Expansion: 8 to 22 employees - Market Leadership: Top 3 remodeling contractor in Austin James''s Quote: \"I wish I had found this program years ago. The quality of leads is incredible - these people are ready to hire, not just browsing around.\"",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 394.9460983276367,
+      "success": true
+    },
+    {
+      "question_id": "ae_025",
+      "question": "New York business scaling",
+      "answer": "New York requires contractor licensing for projects over $1,000-5,000 depending on license type. General contractor license requires 2-4 years experience, trade exam, business law exam, and financial statement. Application fee typically $100-300, bond requirements $5,000-15,000. Processing time 4-8 weeks. Reciprocity available with neighboring states in some cases.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 456.7229747772217,
+      "success": true
+    },
+    {
+      "question_id": "ae_026",
+      "question": "Illinois commercial opportunities",
+      "answer": "Entry-level commercial licensing transforms careers: $45K baseline to $85K-$110K within 12 months. Commercial projects pay 40-60% more than residential for same scope. Monthly impact: From $3,750 to $7,083-$9,167, gain of $3,333-$5,417 monthly. Investment recovery: 25-40 days. Real transformation: \"Lisa started at $42K doing small commercial maintenance. After licensing, she landed her first commercial HVAC project worth $35K profit. Now she specializes in office building systems and cleared $98K last year plus $3,600 monthly qualifier income. She calls it her career breakthrough moment.\" Commercial advantages: longer project durations, higher profit margins, repeat corporate clients, and premium billing rates.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 70,
+      "latency_ms": 366.0290241241455,
+      "success": true
+    },
+    {
+      "question_id": "ae_027",
+      "question": "Pennsylvania growth markets",
+      "answer": "Construction boom market multipliers: 1.5x-2.2x normal ROI in high-growth areas! Boom markets include: Austin (tech growth), Phoenix (population surge), Tampa (business relocation), Nashville (corporate moves). Boom example: \"During Austin''s tech boom, licensed contractors saw 180% premiums. Steve''s normal $85K became $238K annually. His $4,500 licensing investment paid back in 11 days from his first tech company project worth $15,200 profit. Boom markets compress ROI timelines dramatically!\" Boom indicators: Population growth >3% annually, Major corporate relocations, Infrastructure investment, Housing shortage, Commercial development surge.",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 75,
+      "latency_ms": 329.87380027770996,
+      "success": true
+    },
+    {
+      "question_id": "ae_028",
+      "question": "Ohio business expansion",
+      "answer": "5-year licensed contractor projection: Additional revenue $2M-$5M, net profit increase $300K-$750K, business value creation $500K-$2M. Licensing ROI over 5 years: 8,955%-22,388%. Strategic advantages: Licensed contractor credibility, lower insurance rates, higher bonding capacity, increased client trust. Scalability benefits: Multi-state expansion easier, ability to hire/supervise others, licensed businesses worth 2-3x more at sale.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 366.7938709259033,
+      "success": true
+    },
+    {
+      "question_id": "ae_029",
+      "question": "Michigan commercial potential",
+      "answer": "Commercial Kitchen Contractor specializes in Restaurant and commercial kitchen installation. Requirements: General contractor, plumbing, electrical licenses, health department training. Market opportunity: $1.8B market, steady growth with earning potential of $80,000-160,000 annually. Licensing process typically 3-6 months including specialized training. High demand specialty with limited competition.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 75,
+      "latency_ms": 362.4739646911621,
+      "success": true
+    },
+    {
+      "question_id": "ae_030",
+      "question": "North Carolina growth options",
+      "answer": "- Average Home Price: $350,000 - Typical Commission: $10,500 (3%) - Qualifier Commission: $175-$210 per referral - Monthly Target: 18-28 qualifiers - Monthly Revenue Potential: $3,150-$5,880 - Annual Revenue Potential: $37,800-$70,560 - ROI on $4,995 investment: 757%-1,413% - Break-even: 1.3-1.6 months",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 55,
+      "latency_ms": 382.9507827758789,
+      "success": true
+    },
+    {
+      "question_id": "ae_031",
+      "question": "Virginia business opportunities",
+      "answer": "Maryland''s proximity to Washington DC creates federal contracting opportunities requiring security clearances. Chesapeake Bay environmental regulations affect coastal construction projects. Historic Annapolis and Baltimore districts have preservation requirements. Maryland offers reciprocity with Delaware and Virginia for qualified contractors, facilitating regional business expansion.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 70,
+      "latency_ms": 387.5739574432373,
+      "success": true
+    },
+    {
+      "question_id": "ae_032",
+      "question": "Arizona expansion potential",
+      "answer": "Background: - Location: Phoenix, Arizona - Services: HVAC, plumbing, electrical (multi-trade) - Experience: 12 years in trades, 3 years business owner - Pre-Program: Struggling to maintain consistent lead flow Network Building Strategy: - Program Start: February 2022 - Investment: $4,995 (paid in full) - Approach: Quality-first, relationship-focused networking - Goal: Build self-sustaining referral ecosystem Month-by-Month Network Growth: #### Month 1-3: Foundation Building - Initial Contacts: 47 potential qualifier sources identified - Active Relationships: 12 engaged qualifier partners - First Referrals: 8 qualified leads received - Conversion Rate: 75% (6 completed jobs) - Revenue: $4,200 initial network revenue #### Month 4-6: Network Expansion - New Contacts: 23 additional qualifier sources - Active Network: 28 regular referral partners - Monthly Referrals: 35-45 qualified leads - Conversion Improvement: 85% (better pre-qualification) - Revenue: $18,500 monthly average #### Month 7-12: Multiplication Effect - Referral from Referrals: Customers becoming qualifier sources - Network Size: 67 active referral relationships - Monthly Volume: 75-95 qualified leads - Premium Positioning: Selective project acceptance - Revenue: $34,000 monthly average Year 1 Network Results: - Total Referrals: 847 qualified leads - Completed Projects: 678 jobs (80% conversion) - Average Job Value: $1,850 - Total Revenue: $1,254,300 - Network-Generated Revenue: 94% of total business Network Compos",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 80,
+      "latency_ms": 408.33091735839844,
+      "success": true
+    },
+    {
+      "question_id": "ae_033",
+      "question": "Colorado commercial markets",
+      "answer": "Colorado implementing International Code Council (ICC) standardized contractor exam starting early 2025 for new and renewing Class A, B, and C license applicants. ICC Standardized Contractor Exam specific to classification required. Affects municipalities including Denver which currently has stringent 7 years experience for Class A commercial, 2 years for Class C residential. Preparation recommended as this represents significant change from current municipal-specific requirements. This information is time-sensitive.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 75,
+      "latency_ms": 354.77495193481445,
+      "success": true
+    },
+    {
+      "question_id": "ae_034",
+      "question": "Washington growth scaling",
+      "answer": "Multi-state expansion strategy: Research reciprocity agreements (reduces licensing requirements), establish business entities in target states, obtain required licenses sequentially starting with easiest markets, build local partnerships, understand regional differences in codes and practices. Typical expansion timeline 6-18 months per state. ROI improves significantly after 3rd state due to economies of scale.",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 65,
+      "latency_ms": 350.4321575164795,
+      "success": true
+    },
+    {
+      "question_id": "ae_035",
+      "question": "Oregon business opportunities",
+      "answer": "Oregon requires contractor licensing for projects over $1,000-5,000 depending on license type. General contractor license requires 2-4 years experience, trade exam, business law exam, and financial statement. Application fee typically $100-300, bond requirements $5,000-15,000. Processing time 4-8 weeks. Reciprocity available with neighboring states in some cases.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 334.08164978027344,
+      "success": true
+    },
+    {
+      "question_id": "ae_036",
+      "question": "Nevada expansion options",
+      "answer": "Nevada requires contractor licensing for projects over $1,000-5,000 depending on license type. General contractor license requires 2-4 years experience, trade exam, business law exam, and financial statement. Application fee typically $100-300, bond requirements $5,000-15,000. Processing time 4-8 weeks. Reciprocity available with neighboring states in some cases.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 60,
+      "latency_ms": 353.2578945159912,
+      "success": true
+    },
+    {
+      "question_id": "ae_037",
+      "question": "Utah commercial potential",
+      "answer": "Utah contractor license ROI: Average residential project value $29,909, licensed contractors charge 15-25% premium over unlicensed. Annual income potential $65,000-185,000 depending on specialization. License investment $7870 typically recovers within 2-4 projects. Market advantages include bonding capacity, insurance eligibility, and legal work authorization. Break-even typically 3-6 months.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 75,
+      "latency_ms": 312.53671646118164,
+      "success": true
+    },
+    {
+      "question_id": "ae_038",
+      "question": "Tennessee growth markets",
+      "answer": "Original Market: - Starting Location: Nashville, Tennessee - Initial Service Area: Davidson County (15-mile radius) - Annual Revenue: $340,000 (2021) - Team Size: 4 technicians - Market Share: <2% of local HVAC market Program Implementation: - Start Date: March 2022 - Investment: $4,995 (paid in full) - Strategy: Prove model locally, then replicate - Timeline: 2-year expansion plan - Focus: Franchise-style system replication Phase 1: Local Market Domination (Months 1-8) - Qualifier Volume: 450+ qualified leads in 8 months - Revenue Growth: $340K to $580K annual run rate - Team Expansion: 4 to 9 technicians - Market Share: 8% of Davidson County HVAC market - System Development: Standardized processes and training Phase 2: Adjacent Market Entry (Months 9-15) - New Markets: Murfreesboro, TN and Bowling Green, KY - Investment: $125,000 in equipment and personnel - Approach: Hired local technicians, implemented proven system - Results: $320,000 additional annual revenue - Challenges: Licensing variations, local competition adaptation Phase 3: Regional Expansion (Months 16-24) - Additional Markets: Huntsville, AL and Paducah, KY - Structure: Regional manager hired, location-based teams - Technology: Unified dispatch and customer management system - Revenue: $1,240,000 combined annual revenue - Market Position: Top 3 HVAC in each market Current Operations (3 Years Later): - Service Areas: 5 cities across 3 states - Annual Revenue: $1,640,000 (382% growth from start) - Employee Count",
+      "persona": "ambitious_entrepreneur",
+      "category": "growth",
+      "score": 80,
+      "latency_ms": 364.5801544189453,
+      "success": true
+    },
+    {
+      "question_id": "ae_039",
+      "question": "Kentucky business scaling",
+      "answer": "Kentucky has no state-wide general contractor licensing requirement. Louisville and Lexington require business licenses for contractors. Specific trades (electrical, plumbing) are regulated at state level. Home improvement contractors must register for projects over $200. Public works requires prequalification through state transportation department.",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 65,
+      "latency_ms": 377.6130676269531,
+      "success": true
+    },
+    {
+      "question_id": "ae_040",
+      "question": "Indiana expansion opportunities",
+      "answer": "Original Market: - Starting Location: Rural West Virginia - Service Area: 3-county rural region - Population Density: 45 people per square mile - Annual Revenue: $165,000 - Challenge: Limited growth potential, seasonal work Urban Opportunity: - Target Market: Charleston, WV metro area - Population: 300,000+ metro area - Market Research: High demand, limited quality contractors - Competition: Large companies, no mid-tier premium option - Strategy: Rural work ethic meets urban opportunity Market Entry Strategy: - Program Start: September 2022 - Investment: $4,995 (18-month financing) - Approach: Gradual transition, maintain rural base - Timeline: 18-month transition plan - Positioning: \"Country reliability, city expertise\" Urban Market Development: - Month 1-3: Market research, licensing, relationship building - Month 4-6: First urban projects, brand establishment - Month 7-12: Consistent urban presence, team building - Month 13-18: Urban focus, rural as secondary market Revenue Transition Timeline: - Pre-Program: 100% rural ($165,000 annually) - Year 1: 70% rural, 30% urban ($235,000 total) - Year 2: 40% rural, 60% urban ($340,000 total) - Year 3: 25% rural, 75% urban ($445,000 total) Urban Market Advantages Discovered: - Project Size: Average job $2,400 vs. $800 rural - Frequency: Year-round work vs. seasonal rural patterns - Specialization: Smart home and commercial opportunities - Profit Margins: 35% vs. 22% in rural areas - Growth: Unlimited expansion potential vs. fixed r",
+      "persona": "ambitious_entrepreneur",
+      "category": "opportunity",
+      "score": 75,
+      "latency_ms": 380.5990219116211,
+      "success": true
+    }
+  ],
+  "summary": {
+    "total_questions": 200,
+    "successful_queries": 200,
+    "success_rate": 1.0,
+    "average_score": 67.675,
+    "median_score": 65.0,
+    "min_score": 55,
+    "max_score": 85,
+    "average_latency_ms": 403.8637137413025,
+    "median_latency_ms": 388.88096809387207
+  },
+  "persona_performance": {
+    "price_conscious": {
+      "total_questions": 40,
+      "success_rate": 1.0,
+      "average_score": 72.375,
+      "average_latency_ms": 475.05555748939514
+    },
+    "overwhelmed_veteran": {
+      "total_questions": 40,
+      "success_rate": 1.0,
+      "average_score": 62.5,
+      "average_latency_ms": 419.6811378002167
+    },
+    "skeptical_researcher": {
+      "total_questions": 40,
+      "success_rate": 1.0,
+      "average_score": 68.125,
+      "average_latency_ms": 366.46488308906555
+    },
+    "time_pressed": {
+      "total_questions": 40,
+      "success_rate": 1.0,
+      "average_score": 68.75,
+      "average_latency_ms": 373.9342451095581
+    },
+    "ambitious_entrepreneur": {
+      "total_questions": 40,
+      "success_rate": 1.0,
+      "average_score": 66.625,
+      "average_latency_ms": 384.182745218277
+    }
+  },
+  "grade_distribution": {
+    "A (90-100)": 0,
+    "B (80-89)": 18,
+    "C (70-79)": 78,
+    "D (60-69)": 87,
+    "F (0-59)": 17
+  }
+}
