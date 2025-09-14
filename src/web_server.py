@@ -939,10 +939,16 @@ async def get_knowledge_stats():
         
         result = await _driver.database_manager.execute_query(stats_query)
         
+        # Get enhanced retriever count
+        enhanced_retriever_count = 0
+        if _enhanced_retriever and hasattr(_enhanced_retriever, 'in_memory_index'):
+            enhanced_retriever_count = len(_enhanced_retriever.in_memory_index.entries)
+        
         if result.rows:
             stats = result.rows[0]
             return {
                 "total_entries": stats["total_entries"],
+                "enhanced_retriever_entries": enhanced_retriever_count,
                 "total_categories": stats["total_categories"],
                 "total_states": stats["total_states"],
                 "priority_breakdown": {
@@ -955,13 +961,16 @@ async def get_knowledge_stats():
                     "intermediate": stats["intermediate_difficulty"],
                     "advanced": stats["advanced_difficulty"]
                 },
-                "timestamp": datetime.utcnow().isoformat()
+                "timestamp": datetime.utcnow().isoformat(),
+                "note": "enhanced_retriever_entries is the authoritative count for the knowledge base"
             }
         else:
             return {
                 "total_entries": 0,
-                "message": "No knowledge base entries found",
-                "timestamp": datetime.utcnow().isoformat()
+                "enhanced_retriever_entries": enhanced_retriever_count,
+                "message": "No knowledge base entries found in database table",
+                "timestamp": datetime.utcnow().isoformat(),
+                "note": "enhanced_retriever_entries is the authoritative count for the knowledge base"
             }
         
     except Exception as e:
