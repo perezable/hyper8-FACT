@@ -1,0 +1,12 @@
+{
+  "total_tests": 12,
+  "successful": 12,
+  "failed": 0,
+  "scores": {
+    "keyword_accuracy": 0.0,
+    "response_quality": 0.3,
+    "weighted_overall": 0.13999999999999999
+  },
+  "grade": "F",
+  "percentage": 13.999999999999998
+}

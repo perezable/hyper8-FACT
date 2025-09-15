@@ -319,6 +319,14 @@ try:
 except ImportError:
     logger.warning("Groq test module not available")
 
+# Include debug query endpoint
+try:
+    from api.debug_query import router as debug_query_router
+    app.include_router(debug_query_router)
+    logger.info("Debug query endpoint loaded")
+except ImportError:
+    logger.warning("Debug query module not available")
+
 
 @app.get("/", response_model=HealthResponse)
 async def root():
