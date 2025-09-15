@@ -406,6 +406,29 @@ class FACTDriver:
             
             return {"error": str(e)}
     
+    def get_metrics(self) -> Dict[str, Any]:
+        """
+        Get system metrics.
+        
+        Returns:
+            Dictionary containing system metrics
+        """
+        if self.metrics_collector:
+            system_metrics = self.metrics_collector.get_system_metrics()
+            return {
+                "total_executions": system_metrics.total_executions,
+                "successful_executions": system_metrics.successful_executions,
+                "failed_executions": system_metrics.failed_executions,
+                "average_execution_time": system_metrics.average_execution_time,
+                "error_rate": system_metrics.error_rate,
+                "executions_per_minute": system_metrics.executions_per_minute,
+                "initialized": self._initialized
+            }
+        return {
+            "initialized": self._initialized,
+            "message": "Metrics not available"
+        }
+    
     async def shutdown(self) -> None:
         """Shutdown the FACT driver and cleanup resources."""
         try:

@@ -395,7 +395,7 @@ async def process_query(request: QueryRequest, background_tasks: BackgroundTasks
         logger.info(f"Processing web query: {query_id}")
         
         # Process the query
-        response = await _driver.process_query(request.query)
+        response = await _driver.process_fact_query(request.query)
         
         # Check if response was cached (simplified check)
         cached = "cache hit" in response.lower() if isinstance(response, str) else False
