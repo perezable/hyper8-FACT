@@ -311,6 +311,14 @@ try:
 except ImportError:
     logger.warning("Debug module not available")
 
+# Include Groq test endpoint
+try:
+    from api.test_groq import router as test_groq_router
+    app.include_router(test_groq_router)
+    logger.info("Groq test endpoint loaded")
+except ImportError:
+    logger.warning("Groq test module not available")
+
 
 @app.get("/", response_model=HealthResponse)
 async def root():
