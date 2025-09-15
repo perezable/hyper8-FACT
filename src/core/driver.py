@@ -227,8 +227,8 @@ class FACTDriver:
                     system=self.config.system_prompt,
                     messages=messages,
                     max_tokens=2048,
-                    temperature=0.7,
-                    tools=self._get_tool_definitions() if self.tool_registry else None
+                    temperature=0.7
+                    # Note: Tools disabled for Groq API compatibility
                 )
                 
                 # Handle tool calls if present
