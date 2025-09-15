@@ -11,8 +11,13 @@ import traceback
 router = APIRouter(prefix="/api", tags=["test"])
 logger = structlog.get_logger(__name__)
 
+from pydantic import BaseModel
+
+class TestQuery(BaseModel):
+    query: str
+
 @router.post("/test-direct-groq")
-async def test_direct_groq(query: str):
+async def test_direct_groq(request: TestQuery):
     """Test Groq API directly without FACT driver"""
     
     groq_key = os.getenv("GROQ_API_KEY")
@@ -34,7 +39,7 @@ async def test_direct_groq(query: str):
             model="openai/gpt-oss-120b",
             messages=[
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": query}
+                {"role": "user", "content": request.query}
             ],
             max_tokens=1000,
             temperature=0.7
@@ -44,7 +49,7 @@ async def test_direct_groq(query: str):
         
         return {
             "status": "success",
-            "query": query,
+            "query": request.query,
             "response": response_text,
             "model": response.model,
             "tokens": response.usage.total_tokens
@@ -54,7 +59,7 @@ async def test_direct_groq(query: str):
         tb = traceback.format_exc()
         return {
             "status": "error",
-            "query": query,
+            "query": request.query,
             "error": str(e),
             "traceback": tb
         }
