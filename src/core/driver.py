@@ -222,9 +222,12 @@ class FACTDriver:
             else:
                 client = create_groq_client(self.groq_api_key)
                 
+                # Use a simple system prompt for Groq
+                groq_system_prompt = "You are a helpful assistant for contractor licensing questions. Provide detailed, accurate information about contractor licensing, NASCLA certification, state requirements, and related topics."
+                
                 response = client.messages.create(
                     model="openai/gpt-oss-120b",  # Using GPT-OSS-120B as requested
-                    system=self.config.system_prompt,
+                    system=groq_system_prompt,  # Custom prompt for Groq
                     messages=messages,
                     max_tokens=2048,
                     temperature=0.7
